@@ -6,8 +6,8 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_wf6vo"]
 size = Vector3(1.62305, 1.14264, 2.31396)
 
-[node name="Mob" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+[node name="Mob" type="CharacterBody3D" groups=["mob"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_fpeg5")

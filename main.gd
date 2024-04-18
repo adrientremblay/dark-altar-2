@@ -9,6 +9,6 @@ func _on_mob_timer_timeout() -> void:
 	mob_spawn_location.progress_ratio = randf()
 	
 	var player_position = $Player.position
-	mob.initialize(mob_spawn_location.position, player_position)
+	mob.initialize(mob_spawn_location.position - Vector3(0,2,0), player_position)
 	
 	add_child(mob)
