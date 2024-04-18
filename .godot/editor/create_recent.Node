@@ -1,9 +1,12 @@
-CollisionShape3D
 Node3D
+PathFollow3D
+Path3D
+MeshInstance3D
+VisibleOnScreenNotifier3D
+CollisionShape3D
 CharacterBody3D
 Camera3D
 Marker3D
 DirectionalLight3D
-MeshInstance3D
 StaticBody3D
 Node2D
