@@ -14,16 +14,24 @@ func _unhandled_input(event: InputEvent):
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * 0.01)
-			neck.rotate_x(-event.relative.y * 0.01)
+			camera.rotate_x(-event.relative.y * 0.01)
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
 
 func _physics_process(delta):
-	if Input.is_action_pressed("move_right"):
-		position.x += speed * delta
-	if Input.is_action_pressed("move_left"):
-		position.x -= speed * delta
-	if Input.is_action_pressed("move_forward"):
-		position.z -= speed * delta
-	if Input.is_action_pressed("move_back"):
-		position.z += speed * delta
-		
+	var input_dir = Vector3.ZERO
 	
+	if Input.is_action_pressed("move_right"):
+		input_dir.x += 1
+	if Input.is_action_pressed("move_left"):
+		input_dir.x -= 1
+	if Input.is_action_pressed("move_forward"):
+		input_dir.z -= 1
+	if Input.is_action_pressed("move_back"):
+		input_dir.z += 1
+	
+	var direction = (neck.transform.basis * input_dir).normalized()
+	
+	if (direction):
+		position += direction * speed * delta
+	
+	move_and_slide()
