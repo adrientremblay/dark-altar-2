@@ -30,3 +30,5 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10.4066, 19)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+projection = 1
+size = 19.0
