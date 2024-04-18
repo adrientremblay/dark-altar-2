@@ -7,6 +7,9 @@
 size = Vector3(1.62305, 1.14264, 2.31396)
 
 [node name="Mob" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_fpeg5")
 
 [node name="Pivot" type="Node3D" parent="."]
