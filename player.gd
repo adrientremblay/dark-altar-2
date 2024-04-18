@@ -7,6 +7,8 @@ extends CharacterBody3D
 
 var target_velocity = Vector3.ZERO
 
+signal hit
+
 func _physics_process(delta):
 	var direction = Vector3.ZERO
 	
@@ -47,20 +49,10 @@ func _physics_process(delta):
 	
 	velocity = target_velocity
 	move_and_slide()
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+func _on_mob_detector_body_entered(body: Node3D) -> void:
+	die();
+
+func die():
+	hit.emit()
+	queue_free()

@@ -1,10 +1,11 @@
+CollisionShape3D
+Area3D
 Timer
 Node3D
 PathFollow3D
 Path3D
 MeshInstance3D
 VisibleOnScreenNotifier3D
-CollisionShape3D
 CharacterBody3D
 Camera3D
 Marker3D
