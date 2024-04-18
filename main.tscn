@@ -1,7 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=9 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8ulm22g3m7vk" path="res://assets/Skeleton/skeleton.obj" id="1_jgvma"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6cfho"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_mljup"]
+sky_material = SubResource("ProceduralSkyMaterial_6cfho")
+
+[sub_resource type="Environment" id="Environment_ppq17"]
+background_mode = 2
+sky = SubResource("Sky_mljup")
+tonemap_mode = 2
+glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pnacw"]
 size = Vector3(25, 0.2, 25)
@@ -12,6 +25,9 @@ size = Vector3(25, 0.2, 25)
 albedo_color = Color(1, 0.537255, 0, 1)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ppq17")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 

@@ -1,12 +1,12 @@
+Node3D
+MeshInstance3D
 Camera3D
 CollisionShape3D
 CharacterBody3D
 DirectionalLight3D
-MeshInstance3D
 StaticBody3D
 Area3D
 Timer
-Node3D
 PathFollow3D
 Path3D
 VisibleOnScreenNotifier3D
