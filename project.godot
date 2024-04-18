@@ -12,4 +12,7 @@ config_version=5
 
 config/name="Dark Altar 2"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout=""

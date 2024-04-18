@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://h3r1d42it2ut"]
+
+[ext_resource type="ArrayMesh" uid="uid://b8ulm22g3m7vk" path="res://assets/Skeleton/skeleton.obj" id="1_jgvma"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pnacw"]
+size = Vector3(25, 0.2, 25)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rv7tw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcu3x"]
+albedo_color = Color(1, 0.537255, 0, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_pnacw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+mesh = SubResource("PlaneMesh_rv7tw")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_wcu3x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 8.54764, 0)
+mesh = ExtResource("1_jgvma")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

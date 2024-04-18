@@ -1,14 +1,14 @@
+DirectionalLight3D
+MeshInstance3D
 CollisionShape3D
+StaticBody3D
 Area3D
 Timer
 Node3D
 PathFollow3D
 Path3D
-MeshInstance3D
 VisibleOnScreenNotifier3D
 CharacterBody3D
 Camera3D
 Marker3D
-DirectionalLight3D
-StaticBody3D
 Node2D
