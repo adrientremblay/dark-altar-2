@@ -1,7 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713474094
-main.tscn::PackedScene::550203305706061919::1713473986::0::1::::<><>::
+::res://::1713474487
+main.tscn::PackedScene::550203305706061919::1713474419::0::1::::<><>::uid://b8ulm22g3m7vk::::res://assets/Skeleton/skeleton.obj<>uid://nqaltxfxv1gr::::res://player.tscn
+player.tscn::PackedScene::945505688825254077::1713474394::0::1::::<><>::
 ::res://assets/::1713474094
 ::res://assets/fonts/::1713474054
-::res://assets/Skeleton/::1713474084
+::res://assets/Skeleton/::1713474095
 skeleton.obj::Mesh::4744630855427367540::1713474083::1713474095::1::::<><>::
