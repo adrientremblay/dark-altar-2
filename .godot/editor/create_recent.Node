@@ -1,8 +1,8 @@
-Camera3D
-Marker3D
 CollisionShape3D
 Node3D
 CharacterBody3D
+Camera3D
+Marker3D
 DirectionalLight3D
 MeshInstance3D
 StaticBody3D
