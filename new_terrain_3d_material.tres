@@ -35,4 +35,3 @@ _shader_parameters = {
 "noise3_scale": null,
 "noise_texture": SubResource("NoiseTexture2D_bnj3u")
 }
-show_checkered = true
