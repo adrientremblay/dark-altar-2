@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" path="res://grass_nrm_rgh.dds" id="2_6dp6v"]
 
 [sub_resource type="Terrain3DTexture" id="Terrain3DTexture_bp4ht"]
+albedo_color = Color(0.862745, 0.862745, 0.862745, 1)
 albedo_texture = ExtResource("1_uwalo")
 normal_texture = ExtResource("2_6dp6v")
 

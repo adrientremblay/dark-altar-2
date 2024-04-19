@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed = 20
+@export var speed = 10
 
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D

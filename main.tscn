@@ -16,8 +16,9 @@ sky_material = SubResource("ProceduralSkyMaterial_6cfho")
 [sub_resource type="Environment" id="Environment_ppq17"]
 background_mode = 2
 sky = SubResource("Sky_mljup")
-tonemap_mode = 2
-glow_enabled = true
+ambient_light_source = 1
+reflected_light_source = 1
+tonemap_mode = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pnacw"]
 size = Vector3(25, 0.2, 25)
@@ -35,6 +36,7 @@ environment = SubResource("Environment_ppq17")
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+visible = false
 shape = SubResource("BoxShape3D_pnacw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
@@ -47,9 +49,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wcu3x")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 2.22653, 0)
 mesh = ExtResource("1_jgvma")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.327564, 0.944829, 0, -0.944829, 0.327564, 0, 6.65016, 0)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_lbx66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62609, 9.8818)
