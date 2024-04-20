@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=7 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
+[ext_resource type="PackedScene" uid="uid://dam5l71ydi6w1" path="res://assets/models/Arm.gltf" id="2_8a0yd"]
 [ext_resource type="AudioStream" uid="uid://dni157qfh4eyi" path="res://assets/audio/sound_effects/Footsteps grass sound effect.mp3" id="2_vbp7b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwuph"]
@@ -35,6 +36,9 @@ spot_range = 50.0
 spot_attenuation = 1e-05
 spot_angle = 19.46
 spot_angle_attenuation = 1e-05
+
+[node name="Arm" parent="CameraPivot/Camera3D" instance=ExtResource("2_8a0yd")]
+transform = Transform3D(-0.1, -8.56372e-09, 1.75788e-09, 0, -0.0201078, -0.0979575, 8.74228e-09, -0.0979575, 0.0201078, 0.581258, -0.382604, -0.445695)
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")
