@@ -89,4 +89,10 @@ material = ExtResource("4_b3sqw")
 texture_list = ExtResource("5_fqye3")
 
 [node name="tree1" parent="." instance=ExtResource("6_cvhlx")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 8.18454, 0.008306, 4.0934)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 8.18454, -0.667292, 4.0934)
+
+[node name="tree2" parent="." instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -13.8627, 0.008306, -19.2195)
+
+[node name="tree3" parent="." instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -18.3511, -5.30168, 1.60762)
