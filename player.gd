@@ -5,6 +5,8 @@ extends CharacterBody3D
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
 
+var walking = true
+
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -35,5 +37,12 @@ func _physics_process(delta):
 	
 	if (direction):
 		position += direction * speed * delta
+		if not walking:
+			$Footsteps.play()
+		walking = true
+	else:
+		if walking:
+			$Footsteps.stop()
+		walking = false
 	
 	move_and_slide()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=6 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
+[ext_resource type="AudioStream" uid="uid://dni157qfh4eyi" path="res://assets/audio/sound_effects/Footsteps grass sound effect.mp3" id="2_vbp7b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwuph"]
 
@@ -34,3 +35,6 @@ spot_range = 50.0
 spot_attenuation = 1e-05
 spot_angle = 19.46
 spot_angle_attenuation = 1e-05
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vbp7b")
