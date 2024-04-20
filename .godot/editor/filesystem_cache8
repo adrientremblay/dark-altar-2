@@ -1,14 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713613956
+::res://::1713646845
 export_presets.cfg::TextFile::-1::1713488932::0::1::::<><>::
 grass_alb_ht.dds::ImageTexture::-1::1713487170::0::1::::<><>::
 grass_nrm_rgh.dds::ImageTexture::-1::1713488176::0::1::::<><>::
-main.tscn::PackedScene::550203305706061919::1713613956::0::1::::<><>::uid://b8ulm22g3m7vk::::res://assets/Skeleton/skeleton.obj<>uid://nqaltxfxv1gr::::res://player.tscn<>uid://cdeoevjmmmskf::::res://main_terrain_3d_storage.res<>uid://jj8rehsyihdg::::res://new_terrain_3d_material.tres<>uid://cxxgwh8nc3h21::::res://new_terrain_3d_texture_list.tres<>uid://bf2vjbxkvemfs::::res://assets/trees/Gledista_Triacanthos.glb
+main.tscn::PackedScene::550203305706061919::1713617894::0::1::::<><>::uid://b8ulm22g3m7vk::::res://assets/Skeleton/skeleton.obj<>uid://nqaltxfxv1gr::::res://player.tscn<>uid://cdeoevjmmmskf::::res://main_terrain_3d_storage.res<>uid://jj8rehsyihdg::::res://new_terrain_3d_material.tres<>uid://cxxgwh8nc3h21::::res://new_terrain_3d_texture_list.tres<>uid://c15lihvkt78kt::::res://tree1.tscn
 main_terrain_3d_storage.res::Terrain3DStorage::4992523707846235137::1713613056::0::1::::<><>::
-new_terrain_3d_material.tres::Terrain3DMaterial::652313233543769800::1713613956::0::1::::<><>::
-new_terrain_3d_texture_list.tres::Terrain3DTextureList::6435069468063267756::1713613956::0::1::::<><>::res://grass_alb_ht.dds<>res://grass_nrm_rgh.dds
+new_terrain_3d_material.tres::Terrain3DMaterial::652313233543769800::1713617894::0::1::::<><>::
+new_terrain_3d_texture_list.tres::Terrain3DTextureList::6435069468063267756::1713617894::0::1::::<><>::res://grass_alb_ht.dds<>res://grass_nrm_rgh.dds
 player.gd::GDScript::-1::1713491549::0::1::::<>CharacterBody3D<>::
-player.tscn::PackedScene::945505688825254077::1713613956::0::1::::<><>::res://player.gd
+player.tscn::PackedScene::945505688825254077::1713617894::0::1::::<><>::res://player.gd
+tree1.gdshader::Shader::-1::1713618312::0::1::::<><>::
+tree1.tscn::PackedScene::6660365208453892251::1713618312::0::1::::<><>::uid://bf2vjbxkvemfs::::res://assets/trees/Gledista_Triacanthos.glb
 ::res://addons/::1713485640
 ::res://addons/terrain_3d/::1708262870
 LICENSE.txt::TextFile::-1::1708264770::0::1::::<><>::
@@ -68,12 +70,12 @@ importer.tscn::PackedScene::3158990868267418980::1708264774::0::1::::<><>::res:/
 ::res://assets/fonts/::1713474054
 ::res://assets/Skeleton/::1713474095
 skeleton.obj::Mesh::4744630855427367540::1713474083::1713474095::1::::<><>::
-::res://assets/trees/::1713613907
+::res://assets/trees/::1713614155
 Gledista_Triacanthos.glb::PackedScene::2794394318772557020::1713613875::1713614155::1::::<><>::uid://c15aac4hqdf32::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark2 a1.jpg<>uid://cu7egvmim74ns::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos leaf color b1-gleditsia triacanthos leaf mask.png<>uid://dmp1im6vbn0g4::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos flowers color-gleditsia triacanthos flowers mask.png<>uid://ccihr0mbcdtn2::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg
 Gledista_Triacanthos_gleditsia triacanthos bark2 a1.jpg::CompressedTexture2D::6659682784782419743::1713613878::1713613883::1::::<><>::
-Gledista_Triacanthos_gleditsia triacanthos leaf color b1-gleditsia triacanthos leaf mask.png::CompressedTexture2D::6242933032920075008::1713613879::1713613883::1::::<><>::
-Gledista_Triacanthos_gleditsia triacanthos flowers color-gleditsia triacanthos flowers mask.png::CompressedTexture2D::8034087448334914597::1713613879::1713613883::1::::<><>::
 Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg::CompressedTexture2D::4930190785810148601::1713613879::1713613883::1::::<><>::
+Gledista_Triacanthos_gleditsia triacanthos flowers color-gleditsia triacanthos flowers mask.png::CompressedTexture2D::8034087448334914597::1713613879::1713613883::1::::<><>::
+Gledista_Triacanthos_gleditsia triacanthos leaf color b1-gleditsia triacanthos leaf mask.png::CompressedTexture2D::6242933032920075008::1713613879::1713613883::1::::<><>::
 ::res://assets/trees/textures/::1713613115
 tree_bark_65102.jpg::CompressedTexture2D::3731609910644681572::1713613091::1713613115::1::::<><>::
 tree_birch_leaf.png::CompressedTexture2D::731361012408847128::1713613091::1713613115::1::::<><>::

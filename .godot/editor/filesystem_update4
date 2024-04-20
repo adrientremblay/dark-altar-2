@@ -1,7 +1,7 @@
-res://main_terrain_3d_storage.res
+res://tree1.tscn
 res://new_terrain_3d_material.tres
 res://new_terrain_3d_texture_list.tres
+res://tree1.gdshader
+res://main_terrain_3d_storage.res
 res://main.tscn
 res://player.tscn
-res://tree1.tscn
-res://tree1.gdshader

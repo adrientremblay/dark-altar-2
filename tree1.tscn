@@ -1,12 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://c15lihvkt78kt"]
+[gd_scene load_steps=9 format=3 uid="uid://c15lihvkt78kt"]
 
 [ext_resource type="PackedScene" uid="uid://bf2vjbxkvemfs" path="res://assets/trees/Gledista_Triacanthos.glb" id="1_rej3d"]
+[ext_resource type="Texture2D" uid="uid://ccihr0mbcdtn2" path="res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg" id="2_0pyow"]
+[ext_resource type="Texture2D" uid="uid://dmp1im6vbn0g4" path="res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos flowers color-gleditsia triacanthos flowers mask.png" id="2_x10mo"]
+[ext_resource type="Texture2D" uid="uid://cu7egvmim74ns" path="res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos leaf color b1-gleditsia triacanthos leaf mask.png" id="3_13q26"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7t5f8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vw4d0"]
+albedo_color = Color(0.239216, 0.239216, 0.239216, 1)
+albedo_texture = ExtResource("2_x10mo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kgvq6"]
+albedo_color = Color(0.192157, 0.192157, 0.192157, 1)
+albedo_texture = ExtResource("2_x10mo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0y4a"]
+albedo_color = Color(0.345098, 0.345098, 0.345098, 1)
+albedo_texture = ExtResource("3_13q26")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvqaf"]
+albedo_color = Color(0.298039, 0.298039, 0.298039, 1)
+albedo_texture = ExtResource("2_0pyow")
 
 [node name="tree1" instance=ExtResource("1_rej3d")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
 [node name="Gleditsia_triacanthos_v01_m01" parent="." index="0"]
-material_overlay = SubResource("StandardMaterial3D_7t5f8")
 gi_mode = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_vw4d0")
+surface_material_override/1 = SubResource("StandardMaterial3D_kgvq6")
+surface_material_override/2 = SubResource("StandardMaterial3D_o0y4a")
+surface_material_override/3 = SubResource("StandardMaterial3D_cvqaf")
