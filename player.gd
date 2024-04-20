@@ -28,6 +28,8 @@ func _physics_process(delta):
 		input_dir.z -= 1
 	if Input.is_action_pressed("move_back"):
 		input_dir.z += 1
+	if not is_on_floor():
+		input_dir.y -= 1
 	
 	var direction = (neck.transform.basis * input_dir).normalized()
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=20 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8ulm22g3m7vk" path="res://assets/Skeleton/skeleton.obj" id="1_jgvma"]
 [ext_resource type="Texture2D" uid="uid://ccihr0mbcdtn2" path="res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg" id="2_6lq3q"]
@@ -7,6 +7,7 @@
 [ext_resource type="Terrain3DMaterial" uid="uid://jj8rehsyihdg" path="res://new_terrain_3d_material.tres" id="4_b3sqw"]
 [ext_resource type="Terrain3DTextureList" uid="uid://cxxgwh8nc3h21" path="res://new_terrain_3d_texture_list.tres" id="5_fqye3"]
 [ext_resource type="PackedScene" uid="uid://c15lihvkt78kt" path="res://tree1.tscn" id="6_cvhlx"]
+[ext_resource type="PackedScene" uid="uid://cbbuqe37bac5p" path="res://cricket.tscn" id="8_ilbwb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -62,10 +63,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0117111, -0.0916939, 0.0059
 visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+visible = false
 shape = SubResource("BoxShape3D_pnacw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_rv7tw")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_wcu3x")
@@ -96,3 +99,6 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -13.8627, 0.008306, 
 
 [node name="tree3" parent="." instance=ExtResource("6_cvhlx")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -18.3511, -5.30168, 1.60762)
+
+[node name="Cricket" parent="." instance=ExtResource("8_ilbwb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.535524)

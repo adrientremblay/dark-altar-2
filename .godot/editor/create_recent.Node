@@ -1,3 +1,5 @@
+Timer
+AudioStreamPlayer3D
 MeshInstance3D
 SpotLight3D
 WorldEnvironment
@@ -9,6 +11,4 @@ CollisionShape3D
 CharacterBody3D
 StaticBody3D
 Area3D
-Timer
 PathFollow3D
-Path3D

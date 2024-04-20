@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbbuqe37bac5p"]
+
+[ext_resource type="AudioStream" uid="uid://nrdv2pni533t" path="res://assets/audio/sound_effects/cricket.mp3" id="1_57f2k"]
+[ext_resource type="Script" path="res://Cricket.gd" id="2_jfl6i"]
+
+[node name="Cricket" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_57f2k")
+volume_db = -6.18
+autoplay = true
+script = ExtResource("2_jfl6i")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
