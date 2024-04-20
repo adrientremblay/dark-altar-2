@@ -1,3 +1,4 @@
+OmniLight3D
 AudioStreamPlayer
 Timer
 AudioStreamPlayer3D
@@ -12,4 +13,3 @@ CollisionShape3D
 CharacterBody3D
 StaticBody3D
 Area3D
-PathFollow3D

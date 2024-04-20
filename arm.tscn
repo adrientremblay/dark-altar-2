@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnmajxcolns8q"]
+
+[ext_resource type="PackedScene" uid="uid://dam5l71ydi6w1" path="res://assets/models/Arm.gltf" id="1_7r5bf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpkj1"]
+albedo_color = Color(0.303248, 0.257802, 0.154512, 1)
+
+[node name="Arm" instance=ExtResource("1_7r5bf")]
+
+[node name="Окружность" parent="Скелет/Skeleton3D" index="0"]
+material_override = SubResource("StandardMaterial3D_jpkj1")
