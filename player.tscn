@@ -38,10 +38,15 @@ spot_attenuation = 1e-05
 spot_angle = 19.46
 spot_angle_attenuation = 1e-05
 
-[node name="OmniLight3D" type="OmniLight3D" parent="CameraPivot/Camera3D"]
-
 [node name="Arm" parent="CameraPivot/Camera3D" instance=ExtResource("2_v36k5")]
-transform = Transform3D(-0.05, -4.37114e-09, 1.91069e-16, 0, -2.18557e-09, -0.05, 4.37114e-09, -0.05, 2.18557e-09, 0.656507, -0.423212, -0.443583)
+transform = Transform3D(-0.05, -4.37114e-09, 1.91069e-16, 0, -2.18557e-09, -0.05, 4.37114e-09, -0.05, 2.18557e-09, 0.76174, -0.423212, -0.443583)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CameraPivot/Camera3D/Arm"]
+transform = Transform3D(-20, 6.61744e-21, 1.74846e-06, -1.74846e-06, -8.74228e-07, -20, 7.64274e-14, -20, 8.74228e-07, 15.2348, -8.87166, -8.46423)
+light_color = Color(0.905882, 0.709804, 0, 1)
+light_energy = 16.0
+light_size = 1.0
+light_specular = 0.0
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")
