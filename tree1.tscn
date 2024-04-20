@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c15lihvkt78kt"]
+
+[ext_resource type="PackedScene" uid="uid://bf2vjbxkvemfs" path="res://assets/trees/Gledista_Triacanthos.glb" id="1_rej3d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7t5f8"]
+
+[node name="tree1" instance=ExtResource("1_rej3d")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="Gleditsia_triacanthos_v01_m01" parent="." index="0"]
+material_overlay = SubResource("StandardMaterial3D_7t5f8")
+gi_mode = 0

@@ -22,6 +22,10 @@ buses/default_bus_layout=""
 
 enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 move_left={

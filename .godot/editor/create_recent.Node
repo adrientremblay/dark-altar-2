@@ -1,9 +1,9 @@
+MeshInstance3D
 SpotLight3D
 WorldEnvironment
 DirectionalLight3D
 Terrain3D
 Node3D
-MeshInstance3D
 Camera3D
 CollisionShape3D
 CharacterBody3D

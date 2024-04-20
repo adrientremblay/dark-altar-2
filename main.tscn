@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=13 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8ulm22g3m7vk" path="res://assets/Skeleton/skeleton.obj" id="1_jgvma"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
 [ext_resource type="Terrain3DStorage" uid="uid://cdeoevjmmmskf" path="res://main_terrain_3d_storage.res" id="3_o3haq"]
 [ext_resource type="Terrain3DMaterial" uid="uid://jj8rehsyihdg" path="res://new_terrain_3d_material.tres" id="4_b3sqw"]
 [ext_resource type="Terrain3DTextureList" uid="uid://cxxgwh8nc3h21" path="res://new_terrain_3d_texture_list.tres" id="5_fqye3"]
+[ext_resource type="PackedScene" uid="uid://c15lihvkt78kt" path="res://tree1.tscn" id="6_cvhlx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -60,3 +61,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62609, 9.8818)
 storage = ExtResource("3_o3haq")
 material = ExtResource("4_b3sqw")
 texture_list = ExtResource("5_fqye3")
+
+[node name="tree1" parent="." instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 8.18454, 0.008306, 4.0934)
