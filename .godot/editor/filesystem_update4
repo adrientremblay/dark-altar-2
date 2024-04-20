@@ -1,6 +1,5 @@
-res://main_terrain_3d_storage.res
+res://player.tscn
 res://new_terrain_3d_material.tres
 res://new_terrain_3d_texture_list.tres
+res://main_terrain_3d_storage.res
 res://main.tscn
-res://player.tscn
-res://player.gd

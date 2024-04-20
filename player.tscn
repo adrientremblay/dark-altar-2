@@ -13,10 +13,6 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07157, 0)
 script = ExtResource("1_fclsx")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_xwuph")
 
@@ -30,3 +26,11 @@ shape = SubResource("ConvexPolygonShape3D_yw4dy")
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.540563, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CameraPivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.540563, -1)
+light_energy = 10.2
+spot_range = 10.0
+spot_attenuation = 1e-05
+spot_angle = 31.29
+spot_angle_attenuation = 1e-05
