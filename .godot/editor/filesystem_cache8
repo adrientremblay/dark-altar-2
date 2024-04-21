@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713732861
-arm.tscn::PackedScene::8096506835345576210::1713732861::0::1::::<><>::uid://dam5l71ydi6w1::::res://assets/models/Arm.gltf
+::res://::1713735509
+arm.tscn::PackedScene::8096506835345576210::1713735376::0::1::::<><>::uid://dam5l71ydi6w1::::res://assets/models/Arm.gltf
 Cricket.gd::GDScript::-1::1713649127::0::1::::<>AudioStreamPlayer3D<>::
 cricket.tscn::PackedScene::4846337756139299363::1713650055::0::1::::<><>::uid://nrdv2pni533t::::res://assets/audio/sound_effects/cricket.mp3<>res://Cricket.gd
 export_presets.cfg::TextFile::-1::1713665505::0::1::::<><>::
@@ -8,13 +8,13 @@ grass_alb_ht.dds::ImageTexture::-1::1713487170::0::1::::<><>::
 grass_nrm_rgh.dds::ImageTexture::-1::1713488176::0::1::::<><>::
 ground_alb_ht.dds::ImageTexture::-1::1713728614::0::1::::<><>::
 ground_normal_roughness.dds::ImageTexture::-1::1713728717::0::1::::<><>::
-main.tscn::PackedScene::550203305706061919::1713732861::0::1::::<><>::uid://b8ulm22g3m7vk::::res://assets/Skeleton/skeleton.obj<>uid://ccihr0mbcdtn2::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg<>uid://nqaltxfxv1gr::::res://player.tscn<>uid://cdeoevjmmmskf::::res://main_terrain_3d_storage.res<>uid://jj8rehsyihdg::::res://new_terrain_3d_material.tres<>uid://cxxgwh8nc3h21::::res://new_terrain_3d_texture_list.tres<>uid://c15lihvkt78kt::::res://tree1.tscn<>uid://cbbuqe37bac5p::::res://cricket.tscn
-main_terrain_3d_storage.res::Terrain3DStorage::4992523707846235137::1713731861::0::1::::<><>::
-new_terrain_3d_material.tres::Terrain3DMaterial::652313233543769800::1713732861::0::1::::<><>::
-new_terrain_3d_texture_list.tres::Terrain3DTextureList::6435069468063267756::1713732861::0::1::::<><>::res://grass_alb_ht.dds<>res://grass_nrm_rgh.dds<>res://ground_alb_ht.dds<>res://ground_normal_roughness.dds
-player.gd::GDScript::-1::1713731859::0::1::::<>CharacterBody3D<>::
-player.tscn::PackedScene::945505688825254077::1713732861::0::1::::<><>::res://player.gd<>uid://dnmajxcolns8q::::res://arm.tscn<>uid://dni157qfh4eyi::::res://assets/audio/sound_effects/Footsteps grass sound effect.mp3<>uid://co1mf8u8n8p2::::res://assets/models/candle.blend<>uid://qdyw4nawsdok::::res://assets/audio/dialog/intro1.mp3
-README.md::TextFile::-1::1713731312::0::1::::<><>::
+main.tscn::PackedScene::550203305706061919::1713735376::0::1::::<><>::uid://b8ulm22g3m7vk::::res://assets/Skeleton/skeleton.obj<>uid://ccihr0mbcdtn2::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg<>uid://nqaltxfxv1gr::::res://player.tscn<>uid://cdeoevjmmmskf::::res://main_terrain_3d_storage.res<>uid://jj8rehsyihdg::::res://new_terrain_3d_material.tres<>uid://cxxgwh8nc3h21::::res://new_terrain_3d_texture_list.tres<>uid://c15lihvkt78kt::::res://tree1.tscn<>uid://cbbuqe37bac5p::::res://cricket.tscn
+main_terrain_3d_storage.res::Terrain3DStorage::4992523707846235137::1713735376::0::1::::<><>::
+new_terrain_3d_material.tres::Terrain3DMaterial::652313233543769800::1713735376::0::1::::<><>::
+new_terrain_3d_texture_list.tres::Terrain3DTextureList::6435069468063267756::1713735376::0::1::::<><>::res://grass_alb_ht.dds<>res://grass_nrm_rgh.dds<>res://ground_alb_ht.dds<>res://ground_normal_roughness.dds
+player.gd::GDScript::-1::1713735498::0::1::::<>CharacterBody3D<>::
+player.tscn::PackedScene::945505688825254077::1713735498::0::1::::<><>::res://player.gd<>uid://dnmajxcolns8q::::res://arm.tscn<>uid://dni157qfh4eyi::::res://assets/audio/sound_effects/Footsteps grass sound effect.mp3<>uid://co1mf8u8n8p2::::res://assets/models/candle.blend<>uid://qdyw4nawsdok::::res://assets/audio/dialog/intro1.mp3
+README.md::TextFile::-1::1713734495::0::1::::<><>::
 tree1.tscn::PackedScene::6660365208453892251::1713650054::0::1::::<><>::uid://bf2vjbxkvemfs::::res://assets/trees/Gledista_Triacanthos.glb<>uid://ccihr0mbcdtn2::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg<>uid://dmp1im6vbn0g4::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos flowers color-gleditsia triacanthos flowers mask.png<>uid://cu7egvmim74ns::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos leaf color b1-gleditsia triacanthos leaf mask.png
 ::res://addons/::1713485640
 ::res://addons/terrain_3d/::1708262870
@@ -72,9 +72,10 @@ icon_wetness.svg::CompressedTexture2D::3920614623352930861::1708264774::17134857
 importer.gd::GDScript::-1::1708264774::0::1::::<>Terrain3D<>::
 importer.tscn::PackedScene::3158990868267418980::1708264774::0::1::::<><>::res://addons/terrain_3d/tools/importer.gd
 ::res://assets/::1713728759
-::res://assets/audio/::1713731698
-::res://assets/audio/dialog/::1713734250
-intro1.mp3::AudioStreamMP3::1130712670052722722::1713734250::1713734253::1::::<><>::
+::res://assets/audio/::1713735315
+::res://assets/audio/dialog/::1713735584
+intro1.mp3::AudioStreamMP3::1130712670052722722::1713735315::1713735315::1::::<><>::
+intro2.mp3::AudioStreamMP3::8874576445040514011::1713735584::1713735586::1::::<><>::
 ::res://assets/audio/sound_effects/::1713649858
 cricket-sound-113945.mp3::AudioStreamMP3::1629892780276997644::1713648653::1713648655::1::::<><>::
 cricket.mp3::AudioStreamMP3::947770483668823179::1713648801::1713648802::1::::<><>::

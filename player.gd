@@ -5,10 +5,13 @@ extends CharacterBody3D
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
 
+var intro_dialog_1 = Dialog.new("res://assets/audio/dialog/intro1.mp3")
+var intro_dialog_2 = Dialog.new("res://assets/audio/dialog/intro1.mp3")
+
 var walking = true
 
 func _ready() -> void:
-	$Dialog.play()
+	pass
 
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseButton:
@@ -36,7 +39,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		input_dir.y -= 1
 	
-	var direction = (neck.transform.basis * input_dir).normalized()
+	var direction = (transform.basis * neck.transform.basis * input_dir).normalized()
 	
 	if (direction):
 		position += direction * speed * delta
@@ -49,3 +52,19 @@ func _physics_process(delta):
 		walking = false
 	
 	move_and_slide()
+
+
+func _on_dialog_detector_area_entered(area: Area3D) -> void:
+	if area.name == "Dialog1":
+		play_dialog(intro_dialog_1)
+	if area.name == "Dialog2":
+		play_dialog(intro_dialog_2)
+
+func play_dialog(dialog: Dialog):
+	if dialog.was_played:
+		return
+		
+	$Dialog.stream = dialog.audio_file
+	$Dialog.play()
+		
+	dialog.was_played = true

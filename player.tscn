@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=15 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
@@ -41,6 +41,8 @@ tangential_accel_max = 2.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_66rta"]
 size = Vector2(0.05, 0.05)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qlpxg"]
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07157, 0)
@@ -101,3 +103,10 @@ stream = ExtResource("2_vbp7b")
 [node name="Dialog" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_hdc3b")
 volume_db = -12.0
+
+[node name="DialogDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DialogDetector"]
+shape = SubResource("CapsuleShape3D_qlpxg")
+
+[connection signal="area_entered" from="DialogDetector" to="." method="_on_dialog_detector_area_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=18 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8ulm22g3m7vk" path="res://assets/Skeleton/skeleton.obj" id="1_jgvma"]
 [ext_resource type="Texture2D" uid="uid://ccihr0mbcdtn2" path="res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg" id="2_6lq3q"]
@@ -45,6 +45,9 @@ albedo_texture = ExtResource("2_6lq3q")
 albedo_color = Color(0.360784, 0.360784, 0.360784, 1)
 albedo_texture = ExtResource("2_6lq3q")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0poyd"]
+size = Vector3(7.5191, 4.49951, 1)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -61,7 +64,7 @@ surface_material_override/3 = SubResource("StandardMaterial3D_12gei")
 surface_material_override/4 = SubResource("StandardMaterial3D_5ohh3")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.8572, 1.62609, -108.186)
+transform = Transform3D(0.884394, 0, -0.466742, 0, 1, 0, 0.466742, 0, 0.884394, 99.8572, 1.62609, -91.6037)
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 storage = ExtResource("3_o3haq")
@@ -75,3 +78,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
 
 [node name="tree1" parent="Trees" instance=ExtResource("6_cvhlx")]
 transform = Transform3D(0.241985, 0, 0.0627935, 0, 0.25, 0, -0.0627935, 0, 0.241985, 97.2062, -0.667292, -85.2032)
+
+[node name="Dialog1" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.815, 2.06452, -100.003)
+shape = SubResource("BoxShape3D_0poyd")

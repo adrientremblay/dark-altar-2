@@ -1,6 +1,7 @@
+CollisionShape3D
+Area3D
 AudioStreamPlayer
 Node3D
-CollisionShape3D
 StaticBody3D
 GPUParticles3D
 OmniLight3D
@@ -11,4 +12,3 @@ SpotLight3D
 WorldEnvironment
 DirectionalLight3D
 Terrain3D
-Camera3D
