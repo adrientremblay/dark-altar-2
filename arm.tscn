@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://dam5l71ydi6w1" path="res://assets/models/Arm.gltf" id="1_7r5bf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpkj1"]
+diffuse_mode = 1
+disable_ambient_light = true
 albedo_color = Color(0.303248, 0.257802, 0.154512, 1)
 
 [node name="Arm" instance=ExtResource("1_7r5bf")]
