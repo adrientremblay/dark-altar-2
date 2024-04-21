@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://qu8m8i5m2acd"]
+
+[ext_resource type="PackedScene" uid="uid://cm7ui6ckk0psq" path="res://assets/models/signpost/scene.gltf" id="1_tl8gn"]
+[ext_resource type="Texture2D" uid="uid://clfngbi78f88x" path="res://assets/models/signpost/textures/Material.002_baseColor.jpeg" id="2_jyn0c"]
+[ext_resource type="Texture2D" uid="uid://8yhduf6t3mkt" path="res://assets/models/signpost/textures/Material.005_baseColor.png" id="3_f4exm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nt8a0"]
+albedo_color = Color(0.341176, 0.341176, 0.341176, 1)
+albedo_texture = ExtResource("2_jyn0c")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mjag"]
+albedo_color = Color(0.403922, 0.403922, 0.403922, 1)
+albedo_texture = ExtResource("3_f4exm")
+
+[node name="Signpost" instance=ExtResource("1_tl8gn")]
+transform = Transform3D(0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.005, 0, 0, 0)
+
+[node name="UKAZ3_LOW_Material_002_0" parent="Sketchfab_model/a01f71c111f94da2a59ab8e0f21b1736_fbx/RootNode/UKAZ3_LOW" index="0"]
+material_override = SubResource("StandardMaterial3D_nt8a0")
+
+[node name="UKAZ3_LOW_Material_005_0" parent="Sketchfab_model/a01f71c111f94da2a59ab8e0f21b1736_fbx/RootNode/UKAZ3_LOW" index="1"]
+material_override = SubResource("StandardMaterial3D_7mjag")
