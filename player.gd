@@ -6,7 +6,7 @@ extends CharacterBody3D
 @onready var camera = $CameraPivot/Camera3D
 
 var intro_dialog_1 = Dialog.new("res://assets/audio/dialog/intro1.mp3")
-var intro_dialog_2 = Dialog.new("res://assets/audio/dialog/intro1.mp3")
+var intro_dialog_2 = Dialog.new("res://assets/audio/dialog/intro2.mp3")
 
 var walking = true
 
