@@ -49,6 +49,7 @@ script = ExtResource("1_fclsx")
 shape = SubResource("CapsuleShape3D_xwuph")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_8cwml")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
@@ -77,6 +78,9 @@ light_color = Color(0.705882, 0.666667, 0.141176, 1)
 light_energy = 16.0
 light_size = 1.0
 light_specular = 0.0
+shadow_enabled = true
+shadow_bias = 0.036
+shadow_blur = 0.108
 omni_range = 73.0752
 
 [node name="candle" parent="CameraPivot/Camera3D" instance=ExtResource("3_jqm57")]
