@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=17 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8ulm22g3m7vk" path="res://assets/Skeleton/skeleton.obj" id="1_jgvma"]
 [ext_resource type="Texture2D" uid="uid://ccihr0mbcdtn2" path="res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg" id="2_6lq3q"]
@@ -25,14 +25,6 @@ ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_pnacw"]
-size = Vector3(25, 0.2, 25)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_rv7tw"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcu3x"]
-albedo_color = Color(1, 0.537255, 0, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwv4u"]
 albedo_color = Color(0.352941, 0.352941, 0.352941, 1)
 albedo_texture = ExtResource("2_6lq3q")
@@ -53,31 +45,13 @@ albedo_texture = ExtResource("2_6lq3q")
 albedo_color = Color(0.360784, 0.360784, 0.360784, 1)
 albedo_texture = ExtResource("2_6lq3q")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_duxpw"]
-size = Vector3(0.0341797, 1, 1)
-
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g4vby")
 
-[node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0117111, -0.0916939, 0.00593185)
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
-visible = false
-shape = SubResource("BoxShape3D_pnacw")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
-visible = false
-mesh = SubResource("PlaneMesh_rv7tw")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_wcu3x")
-
 [node name="Skeleton" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.05, 0, 0, 0, 0.0106771, 0.0488467, 0, -0.0488467, 0.0106771, 0, 0.480055, 0)
+transform = Transform3D(0.05, 0, 0, 0, 0.0106771, 0.0488467, 0, -0.0488467, 0.0106771, 109.489, 0.480055, -101.127)
 gi_mode = 0
 mesh = ExtResource("1_jgvma")
 surface_material_override/0 = SubResource("StandardMaterial3D_gwv4u")
@@ -87,7 +61,7 @@ surface_material_override/3 = SubResource("StandardMaterial3D_12gei")
 surface_material_override/4 = SubResource("StandardMaterial3D_5ohh3")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62609, 9.8818)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.8572, 1.62609, -108.186)
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 storage = ExtResource("3_o3haq")
@@ -95,29 +69,9 @@ material = ExtResource("4_b3sqw")
 texture_list = ExtResource("5_fqye3")
 
 [node name="Cricket" parent="." instance=ExtResource("8_ilbwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.535524)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
 
 [node name="Trees" type="Node3D" parent="."]
 
 [node name="tree1" parent="Trees" instance=ExtResource("6_cvhlx")]
-transform = Transform3D(0.241985, 0, 0.0627935, 0, 0.25, 0, -0.0627935, 0, 0.241985, 8.18454, -0.667292, 4.0934)
-
-[node name="tree2" parent="Trees" instance=ExtResource("6_cvhlx")]
-transform = Transform3D(0.243856, 0, 0.055085, 0, 0.25, 0, -0.055085, 0, 0.243856, -13.8627, 0.008306, -19.2195)
-
-[node name="tree3" parent="Trees" instance=ExtResource("6_cvhlx")]
-transform = Transform3D(-0.159127, 0, -0.192817, 0, 0.25, 0, 0.192817, 0, -0.159127, -18.3511, -5.30168, 1.60762)
-
-[node name="tree4" parent="Trees" instance=ExtResource("6_cvhlx")]
-transform = Transform3D(0.222975, 0, -0.113058, 0, 0.25, 0, 0.113058, 0, 0.222975, -54.6643, -2.51748, 1.60762)
-
-[node name="tree5" parent="Trees" instance=ExtResource("6_cvhlx")]
-transform = Transform3D(0.241985, 0, 0.0627935, 0, 0.25, 0, -0.0627935, 0, 0.241985, 8.18454, -0.667292, -44.9478)
-
-[node name="LeftWall" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall"]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -24.1455, 0.936796, 0)
-shape = SubResource("BoxShape3D_duxpw")
-
-[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(0.241985, 0, 0.0627935, 0, 0.25, 0, -0.0627935, 0, 0.241985, 97.2062, -0.667292, -85.2032)
