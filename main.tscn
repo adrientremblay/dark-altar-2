@@ -80,6 +80,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
 [node name="tree1" parent="Trees" instance=ExtResource("6_cvhlx")]
 transform = Transform3D(0.241985, 0, 0.0627935, 0, 0.25, 0, -0.0627935, 0, 0.241985, 97.2062, -0.667292, -85.2032)
 
+[node name="tree2" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.194922, 0, 0.156542, 0, 0.25, 0, -0.156542, 0, 0.194922, 97.2062, -0.667292, -101.741)
+
+[node name="tree3" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.230428, 0, 0.0969673, 0, 0.25, 0, -0.0969673, 0, 0.230428, 90.2849, -0.667292, -94.0543)
+
+[node name="tree4" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.0299734, 0, 0.248196, 0, 0.25, 0, -0.248196, 0, 0.0299734, 109.613, -0.667292, -89.1063)
+
+[node name="tree5" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(-0.249553, 0, -0.0149443, 0, 0.25, 0, 0.0149443, 0, -0.249553, 109.613, -0.667292, -96.3933)
+
+[node name="tree6" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(-0.160329, 0, -0.191819, 0, 0.25, 0, 0.191819, 0, -0.160329, 99.7308, -0.667292, -96.3933)
+
 [node name="Dialog1" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog1"]
