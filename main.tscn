@@ -114,8 +114,10 @@ transform = Transform3D(0.222975, 0, -0.113058, 0, 0.25, 0, 0.113058, 0, 0.22297
 [node name="tree5" parent="Trees" instance=ExtResource("6_cvhlx")]
 transform = Transform3D(0.241985, 0, 0.0627935, 0, 0.25, 0, -0.0627935, 0, 0.241985, 8.18454, -0.667292, -44.9478)
 
-[node name="World Boundaries" type="StaticBody3D" parent="."]
+[node name="LeftWall" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World Boundaries"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall"]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -24.1455, 0.936796, 0)
 shape = SubResource("BoxShape3D_duxpw")
+
+[node name="Node3D" type="Node3D" parent="."]

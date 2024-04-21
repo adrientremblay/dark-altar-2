@@ -3,11 +3,32 @@
 [ext_resource type="PackedScene" uid="uid://dam5l71ydi6w1" path="res://assets/models/Arm.gltf" id="1_7r5bf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpkj1"]
-diffuse_mode = 1
-disable_ambient_light = true
-albedo_color = Color(0.303248, 0.257802, 0.154512, 1)
+shading_mode = 0
+specular_mode = 2
+albedo_color = Color(0.682353, 0.603922, 0.501961, 1)
 
 [node name="Arm" instance=ExtResource("1_7r5bf")]
+
+[node name="Skeleton3D" parent="Скелет" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000564814, 0, 0.0111499)
+bones/4/rotation = Quaternion(-0.00530664, -0.0116623, 0.536768, 0.843633)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.0275854, 0.0274996, 0.621137, 0.782733)
+bones/5/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(0.0211768, -0.0848696, 0.492491, 0.865911)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(0.0028115, -0.0132158, 0.65785, 0.753028)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/rotation = Quaternion(-0.0114708, 0.00733347, 0.597727, 0.801584)
+bones/10/scale = Vector3(1, 1, 1)
+bones/13/position = Vector3(1.88905e-07, 0.756027, -5.34691e-08)
+bones/13/rotation = Quaternion(-0.0118486, -0.00125738, 0.454475, 0.89068)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(0.00956286, -0.00756631, 0.62432, 0.781074)
+bones/14/scale = Vector3(1, 1, 1)
+bones/18/position = Vector3(-1.1768e-07, 0.793533, -8.72138e-08)
+bones/18/rotation = Quaternion(-0.0570592, -0.0779907, 0.506342, 0.856901)
+bones/18/scale = Vector3(1, 1, 1)
 
 [node name="Окружность" parent="Скелет/Skeleton3D" index="0"]
 material_override = SubResource("StandardMaterial3D_jpkj1")
