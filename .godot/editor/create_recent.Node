@@ -1,3 +1,4 @@
+GPUParticles3D
 OmniLight3D
 AudioStreamPlayer
 Timer
@@ -12,4 +13,3 @@ Camera3D
 CollisionShape3D
 CharacterBody3D
 StaticBody3D
-Area3D
