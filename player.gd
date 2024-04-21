@@ -7,6 +7,9 @@ extends CharacterBody3D
 
 var walking = true
 
+func _ready() -> void:
+	$Dialog.play()
+
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

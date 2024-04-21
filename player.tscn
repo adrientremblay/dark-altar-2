@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=14 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
 [ext_resource type="AudioStream" uid="uid://dni157qfh4eyi" path="res://assets/audio/sound_effects/Footsteps grass sound effect.mp3" id="2_vbp7b"]
 [ext_resource type="PackedScene" uid="uid://co1mf8u8n8p2" path="res://assets/models/candle.blend" id="3_jqm57"]
+[ext_resource type="AudioStream" uid="uid://qdyw4nawsdok" path="res://assets/audio/dialog/intro1.mp3" id="5_hdc3b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwuph"]
 
@@ -92,3 +93,7 @@ draw_pass_1 = SubResource("QuadMesh_66rta")
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")
+
+[node name="Dialog" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hdc3b")
+volume_db = -12.0

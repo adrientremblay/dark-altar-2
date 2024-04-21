@@ -1,9 +1,9 @@
+AudioStreamPlayer
 Node3D
 CollisionShape3D
 StaticBody3D
 GPUParticles3D
 OmniLight3D
-AudioStreamPlayer
 Timer
 AudioStreamPlayer3D
 MeshInstance3D
