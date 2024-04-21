@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://030k1q35if8y"]
+
+[ext_resource type="Texture2D" uid="uid://clx4dt71nun1q" path="res://assets/models/Medieval_House/Texture/Medieval_House_Diff.png" id="1_lcoex"]
+[ext_resource type="ArrayMesh" uid="uid://v8t8h4m46po" path="res://assets/models/Medieval_House/Medieval_House.obj" id="2_x0k66"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hu1f0"]
+albedo_color = Color(0.478431, 0.478431, 0.478431, 1)
+albedo_texture = ExtResource("1_lcoex")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MedievalHouse" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.178935, 0, -0.440494)
+material_override = SubResource("StandardMaterial3D_hu1f0")
+mesh = ExtResource("2_x0k66")

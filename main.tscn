@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=20 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8ulm22g3m7vk" path="res://assets/Skeleton/skeleton.obj" id="1_jgvma"]
 [ext_resource type="Texture2D" uid="uid://ccihr0mbcdtn2" path="res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg" id="2_6lq3q"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c15lihvkt78kt" path="res://tree1.tscn" id="6_cvhlx"]
 [ext_resource type="PackedScene" uid="uid://cbbuqe37bac5p" path="res://cricket.tscn" id="8_ilbwb"]
 [ext_resource type="PackedScene" uid="uid://qu8m8i5m2acd" path="res://signpost.tscn" id="9_8itpl"]
+[ext_resource type="PackedScene" uid="uid://030k1q35if8y" path="res://house.tscn" id="10_xdnt2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -65,7 +66,7 @@ surface_material_override/3 = SubResource("StandardMaterial3D_12gei")
 surface_material_override/4 = SubResource("StandardMaterial3D_5ohh3")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.884394, 0, -0.466742, 0, 1, 0, 0.466742, 0, 0.884394, 99.8572, 1.62609, -91.6037)
+transform = Transform3D(0.884394, 0, -0.466742, 0, 1, 0, 0.466742, 0, 0.884394, 215.178, 1.62609, -234.226)
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 storage = ExtResource("3_o3haq")
@@ -109,3 +110,6 @@ shape = SubResource("BoxShape3D_0poyd")
 
 [node name="Signpost" parent="." instance=ExtResource("9_8itpl")]
 transform = Transform3D(0.000500159, 0, -0.00497492, 0, 0.005, 0, 0.00497492, 0, 0.000500159, 110.921, 0, -102.473)
+
+[node name="Node3D" parent="." instance=ExtResource("10_xdnt2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 218.59, 0, -254.44)
