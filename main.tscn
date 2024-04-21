@@ -91,14 +91,22 @@ storage = ExtResource("3_o3haq")
 material = ExtResource("4_b3sqw")
 texture_list = ExtResource("5_fqye3")
 
-[node name="tree1" parent="." instance=ExtResource("6_cvhlx")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 8.18454, -0.667292, 4.0934)
-
-[node name="tree2" parent="." instance=ExtResource("6_cvhlx")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -13.8627, 0.008306, -19.2195)
-
-[node name="tree3" parent="." instance=ExtResource("6_cvhlx")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -18.3511, -5.30168, 1.60762)
-
 [node name="Cricket" parent="." instance=ExtResource("8_ilbwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.535524)
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="tree1" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.241985, 0, 0.0627935, 0, 0.25, 0, -0.0627935, 0, 0.241985, 8.18454, -0.667292, 4.0934)
+
+[node name="tree2" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.243856, 0, 0.055085, 0, 0.25, 0, -0.055085, 0, 0.243856, -13.8627, 0.008306, -19.2195)
+
+[node name="tree3" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(-0.159127, 0, -0.192817, 0, 0.25, 0, 0.192817, 0, -0.159127, -18.3511, -5.30168, 1.60762)
+
+[node name="tree4" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.222975, 0, -0.113058, 0, 0.25, 0, 0.113058, 0, 0.222975, -54.6643, -2.51748, 1.60762)
+
+[node name="tree5" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.241985, 0, 0.0627935, 0, 0.25, 0, -0.0627935, 0, 0.241985, 8.18454, -0.667292, -44.9478)
