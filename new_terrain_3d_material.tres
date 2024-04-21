@@ -25,7 +25,7 @@ noise = SubResource("FastNoiseLite_6il0i")
 _shader_parameters = {
 "_mouse_layer": 2147483648,
 "blend_sharpness": null,
-"height_blending": null,
+"height_blending": false,
 "macro_variation1": null,
 "macro_variation2": null,
 "noise1_angle": null,
@@ -35,3 +35,4 @@ _shader_parameters = {
 "noise3_scale": null,
 "noise_texture": SubResource("NoiseTexture2D_bnj3u")
 }
+world_background = 0

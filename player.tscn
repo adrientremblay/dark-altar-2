@@ -77,6 +77,7 @@ light_color = Color(0.905882, 0.709804, 0, 1)
 light_energy = 16.0
 light_size = 1.0
 light_specular = 0.0
+omni_range = 73.0752
 
 [node name="candle" parent="CameraPivot/Camera3D" instance=ExtResource("3_jqm57")]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.690071, -0.507997, -0.686243)

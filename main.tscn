@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=21 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8ulm22g3m7vk" path="res://assets/Skeleton/skeleton.obj" id="1_jgvma"]
 [ext_resource type="Texture2D" uid="uid://ccihr0mbcdtn2" path="res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg" id="2_6lq3q"]
@@ -19,11 +19,11 @@ radiance_size = 0
 
 [sub_resource type="Environment" id="Environment_g4vby"]
 background_mode = 2
-background_energy_multiplier = 0.3
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_e7hv7")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.5
+ambient_light_energy = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pnacw"]
 size = Vector3(25, 0.2, 25)
@@ -52,6 +52,9 @@ albedo_texture = ExtResource("2_6lq3q")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ohh3"]
 albedo_color = Color(0.360784, 0.360784, 0.360784, 1)
 albedo_texture = ExtResource("2_6lq3q")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_duxpw"]
+size = Vector3(0.0341797, 1, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -110,3 +113,9 @@ transform = Transform3D(0.222975, 0, -0.113058, 0, 0.25, 0, 0.113058, 0, 0.22297
 
 [node name="tree5" parent="Trees" instance=ExtResource("6_cvhlx")]
 transform = Transform3D(0.241985, 0, 0.0627935, 0, 0.25, 0, -0.0627935, 0, 0.241985, 8.18454, -0.667292, -44.9478)
+
+[node name="World Boundaries" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World Boundaries"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -24.1455, 0.936796, 0)
+shape = SubResource("BoxShape3D_duxpw")
