@@ -80,7 +80,7 @@ light_size = 1.0
 light_specular = 0.0
 shadow_enabled = true
 shadow_bias = 0.036
-shadow_blur = 0.108
+shadow_blur = 0.02
 omni_range = 73.0752
 
 [node name="candle" parent="CameraPivot/Camera3D" instance=ExtResource("3_jqm57")]
