@@ -11,3 +11,6 @@ func teleport(player_position):
 	var direction_to = position.direction_to(player_position)
 	var new_basis = Basis.looking_at(direction_to)
 	basis = new_basis
+	
+	# sound
+	$BoomSound.play()
