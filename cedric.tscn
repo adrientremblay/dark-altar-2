@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdn0o2f8qbgk"]
+
+[ext_resource type="ArrayMesh" uid="uid://b8ulm22g3m7vk" path="res://assets/Skeleton/skeleton.obj" id="1_bjauq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti60a"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+
+[node name="Skeleton" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 2.2059, 0)
+material_override = SubResource("StandardMaterial3D_ti60a")
+gi_mode = 0
+mesh = ExtResource("1_bjauq")

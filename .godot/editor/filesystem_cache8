@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1713749195
+::res://::1713750353
 arm.tscn::PackedScene::8096506835345576210::1713737733::0::1::::<><>::uid://dam5l71ydi6w1::::res://assets/models/Arm.gltf
 Cricket.gd::GDScript::-1::1713649127::0::1::::<>AudioStreamPlayer3D<>::
 cricket.tscn::PackedScene::4846337756139299363::1713650055::0::1::::<><>::uid://nrdv2pni533t::::res://assets/audio/sound_effects/cricket.mp3<>res://Cricket.gd
@@ -9,15 +9,17 @@ grass_alb_ht.dds::ImageTexture::-1::1713487170::0::1::::<><>::
 grass_nrm_rgh.dds::ImageTexture::-1::1713488176::0::1::::<><>::
 ground_alb_ht.dds::ImageTexture::-1::1713728614::0::1::::<><>::
 ground_normal_roughness.dds::ImageTexture::-1::1713728717::0::1::::<><>::
-house.tscn::PackedScene::1814060842459271598::1713749075::0::1::::<><>::uid://clx4dt71nun1q::::res://assets/models/Medieval_House/Texture/Medieval_House_Diff.png<>uid://v8t8h4m46po::::res://assets/models/Medieval_House/Medieval_House.obj
-main.tscn::PackedScene::550203305706061919::1713749153::0::1::::<><>::uid://b8ulm22g3m7vk::::res://assets/Skeleton/skeleton.obj<>uid://ccihr0mbcdtn2::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg<>uid://nqaltxfxv1gr::::res://player.tscn<>uid://jj8rehsyihdg::::res://new_terrain_3d_material.tres<>uid://cxxgwh8nc3h21::::res://new_terrain_3d_texture_list.tres<>uid://c15lihvkt78kt::::res://tree1.tscn<>uid://smjxvslnotwx::::res://new_terrain_3d_storage.res<>uid://cbbuqe37bac5p::::res://cricket.tscn<>uid://qu8m8i5m2acd::::res://signpost.tscn<>uid://030k1q35if8y::::res://house.tscn
+house.tscn::PackedScene::1814060842459271598::1713750353::0::1::::<><>::uid://clx4dt71nun1q::::res://assets/models/Medieval_House/Texture/Medieval_House_Diff.png<>uid://v8t8h4m46po::::res://assets/models/Medieval_House/Medieval_House.obj
+main.tscn::PackedScene::550203305706061919::1713750353::0::1::::<><>::uid://b8ulm22g3m7vk::::res://assets/Skeleton/skeleton.obj<>uid://ccihr0mbcdtn2::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg<>uid://nqaltxfxv1gr::::res://player.tscn<>uid://jj8rehsyihdg::::res://new_terrain_3d_material.tres<>uid://cxxgwh8nc3h21::::res://new_terrain_3d_texture_list.tres<>uid://c15lihvkt78kt::::res://tree1.tscn<>uid://smjxvslnotwx::::res://new_terrain_3d_storage.res<>uid://cbbuqe37bac5p::::res://cricket.tscn<>uid://qu8m8i5m2acd::::res://signpost.tscn<>uid://030k1q35if8y::::res://house.tscn<>uid://dx1ic8e4exr86::::res://ui.tscn
 main_terrain_3d_storage.res::Terrain3DStorage::4992523707846235137::1713738159::0::1::::<><>::
-new_terrain_3d_material.tres::Terrain3DMaterial::652313233543769800::1713749153::0::1::::<><>::
-new_terrain_3d_storage.res::Terrain3DStorage::1288760376042578543::1713748598::0::1::::<><>::
-new_terrain_3d_texture_list.tres::Terrain3DTextureList::6435069468063267756::1713749153::0::1::::<><>::res://grass_alb_ht.dds<>res://grass_nrm_rgh.dds<>res://ground_alb_ht.dds<>res://ground_normal_roughness.dds
-player.gd::GDScript::-1::1713736694::0::1::::<>CharacterBody3D<>::
-player.tscn::PackedScene::945505688825254077::1713749075::0::1::::<><>::res://player.gd<>uid://dnmajxcolns8q::::res://arm.tscn<>uid://dni157qfh4eyi::::res://assets/audio/sound_effects/Footsteps grass sound effect.mp3<>uid://co1mf8u8n8p2::::res://assets/models/candle.blend<>uid://qdyw4nawsdok::::res://assets/audio/dialog/intro1.mp3
+new_terrain_3d_material.tres::Terrain3DMaterial::652313233543769800::1713750353::0::1::::<><>::
+new_terrain_3d_storage.res::Terrain3DStorage::1288760376042578543::1713749236::0::1::::<><>::
+new_terrain_3d_texture_list.tres::Terrain3DTextureList::6435069468063267756::1713750353::0::1::::<><>::res://grass_alb_ht.dds<>res://grass_nrm_rgh.dds<>res://ground_alb_ht.dds<>res://ground_normal_roughness.dds
+player.gd::GDScript::-1::1713749472::0::1::::<>CharacterBody3D<>::
+player.tscn::PackedScene::945505688825254077::1713750353::0::1::::<><>::res://player.gd<>uid://dnmajxcolns8q::::res://arm.tscn<>uid://dni157qfh4eyi::::res://assets/audio/sound_effects/Footsteps grass sound effect.mp3<>uid://co1mf8u8n8p2::::res://assets/models/candle.blend<>uid://qdyw4nawsdok::::res://assets/audio/dialog/intro1.mp3
 README.md::TextFile::-1::1713748918::0::1::::<><>::
+ui.tscn::PackedScene::8827770324663213533::1713750353::0::1::::<><>::res://UI.gd
+UI.gd::GDScript::-1::1713750351::0::1::::<>Control<>::
 signpost.tscn::PackedScene::1166335890587015839::1713737733::0::1::::<><>::uid://cm7ui6ckk0psq::::res://assets/models/signpost/scene.gltf<>uid://clfngbi78f88x::::res://assets/models/signpost/textures/Material.002_baseColor.jpeg<>uid://8yhduf6t3mkt::::res://assets/models/signpost/textures/Material.005_baseColor.png
 tree1.tscn::PackedScene::6660365208453892251::1713650054::0::1::::<><>::uid://bf2vjbxkvemfs::::res://assets/trees/Gledista_Triacanthos.glb<>uid://ccihr0mbcdtn2::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg<>uid://dmp1im6vbn0g4::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos flowers color-gleditsia triacanthos flowers mask.png<>uid://cu7egvmim74ns::::res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos leaf color b1-gleditsia triacanthos leaf mask.png
 ::res://addons/::1713485640
@@ -87,10 +89,11 @@ cricket-sound-113945.mp3::AudioStreamMP3::1629892780276997644::1713648653::17136
 cricket.mp3::AudioStreamMP3::947770483668823179::1713648801::1713648802::1::::<><>::
 Footsteps grass sound effect.mp3::AudioStreamMP3::8089865961737029312::1713649824::1713649858::1::::<><>::
 ::res://assets/fonts/::1713474054
-::res://assets/models/::1713739677
+::res://assets/models/::1713751305
 Arm3.blend::PackedScene::4058930091011123360::1713652532::1713652534::1::::<><>::
 Arm.gltf::PackedScene::7185877459650897906::1713653425::1713653429::1::::<><>::
 candle.blend::PackedScene::170879361720342101::1713656586::1713656592::1::::<><>::
+Monk.blend::PackedScene::84361672039755665::1713751305::1713751308::1::::<><>::
 ::res://assets/models/Medieval_House/::1713739682
 Medieval_House.obj::Mesh::45391269099766800::1713739677::1713739682::1::::<><>::
 ::res://assets/models/Medieval_House/Texture/::1713739833

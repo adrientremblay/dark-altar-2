@@ -1,7 +1,5 @@
-[gd_scene load_steps=21 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=15 format=3 uid="uid://h3r1d42it2ut"]
 
-[ext_resource type="ArrayMesh" uid="uid://b8ulm22g3m7vk" path="res://assets/Skeleton/skeleton.obj" id="1_jgvma"]
-[ext_resource type="Texture2D" uid="uid://ccihr0mbcdtn2" path="res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg" id="2_6lq3q"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
 [ext_resource type="Terrain3DMaterial" uid="uid://jj8rehsyihdg" path="res://new_terrain_3d_material.tres" id="4_b3sqw"]
 [ext_resource type="Terrain3DTextureList" uid="uid://cxxgwh8nc3h21" path="res://new_terrain_3d_texture_list.tres" id="5_fqye3"]
@@ -11,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://qu8m8i5m2acd" path="res://signpost.tscn" id="9_8itpl"]
 [ext_resource type="PackedScene" uid="uid://030k1q35if8y" path="res://house.tscn" id="10_xdnt2"]
 [ext_resource type="PackedScene" uid="uid://dx1ic8e4exr86" path="res://ui.tscn" id="11_usrys"]
+[ext_resource type="PackedScene" uid="uid://bdn0o2f8qbgk" path="res://cedric.tscn" id="12_ax3ba"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -28,26 +27,6 @@ ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwv4u"]
-albedo_color = Color(0.352941, 0.352941, 0.352941, 1)
-albedo_texture = ExtResource("2_6lq3q")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v2fh8"]
-albedo_color = Color(0.376471, 0.376471, 0.376471, 1)
-albedo_texture = ExtResource("2_6lq3q")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6o3qf"]
-albedo_color = Color(0.364706, 0.364706, 0.364706, 1)
-albedo_texture = ExtResource("2_6lq3q")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12gei"]
-albedo_color = Color(0.34902, 0.34902, 0.34902, 1)
-albedo_texture = ExtResource("2_6lq3q")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ohh3"]
-albedo_color = Color(0.360784, 0.360784, 0.360784, 1)
-albedo_texture = ExtResource("2_6lq3q")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_0poyd"]
 size = Vector3(7.5191, 4.49951, 1)
 
@@ -55,16 +34,6 @@ size = Vector3(7.5191, 4.49951, 1)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g4vby")
-
-[node name="Skeleton" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.05, 0, 0, 0, -0.000535802, 0.0499971, 0, -0.0499971, -0.000535802, 223.114, 0.480055, -177.757)
-gi_mode = 0
-mesh = ExtResource("1_jgvma")
-surface_material_override/0 = SubResource("StandardMaterial3D_gwv4u")
-surface_material_override/1 = SubResource("StandardMaterial3D_v2fh8")
-surface_material_override/2 = SubResource("StandardMaterial3D_6o3qf")
-surface_material_override/3 = SubResource("StandardMaterial3D_12gei")
-surface_material_override/4 = SubResource("StandardMaterial3D_5ohh3")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_lbx66")]
 transform = Transform3D(0.884394, 0, -0.466742, 0, 1, 0, 0.466742, 0, 0.884394, 90.6528, 1.62609, -88.9761)
@@ -148,3 +117,6 @@ material = ExtResource("4_b3sqw")
 texture_list = ExtResource("5_fqye3")
 
 [node name="UI" parent="." instance=ExtResource("11_usrys")]
+
+[node name="CharacterBody3D2" parent="." instance=ExtResource("12_ax3ba")]
+transform = Transform3D(0.697002, 0, -0.717069, 0, 1, 0, 0.717069, 0, 0.697002, 117.41, 0, -125.761)
