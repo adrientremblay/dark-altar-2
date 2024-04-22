@@ -3,10 +3,10 @@
 [ext_resource type="ArrayMesh" uid="uid://b8ulm22g3m7vk" path="res://assets/Skeleton/skeleton.obj" id="1_jgvma"]
 [ext_resource type="Texture2D" uid="uid://ccihr0mbcdtn2" path="res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg" id="2_6lq3q"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
-[ext_resource type="Terrain3DStorage" uid="uid://cdeoevjmmmskf" path="res://main_terrain_3d_storage.res" id="3_o3haq"]
 [ext_resource type="Terrain3DMaterial" uid="uid://jj8rehsyihdg" path="res://new_terrain_3d_material.tres" id="4_b3sqw"]
 [ext_resource type="Terrain3DTextureList" uid="uid://cxxgwh8nc3h21" path="res://new_terrain_3d_texture_list.tres" id="5_fqye3"]
 [ext_resource type="PackedScene" uid="uid://c15lihvkt78kt" path="res://tree1.tscn" id="6_cvhlx"]
+[ext_resource type="Terrain3DStorage" uid="uid://smjxvslnotwx" path="res://new_terrain_3d_storage.res" id="8_a0fla"]
 [ext_resource type="PackedScene" uid="uid://cbbuqe37bac5p" path="res://cricket.tscn" id="8_ilbwb"]
 [ext_resource type="PackedScene" uid="uid://qu8m8i5m2acd" path="res://signpost.tscn" id="9_8itpl"]
 [ext_resource type="PackedScene" uid="uid://030k1q35if8y" path="res://house.tscn" id="10_xdnt2"]
@@ -66,12 +66,7 @@ surface_material_override/3 = SubResource("StandardMaterial3D_12gei")
 surface_material_override/4 = SubResource("StandardMaterial3D_5ohh3")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.884394, 0, -0.466742, 0, 1, 0, 0.466742, 0, 0.884394, 215.178, 1.62609, -234.226)
-
-[node name="Terrain3D" type="Terrain3D" parent="."]
-storage = ExtResource("3_o3haq")
-material = ExtResource("4_b3sqw")
-texture_list = ExtResource("5_fqye3")
+transform = Transform3D(0.884394, 0, -0.466742, 0, 1, 0, 0.466742, 0, 0.884394, 98.7222, 1.62609, -88.9761)
 
 [node name="Cricket" parent="." instance=ExtResource("8_ilbwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
@@ -79,22 +74,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
 [node name="Trees" type="Node3D" parent="."]
 
 [node name="tree1" parent="Trees" instance=ExtResource("6_cvhlx")]
-transform = Transform3D(0.241985, 0, 0.0627935, 0, 0.25, 0, -0.0627935, 0, 0.241985, 97.2062, -0.667292, -85.2032)
+transform = Transform3D(0.241985, 0, 0.0627935, 0, 0.25, 0, -0.0627935, 0, 0.241985, 82.2557, -0.667292, -66.3153)
 
 [node name="tree2" parent="Trees" instance=ExtResource("6_cvhlx")]
-transform = Transform3D(0.194922, 0, 0.156542, 0, 0.25, 0, -0.156542, 0, 0.194922, 97.2062, -0.667292, -101.741)
+transform = Transform3D(0.194922, 0, 0.156542, 0, 0.25, 0, -0.156542, 0, 0.194922, 187.69, -0.667292, -101.741)
 
 [node name="tree3" parent="Trees" instance=ExtResource("6_cvhlx")]
-transform = Transform3D(0.230428, 0, 0.0969673, 0, 0.25, 0, -0.0969673, 0, 0.230428, 90.2849, -0.667292, -94.0543)
+transform = Transform3D(0.230428, 0, 0.0969673, 0, 0.25, 0, -0.0969673, 0, 0.230428, 75.9272, -0.667292, -94.0543)
 
 [node name="tree4" parent="Trees" instance=ExtResource("6_cvhlx")]
-transform = Transform3D(0.0299734, 0, 0.248196, 0, 0.25, 0, -0.248196, 0, 0.0299734, 109.613, -0.667292, -89.1063)
+transform = Transform3D(0.0299734, 0, 0.248196, 0, 0.25, 0, -0.248196, 0, 0.0299734, 109.613, -0.667292, -70.8583)
 
 [node name="tree5" parent="Trees" instance=ExtResource("6_cvhlx")]
 transform = Transform3D(-0.249553, 0, -0.0149443, 0, 0.25, 0, 0.0149443, 0, -0.249553, 109.613, -0.667292, -96.3933)
 
 [node name="tree6" parent="Trees" instance=ExtResource("6_cvhlx")]
 transform = Transform3D(-0.160329, 0, -0.191819, 0, 0.25, 0, 0.191819, 0, -0.160329, 99.7308, -0.667292, -96.3933)
+
+[node name="tree7" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(-0.160329, 0, -0.191819, 0, 0.25, 0, 0.191819, 0, -0.160329, 99.7308, -0.667292, -119.643)
+
+[node name="tree8" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.105563, 0, -0.226619, 0, 0.25, 0, 0.226619, 0, 0.105563, 125.652, -0.667292, -117.446)
+
+[node name="tree9" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(-0.160329, 0, -0.191819, 0, 0.25, 0, 0.191819, 0, -0.160329, 152.253, -0.667292, -96.3933)
+
+[node name="tree10" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.0467639, 0, -0.245587, 0, 0.25, 0, 0.245587, 0, 0.0467639, 129.099, -0.667292, -96.3933)
+
+[node name="tree11" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.186668, 0, -0.166297, 0, 0.25, 0, 0.166297, 0, 0.186668, 129.099, -0.667292, -156.222)
+
+[node name="tree12" parent="Trees" instance=ExtResource("6_cvhlx")]
+transform = Transform3D(0.249444, 0, -0.0166598, 0, 0.25, 0, 0.0166598, 0, 0.249444, 155.815, -0.667292, -147.482)
 
 [node name="Dialog1" type="Area3D" parent="."]
 
@@ -111,5 +124,10 @@ shape = SubResource("BoxShape3D_0poyd")
 [node name="Signpost" parent="." instance=ExtResource("9_8itpl")]
 transform = Transform3D(0.000500159, 0, -0.00497492, 0, 0.005, 0, 0.00497492, 0, 0.000500159, 110.921, 0, -102.473)
 
-[node name="Node3D" parent="." instance=ExtResource("10_xdnt2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 218.59, 0, -254.44)
+[node name="House" parent="." instance=ExtResource("10_xdnt2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 218.59, 0, -163.99)
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+storage = ExtResource("8_a0fla")
+material = ExtResource("4_b3sqw")
+texture_list = ExtResource("5_fqye3")
