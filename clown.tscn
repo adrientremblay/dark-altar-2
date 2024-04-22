@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://b42xbyvhmwhn1"]
+
+[ext_resource type="PackedScene" uid="uid://dbs27xbxp0xc4" path="res://assets/models/clown_girl_avatar_second_life_3d_scan/scene.gltf" id="1_mma7w"]
+[ext_resource type="Texture2D" uid="uid://b5xp2fvcekddl" path="res://assets/models/clown_girl_avatar_second_life_3d_scan/textures/150k_baseColor.jpeg" id="2_fpcn3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3d2xr"]
+albedo_color = Color(0.690196, 0.690196, 0.690196, 1)
+albedo_texture = ExtResource("2_fpcn3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfvua"]
+albedo_color = Color(0.690196, 0.690196, 0.690196, 1)
+albedo_texture = ExtResource("2_fpcn3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqrx0"]
+albedo_color = Color(0.690196, 0.690196, 0.690196, 1)
+albedo_texture = ExtResource("2_fpcn3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bicsi"]
+albedo_color = Color(0.690196, 0.690196, 0.690196, 1)
+albedo_texture = ExtResource("2_fpcn3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mg53a"]
+albedo_color = Color(0.690196, 0.690196, 0.690196, 1)
+albedo_texture = ExtResource("2_fpcn3")
+
+[node name="Clown" instance=ExtResource("1_mma7w")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -1, 4.44089e-16, 0, -4.44089e-16, -1, 0, -4.76537, 0)
+
+[node name="150k_obj_cleaner_materialmerger_gles" parent="Sketchfab_model" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.18871, 9.71982e-16)
+
+[node name="Object_2" parent="Sketchfab_model/150k_obj_cleaner_materialmerger_gles" index="0"]
+material_override = SubResource("StandardMaterial3D_3d2xr")
+
+[node name="Object_3" parent="Sketchfab_model/150k_obj_cleaner_materialmerger_gles" index="1"]
+material_override = SubResource("StandardMaterial3D_mfvua")
+
+[node name="Object_4" parent="Sketchfab_model/150k_obj_cleaner_materialmerger_gles" index="2"]
+material_override = SubResource("StandardMaterial3D_xqrx0")
+
+[node name="Object_5" parent="Sketchfab_model/150k_obj_cleaner_materialmerger_gles" index="3"]
+material_override = SubResource("StandardMaterial3D_bicsi")
+
+[node name="Object_6" parent="Sketchfab_model/150k_obj_cleaner_materialmerger_gles" index="4"]
+material_override = SubResource("StandardMaterial3D_mg53a")

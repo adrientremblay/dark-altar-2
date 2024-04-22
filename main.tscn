@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=16 format=3 uid="uid://h3r1d42it2ut"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
 [ext_resource type="Terrain3DMaterial" uid="uid://jj8rehsyihdg" path="res://new_terrain_3d_material.tres" id="4_b3sqw"]
 [ext_resource type="Terrain3DTextureList" uid="uid://cxxgwh8nc3h21" path="res://new_terrain_3d_texture_list.tres" id="5_fqye3"]
@@ -31,12 +32,13 @@ ambient_light_energy = 0.0
 size = Vector3(7.5191, 4.49951, 1)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_y3a05")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g4vby")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.884394, 0, -0.466742, 0, 1, 0, 0.466742, 0, 0.884394, 90.6528, 1.62609, -88.9761)
+[node name="Player" parent="." instance=ExtResource("2_lbx66")]
+transform = Transform3D(0.186695, 0, -0.982418, 0, 1, 0, 0.982418, 0, 0.186695, 90.6528, 1.62609, -87.4109)
 
 [node name="Cricket" parent="." instance=ExtResource("8_ilbwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
@@ -118,5 +120,11 @@ texture_list = ExtResource("5_fqye3")
 
 [node name="UI" parent="." instance=ExtResource("11_usrys")]
 
-[node name="CharacterBody3D2" parent="." instance=ExtResource("12_ax3ba")]
-transform = Transform3D(0.697002, 0, -0.717069, 0, 1, 0, 0.717069, 0, 0.697002, 117.41, 0, -125.761)
+[node name="Cedric" parent="." instance=ExtResource("12_ax3ba")]
+transform = Transform3D(0.697002, 0, -0.717069, 0, 1, 0, 0.717069, 0, 0.697002, 117.41, 1.64489, -125.761)
+
+[node name="TeleportTimer" type="Timer" parent="Cedric"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Cedric/TeleportTimer" to="." method="_on_teleport_timer_timeout"]

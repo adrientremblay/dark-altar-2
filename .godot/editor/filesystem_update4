@@ -1,10 +1,11 @@
-res://player.tscn
+res://main.gd
+res://new_terrain_3d_storage.res
 res://new_terrain_3d_material.tres
 res://new_terrain_3d_texture_list.tres
-res://player.gd
-res://new_terrain_3d_storage.res
 res://main.tscn
+res://cedric.gd
+res://player.tscn
 res://house.tscn
-res://UI.gd
 res://ui.tscn
 res://cedric.tscn
+res://clown.tscn

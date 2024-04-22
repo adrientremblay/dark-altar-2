@@ -1,5 +1,5 @@
-CharacterBody3D
 Timer
+CharacterBody3D
 Label
 Terrain3D
 CollisionShape3D
@@ -12,4 +12,3 @@ OmniLight3D
 AudioStreamPlayer3D
 MeshInstance3D
 SpotLight3D
-WorldEnvironment
