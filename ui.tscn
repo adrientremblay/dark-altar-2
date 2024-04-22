@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx1ic8e4exr86"]
+
+[ext_resource type="Script" path="res://UI.gd" id="1_onnvg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_17whb"]
+font_size = 40
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.00012207
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_onnvg")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -11.5
+offset_right = 45.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "you are a priest"
+label_settings = SubResource("LabelSettings_17whb")
+
+[node name="IntroTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="IntroTimer" to="." method="_on_intro_timer_timeout"]

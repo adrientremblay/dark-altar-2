@@ -7,6 +7,8 @@ extends CharacterBody3D
 
 var intro_dialog_1 = Dialog.new("res://assets/audio/dialog/intro1.mp3")
 var intro_dialog_2 = Dialog.new("res://assets/audio/dialog/intro2.mp3")
+var intro_dialog_3 = Dialog.new("res://assets/audio/dialog/intro3.mp3")
+var intro_dialog_4 = Dialog.new("res://assets/audio/dialog/intro4.mp3")
 
 var walking = true
 
@@ -55,10 +57,15 @@ func _physics_process(delta):
 
 
 func _on_dialog_detector_area_entered(area: Area3D) -> void:
+	return # dialog disabled
 	if area.name == "Dialog1":
 		play_dialog(intro_dialog_1)
 	if area.name == "Dialog2":
 		play_dialog(intro_dialog_2)
+	if area.name == "Dialog3":
+		play_dialog(intro_dialog_3)	
+	if area.name == "Dialog4":
+		play_dialog(intro_dialog_4)
 
 func play_dialog(dialog: Dialog):
 	if dialog.was_played:

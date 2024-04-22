@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=21 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="ArrayMesh" uid="uid://b8ulm22g3m7vk" path="res://assets/Skeleton/skeleton.obj" id="1_jgvma"]
 [ext_resource type="Texture2D" uid="uid://ccihr0mbcdtn2" path="res://assets/trees/Gledista_Triacanthos_gleditsia triacanthos bark reflect.jpg" id="2_6lq3q"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cbbuqe37bac5p" path="res://cricket.tscn" id="8_ilbwb"]
 [ext_resource type="PackedScene" uid="uid://qu8m8i5m2acd" path="res://signpost.tscn" id="9_8itpl"]
 [ext_resource type="PackedScene" uid="uid://030k1q35if8y" path="res://house.tscn" id="10_xdnt2"]
+[ext_resource type="PackedScene" uid="uid://dx1ic8e4exr86" path="res://ui.tscn" id="11_usrys"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -56,7 +57,7 @@ size = Vector3(7.5191, 4.49951, 1)
 environment = SubResource("Environment_g4vby")
 
 [node name="Skeleton" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.05, 0, 0, 0, -0.000535802, 0.0499971, 0, -0.0499971, -0.000535802, 109.489, 0.480055, -117.946)
+transform = Transform3D(0.05, 0, 0, 0, -0.000535802, 0.0499971, 0, -0.0499971, -0.000535802, 223.114, 0.480055, -177.757)
 gi_mode = 0
 mesh = ExtResource("1_jgvma")
 surface_material_override/0 = SubResource("StandardMaterial3D_gwv4u")
@@ -66,7 +67,7 @@ surface_material_override/3 = SubResource("StandardMaterial3D_12gei")
 surface_material_override/4 = SubResource("StandardMaterial3D_5ohh3")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.884394, 0, -0.466742, 0, 1, 0, 0.466742, 0, 0.884394, 98.7222, 1.62609, -88.9761)
+transform = Transform3D(0.884394, 0, -0.466742, 0, 1, 0, 0.466742, 0, 0.884394, 90.6528, 1.62609, -88.9761)
 
 [node name="Cricket" parent="." instance=ExtResource("8_ilbwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
@@ -112,13 +113,27 @@ transform = Transform3D(0.249444, 0, -0.0166598, 0, 0.25, 0, 0.0166598, 0, 0.249
 [node name="Dialog1" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106.815, 2.06452, -100.003)
+transform = Transform3D(0.517699, 0, -0.855563, 0, 1, 0, 0.855563, 0, 0.517699, 102.029, 2.06452, -92.6199)
 shape = SubResource("BoxShape3D_0poyd")
 
 [node name="Dialog2" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.656, 2.06452, -112.234)
+transform = Transform3D(0.795283, 0, -0.606238, 0, 1, 0, 0.606238, 0, 0.795283, 114.784, 2.06452, -120.804)
+shape = SubResource("BoxShape3D_0poyd")
+
+[node name="Dialog3" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9928, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog3"]
+transform = Transform3D(0.113099, 0, -0.993584, 0, 1, 0, 0.993584, 0, 0.113099, 112.855, 2.06452, -127.259)
+shape = SubResource("BoxShape3D_0poyd")
+
+[node name="Dialog4" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9928, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog4"]
+transform = Transform3D(-0.268315, 0, -0.963332, 0, 1, 0, 0.963332, 0, -0.268315, 136.634, 2.06452, -115.005)
 shape = SubResource("BoxShape3D_0poyd")
 
 [node name="Signpost" parent="." instance=ExtResource("9_8itpl")]
@@ -131,3 +146,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 218.59, 0, -163.99)
 storage = ExtResource("8_a0fla")
 material = ExtResource("4_b3sqw")
 texture_list = ExtResource("5_fqye3")
+
+[node name="UI" parent="." instance=ExtResource("11_usrys")]
