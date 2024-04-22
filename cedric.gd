@@ -8,10 +8,6 @@ func teleport(player_position):
 	position = player_position + random_distance_vector
 	
 	# rotate
-	var basis_x = transform.basis.x
-	var direction_to_player = position.direction_to(player_position)
-	print("direction_to_player: ", direction_to_player)
-	print("basis_x: ", basis_x)
-	var angle_to_rotate = rad_to_deg(basis_x.angle_to(direction_to_player))
-	print("angle to rotate: ", angle_to_rotate)
-	rotation.y = angle_to_rotate
+	var direction_to = position.direction_to(player_position)
+	var new_basis = Basis.looking_at(direction_to)
+	basis = new_basis

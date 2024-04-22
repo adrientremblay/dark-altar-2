@@ -17,4 +17,4 @@ gi_mode = 0
 mesh = ExtResource("1_bjauq")
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("2_yc4t1")]
-transform = Transform3D(0.0592479, 0, 0.395587, 0, 0.4, 0, -0.395587, 0, 0.0592479, 0, -0.362972, 0)
+transform = Transform3D(-0.399994, 0, -0.0021573, 0, 0.4, 0, 0.0021573, 0, -0.399994, 0, -0.362972, 0)
