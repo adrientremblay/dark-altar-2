@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 var random = RandomNumberGenerator.new()
 
+var can_boom = false
+
 func teleport(player_position):
 	# move
 	var random_distance_vector = Vector3(random.randf_range(-2, 2), 0, random.randf_range(-2, 2))
@@ -13,7 +15,12 @@ func teleport(player_position):
 	basis = new_basis
 	
 	# sound
-	#$BoomSound.play()
+	can_boom = true
 
 func play_boom():
+	if not can_boom:
+		return
+	
 	$BoomSound.play()
+	
+	can_boom = false
