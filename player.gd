@@ -81,7 +81,7 @@ func check_if_can_see_me(cedric: CharacterBody3D):
 	var direction_to_cedric = position.direction_to(cedric.position)
 	var angle_to_me = rad_to_deg(player_direction.signed_angle_to(direction_to_cedric, Vector3(0,1,0)))
 	
-	print(abs(angle_to_me))
-	
 	if abs(angle_to_me) <= 75:
 		cedric.play_boom()
+	else:
+		cedric.rotate_to_me(self.position)

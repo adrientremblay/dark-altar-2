@@ -24,3 +24,10 @@ func play_boom():
 	$BoomSound.play()
 	
 	can_boom = false
+
+func rotate_to_me(player_position: Vector3):
+	# rotate
+	var direction_to = position.direction_to(player_position)
+	var new_basis = Basis.looking_at(direction_to)
+	basis = new_basis
+	
