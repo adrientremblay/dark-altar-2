@@ -13,4 +13,4 @@ func teleport(player_position):
 	basis = new_basis
 	
 	# sound
-	$BoomSound.play()
+	#$BoomSound.play()
