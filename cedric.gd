@@ -14,3 +14,6 @@ func teleport(player_position):
 	
 	# sound
 	#$BoomSound.play()
+
+func play_boom():
+	$BoomSound.play()

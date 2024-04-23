@@ -76,8 +76,10 @@ func play_dialog(dialog: Dialog):
 		
 	dialog.was_played = true
 
-func check_if_can_see_me(cedric_position: Vector3):
+func check_if_can_see_me(cedric: CharacterBody3D):
 	var player_direction = (transform.basis * neck.transform.basis * Vector3(0, 0, -1)).normalized()
-	var direction_to_cedric = position.direction_to(cedric_position)
+	var direction_to_cedric = position.direction_to(cedric.position)
 	var angle_to_me = rad_to_deg(player_direction.signed_angle_to(direction_to_cedric, Vector3(0,1,0)))
-	print(angle_to_me)
+	
+	if abs(angle_to_me) <= 75:
+		cedric.play_boom()
