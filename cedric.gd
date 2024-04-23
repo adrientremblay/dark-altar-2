@@ -6,7 +6,8 @@ var can_boom = false
 
 func teleport(player_position):
 	# move
-	var random_distance_vector = Vector3(random.randf_range(-2, 2), 0, random.randf_range(-2, 2))
+	var random_direction = Vector3(random.randf_range(-1, 1), 0, random.randf_range(-1, 1))
+	var random_distance_vector = random_direction * 5
 	position = player_position + random_distance_vector
 	
 	# rotate
