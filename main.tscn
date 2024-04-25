@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=19 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://qu8m8i5m2acd" path="res://signpost.tscn" id="9_8itpl"]
 [ext_resource type="PackedScene" uid="uid://030k1q35if8y" path="res://house.tscn" id="10_xdnt2"]
 [ext_resource type="PackedScene" uid="uid://dx1ic8e4exr86" path="res://ui.tscn" id="11_usrys"]
+[ext_resource type="Shader" path="res://main.gdshader" id="12_35pxv"]
 [ext_resource type="PackedScene" uid="uid://bdn0o2f8qbgk" path="res://cedric.tscn" id="12_ax3ba"]
+[ext_resource type="Texture2D" uid="uid://bi7ytov5l6euy" path="res://assets/Skeleton/monkey.jpg" id="12_hbp13"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -30,6 +32,30 @@ ambient_light_energy = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0poyd"]
 size = Vector3(7.5191, 4.49951, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_coeak"]
+shader = ExtResource("12_35pxv")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.05
+shader_parameter/noise_opacity = 0.4
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.03
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_y3a05")
@@ -126,5 +152,22 @@ transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996
 [node name="TeleportTimer" type="Timer" parent="Cedric"]
 wait_time = 5.0
 autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(826.75, 749.375)
+scale = Vector2(0.365187, 0.287693)
+texture = ExtResource("12_hbp13")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_coeak")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="timeout" from="Cedric/TeleportTimer" to="." method="_on_teleport_timer_timeout"]
