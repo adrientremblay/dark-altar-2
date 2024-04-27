@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=20 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -31,9 +31,6 @@ sky = SubResource("Sky_e7hv7")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 0.0
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0poyd"]
-size = Vector3(7.5191, 4.49951, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_coeak"]
 shader = ExtResource("12_35pxv")
@@ -81,7 +78,7 @@ transform = Transform3D(-0.160329, 0, -0.191819, 0, 0.25, 0, 0.191819, 0, -0.160
 transform = Transform3D(0.105563, 0, -0.226619, 0, 0.25, 0, 0.226619, 0, 0.105563, 125.652, -0.667292, -117.446)
 
 [node name="tree9" parent="Trees" instance=ExtResource("6_cvhlx")]
-transform = Transform3D(-0.160329, 0, -0.191819, 0, 0.25, 0, 0.191819, 0, -0.160329, 152.253, -0.667292, -96.3933)
+transform = Transform3D(-0.160329, 0, -0.191819, 0, 0.25, 0, 0.191819, 0, -0.160329, 141.769, -0.667292, -104.448)
 
 [node name="tree10" parent="Trees" instance=ExtResource("6_cvhlx")]
 transform = Transform3D(0.0467639, 0, -0.245587, 0, 0.25, 0, 0.245587, 0, 0.0467639, 129.099, -0.667292, -96.3933)
@@ -92,37 +89,8 @@ transform = Transform3D(0.186668, 0, -0.166297, 0, 0.25, 0, 0.166297, 0, 0.18666
 [node name="tree12" parent="Trees" instance=ExtResource("6_cvhlx")]
 transform = Transform3D(0.249444, 0, -0.0166598, 0, 0.25, 0, 0.0166598, 0, 0.249444, 155.815, -0.667292, -147.482)
 
-[node name="Dialog1" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog1"]
-transform = Transform3D(0.517699, 0, -0.855563, 0, 1, 0, 0.855563, 0, 0.517699, 102.029, 2.06452, -92.6199)
-shape = SubResource("BoxShape3D_0poyd")
-
-[node name="Dialog2" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog2"]
-transform = Transform3D(0.795283, 0, -0.606238, 0, 1, 0, 0.606238, 0, 0.795283, 114.784, 2.06452, -120.804)
-shape = SubResource("BoxShape3D_0poyd")
-
-[node name="Dialog3" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9928, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog3"]
-transform = Transform3D(0.113099, 0, -0.993584, 0, 1, 0, 0.993584, 0, 0.113099, 112.855, 2.06452, -127.259)
-shape = SubResource("BoxShape3D_0poyd")
-
-[node name="Dialog4" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9928, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog4"]
-transform = Transform3D(-0.268315, 0, -0.963332, 0, 1, 0, 0.963332, 0, -0.268315, 136.634, 2.06452, -115.005)
-shape = SubResource("BoxShape3D_0poyd")
-
 [node name="Signpost" parent="." instance=ExtResource("9_8itpl")]
 transform = Transform3D(0.000500159, 0, -0.00497492, 0, 0.005, 0, 0.00497492, 0, 0.000500159, 110.921, 0, -102.473)
-
-[node name="House" parent="." instance=ExtResource("10_xdnt2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 218.59, 0, -163.99)
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 storage = ExtResource("8_a0fla")
@@ -132,7 +100,7 @@ texture_list = ExtResource("5_fqye3")
 [node name="UI" parent="." instance=ExtResource("11_usrys")]
 
 [node name="Cedric" parent="." instance=ExtResource("12_ax3ba")]
-transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 124.94, 0.994264, -88.7531)
+transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 241.121, 0.994264, -78.6302)
 
 [node name="TeleportTimer" type="Timer" parent="Cedric"]
 wait_time = 5.0
@@ -161,5 +129,13 @@ volume_db = -10.0
 
 [node name="Choir" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_ww56w")
+
+[node name="Houses" type="Node3D" parent="."]
+
+[node name="House" parent="Houses" instance=ExtResource("10_xdnt2")]
+transform = Transform3D(0.770413, 0, -0.637545, 0, 1, 0, 0.637545, 0, 0.770413, 158.041, 0, -132.054)
+
+[node name="House2" parent="Houses" instance=ExtResource("10_xdnt2")]
+transform = Transform3D(-0.831082, 0, 0.556151, 0, 1, 0, -0.556151, 0, -0.831082, 159.899, 0, -99.5876)
 
 [connection signal="timeout" from="Cedric/TeleportTimer" to="." method="_on_teleport_timer_timeout"]

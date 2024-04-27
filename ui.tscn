@@ -29,7 +29,7 @@ offset_right = 45.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "you are a priest"
+text = "collect all 8 skulls"
 label_settings = SubResource("LabelSettings_17whb")
 
 [node name="IntroTimer" type="Timer" parent="."]
