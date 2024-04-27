@@ -7,7 +7,7 @@ func _ready() -> void:
 	shaderMat.set_shader_parameter("ghost", 1.0)
 
 func _process(delta: float) -> void:
-	var angle_to_cedric = $Player.check_if_can_see_me($Cedric)
+	var angle_to_cedric = abs($Player.check_if_can_see_me($Cedric))
 	
 	var ghost = 0
 	var amplitude = 0.01
