@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=13 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
 [ext_resource type="AudioStream" uid="uid://dni157qfh4eyi" path="res://assets/audio/sound_effects/Footsteps grass sound effect.mp3" id="2_vbp7b"]
 [ext_resource type="PackedScene" uid="uid://dgcgrml4qo4l8" path="res://candle.tscn" id="4_h756x"]
+[ext_resource type="AudioStream" uid="uid://cb7tjjqfo08h0" path="res://assets/audio/sound_effects/scary-foley-86229.mp3" id="5_vv7y3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwuph"]
 
@@ -106,3 +107,6 @@ transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.69, -0.508, -0.686
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")
+
+[node name="SkullPickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vv7y3")

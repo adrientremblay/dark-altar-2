@@ -67,3 +67,4 @@ func check_if_can_see_me(cedric: CharacterBody3D):
 
 func collect_skull():
 	register_skull.emit()
+	$SkullPickupSound.play()
