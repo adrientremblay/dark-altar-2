@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
 [ext_resource type="AudioStream" uid="uid://dni157qfh4eyi" path="res://assets/audio/sound_effects/Footsteps grass sound effect.mp3" id="2_vbp7b"]
-[ext_resource type="PackedScene" uid="uid://co1mf8u8n8p2" path="res://assets/models/candle.blend" id="3_jqm57"]
+[ext_resource type="PackedScene" uid="uid://dgcgrml4qo4l8" path="res://candle.tscn" id="4_h756x"]
 [ext_resource type="AudioStream" uid="uid://qdyw4nawsdok" path="res://assets/audio/dialog/intro1.mp3" id="5_hdc3b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwuph"]
@@ -52,6 +52,7 @@ script = ExtResource("1_fclsx")
 shape = SubResource("CapsuleShape3D_xwuph")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 2
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_8cwml")
 
@@ -62,6 +63,7 @@ shape = SubResource("ConvexPolygonShape3D_yw4dy")
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.540563, 0)
+current = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="CameraPivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.540563, -1)
@@ -75,19 +77,30 @@ spot_angle_attenuation = 1e-05
 [node name="Arm" parent="CameraPivot/Camera3D" instance=ExtResource("2_v36k5")]
 transform = Transform3D(-0.05, -4.37114e-09, 1.91069e-16, 0, -2.18557e-09, -0.05, 4.37114e-09, -0.05, 2.18557e-09, 0.76174, -0.423212, -0.443583)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="CameraPivot/Camera3D/Arm"]
-transform = Transform3D(-20, 9.59444e-20, 1.74846e-06, -1.74846e-06, -8.74228e-07, -20, 7.64274e-14, -20, 8.74228e-07, 1.56659, 5.11391, -6.01983)
+[node name="WorldLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Arm"]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 1.56659, 5.11391, -6.01983)
 light_color = Color(0.705882, 0.666667, 0.141176, 1)
 light_energy = 16.0
 light_size = 1.0
 light_specular = 0.0
+light_cull_mask = 4294967293
 shadow_enabled = true
 shadow_bias = 0.036
 shadow_blur = 0.04
 omni_range = 20.3518
 
-[node name="candle" parent="CameraPivot/Camera3D" instance=ExtResource("3_jqm57")]
-transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.690071, -0.507997, -0.686243)
+[node name="PlayerLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Arm"]
+transform = Transform3D(-20, -1.74846e-06, -2.27374e-13, 3.41061e-13, -8.74228e-07, -20, 1.74846e-06, -20, 8.74228e-07, 1.56659, 5.11391, -10.5661)
+light_color = Color(0.705882, 0.666667, 0.141176, 1)
+light_energy = 13.118
+light_size = 0.436
+light_specular = 0.0
+light_cull_mask = 4293918722
+shadow_enabled = true
+shadow_bias = 0.001
+shadow_opacity = 0.96
+shadow_blur = 0.075
+omni_range = 0.75
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="CameraPivot/Camera3D"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.690071, -0.13143, -0.686243)
@@ -96,6 +109,9 @@ amount = 10
 lifetime = 0.5
 process_material = SubResource("ParticleProcessMaterial_443lx")
 draw_pass_1 = SubResource("QuadMesh_66rta")
+
+[node name="Candle" parent="CameraPivot/Camera3D" instance=ExtResource("4_h756x")]
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.69, -0.508, -0.686)
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")
