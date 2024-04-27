@@ -3,11 +3,26 @@ extends CharacterBody3D
 var random = RandomNumberGenerator.new()
 
 var can_boom = false
+var agression = 1
 
 func teleport(player_position):
 	# move
 	var random_direction = Vector3(random.randf_range(-1, 1), 0, random.randf_range(-1, 1)).normalized()
-	var random_distance_vector = random_direction * 5
+	
+	var distance_to_spawn = 50
+	match agression:
+		1:
+			distance_to_spawn = 15
+		2:
+			distance_to_spawn = 10
+		3:
+			distance_to_spawn = 8
+		4:
+			distance_to_spawn = 5
+		
+		
+	var random_distance_vector = random_direction * distance_to_spawn
+	
 	position = player_position + random_distance_vector
 	
 	# rotate
