@@ -1,0 +1,11 @@
+Model Information:
+* title:	Rock5
+* source:	https://sketchfab.com/3d-models/rock5-8a66e3d11c934b79af40a6efe9a9af2f
+* author:	Alex791 (https://sketchfab.com/alexcarralero791)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Rock5" (https://sketchfab.com/3d-models/rock5-8a66e3d11c934b79af40a6efe9a9af2f) by Alex791 (https://sketchfab.com/alexcarralero791) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

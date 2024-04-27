@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7xxhqgfuhhov"]
+
+[ext_resource type="PackedScene" uid="uid://lgg1veopssi" path="res://assets/models/rock5 (1)/scene.gltf" id="1_dgmal"]
+[ext_resource type="Texture2D" uid="uid://qwvpkk8cra4q" path="res://assets/models/rock5 (1)/textures/M_Rock5_diffuse.png" id="2_5an3m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vewo5"]
+albedo_texture = ExtResource("2_5an3m")
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_dgmal")]
+
+[node name="Object_4" parent="Sketchfab_model/root/GLTF_SceneRootNode/_0" index="0"]
+material_override = SubResource("StandardMaterial3D_vewo5")
