@@ -16,10 +16,13 @@ func _process(delta: float) -> void:
 	var ghost = 0
 	var amplitude = 0.01
 	if (angle_to_cedric < 75 && distance_to_cedric <= 10):
-		ghost = 1
 		var angle_scale = ((75 - angle_to_cedric) / 75) * 0.5
 		var distance_scale = ((10 - distance_to_cedric) / 10) * 0.5
-		var distortion_scale = angle_scale + distance_scale
+		var damage_scale = angle_scale + distance_scale
+		$Player.health -= damage_scale * 1.0
+		
+	if $Player.health < 100:
+		var distortion_scale = (100 - $Player.health) / 100
 		ghost = distortion_scale * 0.7
 		
 		if (!choirSound.playing):

@@ -11,6 +11,7 @@ var intro_dialog_3 = Dialog.new("res://assets/audio/dialog/intro3.mp3")
 var intro_dialog_4 = Dialog.new("res://assets/audio/dialog/intro4.mp3")
 
 var walking = true
+var health = 100 # out of 100
 
 func _ready() -> void:
 	pass
