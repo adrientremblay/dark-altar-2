@@ -19,9 +19,9 @@ func _process(delta: float) -> void:
 		var angle_scale = ((75 - angle_to_cedric) / 75) * 0.5
 		var distance_scale = ((10 - distance_to_cedric) / 10) * 0.5
 		var damage_scale = angle_scale + distance_scale
-		$Player.health -= damage_scale * 0.5
+		$Player.health -= damage_scale * 0.5 * delta
 	elif $Player.health < 100:
-		$Player.health += 1
+		$Player.health += 1 * delta
 		
 	if $Player.health < 0:
 		get_tree().change_scene_to_file("res://death_screen.tscn")
@@ -29,10 +29,14 @@ func _process(delta: float) -> void:
 		var distortion_scale = (100 - $Player.health) / 100
 		ghost = distortion_scale * 0.7
 		
+		choirSound.volume_db = 0
 		if (!choirSound.playing):
 			choirSound.play()
 	elif (choirSound.playing):
-		choirSound.stop()
+		choirSound.volume_db -= 5 * delta
+		if choirSound.volume_db < -40:
+			choirSound.stop()
+	print(choirSound.volume_db)
 	
 	shaderMat.set_shader_parameter("ghost", ghost)
 	shaderMat.set_shader_parameter("amplitude", amplitude)
