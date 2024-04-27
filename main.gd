@@ -20,6 +20,8 @@ func _process(delta: float) -> void:
 		var distance_scale = ((10 - distance_to_cedric) / 10) * 0.5
 		var damage_scale = angle_scale + distance_scale
 		$Player.health -= damage_scale * 1.0
+	elif $Player.health < 100:
+		$Player.health += 1
 		
 	if $Player.health < 100:
 		var distortion_scale = (100 - $Player.health) / 100
