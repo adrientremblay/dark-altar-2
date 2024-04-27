@@ -6,7 +6,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vewo5"]
 albedo_texture = ExtResource("2_5an3m")
 
-[node name="Sketchfab_Scene" instance=ExtResource("1_dgmal")]
+[node name="RockArch" instance=ExtResource("1_dgmal")]
 
 [node name="Object_4" parent="Sketchfab_model/root/GLTF_SceneRootNode/_0" index="0"]
 material_override = SubResource("StandardMaterial3D_vewo5")

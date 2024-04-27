@@ -16,7 +16,7 @@ func change_agression(agression: int, timer : Timer):
 			distance_to_spawn = 20 # TODO Time to spawn
 			timer.wait_time = 15
 		2:
-			distance_to_spawn = 15
+			distance_to_spawn = 10
 			timer.wait_time = 15
 		3:
 			distance_to_spawn = 10
