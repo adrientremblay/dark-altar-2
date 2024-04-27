@@ -19,10 +19,12 @@ func _process(delta: float) -> void:
 		var angle_scale = ((75 - angle_to_cedric) / 75) * 0.5
 		var distance_scale = ((10 - distance_to_cedric) / 10) * 0.5
 		var damage_scale = angle_scale + distance_scale
-		$Player.health -= damage_scale * 1.0
+		$Player.health -= damage_scale * 2.0
 	elif $Player.health < 100:
 		$Player.health += 1
 		
+	if $Player.health < 0:
+		get_tree().change_scene_to_file("res://death_screen.tscn")
 	if $Player.health < 100:
 		var distortion_scale = (100 - $Player.health) / 100
 		ghost = distortion_scale * 0.7
