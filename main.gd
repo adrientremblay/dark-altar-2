@@ -9,12 +9,17 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var angle_to_cedric = abs($Player.check_if_can_see_me($Cedric))
 	
+	var distance_to_cedric_vec = $Player.global_position - $Cedric.global_position
+	var distance_to_cedric = distance_to_cedric_vec.length()
+	
 	var ghost = 0
 	var amplitude = 0.01
-	if (angle_to_cedric < 75):
+	if (angle_to_cedric < 75 && distance_to_cedric <= 10):
 		ghost = 1
-		var distortion_scale = (75 - angle_to_cedric) / 75
-		ghost = distortion_scale * 0.5
+		var angle_scale = ((75 - angle_to_cedric) / 75) * 0.5
+		var distance_scale = ((10 - distance_to_cedric) / 10) * 0.5
+		var distortion_scale = angle_scale + distance_scale
+		ghost = distortion_scale * 0.7
 	
 	shaderMat.set_shader_parameter("ghost", ghost)
 	shaderMat.set_shader_parameter("amplitude", amplitude)
