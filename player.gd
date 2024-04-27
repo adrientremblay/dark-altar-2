@@ -8,6 +8,8 @@ extends CharacterBody3D
 var walking = true
 var health = 100 # out of 100
 
+signal register_skull
+
 func _ready() -> void:
 	pass
 
@@ -51,11 +53,6 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
-
-func _on_dialog_detector_area_entered(area: Area3D) -> void:
-	if area.is_in_group("skull"):
-		print("skull")
-
 func check_if_can_see_me(cedric: CharacterBody3D):
 	var player_direction = (transform.basis * neck.transform.basis * Vector3(0, 0, -1)).normalized()
 	var direction_to_cedric = position.direction_to(cedric.position)
@@ -67,3 +64,6 @@ func check_if_can_see_me(cedric: CharacterBody3D):
 		cedric.rotate_to_me(self.position)
 	
 	return angle_to_me
+
+func collect_skull():
+	register_skull.emit()

@@ -1,15 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxcnqxkcllt8f"]
+[gd_scene load_steps=4 format=3 uid="uid://cxcnqxkcllt8f"]
 
 [ext_resource type="PackedScene" uid="uid://d01r3cssya72g" path="res://assets/models/skull/scene.gltf" id="1_uk8h7"]
+[ext_resource type="Script" path="res://skull.gd" id="2_4nu2t"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pxfaf"]
 radius = 0.197958
 
 [node name="Skull" instance=ExtResource("1_uk8h7")]
 transform = Transform3D(1, 0, 0, 0, 0.802922, 0.596085, 0, -0.596085, 0.802922, 0, -0.0157376, 0)
+script = ExtResource("2_4nu2t")
 
 [node name="Area3D" type="Area3D" parent="." index="1" groups=["skull"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.132456, 0.0322302)
 shape = SubResource("SphereShape3D_pxfaf")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -144,4 +144,5 @@ transform = Transform3D(-0.831082, 0, 0.556151, 0, 1, 0, -0.556151, 0, -0.831082
 [node name="Skull" parent="Skulls" instance=ExtResource("16_4ask6")]
 transform = Transform3D(1, 0, 0, 0, 0.802922, 0.596085, 0, -0.596085, 0.802922, 139.761, 0, -130.17)
 
+[connection signal="register_skull" from="Player" to="UI" method="_on_player_register_skull"]
 [connection signal="timeout" from="Cedric/TeleportTimer" to="." method="_on_teleport_timer_timeout"]
