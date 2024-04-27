@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=22 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://j5w3xpbaplrs" path="res://assets/audio/music/horror-background-atmosphere-for-horror-and-mystical-179447.mp3" id="14_y84eg"]
 [ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
 [ext_resource type="PackedScene" uid="uid://cxcnqxkcllt8f" path="res://skull.tscn" id="16_4ask6"]
+[ext_resource type="ArrayMesh" uid="uid://dpci07ey3ih3n" path="res://assets/models/Well_obj/Well.obj" id="17_chujx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -146,6 +147,10 @@ transform = Transform3D(0.970038, 0, -0.242955, 0, 1, 0, 0.242955, 0, 0.970038, 
 
 [node name="Skull" parent="Skulls" instance=ExtResource("16_4ask6")]
 transform = Transform3D(1, 0, 0, 0, 0.802922, 0.596085, 0, -0.596085, 0.802922, 139.761, 0, -130.17)
+
+[node name="Well" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 176.907, 0, -107.744)
+mesh = ExtResource("17_chujx")
 
 [connection signal="register_skull" from="Player" to="UI" method="_on_player_register_skull"]
 [connection signal="timeout" from="Cedric/TeleportTimer" to="." method="_on_teleport_timer_timeout"]
