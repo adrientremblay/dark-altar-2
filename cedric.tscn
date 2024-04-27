@@ -22,4 +22,4 @@ transform = Transform3D(-0.399994, 0, -0.0021573, 0, 0.4, 0, 0.0021573, 0, -0.39
 
 [node name="BoomSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_xhb7r")
-volume_db = -10.0
+volume_db = -80.0

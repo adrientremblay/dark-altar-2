@@ -15,13 +15,13 @@ func _process(delta: float) -> void:
 	
 	var ghost = 0
 	var amplitude = 0.01
-	if (angle_to_cedric < 75 && distance_to_cedric <= 10):
+	if (angle_to_cedric < 75 && distance_to_cedric <= 15):
 		var angle_scale = ((75 - angle_to_cedric) / 75) * 0.5
-		var distance_scale = ((10 - distance_to_cedric) / 10) * 0.5
+		var distance_scale = ((15 - distance_to_cedric) / 15) * 0.5
 		var damage_scale = angle_scale + distance_scale
-		$Player.health -= damage_scale * 0.5 * delta
+		$Player.health -= damage_scale * 30 * delta
 	elif $Player.health < 100:
-		$Player.health += 1 * delta
+		$Player.health += 20 * delta
 		
 	if $Player.health < 0:
 		get_tree().change_scene_to_file("res://death_screen.tscn")

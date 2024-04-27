@@ -12,13 +12,13 @@ func teleport(player_position):
 	var distance_to_spawn = 50
 	match agression:
 		1:
-			distance_to_spawn = 15
+			distance_to_spawn = 20
 		2:
-			distance_to_spawn = 10
+			distance_to_spawn = 15
 		3:
-			distance_to_spawn = 8
+			distance_to_spawn = 10
 		4:
-			distance_to_spawn = 5
+			distance_to_spawn = 8
 		
 		
 	var random_distance_vector = random_direction * distance_to_spawn
