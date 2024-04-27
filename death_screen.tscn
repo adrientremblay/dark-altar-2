@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://0qvy2548pnfh"]
+[gd_scene load_steps=3 format=3 uid="uid://c6kfu4yd13506"]
+
+[ext_resource type="Script" path="res://death_screen.gd" id="1_xxkfi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6wc3r"]
 font_size = 80
@@ -6,6 +8,8 @@ font_size = 80
 [node name="DeathScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_xxkfi")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
