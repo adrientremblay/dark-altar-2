@@ -4,13 +4,20 @@ var random = RandomNumberGenerator.new()
 
 var can_boom = false
 var distance_to_spawn = 50
+var agression = 0
+	
+func increase_agression(timer : Timer):
+	agression += 1
+	change_agression(agression, timer)
 
-func change_agression(agression: int):
+func change_agression(agression: int, timer : Timer):
 	match agression:
 		1:
 			distance_to_spawn = 20 # TODO Time to spawn
+			timer.wait_time = 15
 		2:
 			distance_to_spawn = 15
+			timer.wait_time = 15
 		3:
 			distance_to_spawn = 10
 		4:

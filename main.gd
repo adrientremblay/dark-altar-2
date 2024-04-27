@@ -6,6 +6,7 @@ var choirSound: AudioStreamPlayer
 func _ready() -> void:
 	shaderMat  = $CanvasLayer/ColorRect.material
 	choirSound = $Choir
+	$Cedric.increase_agression($Cedric/TeleportTimer)
 
 func _process(delta: float) -> void:
 	var angle_to_cedric = abs($Player.check_if_can_see_me($Cedric))
@@ -53,3 +54,7 @@ func _on_teleport_timer_timeout() -> void:
 	
 	var player_position = $Player.position
 	$Cedric.teleport(player_position)
+
+
+func _on_player_register_skull() -> void:
+	$Cedric.increase_agression($Cedric/TeleportTimer)
