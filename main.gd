@@ -1,5 +1,9 @@
 extends Node3D
 
+func _ready() -> void:
+	var shaderMat : ShaderMaterial = $CanvasLayer/ColorRect.material
+	shaderMat.set_shader_parameter("ghost", 1.0)
+
 func _process(delta: float) -> void:
 	$Player.check_if_can_see_me($Cedric)
 
