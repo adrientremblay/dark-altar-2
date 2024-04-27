@@ -58,7 +58,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
 transform = Transform3D(0.241985, 0, 0.0627935, 0, 0.25, 0, -0.0627935, 0, 0.241985, 82.2557, -0.667292, -66.3153)
 
 [node name="tree2" parent="Trees" instance=ExtResource("6_cvhlx")]
-transform = Transform3D(0.194922, 0, 0.156542, 0, 0.25, 0, -0.156542, 0, 0.194922, 187.69, -0.667292, -101.741)
+transform = Transform3D(0.194922, 0, 0.156542, 0, 0.25, 0, -0.156542, 0, 0.194922, 187.69, -0.667292, -170.39)
 
 [node name="tree3" parent="Trees" instance=ExtResource("6_cvhlx")]
 transform = Transform3D(0.230428, 0, 0.0969673, 0, 0.25, 0, -0.0969673, 0, 0.230428, 75.9272, -0.667292, -94.0543)
@@ -134,10 +134,13 @@ stream = ExtResource("15_ww56w")
 [node name="Houses" type="Node3D" parent="."]
 
 [node name="House" parent="Houses" instance=ExtResource("10_xdnt2")]
-transform = Transform3D(0.770413, 0, -0.637545, 0, 1, 0, 0.637545, 0, 0.770413, 158.041, 0, -132.054)
+transform = Transform3D(-0.451454, 0, -0.892295, 0, 1, 0, 0.892295, 0, -0.451454, 195.07, 0, -102.136)
 
 [node name="House2" parent="Houses" instance=ExtResource("10_xdnt2")]
-transform = Transform3D(-0.831082, 0, 0.556151, 0, 1, 0, -0.556151, 0, -0.831082, 159.899, 0, -99.5876)
+transform = Transform3D(-0.250684, 0, 0.968069, 0, 1, 0, -0.968069, 0, -0.250684, 156.029, 0, -99.0062)
+
+[node name="House3" parent="Houses" instance=ExtResource("10_xdnt2")]
+transform = Transform3D(0.970038, 0, -0.242955, 0, 1, 0, 0.242955, 0, 0.970038, 179.415, 0, -127.788)
 
 [node name="Skulls" type="Node3D" parent="."]
 
