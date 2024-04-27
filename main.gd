@@ -36,7 +36,6 @@ func _process(delta: float) -> void:
 		choirSound.volume_db -= 5 * delta
 		if choirSound.volume_db < -40:
 			choirSound.stop()
-	print(choirSound.volume_db)
 	
 	shaderMat.set_shader_parameter("ghost", ghost)
 	shaderMat.set_shader_parameter("amplitude", amplitude)

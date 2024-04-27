@@ -5,11 +5,6 @@ extends CharacterBody3D
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
 
-var intro_dialog_1 = Dialog.new("res://assets/audio/dialog/intro1.mp3")
-var intro_dialog_2 = Dialog.new("res://assets/audio/dialog/intro2.mp3")
-var intro_dialog_3 = Dialog.new("res://assets/audio/dialog/intro3.mp3")
-var intro_dialog_4 = Dialog.new("res://assets/audio/dialog/intro4.mp3")
-
 var walking = true
 var health = 100 # out of 100
 
@@ -58,24 +53,8 @@ func _physics_process(delta):
 
 
 func _on_dialog_detector_area_entered(area: Area3D) -> void:
-	return # dialog disabled
-	if area.name == "Dialog1":
-		play_dialog(intro_dialog_1)
-	if area.name == "Dialog2":
-		play_dialog(intro_dialog_2)
-	if area.name == "Dialog3":
-		play_dialog(intro_dialog_3)	
-	if area.name == "Dialog4":
-		play_dialog(intro_dialog_4)
-
-func play_dialog(dialog: Dialog):
-	if dialog.was_played:
-		return
-		
-	$Dialog.stream = dialog.audio_file
-	$Dialog.play()
-		
-	dialog.was_played = true
+	if area.is_in_group("skull"):
+		print("skull")
 
 func check_if_can_see_me(cedric: CharacterBody3D):
 	var player_direction = (transform.basis * neck.transform.basis * Vector3(0, 0, -1)).normalized()

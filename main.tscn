@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=21 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bi7ytov5l6euy" path="res://assets/Skeleton/monkey.jpg" id="12_hbp13"]
 [ext_resource type="AudioStream" uid="uid://j5w3xpbaplrs" path="res://assets/audio/music/horror-background-atmosphere-for-horror-and-mystical-179447.mp3" id="14_y84eg"]
 [ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
+[ext_resource type="PackedScene" uid="uid://cxcnqxkcllt8f" path="res://skull.tscn" id="16_4ask6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -103,7 +104,7 @@ texture_list = ExtResource("5_fqye3")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 241.121, 0.994264, -78.6302)
 
 [node name="TeleportTimer" type="Timer" parent="Cedric"]
-wait_time = 5.0
+wait_time = 15.0
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -137,5 +138,10 @@ transform = Transform3D(0.770413, 0, -0.637545, 0, 1, 0, 0.637545, 0, 0.770413, 
 
 [node name="House2" parent="Houses" instance=ExtResource("10_xdnt2")]
 transform = Transform3D(-0.831082, 0, 0.556151, 0, 1, 0, -0.556151, 0, -0.831082, 159.899, 0, -99.5876)
+
+[node name="Skulls" type="Node3D" parent="."]
+
+[node name="Skull" parent="Skulls" instance=ExtResource("16_4ask6")]
+transform = Transform3D(1, 0, 0, 0, 0.802922, 0.596085, 0, -0.596085, 0.802922, 139.761, 0, -130.17)
 
 [connection signal="timeout" from="Cedric/TeleportTimer" to="." method="_on_teleport_timer_timeout"]
