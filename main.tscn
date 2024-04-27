@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=21 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bdn0o2f8qbgk" path="res://cedric.tscn" id="12_ax3ba"]
 [ext_resource type="Texture2D" uid="uid://bi7ytov5l6euy" path="res://assets/Skeleton/monkey.jpg" id="12_hbp13"]
 [ext_resource type="AudioStream" uid="uid://j5w3xpbaplrs" path="res://assets/audio/music/horror-background-atmosphere-for-horror-and-mystical-179447.mp3" id="14_y84eg"]
+[ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -157,5 +158,8 @@ mouse_filter = 2
 [node name="AmbientMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_y84eg")
 volume_db = -10.0
+
+[node name="Choir" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_ww56w")
 
 [connection signal="timeout" from="Cedric/TeleportTimer" to="." method="_on_teleport_timer_timeout"]

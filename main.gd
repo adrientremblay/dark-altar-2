@@ -1,10 +1,11 @@
 extends Node3D
 
 var shaderMat : ShaderMaterial
+var choirSound: AudioStreamPlayer
 
 func _ready() -> void:
 	shaderMat  = $CanvasLayer/ColorRect.material
-	shaderMat.set_shader_parameter("ghost", 1.0)
+	choirSound = $Choir
 
 func _process(delta: float) -> void:
 	var angle_to_cedric = abs($Player.check_if_can_see_me($Cedric))
@@ -20,6 +21,11 @@ func _process(delta: float) -> void:
 		var distance_scale = ((10 - distance_to_cedric) / 10) * 0.5
 		var distortion_scale = angle_scale + distance_scale
 		ghost = distortion_scale * 0.7
+		
+		if (!choirSound.playing):
+			choirSound.play()
+	elif (choirSound.playing):
+		choirSound.stop()
 	
 	shaderMat.set_shader_parameter("ghost", ghost)
 	shaderMat.set_shader_parameter("amplitude", amplitude)

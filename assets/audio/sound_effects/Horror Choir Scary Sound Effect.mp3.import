@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b44nqnfus16hc"
+path="res://.godot/imported/Horror Choir Scary Sound Effect.mp3-4035d7e64d9507e1be8fa119b8fcf90f.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3"
+dest_files=["res://.godot/imported/Horror Choir Scary Sound Effect.mp3-4035d7e64d9507e1be8fa119b8fcf90f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
