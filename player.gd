@@ -85,3 +85,5 @@ func check_if_can_see_me(cedric: CharacterBody3D):
 		cedric.play_boom()
 	else:
 		cedric.rotate_to_me(self.position)
+	
+	return angle_to_me

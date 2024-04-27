@@ -16,7 +16,7 @@ void fragment()
 
     // Centre pour l'effet de fantôme
     vec2 center = vec2(0.5, 0.5);
-    vec2 offset = (UV - center) * ghost; // Ajuste le décalage en fonction de 'ghost'
+    vec2 offset = (UV - center); // Ajuste le décalage en fonction de 'ghost'
     vec2 ghostUV = center + offset; // Calcule les nouvelles coordonnées UV pour l'effet de fantôme
 
     // Ajout de l'effet de vibration sur l'effet de fantôme
