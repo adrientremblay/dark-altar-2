@@ -28,3 +28,15 @@ volume_db = -80.0
 
 [node name="cedric_v2" parent="." instance=ExtResource("5_b5wdq")]
 transform = Transform3D(-0.497888, 0, 0.0459072, 0, 0.5, 0, -0.0459072, 0, -0.497888, 0, -0.980671, 0)
+
+[node name="LeftEye" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0381049, 1.28721, -0.077486)
+light_color = Color(1, 0.286275, 0.247059, 1)
+light_energy = 0.5
+omni_range = 1.0
+
+[node name="RightEye" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030338, 1.28721, -0.077486)
+light_color = Color(1, 0.286275, 0.247059, 1)
+light_energy = 0.5
+omni_range = 1.0

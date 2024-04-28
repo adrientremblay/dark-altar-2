@@ -375,7 +375,7 @@ texture_list = ExtResource("5_fqye3")
 [node name="UI" parent="." instance=ExtResource("11_usrys")]
 
 [node name="Cedric" parent="." instance=ExtResource("12_ax3ba")]
-transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 241.121, 0.994264, -78.6302)
+transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 241.121, 0.994264, 48.9396)
 
 [node name="TeleportTimer" type="Timer" parent="Cedric"]
 wait_time = 15.0

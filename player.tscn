@@ -83,14 +83,14 @@ transform = Transform3D(-0.05, -4.37114e-09, 1.91069e-16, 0, -2.18557e-09, -0.05
 [node name="WorldLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Arm"]
 transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 1.56659, 5.11391, -6.01983)
 light_color = Color(0.705882, 0.666667, 0.141176, 1)
-light_energy = 16.0
+light_energy = 10.0
 light_size = 1.0
 light_specular = 0.0
 light_cull_mask = 4294967293
 shadow_enabled = true
 shadow_bias = 0.036
 shadow_blur = 0.04
-omni_range = 20.3518
+omni_range = 8.04441
 
 [node name="PlayerLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Arm"]
 transform = Transform3D(-20, -1.74846e-06, -2.27374e-13, 3.41061e-13, -8.74228e-07, -20, 1.74846e-06, -20, 8.74228e-07, 1.56659, 5.11391, -10.5661)
