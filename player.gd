@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed = 5
+@export var speed = 3.5
 
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
@@ -27,6 +27,8 @@ func _unhandled_input(event: InputEvent):
 
 func _physics_process(delta):
 	var input_dir = Vector3.ZERO
+	
+	print($CameraPivot/Camera3D/GPUParticles3D.transform)
 	
 	if Input.is_action_pressed("move_right"):
 		input_dir.x += 1

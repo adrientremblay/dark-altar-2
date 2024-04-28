@@ -75,15 +75,6 @@ mesh = SubResource("CapsuleMesh_8cwml")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.540563, 0)
 current = true
 
-[node name="SpotLight3D" type="SpotLight3D" parent="CameraPivot/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.540563, -1)
-visible = false
-light_energy = 10.2
-spot_range = 50.0
-spot_attenuation = 1e-05
-spot_angle = 19.46
-spot_angle_attenuation = 1e-05
-
 [node name="Arm" parent="CameraPivot/Camera3D" instance=ExtResource("2_v36k5")]
 transform = Transform3D(-0.05, -4.37114e-09, 1.91069e-16, 0, -2.18557e-09, -0.05, 4.37114e-09, -0.05, 2.18557e-09, 0.76174, -0.423212, -0.443583)
 
