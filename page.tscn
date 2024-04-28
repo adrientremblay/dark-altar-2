@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0k3gkte6gqhl"]
+
+[ext_resource type="Texture2D" uid="uid://bt22o018bjsuu" path="res://assets/images/page_template.png" id="1_4ktc2"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_ihok5"]
+size = Vector2(0.5, 0.7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkkdm"]
+transparency = 1
+albedo_texture = ExtResource("1_4ktc2")
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_ihok5")
+surface_material_override/0 = SubResource("StandardMaterial3D_nkkdm")

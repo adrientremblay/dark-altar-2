@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=26 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -19,6 +19,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dpci07ey3ih3n" path="res://assets/models/Well_obj/Well.obj" id="17_chujx"]
 [ext_resource type="PackedScene" uid="uid://c7xxhqgfuhhov" path="res://rock_arch.tscn" id="18_5qoh6"]
 [ext_resource type="PackedScene" uid="uid://cqapmgn7vakkj" path="res://mausoleum.tscn" id="19_wcieb"]
+[ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="20_b2i1c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -442,6 +443,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.8657, 0, -163.956)
 
 [node name="mausoleum" parent="." instance=ExtResource("19_wcieb")]
 transform = Transform3D(-0.560133, 0, -0.828403, 0, 1, 0, 0.828403, 0, -0.560133, 129.343, 0, -68.5915)
+
+[node name="MeshInstance3D" parent="." instance=ExtResource("20_b2i1c")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 126.624, 0.636471, -68.7115)
 
 [connection signal="register_skull" from="Player" to="." method="_on_player_register_skull"]
 [connection signal="register_skull" from="Player" to="UI" method="_on_player_register_skull"]

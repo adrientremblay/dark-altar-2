@@ -24,7 +24,6 @@ mouse_filter = 2
 script = ExtResource("1_onnvg")
 
 [node name="Label" type="Label" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -45,6 +44,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="PageView" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -75,7 +75,7 @@ offset_bottom = 139.0
 text = "Page Title"
 label_settings = SubResource("LabelSettings_hiycv")
 
-[node name="Label" type="Label" parent="PageView"]
+[node name="PageText" type="Label" parent="PageView"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
