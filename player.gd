@@ -1,12 +1,14 @@
 extends CharacterBody3D
 
 @export var speed = 3.5
+@export var sprint_modifier = 2
 
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
 
 var walking = true
 var health = 100 # out of 100
+var stamina = 100 # out of 100
 
 signal register_skull
 
@@ -42,9 +44,12 @@ func _physics_process(delta):
 		input_dir.y -= 1
 	
 	var direction = (transform.basis * neck.transform.basis * input_dir).normalized()
+	var sprint = 1
+	if Input.is_action_pressed("sprint"):
+		sprint = sprint_modifier
 	
 	if (direction):
-		position += direction * speed * delta
+		position += direction * speed * delta * sprint
 		if not walking:
 			$Footsteps.play()
 		walking = true
