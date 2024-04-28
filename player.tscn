@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=13 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
@@ -22,6 +22,13 @@ particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
+[sub_resource type="Gradient" id="Gradient_m1gc2"]
+offsets = PackedFloat32Array(0, 0.663636, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.636364, 0.636364, 0.636364, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2fjyi"]
+gradient = SubResource("Gradient_m1gc2")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_443lx"]
 angle_max = 360.0
 direction = Vector3(0, 1, 0)
@@ -32,9 +39,11 @@ angular_velocity_max = 40.0
 gravity = Vector3(0, 0, 0)
 tangential_accel_max = 2.0
 scale_min = 0.1
+color = Color(0.839216, 0.682353, 0, 1)
+color_ramp = SubResource("GradientTexture1D_2fjyi")
 
 [sub_resource type="QuadMesh" id="QuadMesh_66rta"]
-size = Vector2(0.05, 0.05)
+size = Vector2(2, 1)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07157, 0)
@@ -94,8 +103,10 @@ omni_range = 0.75
 [node name="GPUParticles3D" type="GPUParticles3D" parent="CameraPivot/Camera3D"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.690071, -0.13143, -0.686243)
 material_override = SubResource("StandardMaterial3D_5gllx")
-amount = 30
-lifetime = 0.5
+amount = 100
+lifetime = 0.3
+randomness = 1.0
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_443lx")
 draw_pass_1 = SubResource("QuadMesh_66rta")
 
