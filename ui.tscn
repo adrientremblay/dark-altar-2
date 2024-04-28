@@ -10,7 +10,7 @@ font_size = 40
 font_size = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_hs1hk"]
-font_size = 20
+font_size = 26
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -82,9 +82,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -252.0
+offset_left = -730.0
 offset_top = -356.0
-offset_right = 261.0
+offset_right = 769.0
 offset_bottom = 383.0
 grow_horizontal = 2
 grow_vertical = 2
