@@ -14,10 +14,14 @@ var movement_mode : MovementMode = MovementMode.STANDING
 var health = 100 # out of 100
 var stamina = 100 # out of 100
 
+var camera_max_angle = 80
+var camera_min_angle = -80
+
 signal register_skull
 
 func calculate_flame_direction(direction: Vector3):
-	var flame_direction : Vector3 = Vector3(0, 1, 0)
+	var flame_direction : Vector3 = Vector3(0,1,0) # -z
+	flame_direction = flame_direction.rotated(Vector3(-1, 0, 0), camera.rotation.x)
 	flame_direction -= (direction * 0.5)
 	particle_emitter.process_material.direction = flame_direction.normalized()
 
@@ -31,7 +35,7 @@ func _unhandled_input(event: InputEvent):
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * 0.01)
 			camera.rotate_x(-event.relative.y * 0.01)
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-80), deg_to_rad(60))
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(camera_min_angle), deg_to_rad(camera_max_angle))
 
 func _physics_process(delta):
 	var input_dir = Vector3.ZERO
