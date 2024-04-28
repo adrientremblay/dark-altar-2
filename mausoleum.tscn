@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqapmgn7vakkj"]
+[gd_scene load_steps=3 format=3 uid="uid://cqapmgn7vakkj"]
 
 [ext_resource type="PackedScene" uid="uid://1lavubjrhj36" path="res://assets/models/mausoleum.blend" id="1_7jpns"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4igqr"]
+size = Vector3(4.0129, 6.7196, 4.89648)
+
 [node name="mausoleum" instance=ExtResource("1_7jpns")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0383339, 3.29405, -0.128906)
+shape = SubResource("BoxShape3D_4igqr")
