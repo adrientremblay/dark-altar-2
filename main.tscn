@@ -424,6 +424,9 @@ transform = Transform3D(0.597023, 0.478194, -0.644123, 0, 0.802922, 0.596085, 0.
 [node name="Skull2" parent="Skulls" instance=ExtResource("16_4ask6")]
 transform = Transform3D(1, 0, 0, 0, 0.802922, 0.596085, 0, -0.596085, 0.802922, 90.435, 0, -163.133)
 
+[node name="Skull3" parent="Skulls" instance=ExtResource("16_4ask6")]
+transform = Transform3D(-0.404423, 0.545163, -0.73433, 0, 0.802922, 0.596085, 0.914572, 0.241071, -0.32472, 128.145, 0.626812, -71.3209)
+
 [node name="Well" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 176.907, 0, -107.744)
 mesh = ExtResource("17_chujx")
