@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=17 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dgcgrml4qo4l8" path="res://candle.tscn" id="4_h756x"]
 [ext_resource type="AudioStream" uid="uid://cb7tjjqfo08h0" path="res://assets/audio/sound_effects/scary-foley-86229.mp3" id="5_vv7y3"]
 [ext_resource type="AudioStream" uid="uid://cmauvnhp04ys4" path="res://assets/audio/sound_effects/panting.mp3" id="6_8qrlp"]
+[ext_resource type="AudioStream" uid="uid://dnem3422cvig" path="res://assets/audio/sound_effects/running.mp3" id="7_0qke1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwuph"]
 
@@ -117,7 +118,7 @@ draw_pass_1 = SubResource("QuadMesh_66rta")
 [node name="Candle" parent="CameraPivot/Camera3D" instance=ExtResource("4_h756x")]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.69, -0.508, -0.686)
 
-[node name="Footsteps" type="AudioStreamPlayer" parent="."]
+[node name="Walking" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")
 
 [node name="SkullPickupSound" type="AudioStreamPlayer" parent="."]
@@ -125,3 +126,7 @@ stream = ExtResource("5_vv7y3")
 
 [node name="Panting" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_8qrlp")
+volume_db = -4.0
+
+[node name="Sprinting" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0qke1")

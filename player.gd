@@ -1,16 +1,15 @@
 extends CharacterBody3D
 
 @export var speed = 3.5
-
-@export var sprint_modifier = 2
+@export var sprint_modifier = 1.7
 var sprint_regen = 10
 var sprint_degen = 30
-var sprinting = false
+enum MovementMode {STANDING, WALKING, SPRINTING}
+var movement_mode : MovementMode = MovementMode.STANDING
 
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
 
-var walking = true
 var health = 100 # out of 100
 var stamina = 100 # out of 100
 
@@ -47,34 +46,65 @@ func _physics_process(delta):
 		input_dir.y -= 1
 	var direction = (transform.basis * neck.transform.basis * input_dir).normalized()
 	
-	# sprinting logic
-	if Input.is_action_just_pressed("sprint") and stamina > 0:
-		sprinting = true
+	# movement mode code
+	if Input.is_action_just_pressed("sprint") and stamina > 0 and direction:
+		change_movement_mode(MovementMode.SPRINTING)
 	if Input.is_action_just_released("sprint") and stamina > 0:
-		sprinting = false
-	
-	var sprint = 1
-	if sprinting:
-		if stamina > 0:
-			sprint = sprint_modifier
-			stamina -= delta * 30
+		if direction:
+			change_movement_mode(MovementMode.WALKING)
 		else:
-			sprinting = false
+			change_movement_mode(MovementMode.STANDING)
+	
+	if movement_mode == MovementMode.SPRINTING:
+		if stamina > 0:
+			stamina -= delta * sprint_degen
+		else:
+			if direction:
+				change_movement_mode(MovementMode.WALKING)
+			else:
+				change_movement_mode(MovementMode.STANDING)
 			$Panting.play()
-	elif stamina < 100:
-		stamina += delta * 10
+	elif stamina < 100: # TODO: Increased stamina gain if standing
+		stamina += delta * sprint_regen
+		
+	if movement_mode == MovementMode.STANDING and direction:
+		change_movement_mode(MovementMode.WALKING)
+		
+	if movement_mode == MovementMode.WALKING and not direction:
+		change_movement_mode(MovementMode.STANDING)
 	
-	if (direction):
-		position += direction * speed * delta * sprint
-		if not walking:
-			$Footsteps.play()
-		walking = true
-	else:
-		if walking:
-			$Footsteps.stop()
-		walking = false
-	
+	# movement
+	if movement_mode == MovementMode.SPRINTING:
+		position += direction * speed * delta * sprint_modifier
+	elif movement_mode == MovementMode.WALKING:
+		position += direction * speed * delta
+		
 	move_and_slide()
+
+func change_movement_mode(new_movement_mode : MovementMode):
+	match movement_mode:
+		MovementMode.STANDING:
+			match new_movement_mode:
+				MovementMode.WALKING:
+					$Walking.play()
+				MovementMode.SPRINTING:
+					$Sprinting.play()
+		MovementMode.WALKING:
+			match new_movement_mode:
+				MovementMode.STANDING:
+					$Walking.stop()
+				MovementMode.SPRINTING:
+					$Walking.stop()
+					$Sprinting.play()
+		MovementMode.SPRINTING:
+			match new_movement_mode:
+				MovementMode.STANDING:
+					$Sprinting.stop()
+				MovementMode.WALKING:
+					$Sprinting.stop()
+					$Walking.play()
+	
+	movement_mode = new_movement_mode
 
 func check_if_can_see_me(cedric: CharacterBody3D):
 	var player_direction = (transform.basis * neck.transform.basis * Vector3(0, 0, -1)).normalized()
