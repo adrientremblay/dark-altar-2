@@ -43,10 +43,15 @@ func _physics_process(delta):
 	if not is_on_floor():
 		input_dir.y -= 1
 	
+	# sprinting logic
 	var direction = (transform.basis * neck.transform.basis * input_dir).normalized()
 	var sprint = 1
-	if Input.is_action_pressed("sprint"):
+	if Input.is_action_pressed("sprint") and stamina > 0:
 		sprint = sprint_modifier
+		stamina -= delta * 30
+	elif stamina < 100:
+		stamina += delta * 10
+		
 	
 	if (direction):
 		position += direction * speed * delta * sprint
