@@ -382,6 +382,60 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.2381, 0, -65.3815)
 [node name="Tree3" parent="." instance=ExtResource("4_gfekl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.2809, 0, -94.444)
 
+[node name="Tree4" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.3438, 0, -138.262)
+
+[node name="Tree5" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.1675, 0, -91.4852)
+
+[node name="Tree6" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.9977, 0, -76.0511)
+
+[node name="Tree7" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.8377, 0, -58.3272)
+
+[node name="Tree8" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.4507, 0, -87.2442)
+
+[node name="Tree9" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.7971, 0, -66.9734)
+
+[node name="Tree10" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.3434, 0, -48.8812)
+
+[node name="Tree11" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.4648, 0, -73.7901)
+
+[node name="Tree12" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.0098, 0, -128.753)
+
+[node name="Tree13" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.2539, 0, -179.112)
+
+[node name="Tree14" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.677, 0, -193.696)
+
+[node name="Tree15" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.683, 0, -194.154)
+
+[node name="Tree16" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.801, 0, -183.686)
+
+[node name="Tree17" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.8823, 0, -202.345)
+
+[node name="Tree18" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.808, 0, -198.92)
+
+[node name="Tree19" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.172, 0, -183.374)
+
+[node name="Tree20" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156.004, -1.90735e-06, -160.342)
+
+[node name="Tree21" parent="." instance=ExtResource("4_gfekl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.11, 0, -139.972)
+
 [connection signal="register_skull" from="Player" to="." method="_on_player_register_skull"]
 [connection signal="register_skull" from="Player" to="UI" method="_on_player_register_skull"]
 [connection signal="timeout" from="Cedric/TeleportTimer" to="." method="_on_teleport_timer_timeout"]

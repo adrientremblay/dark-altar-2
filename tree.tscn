@@ -5,3 +5,4 @@
 [node name="Tree" type="Node3D"]
 
 [node name="adrien_tree" parent="." instance=ExtResource("1_66x82")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
