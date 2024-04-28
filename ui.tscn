@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx1ic8e4exr86"]
+[gd_scene load_steps=4 format=3 uid="uid://dx1ic8e4exr86"]
 
 [ext_resource type="Script" path="res://UI.gd" id="1_onnvg"]
+[ext_resource type="Texture2D" uid="uid://bt22o018bjsuu" path="res://assets/images/page_template.png" id="2_88ewc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_17whb"]
 font_size = 40
@@ -15,6 +16,20 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_onnvg")
+
+[node name="PageView" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PageView"]
+modulate = Color(1, 1, 1, 0.552941)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_88ewc")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
