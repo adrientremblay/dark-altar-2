@@ -123,5 +123,5 @@ stream = ExtResource("2_vbp7b")
 [node name="SkullPickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_vv7y3")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Panting" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_8qrlp")

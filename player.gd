@@ -1,7 +1,11 @@
 extends CharacterBody3D
 
 @export var speed = 3.5
+
 @export var sprint_modifier = 2
+var sprint_regen = 10
+var sprint_degen = 30
+var sprinting = false
 
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
@@ -30,8 +34,7 @@ func _unhandled_input(event: InputEvent):
 func _physics_process(delta):
 	var input_dir = Vector3.ZERO
 	
-	print($CameraPivot/Camera3D/GPUParticles3D.transform)
-	
+	# direction
 	if Input.is_action_pressed("move_right"):
 		input_dir.x += 1
 	if Input.is_action_pressed("move_left"):
@@ -42,16 +45,24 @@ func _physics_process(delta):
 		input_dir.z += 1
 	if not is_on_floor():
 		input_dir.y -= 1
+	var direction = (transform.basis * neck.transform.basis * input_dir).normalized()
 	
 	# sprinting logic
-	var direction = (transform.basis * neck.transform.basis * input_dir).normalized()
+	if Input.is_action_just_pressed("sprint") and stamina > 0:
+		sprinting = true
+	if Input.is_action_just_released("sprint") and stamina > 0:
+		sprinting = false
+	
 	var sprint = 1
-	if Input.is_action_pressed("sprint") and stamina > 0:
-		sprint = sprint_modifier
-		stamina -= delta * 30
+	if sprinting:
+		if stamina > 0:
+			sprint = sprint_modifier
+			stamina -= delta * 30
+		else:
+			sprinting = false
+			$Panting.play()
 	elif stamina < 100:
 		stamina += delta * 10
-		
 	
 	if (direction):
 		position += direction * speed * delta * sprint
