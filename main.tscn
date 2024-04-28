@@ -47,7 +47,7 @@ shader_parameter/amplitude = 0.01
 height = 127.807
 radius = 35.3178
 
-[node name="Node3D" type="Node3D"]
+[node name="Main" type="Node3D"]
 script = ExtResource("1_y3a05")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
