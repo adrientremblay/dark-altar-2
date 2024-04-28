@@ -1,3 +1,8 @@
-[gd_scene format=3 uid="uid://dinx2n1kr6nxt"]
+[gd_scene load_steps=2 format=3 uid="uid://dinx2n1kr6nxt"]
+
+[ext_resource type="PackedScene" uid="uid://c1mymj4sk34o4" path="res://adrien_tree.tscn" id="1_66x82"]
 
 [node name="Tree" type="Node3D"]
+
+[node name="adrien_tree" parent="." instance=ExtResource("1_66x82")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

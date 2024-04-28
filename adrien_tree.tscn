@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1mymj4sk34o4"]
+
+[ext_resource type="PackedScene" uid="uid://jyh3c61apvqh" path="res://adrien_tree.blend" id="1_gqbqp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5yt0k"]
+albedo_color = Color(0.203922, 0.156863, 0.0784314, 1)
+
+[node name="adrien_tree" instance=ExtResource("1_gqbqp")]
+
+[node name="tree" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_5yt0k")
+
+[node name="Cube" parent="." index="1"]
+visible = false
+
+[node name="Light" parent="." index="2"]
+visible = false
+
+[node name="Camera" parent="." index="3"]
+visible = false
