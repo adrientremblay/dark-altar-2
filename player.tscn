@@ -43,7 +43,7 @@ angle_max = 360.0
 direction = Vector3(0, 1, 0)
 spread = 0.0
 initial_velocity_min = 1.0
-initial_velocity_max = 4.0
+initial_velocity_max = 5.0
 angular_velocity_max = 20.0
 gravity = Vector3(0, 0, 0)
 linear_accel_max = 1.0
@@ -57,7 +57,7 @@ hue_variation_min = -0.3
 hue_variation_max = 0.3
 
 [sub_resource type="QuadMesh" id="QuadMesh_66rta"]
-size = Vector2(0.1, 0.1)
+size = Vector2(3, 3)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07157, 0)
@@ -106,11 +106,12 @@ shadow_blur = 0.075
 omni_range = 0.75
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="CameraPivot/Camera3D"]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0.690071, -0.13143, -0.686243)
+transform = Transform3D(0.0281247, 0, -0.0104405, 0, 0.03, 0, 0.0104405, 0, 0.0281247, 0.690071, -0.13143, -0.686243)
 material_override = SubResource("StandardMaterial3D_5gllx")
 amount = 100
 lifetime = 0.3
 randomness = 1.0
+local_coords = true
 draw_order = 3
 process_material = SubResource("ParticleProcessMaterial_443lx")
 draw_pass_1 = SubResource("QuadMesh_66rta")
