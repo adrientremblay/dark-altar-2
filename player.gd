@@ -22,7 +22,7 @@ signal register_skull
 func calculate_flame_direction(direction: Vector3):
 	var flame_direction : Vector3 = Vector3(0,1,0) # -z
 	flame_direction = flame_direction.rotated(Vector3(-1, 0, 0), camera.rotation.x)
-	flame_direction -= (direction * 0.5)
+	flame_direction -= direction
 	particle_emitter.process_material.direction = flame_direction.normalized()
 
 func _unhandled_input(event: InputEvent):
