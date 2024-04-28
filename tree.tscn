@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dinx2n1kr6nxt"]
 
-[ext_resource type="PackedScene" uid="uid://cr57dtgrr3jcp" path="res://adrien_tree.gltf" id="1_sj2il"]
+[ext_resource type="PackedScene" uid="uid://fx0d583oao8c" path="res://adrien_tree.tscn" id="1_66x82"]
 
 [node name="Tree" type="Node3D"]
 
-[node name="adrien_tree" parent="." instance=ExtResource("1_sj2il")]
+[node name="adrien_tree" parent="." instance=ExtResource("1_66x82")]

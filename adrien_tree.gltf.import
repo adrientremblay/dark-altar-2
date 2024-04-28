@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cr57dtgrr3jcp"
+uid="uid://dlh5s34gokeii"
 path="res://.godot/imported/adrien_tree.gltf-c5b0773da446db7ea41e2be872c36dad.scn"
 
 [deps]
@@ -29,6 +29,13 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"bark_willow_02": {
+"use_external/enabled": true,
+"use_external/path": "res://bark_willow_02.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

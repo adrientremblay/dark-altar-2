@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctfvlajeijry7"]
+[gd_scene load_steps=3 format=3 uid="uid://fx0d583oao8c"]
 
-[ext_resource type="PackedScene" uid="uid://cr57dtgrr3jcp" path="res://adrien_tree.gltf" id="1_eeqtu"]
+[ext_resource type="PackedScene" uid="uid://dlh5s34gokeii" path="res://adrien_tree.gltf" id="1_4pjdj"]
+[ext_resource type="Material" uid="uid://dt6fnuogarm5l" path="res://bark_willow_02.tres" id="2_4ffn8"]
 
-[node name="adrien_tree" instance=ExtResource("1_eeqtu")]
+[node name="adrien_tree" instance=ExtResource("1_4pjdj")]
+
+[node name="tree" parent="." index="0"]
+material_override = ExtResource("2_4ffn8")
