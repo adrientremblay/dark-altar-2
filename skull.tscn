@@ -19,4 +19,10 @@ transform = Transform3D(1.3, 0, 0, 0, -1.19209e-07, 1.3, 0, -1.3, -1.19209e-07, 
 transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0.132456, 0.0322302)
 shape = SubResource("SphereShape3D_pxfaf")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 1.19209e-07, 0, -1.19209e-07, 0.999999, -0.00754911, 0.140492, 0.104301)
+light_color = Color(0.815686, 0.560784, 0, 1)
+light_energy = 2.0
+omni_range = 2.47571
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
