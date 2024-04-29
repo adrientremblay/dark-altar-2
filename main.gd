@@ -69,3 +69,8 @@ func _input(event):
 		if interactable.is_in_group("page"):
 			var page: Page = interactable
 			ui.display_page(page)
+			
+		if interactable.is_in_group("skull"):
+			var skull = interactable
+			$Player.collect_skull()
+			skull.queue_free()

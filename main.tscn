@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bi7ytov5l6euy" path="res://assets/Skeleton/monkey.jpg" id="12_hbp13"]
 [ext_resource type="AudioStream" uid="uid://j5w3xpbaplrs" path="res://assets/audio/music/horror-background-atmosphere-for-horror-and-mystical-179447.mp3" id="14_y84eg"]
 [ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
-[ext_resource type="PackedScene" uid="uid://cxcnqxkcllt8f" path="res://skull.tscn" id="16_4ask6"]
+[ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="16_4ask6"]
 [ext_resource type="ArrayMesh" uid="uid://dpci07ey3ih3n" path="res://assets/models/Well_obj/Well.obj" id="17_chujx"]
 [ext_resource type="PackedScene" uid="uid://c7xxhqgfuhhov" path="res://rock_arch.tscn" id="18_5qoh6"]
 [ext_resource type="PackedScene" uid="uid://cqapmgn7vakkj" path="res://mausoleum.tscn" id="19_wcieb"]
@@ -420,13 +420,7 @@ transform = Transform3D(0.970038, 0, -0.242955, 0, 1, 0, 0.242955, 0, 0.970038, 
 [node name="Skulls" type="Node3D" parent="."]
 
 [node name="Skull" parent="Skulls" instance=ExtResource("16_4ask6")]
-transform = Transform3D(0.597023, 0.478194, -0.644123, 0, 0.802922, 0.596085, 0.802224, -0.355877, 0.479363, 176.133, 0.210266, -108.181)
-
-[node name="Skull2" parent="Skulls" instance=ExtResource("16_4ask6")]
-transform = Transform3D(1, 0, 0, 0, 0.802922, 0.596085, 0, -0.596085, 0.802922, 90.435, 0, -163.133)
-
-[node name="Skull3" parent="Skulls" instance=ExtResource("16_4ask6")]
-transform = Transform3D(-0.404423, 0.545163, -0.73433, 0, 0.802922, 0.596085, 0.914572, 0.241071, -0.32472, 128.145, 0.626812, -71.3209)
+transform = Transform3D(0.02007, 0, -0.999799, 0, 1, 0, 0.999799, 0, 0.02007, 128.022, 0.674559, -71.142)
 
 [node name="Well" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 176.907, 0, -107.744)
