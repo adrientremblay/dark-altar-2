@@ -68,13 +68,18 @@ mouse_filter = 2
 texture = ExtResource("2_88ewc")
 
 [node name="PageTitle" type="Label" parent="PageView"]
-layout_mode = 2
-offset_left = 842.0
-offset_top = 70.0
-offset_right = 1077.0
-offset_bottom = 139.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -751.0
+offset_top = 50.0
+offset_right = 751.0
+offset_bottom = 119.0
+grow_horizontal = 2
 text = "Page Title"
 label_settings = SubResource("LabelSettings_hiycv")
+horizontal_alignment = 1
 
 [node name="PageText" type="Label" parent="PageView"]
 layout_mode = 1

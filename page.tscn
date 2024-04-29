@@ -13,7 +13,7 @@ size = Vector2(0.5, 0.7)
 transparency = 1
 albedo_texture = ExtResource("1_4ktc2")
 
-[node name="Area3D" type="Area3D" groups=["interactable", "page"]]
+[node name="Page" type="Area3D" groups=["interactable", "page"]]
 script = ExtResource("1_8ykir")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
