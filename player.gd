@@ -22,6 +22,8 @@ signal register_skull
 signal can_interact_with_something
 signal cannot_interact_with_something
 
+var reading = false
+
 func calculate_flame_direction(direction: Vector3):
 	var flame_direction : Vector3 = Vector3(0,1,0) # -z
 	flame_direction = flame_direction.rotated(Vector3(-1, 0, 0), camera.rotation.x)
@@ -41,6 +43,9 @@ func _unhandled_input(event: InputEvent):
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(camera_min_angle), deg_to_rad(camera_max_angle))
 
 func _physics_process(delta):
+	if reading:
+		return
+	
 	var input_dir = Vector3.ZERO
 	
 	# direction

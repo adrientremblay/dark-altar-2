@@ -67,6 +67,7 @@ func _input(event):
 			return
 		
 		if interactable.is_in_group("page"):
+			$Player.reading = not $Player.reading
 			var page: Page = interactable
 			ui.display_page(page)
 			
