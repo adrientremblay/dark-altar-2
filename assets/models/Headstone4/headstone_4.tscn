@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://du42fl1gkhb0h"]
+
+[ext_resource type="PackedScene" uid="uid://cv1d5qglgfqxk" path="res://assets/models/Headstone4/Headstone4.glb" id="1_njm0n"]
+
+[node name="Headstone4" instance=ExtResource("1_njm0n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Cube_003" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
