@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=29 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="20_b2i1c"]
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
 [ext_resource type="PackedScene" uid="uid://dtvfec0b0eaqw" path="res://assets/models/Headstone1/headstone_1.tscn" id="22_ishw5"]
+[ext_resource type="PackedScene" uid="uid://d2vyr3cat8e6o" path="res://assets/models/Headstone3/headstone_3.tscn" id="23_50fpa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -57,7 +58,7 @@ script = ExtResource("1_y3a05")
 environment = SubResource("Environment_g4vby")
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(-0.684623, 0, -0.728897, 0, 1, 0, 0.728897, 0, -0.684623, 122.337, 1.62609, -78.4927)
+transform = Transform3D(-0.19805, 0, -0.980191, 0, 1, 0, 0.980191, 0, -0.19805, 110.709, 1.62609, -86.5064)
 
 [node name="Cricket" parent="." instance=ExtResource("8_ilbwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
@@ -68,7 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.0768, 0, -81.7387)
 
 [node name="Tree2" parent="Trees" instance=ExtResource("4_gfekl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.9771, 0, -75.7743)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.9826, 0, -75.7743)
 
 [node name="Tree3" parent="Trees" instance=ExtResource("4_gfekl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.652, 0, -95.0291)
@@ -128,7 +129,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.201, 0, -82.3913)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.787, 0, -98.5101)
 
 [node name="Tree22" parent="Trees" instance=ExtResource("4_gfekl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.034, 0, -82.0388)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.329, 0, -73.8203)
 
 [node name="Tree23" parent="Trees" instance=ExtResource("4_gfekl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.232, 0, -110.449)
@@ -191,19 +192,19 @@ transform = Transform3D(0.713886, 0, 0.700262, 0, 1, 0, -0.700262, 0, 0.713886, 
 transform = Transform3D(0.713886, 0, 0.700262, 0, 1, 0, -0.700262, 0, 0.713886, 115.166, 0, -94.1958)
 
 [node name="Tree43" parent="Trees" instance=ExtResource("4_gfekl")]
-transform = Transform3D(0.713886, 0, 0.700262, 0, 1, 0, -0.700262, 0, 0.713886, 119.738, 0, -75.6076)
+transform = Transform3D(0.713886, 0, 0.700262, 0, 1, 0, -0.700262, 0, 0.713886, 135.813, 0, -69.2288)
 
 [node name="Tree44" parent="Trees" instance=ExtResource("4_gfekl")]
 transform = Transform3D(0.982855, 0, 0.18438, 0, 1, 0, -0.18438, 0, 0.982855, 122.645, 0, -53.4364)
 
 [node name="Tree45" parent="Trees" instance=ExtResource("4_gfekl")]
-transform = Transform3D(0.982855, 0, 0.18438, 0, 1, 0, -0.18438, 0, 0.982855, 107.964, 0, -70.2729)
+transform = Transform3D(0.982855, 0, 0.18438, 0, 1, 0, -0.18438, 0, 0.982855, 114.804, 0, -65.3446)
 
 [node name="Tree46" parent="Trees" instance=ExtResource("4_gfekl")]
 transform = Transform3D(0.982855, 0, 0.18438, 0, 1, 0, -0.18438, 0, 0.982855, 122.377, 0, -60.1186)
 
 [node name="Tree47" parent="Trees" instance=ExtResource("4_gfekl")]
-transform = Transform3D(0.982855, 0, 0.18438, 0, 1, 0, -0.18438, 0, 0.982855, 110.152, 0, -74.2252)
+transform = Transform3D(0.982855, 0, 0.18438, 0, 1, 0, -0.18438, 0, 0.982855, 95.1919, 0, -58.0825)
 
 [node name="Tree48" parent="Trees" instance=ExtResource("4_gfekl")]
 transform = Transform3D(0.982855, 0, 0.18438, 0, 1, 0, -0.18438, 0, 0.982855, 103.604, 0, -56.2381)
@@ -432,8 +433,17 @@ shape = SubResource("CylinderShape3D_18whr")
 [node name="RockArch" parent="." instance=ExtResource("18_5qoh6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.8657, 0, -163.956)
 
+[node name="Remains" parent="." instance=ExtResource("21_soo3d")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 69.8289, -0.0624461, -63.9854)
+
+[node name="RemainsPage" parent="." instance=ExtResource("20_b2i1c")]
+transform = Transform3D(0.608997, 0, -0.793173, 0, 1, 0, 0.793173, 0, 0.608997, 69.4602, 0.0106834, -63.5473)
+page_title = "Dear David"
+page_text = "Dear David, I am the humble village elder of Riddenvale. We have been expecting you, though it seems that the King has sent a lone cleric to do the job of a squadrom of armsmen. I wish I could receive you properly. But it seems my days are numbered. I am gravely wounded. The vile demon Cedric Leopold stalks these woods. You must banish him. Collect the skulls of his followers..."
+
 [node name="mausoleum" parent="." instance=ExtResource("19_wcieb")]
 transform = Transform3D(-0.987738, 0, -0.156125, 0, 1, 0, 0.156125, 0, -0.987738, 129.343, 0, -55.4154)
+visible = false
 
 [node name="Page" parent="mausoleum" instance=ExtResource("20_b2i1c")]
 transform = Transform3D(-0.99858, 0.0531392, -0.00386541, -0.00494174, -0.0201387, 0.999785, 0.0530509, 0.998384, 0.0203726, 0.0213318, 1.61864, 1.52227)
@@ -443,24 +453,29 @@ page_text = "Here lies the head of the house of Leopold. We used his skull for o
 [node name="Skull" parent="mausoleum" instance=ExtResource("16_4ask6")]
 transform = Transform3D(0.816994, 0, 0.576646, 0, 1, 0, -0.576646, 0, 0.816994, -1.37289, 0.674559, 2.52294)
 
-[node name="Remains" parent="." instance=ExtResource("21_soo3d")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 69.8289, -0.0624461, -63.9854)
-
-[node name="RemainsPage" parent="." instance=ExtResource("20_b2i1c")]
-transform = Transform3D(0.608997, 0, -0.793173, 0, 1, 0, 0.793173, 0, 0.608997, 69.4602, 0.0106834, -63.5473)
-page_title = "Dear David"
-page_text = "Dear David, I am the humble village elder of Riddenvale. We have been expecting you, though it seems that the King has sent a lone cleric to do the job of a squadrom of armsmen. I wish I could receive you properly. But it seems my days are numbered. I am gravely wounded. The vile demon Cedric Leopold stalks these woods. You must banish him. Collect the skulls of his followers..."
-
 [node name="Graves" type="Node3D" parent="."]
+visible = false
 
 [node name="Headstone1" parent="Graves" instance=ExtResource("22_ishw5")]
-transform = Transform3D(-0.491897, 0, -0.0896501, 0, 0.5, 0, 0.0896501, 0, -0.491897, 129.857, 0, -68.8281)
+transform = Transform3D(-0.491897, 0, -0.0896501, 0, 0.5, 0, 0.0896501, 0, -0.491897, 130.608, 0, -68.4203)
 
 [node name="Headstone2" parent="Graves" instance=ExtResource("22_ishw5")]
-transform = Transform3D(-0.491897, 0, -0.0896501, 0, 0.5, 0, 0.0896501, 0, -0.491897, 131.938, 0, -69.3107)
+transform = Transform3D(-0.491897, 0, -0.0896501, 0, 0.5, 0, 0.0896501, 0, -0.491897, 132.341, 0, -68.8409)
 
 [node name="Headstone3" parent="Graves" instance=ExtResource("22_ishw5")]
-transform = Transform3D(-0.491897, 0, -0.0896501, 0, 0.5, 0, 0.0896501, 0, -0.491897, 123.421, 0, -66.8464)
+transform = Transform3D(-0.491897, 0, -0.0896501, 0, 0.5, 0, 0.0896501, 0, -0.491897, 123.421, 0, -67.2825)
+
+[node name="Headstone4" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.491897, 0, -0.0896501, 0, 0.5, 0, 0.0896501, 0, -0.491897, 121.404, 0, -66.9642)
+
+[node name="Headstone5" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.491897, 0, -0.0896501, 0, 0.5, 0, 0.0896501, 0, -0.491897, 119.33, 0, -66.6451)
+
+[node name="Headstone6" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.491897, 0, -0.0896501, 0, 0.5, 0, 0.0896501, 0, -0.491897, 134.64, 0, -69.1615)
+
+[node name="Headstone7" parent="Graves" instance=ExtResource("23_50fpa")]
+transform = Transform3D(0.476882, 0, 0.150278, 0, 0.5, 0, -0.150278, 0, 0.476882, 132.288, 0, -62.624)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
