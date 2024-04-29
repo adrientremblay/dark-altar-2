@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c8sl6d2hndjlu"
+path="res://.godot/imported/crossstone.obj-ba637386d993112950e2c3af5cf8dab1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/crossstone.obj-ba637386d993112950e2c3af5cf8dab1.mesh"]
+
+source_file="res://assets/models/Crossstone/crossstone.obj"
+dest_files=["res://.godot/imported/crossstone.obj-ba637386d993112950e2c3af5cf8dab1.mesh", "res://.godot/imported/crossstone.obj-ba637386d993112950e2c3af5cf8dab1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

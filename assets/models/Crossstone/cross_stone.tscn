@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://17c4kmj323ib"]
+
+[ext_resource type="ArrayMesh" uid="uid://c8sl6d2hndjlu" path="res://assets/models/Crossstone/crossstone.obj" id="1_221tj"]
+
+[node name="CrossStone" type="Node3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.130225, 0.152354, 0)
+
+[node name="Crossstone" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20895, 4.00086, -0.561786)
+mesh = ExtResource("1_221tj")
