@@ -460,7 +460,43 @@ transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623
 transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 108.119, 0, -80.1936)
 
 [node name="Headstone3" parent="Graves" instance=ExtResource("22_ishw5")]
-transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 106.571, 0, -79.1115)
+transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 106.284, 0, -79.3838)
+
+[node name="Headstone4" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 104.534, 0, -78.4013)
+
+[node name="Headstone5" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 102.797, 0, -77.4803)
+
+[node name="Headstone6" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 111.154, 0, -78.9546)
+
+[node name="Headstone7" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 109.463, 0, -77.9494)
+
+[node name="Headstone8" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 107.629, 0, -77.1396)
+
+[node name="Headstone9" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 105.879, 0, -76.1571)
+
+[node name="Headstone10" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 104.141, 0, -75.2361)
+
+[node name="Headstone11" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 112.169, 0, -76.0386)
+
+[node name="Headstone12" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 110.478, 0, -75.0333)
+
+[node name="Headstone13" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 108.644, 0, -74.2235)
+
+[node name="Headstone14" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 106.894, 0, -73.241)
+
+[node name="Headstone15" parent="Graves" instance=ExtResource("22_ishw5")]
+transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623, 105.156, 0, -72.32)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
