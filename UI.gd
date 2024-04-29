@@ -22,6 +22,10 @@ func _on_player_cannot_interact_with_something() -> void:
 	$InteractHand.visible = false
 	
 func display_page(page : Page):
+	if $PageView.visible:
+		$PageView.visible = false
+		return
+	
 	$PageView.visible = true
 	$PageView/PageTitle.text = page.page_title
 	$PageView/PageText.text = page.page_text

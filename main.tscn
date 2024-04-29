@@ -445,7 +445,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.8657, 0, -163.956)
 transform = Transform3D(-0.560133, 0, -0.828403, 0, 1, 0, 0.828403, 0, -0.560133, 129.343, 0, -68.5915)
 
 [node name="Page" parent="." instance=ExtResource("20_b2i1c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.661, 0.704923, -68.765)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.661, 0.63474, -68.6529)
 page_title = "Cedric Leopold's Journal Page 1"
 page_text = "Here lies the head of the house of Leopold. We used his skull for our ritual."
 
