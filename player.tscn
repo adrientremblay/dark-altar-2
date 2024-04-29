@@ -84,6 +84,7 @@ current = true
 transform = Transform3D(-0.05, -4.37114e-09, 1.91069e-16, 0, -2.18557e-09, -0.05, 4.37114e-09, -0.05, 2.18557e-09, 0.76174, -0.423212, -0.443583)
 
 [node name="WorldLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Arm"]
+transform = Transform3D(20, 4.54747e-13, 1.35525e-19, -4.54747e-13, 20, -2.27374e-13, 6.77626e-21, 2.27374e-13, 20, 0, 5.29683, -6.39571)
 light_color = Color(0.705882, 0.666667, 0.141176, 1)
 light_energy = 10.0
 light_size = 1.0
