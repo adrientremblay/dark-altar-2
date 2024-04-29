@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=30 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
 [ext_resource type="PackedScene" uid="uid://dtvfec0b0eaqw" path="res://assets/models/Headstone1/headstone_1.tscn" id="22_ishw5"]
 [ext_resource type="PackedScene" uid="uid://du42fl1gkhb0h" path="res://assets/models/Headstone4/headstone_4.tscn" id="23_84gbe"]
+[ext_resource type="PackedScene" uid="uid://chrbsmggm8opq" path="res://assets/models/Headstone2/headstone_2.tscn" id="24_sopem"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -503,7 +504,46 @@ transform = Transform3D(-0.438623, 0, -0.24002, 0, 0.5, 0, 0.24002, 0, -0.438623
 transform = Transform3D(0.42901, 0, 0.256808, 0, 0.5, 0, -0.256808, 0, 0.42901, 110.208, 0, -67.327)
 
 [node name="Headstone17" parent="Graves" instance=ExtResource("23_84gbe")]
-transform = Transform3D(-0.0167781, 0, -0.499718, 0, 0.5, 0, 0.499718, 0, -0.0167781, 125.724, 0, -79.3821)
+transform = Transform3D(-0.173402, 0, -0.468969, 0, 0.5, 0, 0.468969, 0, -0.173402, 125.724, 0, -77.8947)
+
+[node name="Headstone18" parent="Graves" instance=ExtResource("24_sopem")]
+transform = Transform3D(0.495955, 0, -0.0634717, 0, 0.5, 0, 0.0634717, 0, 0.495955, 123.805, 0, -71.8422)
+
+[node name="Headstone19" parent="Graves" instance=ExtResource("24_sopem")]
+transform = Transform3D(-0.434082, 0, -0.248139, 0, 0.5, 0, 0.248139, 0, -0.434082, 117.419, 0, -84.4344)
+
+[node name="Headstone20" parent="Graves" instance=ExtResource("24_sopem")]
+transform = Transform3D(-0.434082, 0, -0.248139, 0, 0.5, 0, 0.248139, 0, -0.434082, 119.595, 0, -85.8242)
+
+[node name="Headstone21" parent="Graves" instance=ExtResource("24_sopem")]
+transform = Transform3D(-0.434082, 0, -0.248139, 0, 0.5, 0, 0.248139, 0, -0.434082, 121.915, 0, -87.1251)
+
+[node name="Headstone22" parent="Graves" instance=ExtResource("24_sopem")]
+transform = Transform3D(-0.434082, 0, -0.248139, 0, 0.5, 0, 0.248139, 0, -0.434082, 123.993, 0, -88.3228)
+
+[node name="Headstone23" parent="Graves" instance=ExtResource("24_sopem")]
+transform = Transform3D(-0.434082, 0, -0.248139, 0, 0.5, 0, 0.248139, 0, -0.434082, 118.996, 0, -81.5718)
+
+[node name="Headstone24" parent="Graves" instance=ExtResource("24_sopem")]
+transform = Transform3D(-0.434082, 0, -0.248139, 0, 0.5, 0, 0.248139, 0, -0.434082, 121.172, 0, -82.9615)
+
+[node name="Headstone25" parent="Graves" instance=ExtResource("24_sopem")]
+transform = Transform3D(-0.434082, 0, -0.248139, 0, 0.5, 0, 0.248139, 0, -0.434082, 123.492, 0, -84.2624)
+
+[node name="Headstone26" parent="Graves" instance=ExtResource("24_sopem")]
+transform = Transform3D(-0.434082, 0, -0.248139, 0, 0.5, 0, 0.248139, 0, -0.434082, 125.57, 0, -85.4601)
+
+[node name="Headstone27" parent="Graves" instance=ExtResource("24_sopem")]
+transform = Transform3D(-0.434082, 0, -0.248139, 0, 0.5, 0, 0.248139, 0, -0.434082, 120.62, 0, -78.8063)
+
+[node name="Headstone28" parent="Graves" instance=ExtResource("24_sopem")]
+transform = Transform3D(-0.434082, 0, -0.248139, 0, 0.5, 0, 0.248139, 0, -0.434082, 122.797, 0, -80.196)
+
+[node name="Headstone29" parent="Graves" instance=ExtResource("24_sopem")]
+transform = Transform3D(-0.434082, 0, -0.248139, 0, 0.5, 0, 0.248139, 0, -0.434082, 125.116, 0, -81.4969)
+
+[node name="Headstone30" parent="Graves" instance=ExtResource("24_sopem")]
+transform = Transform3D(-0.434082, 0, -0.248139, 0, 0.5, 0, 0.248139, 0, -0.434082, 127.195, 0, -82.6947)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
