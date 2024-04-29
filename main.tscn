@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=27 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c7xxhqgfuhhov" path="res://rock_arch.tscn" id="18_5qoh6"]
 [ext_resource type="PackedScene" uid="uid://cqapmgn7vakkj" path="res://mausoleum.tscn" id="19_wcieb"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="20_b2i1c"]
+[ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -55,7 +56,7 @@ script = ExtResource("1_y3a05")
 environment = SubResource("Environment_g4vby")
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(-0.438779, 0, -0.898595, 0, 1, 0, 0.898595, 0, -0.438779, 121.646, 1.62609, -78.8742)
+transform = Transform3D(0.794584, 0, -0.607154, 0, 1, 0, 0.607154, 0, 0.794584, 65.5544, 1.62609, -59.3596)
 
 [node name="Cricket" parent="." instance=ExtResource("8_ilbwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
@@ -442,6 +443,14 @@ transform = Transform3D(-0.560133, 0, -0.828403, 0, 1, 0, 0.828403, 0, -0.560133
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.661, 0.63474, -68.6529)
 page_title = "Cedric Leopold's Journal Page 1"
 page_text = "Here lies the head of the house of Leopold. We used his skull for our ritual."
+
+[node name="Remains" parent="." instance=ExtResource("21_soo3d")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 69.8289, -0.0624461, -63.9854)
+
+[node name="RemainsPage" parent="." instance=ExtResource("20_b2i1c")]
+transform = Transform3D(0.608997, 0, -0.793173, 0, 1, 0, 0.793173, 0, 0.608997, 69.4602, 0.0106834, -63.5473)
+page_title = "Dear David"
+page_text = "Dear David... I wish only I could have received you like I intended. Our village is overrun and my own days are numbered. Please collect the skulls. Banish Cedric Leopold."
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
