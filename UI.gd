@@ -15,9 +15,14 @@ func _on_player_register_skull() -> void:
 	$Label.text = "skull collected"
 	$Label.visible = true
 
-
 func _on_player_can_interact_with_something() -> void:
 	$InteractHand.visible = true
 
 func _on_player_cannot_interact_with_something() -> void:
+	$InteractHand.visible = false
+	
+func display_page(page : Page):
+	$PageView.visible = true
+	$PageView/PageTitle.text = page.page_title
+	$PageView/PageText.text = page.page_text
 	$InteractHand.visible = false

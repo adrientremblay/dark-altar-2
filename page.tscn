@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0k3gkte6gqhl"]
+[gd_scene load_steps=6 format=3 uid="uid://d0k3gkte6gqhl"]
 
 [ext_resource type="Texture2D" uid="uid://bt22o018bjsuu" path="res://assets/images/page_template.png" id="1_4ktc2"]
+[ext_resource type="Script" path="res://page.gd" id="1_8ykir"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5aclu"]
+size = Vector3(0.554138, 0.741699, 0.190002)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ihok5"]
 size = Vector2(0.5, 0.7)
@@ -9,16 +13,14 @@ size = Vector2(0.5, 0.7)
 transparency = 1
 albedo_texture = ExtResource("1_4ktc2")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_5aclu"]
-size = Vector3(0.554138, 0.741699, 0.190002)
+[node name="Area3D" type="Area3D" groups=["interactable", "page"]]
+script = ExtResource("1_8ykir")
 
-[node name="MeshInstance3D" type="MeshInstance3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.00352552, 0.999981, 0, -0.999981, 0.00352552, -0.00356162, 0.0727063, -0.000816897)
+shape = SubResource("BoxShape3D_5aclu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("QuadMesh_ihok5")
 surface_material_override/0 = SubResource("StandardMaterial3D_nkkdm")
-
-[node name="Area3D" type="Area3D" parent="." groups=["page"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 0.999987, -2.02505e-13, 0, 2.02505e-13, 0.999987, -0.00356162, 0.0104982, 0.0966731)
-shape = SubResource("BoxShape3D_5aclu")

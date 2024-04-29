@@ -10,6 +10,7 @@ var movement_mode : MovementMode = MovementMode.STANDING
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
 @onready var particle_emitter : GPUParticles3D = $CameraPivot/Camera3D/GPUParticles3D
+@onready var grab_shape : Area3D = $CameraPivot/Camera3D/GrabShape
 
 var health = 100 # out of 100
 var stamina = 100 # out of 100
@@ -136,10 +137,15 @@ func collect_skull():
 	register_skull.emit()
 	$SkullPickupSound.play()
 
-
 func _on_grab_shape_area_entered(area: Area3D) -> void:
 	can_interact_with_something.emit()
 
-
 func _on_grab_shape_area_exited(area: Area3D) -> void:
 	cannot_interact_with_something.emit()
+
+func return_interactable():
+	for area in grab_shape.get_overlapping_areas():
+		if area.is_in_group("interactable"):
+			return area
+	return null
+			

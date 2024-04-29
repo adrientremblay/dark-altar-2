@@ -3,6 +3,8 @@ extends Node3D
 var shaderMat : ShaderMaterial
 var choirSound: AudioStreamPlayer
 
+@onready var ui = $UI
+
 func _ready() -> void:
 	shaderMat  = $CanvasLayer/ColorRect.material
 	choirSound = $Choir
@@ -57,3 +59,13 @@ func _on_teleport_timer_timeout() -> void:
 
 func _on_player_register_skull() -> void:
 	$Cedric.increase_agression($Cedric/TeleportTimer)
+
+func _input(event):
+	if event.is_action_pressed("interact"):
+		var interactable : Area3D = $Player.return_interactable()
+		if interactable == null:
+			return
+		
+		if interactable.is_in_group("page"):
+			var page: Page = interactable
+			ui.display_page(page)
