@@ -5,7 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_o1dhv"]
 size = Vector3(22.9856, 13.7805, 15.2181)
 
-[node name="Cemetery Pack" instance=ExtResource("1_2pp5x")]
+[node name="Church" instance=ExtResource("1_2pp5x")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 

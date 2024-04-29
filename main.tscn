@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=34 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://chrbsmggm8opq" path="res://assets/models/Headstone2/headstone_2.tscn" id="24_sopem"]
 [ext_resource type="PackedScene" uid="uid://17c4kmj323ib" path="res://assets/models/Crossstone/cross_stone.tscn" id="26_hplrs"]
 [ext_resource type="PackedScene" uid="uid://b54uvt8meaxdf" path="res://assets/models/Church/church.tscn" id="27_mapp5"]
+[ext_resource type="PackedScene" uid="uid://d225smg2vwwb8" path="res://assets/models/CemetaryGate/cemetary_gate.tscn" id="28_neona"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -62,7 +63,7 @@ script = ExtResource("1_y3a05")
 environment = SubResource("Environment_g4vby")
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(-0.19805, 0, -0.980191, 0, 1, 0, 0.980191, 0, -0.19805, 110.709, 1.62609, -86.5064)
+transform = Transform3D(-0.19805, 0, -0.980191, 0, 1, 0, 0.980191, 0, -0.19805, 106.229, 1.62609, -93.1829)
 
 [node name="Cricket" parent="." instance=ExtResource("8_ilbwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
@@ -567,7 +568,10 @@ transform = Transform3D(0.125403, 0, 0.0823053, 0, 0.15, 0, -0.0823053, 0, 0.125
 transform = Transform3D(0.0245609, 0, -0.147976, 0, 0.15, 0, 0.147976, 0, 0.0245609, 126.002, 0.0994167, -79.9635)
 
 [node name="Church" parent="." instance=ExtResource("27_mapp5")]
-transform = Transform3D(-0.537638, 0, -0.843176, 0, 1, 0, 0.843176, 0, -0.537638, 212.801, 0, -153.893)
+transform = Transform3D(-0.955732, 0, 0.29424, 0, 1, 0, -0.29424, 0, -0.955732, 306.584, 0, -157.424)
+
+[node name="CemetaryGate" parent="." instance=ExtResource("28_neona")]
+transform = Transform3D(-0.589591, 0, 0.807702, 0, 1, 0, -0.807702, 0, -0.589591, 108.8, 0, -89.2633)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
