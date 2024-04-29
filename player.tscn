@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=18 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
@@ -58,6 +58,9 @@ hue_variation_max = 0.3
 
 [sub_resource type="QuadMesh" id="QuadMesh_66rta"]
 size = Vector2(3, 3)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bp2ix"]
+height = 2.59507
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07157, 0)
@@ -119,6 +122,13 @@ draw_pass_1 = SubResource("QuadMesh_66rta")
 [node name="Candle" parent="CameraPivot/Camera3D" instance=ExtResource("4_h756x")]
 transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.69, -0.508, -0.686)
 
+[node name="GrabShape" type="Area3D" parent="CameraPivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00240922, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraPivot/Camera3D/GrabShape"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -1.866)
+shape = SubResource("CapsuleShape3D_bp2ix")
+
 [node name="Walking" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")
 
@@ -131,3 +141,6 @@ volume_db = -4.0
 
 [node name="Sprinting" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_0qke1")
+
+[connection signal="area_entered" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_entered"]
+[connection signal="area_exited" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_exited"]

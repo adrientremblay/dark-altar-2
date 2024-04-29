@@ -18,6 +18,8 @@ var camera_max_angle = 80
 var camera_min_angle = -80
 
 signal register_skull
+signal can_interact_with_something
+signal cannot_interact_with_something
 
 func calculate_flame_direction(direction: Vector3):
 	var flame_direction : Vector3 = Vector3(0,1,0) # -z
@@ -133,3 +135,11 @@ func check_if_can_see_me(cedric: CharacterBody3D):
 func collect_skull():
 	register_skull.emit()
 	$SkullPickupSound.play()
+
+
+func _on_grab_shape_area_entered(area: Area3D) -> void:
+	can_interact_with_something.emit()
+
+
+func _on_grab_shape_area_exited(area: Area3D) -> void:
+	cannot_interact_with_something.emit()
