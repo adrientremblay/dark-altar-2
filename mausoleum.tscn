@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqapmgn7vakkj"]
 
-[ext_resource type="PackedScene" uid="uid://1lavubjrhj36" path="res://assets/models/mausoleum.blend" id="1_7jpns"]
+[ext_resource type="PackedScene" uid="uid://1lavubjrhj36" path="res://assets/models/Mausoleum/mausoleum.blend" id="1_7jpns"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4igqr"]
 size = Vector3(4.0129, 6.7196, 4.89648)

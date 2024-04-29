@@ -1,26 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdn0o2f8qbgk"]
+[gd_scene load_steps=4 format=3 uid="uid://bdn0o2f8qbgk"]
 
-[ext_resource type="ArrayMesh" uid="uid://b8ulm22g3m7vk" path="res://assets/Skeleton/skeleton.obj" id="1_bjauq"]
 [ext_resource type="Script" path="res://cedric.gd" id="1_xmn3u"]
-[ext_resource type="PackedScene" uid="uid://b42xbyvhmwhn1" path="res://clown.tscn" id="2_yc4t1"]
 [ext_resource type="AudioStream" uid="uid://b5x14n16kot0p" path="res://assets/audio/sound_effects/boom.mp3" id="4_xhb7r"]
 [ext_resource type="PackedScene" uid="uid://dbue6pqurgujn" path="res://cedric_v_2.tscn" id="5_b5wdq"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ti60a"]
-
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_xmn3u")
-
-[node name="Skeleton" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 2.2059, 0)
-visible = false
-material_override = SubResource("StandardMaterial3D_ti60a")
-gi_mode = 0
-mesh = ExtResource("1_bjauq")
-
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_yc4t1")]
-transform = Transform3D(-0.399994, 0, -0.0021573, 0, 0.4, 0, 0.0021573, 0, -0.399994, 0, -0.362972, 0)
-visible = false
 
 [node name="BoomSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_xhb7r")

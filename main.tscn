@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cbbuqe37bac5p" path="res://cricket.tscn" id="8_ilbwb"]
 [ext_resource type="PackedScene" uid="uid://qu8m8i5m2acd" path="res://signpost.tscn" id="9_8itpl"]
 [ext_resource type="PackedScene" uid="uid://030k1q35if8y" path="res://house.tscn" id="10_xdnt2"]
-[ext_resource type="PackedScene" uid="uid://dx1ic8e4exr86" path="res://ui.tscn" id="11_usrys"]
+[ext_resource type="PackedScene" uid="uid://dx1ic8e4exr86" path="res://scenes/ui/ui.tscn" id="11_usrys"]
 [ext_resource type="Shader" path="res://main.gdshader" id="12_35pxv"]
 [ext_resource type="PackedScene" uid="uid://bdn0o2f8qbgk" path="res://cedric.tscn" id="12_ax3ba"]
 [ext_resource type="Texture2D" uid="uid://bi7ytov5l6euy" path="res://assets/Skeleton/monkey.jpg" id="12_hbp13"]
@@ -440,7 +440,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.8657, 0, -163.956)
 transform = Transform3D(-0.560133, 0, -0.828403, 0, 1, 0, 0.828403, 0, -0.560133, 129.343, 0, -68.5915)
 
 [node name="Page" parent="." instance=ExtResource("20_b2i1c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.661, 0.63474, -68.6529)
+transform = Transform3D(0.51539, -0.856829, -0.0147116, -0.00494174, -0.0201387, 0.999785, -0.856942, -0.515207, -0.0146135, 128.07, 1.61864, -69.4265)
 page_title = "Cedric Leopold's Journal Page 1"
 page_text = "Here lies the head of the house of Leopold. We used his skull for our ritual."
 
