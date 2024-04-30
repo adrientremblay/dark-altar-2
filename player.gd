@@ -9,7 +9,7 @@ var movement_mode : MovementMode = MovementMode.STANDING
 
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
-@onready var particle_emitter : GPUParticles3D = $CameraPivot/Camera3D/GPUParticles3D
+@onready var particle_emitter : GPUParticles3D = $CameraPivot/Camera3D/Candle/Flame
 @onready var grab_shape : Area3D = $CameraPivot/Camera3D/GrabShape
 
 var health = 100 # out of 100
