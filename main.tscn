@@ -533,9 +533,6 @@ transform = Transform3D(-0.598898, 0, 0.800825, 0, 1, 0, -0.800825, 0, -0.598898
 [node name="CemetaryGate" parent="." instance=ExtResource("28_neona")]
 transform = Transform3D(-0.512238, 0, 0.858844, 0, 1, 0, -0.858844, 0, -0.512238, 109.062, 0, -89.215)
 
-[node name="Wall2" parent="." instance=ExtResource("29_pvaao")]
-transform = Transform3D(-0.511818, 0, 0.859094, 0, 1, 0, -0.859094, 0, -0.511818, 107.166, 0, -88.2478)
-
 [node name="Wall3" parent="." instance=ExtResource("29_pvaao")]
 transform = Transform3D(-0.511818, 0, 0.859094, 0, 1, 0, -0.859094, 0, -0.511818, 104.575, 0, -86.7053)
 
@@ -667,6 +664,9 @@ transform = Transform3D(0.999985, 0, -0.00551504, 0, 1, 0, 0.00551504, 0, 0.9999
 
 [node name="Wall1" parent="." instance=ExtResource("30_u4xqx")]
 transform = Transform3D(-0.512043, 0, 0.85896, 0, 1, 0, -0.85896, 0, -0.512043, 113.406, 0, -91.965)
+
+[node name="Wall24" parent="." instance=ExtResource("30_u4xqx")]
+transform = Transform3D(0.512043, 0, -0.85896, 0, 1, 0, 0.85896, 0, 0.512043, 104.55, 0, -86.6821)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
