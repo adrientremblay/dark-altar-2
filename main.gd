@@ -5,6 +5,9 @@ var choirSound: AudioStreamPlayer
 
 @onready var ui = $UI
 
+var CEDRIC_DAMAGE_DISTANCE = 10
+var CEDRIC_DAMAGE = 30
+
 func _ready() -> void:
 	shaderMat  = $CanvasLayer/ColorRect.material
 	choirSound = $Choir
@@ -18,11 +21,9 @@ func _process(delta: float) -> void:
 	
 	var ghost = 0
 	var amplitude = 0.01
-	if (angle_to_cedric < 75 && distance_to_cedric <= 15):
-		var angle_scale = ((75 - angle_to_cedric) / 75) * 0.5
-		var distance_scale = ((15 - distance_to_cedric) / 15) * 0.5
-		var damage_scale = angle_scale + distance_scale
-		$Player.health -= damage_scale * 30 * delta
+	if (distance_to_cedric <= CEDRIC_DAMAGE_DISTANCE):
+		var damage_scale = (CEDRIC_DAMAGE_DISTANCE - distance_to_cedric) / CEDRIC_DAMAGE_DISTANCE
+		$Player.health -= damage_scale * CEDRIC_DAMAGE * delta
 	elif $Player.health < 100:
 		$Player.health += 20 * delta
 	
