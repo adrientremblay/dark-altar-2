@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi0mjvusho31o"]
+
+[ext_resource type="PackedScene" uid="uid://ygr1stqov8t7" path="res://assets/models/SmallMausoleum2/SmallMaus2.gltf" id="1_qp8t5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e8ne0"]
+size = Vector3(4.72961, 4.89508, 2.01562)
+
+[node name="SmallMaus2" instance=ExtResource("1_qp8t5")]
+
+[node name="Family_Tomb_01" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.117249, 2.41879, -0.0078125)
+shape = SubResource("BoxShape3D_e8ne0")
