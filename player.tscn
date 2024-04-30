@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=19 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
 [ext_resource type="AudioStream" uid="uid://dni157qfh4eyi" path="res://assets/audio/sound_effects/Footsteps grass sound effect.mp3" id="2_vbp7b"]
 [ext_resource type="PackedScene" uid="uid://dgcgrml4qo4l8" path="res://candle.tscn" id="4_h756x"]
+[ext_resource type="PackedScene" uid="uid://bxvhdc745xjt" path="res://assets/models/CandleHolder/candlestick.blend" id="4_xrfnu"]
 [ext_resource type="AudioStream" uid="uid://cb7tjjqfo08h0" path="res://assets/audio/sound_effects/scary-foley-86229.mp3" id="5_vv7y3"]
 [ext_resource type="AudioStream" uid="uid://cmauvnhp04ys4" path="res://assets/audio/sound_effects/panting.mp3" id="6_8qrlp"]
 [ext_resource type="AudioStream" uid="uid://dnem3422cvig" path="res://assets/audio/sound_effects/running.mp3" id="7_0qke1"]
@@ -108,7 +109,7 @@ shadow_blur = 0.075
 omni_range = 0.75
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="CameraPivot/Camera3D"]
-transform = Transform3D(0.0281247, 0, -0.0104405, 0, 0.03, 0, 0.0104405, 0, 0.0281247, 0.690071, -0.13143, -0.686243)
+transform = Transform3D(0.0281247, 0, -0.0104405, 0, 0.03, 0, 0.0104405, 0, 0.0281247, 0.695741, 0.129854, -0.71024)
 material_override = SubResource("StandardMaterial3D_5gllx")
 amount = 100
 lifetime = 0.3
@@ -119,7 +120,7 @@ process_material = SubResource("ParticleProcessMaterial_443lx")
 draw_pass_1 = SubResource("QuadMesh_66rta")
 
 [node name="Candle" parent="CameraPivot/Camera3D" instance=ExtResource("4_h756x")]
-transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.69, -0.508, -0.686)
+transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.69, -0.2342, -0.716939)
 
 [node name="GrabShape" type="Area3D" parent="CameraPivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00240922, 0)
@@ -127,6 +128,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00240922, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraPivot/Camera3D/GrabShape"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -1.866)
 shape = SubResource("CapsuleShape3D_bp2ix")
+
+[node name="candlestick" parent="CameraPivot/Camera3D" instance=ExtResource("4_xrfnu")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.683026, -0.579627, -0.711785)
 
 [node name="Walking" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")
