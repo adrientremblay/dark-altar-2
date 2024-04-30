@@ -39,6 +39,10 @@ func _process(delta: float) -> void:
 			
 	if choirSound.volume_db < -40:
 		choirSound.stop()
+		
+	# Cedric teleports when in light
+	if distance_to_cedric < $Player.candle_light.omni_range:
+		$Cedric.teleport($Player)
 	
 	shaderMat.set_shader_parameter("ghost", ghost)
 	shaderMat.set_shader_parameter("amplitude", amplitude)
@@ -55,8 +59,7 @@ func _on_teleport_timer_timeout() -> void:
 		return
 	
 	var player_position = $Player.position
-	$Cedric.teleport(player_position)
-
+	$Cedric.teleport($Player)
 
 func _on_player_register_skull() -> void:
 	$Cedric.increase_agression($Cedric/TeleportTimer)

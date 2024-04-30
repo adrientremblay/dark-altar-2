@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 @export var speed = 3.5
 @export var sprint_modifier = 1.7
@@ -11,6 +11,7 @@ var movement_mode : MovementMode = MovementMode.STANDING
 @onready var camera = $CameraPivot/Camera3D
 @onready var particle_emitter : GPUParticles3D = $CameraPivot/Camera3D/Candle/Flame
 @onready var grab_shape : Area3D = $CameraPivot/Camera3D/GrabShape
+@onready var candle_light : OmniLight3D = $CameraPivot/Camera3D/Candle/WorldLight
 
 var health = 100 # out of 100
 var stamina = 100 # out of 100

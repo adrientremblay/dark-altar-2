@@ -23,11 +23,15 @@ func change_agression(agression: int, timer : Timer):
 		4:
 			distance_to_spawn = 8
 
-func teleport(player_position):
+func teleport(player: Player):
+	var player_position = player.position
+	
+	var safe_distance = min(player.candle_light.omni_range + 1, distance_to_spawn)
+	
 	# move
 	var random_direction = Vector3(random.randf_range(-1, 1), 0, random.randf_range(-1, 1)).normalized()
 		
-	var random_distance_vector = random_direction * distance_to_spawn
+	var random_distance_vector = random_direction * safe_distance
 	
 	position = player_position + random_distance_vector
 	
