@@ -85,18 +85,6 @@ current = true
 [node name="Arm" parent="CameraPivot/Camera3D" instance=ExtResource("2_v36k5")]
 transform = Transform3D(-0.05, -4.37114e-09, 1.91069e-16, 0, -2.18557e-09, -0.05, 4.37114e-09, -0.05, 2.18557e-09, 0.76174, -0.423212, -0.443583)
 
-[node name="WorldLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Arm"]
-transform = Transform3D(20, 4.54747e-13, 1.35525e-19, -4.54747e-13, 20, -2.27374e-13, 6.77626e-21, 2.27374e-13, 20, 0, 5.29683, -6.39571)
-light_color = Color(0.705882, 0.666667, 0.141176, 1)
-light_energy = 10.0
-light_size = 1.0
-light_specular = 0.0
-light_cull_mask = 4294967293
-shadow_enabled = true
-shadow_bias = 0.036
-shadow_blur = 0.04
-omni_range = 8.04441
-
 [node name="PlayerLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Arm"]
 light_color = Color(0.705882, 0.666667, 0.141176, 1)
 light_energy = 13.118
@@ -123,6 +111,18 @@ local_coords = true
 draw_order = 3
 process_material = SubResource("ParticleProcessMaterial_443lx")
 draw_pass_1 = SubResource("QuadMesh_66rta")
+
+[node name="WorldLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Candle"]
+transform = Transform3D(-8.33333, -7.28524e-07, 3.18448e-14, 5.4589e-21, -3.64262e-07, -8.33333, 7.28524e-07, -8.33333, 3.64262e-07, 0.000406742, 3.22024, -0.0149746)
+light_color = Color(0.705882, 0.666667, 0.141176, 1)
+light_energy = 10.0
+light_size = 1.0
+light_specular = 0.0
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_bias = 0.036
+shadow_blur = 0.04
+omni_range = 8.0
 
 [node name="GrabShape" type="Area3D" parent="CameraPivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00240922, 0)
