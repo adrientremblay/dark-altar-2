@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c85ubr2r1vi8o"]
+
+[ext_resource type="PackedScene" uid="uid://dxitfewk5e1ak" path="res://assets/models/notice_board_low-poly/scene.gltf" id="1_8xh7q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7atdi"]
+size = Vector3(0.273926, 2.76611, 2.68235)
+
+[node name="NoticeBoard" instance=ExtResource("1_8xh7q")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 1.3352, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00512695, 1.36743, 0.000148773)
+shape = SubResource("BoxShape3D_7atdi")
