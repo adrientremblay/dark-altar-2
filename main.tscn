@@ -463,7 +463,9 @@ It seems the only people I see here anymore are the members of the \"Society of 
 [node name="NoticeBoardPage3" parent="Village/NoticeBoard" instance=ExtResource("20_b2i1c")]
 transform = Transform3D(-0.0087266, 0.999964, -4.37098e-08, 0, -4.37114e-08, -1, -0.999964, -0.0087266, 3.81456e-10, 0.049469, 1.87923, 0.798996)
 page_title = "The king is sending aid"
-page_text = "This is an announcement from the Mayor Sigivald, Mayor of Angel's Crossing. "
+page_text = "This is an announcement from Mayor Keisel, Mayor of Angel's Crossing. I am well aware of the numerous reports of strange occurences of recent. I am also aware of the numerous sightings of a strange \"monster\" lurking the woods at night since Cedric Leopold arrived in town and then dissapeared. 
+
+Rest easy. I have petitioned the King for aid. Though apparently he cannot spare any armsmen, he is sending a priest. The disturbances here seem to be of a supernatural nature anyways."
 
 [node name="Well" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 176.907, 0, -107.744)
