@@ -722,13 +722,20 @@ transform = Transform3D(-0.835788, 0, -0.549052, 0, 1, 0, 0.549052, 0, -0.835788
 transform = Transform3D(-0.999258, 0, 0.03851, 0, 1, 0, -0.03851, 0, -0.999258, 134.362, 0.134707, -55.2843)
 
 [node name="NoticeBoardPage1" parent="." instance=ExtResource("20_b2i1c")]
-transform = Transform3D(-0.267323, 0.963607, 1.1685e-08, -4.37114e-08, 4.55692e-15, -1, -0.963607, -0.267323, 4.21206e-08, 165.593, 1.3829, -109.972)
+transform = Transform3D(-0.267323, 0.963607, 1.1685e-08, -4.37114e-08, 4.55692e-15, -1, -0.963607, -0.267323, 4.21206e-08, 165.593, 1.3829, -110.104)
 page_title = "Recruiting! Society of the Dark Altar"
 page_text = "Greetings fellow citizen. My name is Cedric Leopold. I, like you have walked through the trees, among the animals, climbed mountains, traversed seas and stared up at the night sky. I, like many would be content to marry a sweet girl, have many children and spend my days in the village square and my nights in a warm bed.
 
 One thing has always bothered me... The night sky! Every night, when I look up and see the speckled white stars, I think of them as souls. I see the souls of my father, grandfather, friend Jorvald and dear late daughter Bodil. They live on in the great beyond. I must know what it is like. I must know why so many of us down on earth live short miserable lives. Why men lead themselves to ruin.
 
 [TODO]"
+
+[node name="NoticeBoardPage2" parent="." instance=ExtResource("20_b2i1c")]
+transform = Transform3D(-0.267238, 0.96363, -4.21216e-08, 0, -4.37114e-08, -1, -0.96363, -0.267238, 1.16814e-08, 165.769, 1.74325, -109.327)
+page_title = "Leave this accursed town!"
+page_text = "A great tragedy has befallen us. Ever since Cedric Leopold rode back into town after his long absense of 30 years, Angel's Crossing has not felt the same!. When I look outside at the village square, I don't see many faces anymore. Every night it seems more and more people are missing. Left in the middle of the night our Mayor says. Who believes him?
+
+It seems the only people I see here anymore are the members of the \"Society of the Dark Altar\". The damned fools that rode in with Cedric Leopold. They're heretics I say! Cultists! I would say we should drive them out. But it seems they outnumber us now. I am leaving this town. And I suggest anyone else left of sound-mind and honest-heart leave too."
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
