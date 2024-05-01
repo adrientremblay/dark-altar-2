@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr4i4u2jhdyq"]
+
+[ext_resource type="PackedScene" uid="uid://bp21hsiq3hylc" path="res://assets/models/medieval_stall/scene.gltf" id="1_hbiwl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8buv4"]
+size = Vector3(1.52513, 1.32397, 2.779)
+
+[node name="Stall" instance=ExtResource("1_hbiwl")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, 0.01, 0, -0.01, -4.37114e-10, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.166603, 0.63147, 0.134708)
+shape = SubResource("BoxShape3D_8buv4")

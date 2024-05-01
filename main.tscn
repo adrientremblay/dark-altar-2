@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=42 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://bi0mjvusho31o" path="res://assets/models/SmallMausoleum2/small_maus_2.tscn" id="33_4t3it"]
 [ext_resource type="Script" path="res://SkullGroup.gd" id="34_b82b0"]
 [ext_resource type="PackedScene" uid="uid://b5gt2bx07wd03" path="res://assets/models/SmallMausoleum3/small_maus_3.tscn" id="34_th04d"]
+[ext_resource type="PackedScene" uid="uid://cr4i4u2jhdyq" path="res://assets/models/medieval_stall/stall.tscn" id="36_sa1h6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -70,7 +71,7 @@ script = ExtResource("1_y3a05")
 environment = SubResource("Environment_g4vby")
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(-0.19805, 0, -0.980191, 0, 1, 0, 0.980191, 0, -0.19805, 106.229, 1.62609, -93.1829)
+transform = Transform3D(-0.19805, 0, -0.980191, 0, 1, 0, 0.980191, 0, -0.19805, 165.402, 1.62609, -113.276)
 
 [node name="Cricket" parent="." instance=ExtResource("8_ilbwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
@@ -421,16 +422,19 @@ volume_db = -10.0
 [node name="Choir" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_ww56w")
 
-[node name="Houses" type="Node3D" parent="."]
+[node name="Village" type="Node3D" parent="."]
 
-[node name="House" parent="Houses" instance=ExtResource("10_xdnt2")]
+[node name="House" parent="Village" instance=ExtResource("10_xdnt2")]
 transform = Transform3D(-0.451454, 0, -0.892295, 0, 1, 0, 0.892295, 0, -0.451454, 195.07, 0, -102.136)
 
-[node name="House2" parent="Houses" instance=ExtResource("10_xdnt2")]
+[node name="House2" parent="Village" instance=ExtResource("10_xdnt2")]
 transform = Transform3D(-0.250684, 0, 0.968069, 0, 1, 0, -0.968069, 0, -0.250684, 156.029, 0, -99.0062)
 
-[node name="House3" parent="Houses" instance=ExtResource("10_xdnt2")]
+[node name="House3" parent="Village" instance=ExtResource("10_xdnt2")]
 transform = Transform3D(0.970038, 0, -0.242955, 0, 1, 0, 0.242955, 0, 0.970038, 179.415, 0, -127.788)
+
+[node name="Stall" parent="Village" instance=ExtResource("36_sa1h6")]
+transform = Transform3D(0.320927, 0, 0.947104, 0, 1, 0, -0.947104, 0, 0.320927, 174.966, 0.0615044, -102.771)
 
 [node name="Well" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 176.907, 0, -107.744)
@@ -454,7 +458,7 @@ page_title = "Dear David"
 page_text = "Dear David, I am the humble village elder of Angel's Crossing. We have been expecting you, though it seems that the King has sent a lone cleric to do the job of a squadrom of armsmen. I wish I could receive you properly. But it seems my days are numbered. I am gravely wounded. The vile demon Cedric Leopold stalks these woods. You must banish him. Collect the skulls of his followers..."
 
 [node name="Church" parent="." instance=ExtResource("27_mapp5")]
-transform = Transform3D(-0.955732, 0, 0.29424, 0, 1, 0, -0.29424, 0, -0.955732, 306.584, 0, -157.424)
+transform = Transform3D(-0.999812, 0, 0.0194238, 0, 1, 0, -0.0194238, 0, -0.999812, 249.704, 0, -222.234)
 
 [node name="Graveyard" type="Node3D" parent="."]
 
@@ -694,19 +698,19 @@ transform = Transform3D(-0.99858, 0.0531394, -0.0038654, -0.00494174, -0.0201387
 page_title = "Notice: Graverobbing"
 page_text = "Citizens of of Angel's Crossing, last night multiple graves in this cemetary were desecrated. It is unknown who the fiend who has done this vile act is or for what reason. It seems only skulls were taken. Please report any information to the Mayor."
 
-[node name="SkullGroup" type="Node3D" parent="."]
+[node name="SkullGroupGraveyard" type="Node3D" parent="."]
 script = ExtResource("34_b82b0")
 
-[node name="SkullMausoleum" parent="SkullGroup" instance=ExtResource("16_4ask6")]
+[node name="SkullMausoleum" parent="SkullGroupGraveyard" instance=ExtResource("16_4ask6")]
 transform = Transform3D(-0.374703, 0, -0.927145, 0, 1, 0, 0.927145, 0, -0.374703, 115.222, 0.674559, -72.7598)
 
-[node name="SkullAngel" parent="SkullGroup" instance=ExtResource("16_4ask6")]
+[node name="SkullAngel" parent="SkullGroupGraveyard" instance=ExtResource("16_4ask6")]
 transform = Transform3D(-0.82374, 0, -0.566967, 0, 1, 0, 0.566967, 0, -0.82374, 105.171, 0, -78.0177)
 
-[node name="Skull" parent="SkullGroup" instance=ExtResource("16_4ask6")]
+[node name="Skull" parent="SkullGroupGraveyard" instance=ExtResource("16_4ask6")]
 transform = Transform3D(-0.835788, 0, -0.549052, 0, 1, 0, 0.549052, 0, -0.835788, 124.618, 0, -82.1521)
 
-[node name="Skull2" parent="SkullGroup" instance=ExtResource("16_4ask6")]
+[node name="Skull2" parent="SkullGroupGraveyard" instance=ExtResource("16_4ask6")]
 transform = Transform3D(-0.999258, 0, 0.03851, 0, 1, 0, -0.03851, 0, -0.999258, 134.362, 0.134707, -55.2843)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]

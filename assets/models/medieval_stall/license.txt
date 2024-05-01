@@ -1,0 +1,11 @@
+Model Information:
+* title:	Medieval stall
+* source:	https://sketchfab.com/3d-models/medieval-stall-4a5a40e78e4b481bafbb576303f992cd
+* author:	Cyril43 (https://sketchfab.com/Cyril43)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Medieval stall" (https://sketchfab.com/3d-models/medieval-stall-4a5a40e78e4b481bafbb576303f992cd) by Cyril43 (https://sketchfab.com/Cyril43) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
