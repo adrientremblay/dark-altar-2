@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=45 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://cr4i4u2jhdyq" path="res://assets/models/medieval_stall/stall.tscn" id="36_sa1h6"]
 [ext_resource type="PackedScene" uid="uid://0ca7iald35bs" path="res://assets/models/CartOfBarrels/cart_of_barrels.tscn" id="37_lb2k0"]
 [ext_resource type="PackedScene" uid="uid://c85ubr2r1vi8o" path="res://assets/models/notice_board_low-poly/notice_board.tscn" id="38_tv8sy"]
+[ext_resource type="PackedScene" uid="uid://bxwxiga4urkxo" path="res://assets/models/market_stall_2/market_stall_2.tscn" id="39_3fl5x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -743,6 +744,9 @@ transform = Transform3D(-0.835788, 0, -0.549052, 0, 1, 0, 0.549052, 0, -0.835788
 
 [node name="Skull2" parent="SkullGroupGraveyard" instance=ExtResource("16_4ask6")]
 transform = Transform3D(-0.999258, 0, 0.03851, 0, 1, 0, -0.03851, 0, -0.999258, 134.362, 0.134707, -55.2843)
+
+[node name="MarketStall2" parent="." instance=ExtResource("39_3fl5x")]
+transform = Transform3D(-0.970712, 0, -0.240245, 0, 1, 0, 0.240245, 0, -0.970712, 178.708, 0, -102.36)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
