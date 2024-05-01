@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu34ecivriip6"]
+
+[ext_resource type="PackedScene" uid="uid://d1ncj8juy86y2" path="res://assets/models/medieval_blacksmith/scene.gltf" id="1_l5kga"]
+
+[node name="Smithy" instance=ExtResource("1_l5kga")]
