@@ -451,7 +451,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 69.8289, -0.0624461, -6
 [node name="RemainsPage" parent="." instance=ExtResource("20_b2i1c")]
 transform = Transform3D(0.608997, 0, -0.793173, 0, 1, 0, 0.793173, 0, 0.608997, 69.4602, 0.0106834, -63.5473)
 page_title = "Dear David"
-page_text = "Dear David, I am the humble village elder of Havenrock. We have been expecting you, though it seems that the King has sent a lone cleric to do the job of a squadrom of armsmen. I wish I could receive you properly. But it seems my days are numbered. I am gravely wounded. The vile demon Cedric Leopold stalks these woods. You must banish him. Collect the skulls of his followers..."
+page_text = "Dear David, I am the humble village elder of Angel's Crossing. We have been expecting you, though it seems that the King has sent a lone cleric to do the job of a squadrom of armsmen. I wish I could receive you properly. But it seems my days are numbered. I am gravely wounded. The vile demon Cedric Leopold stalks these woods. You must banish him. Collect the skulls of his followers..."
 
 [node name="Church" parent="." instance=ExtResource("27_mapp5")]
 transform = Transform3D(-0.955732, 0, 0.29424, 0, 1, 0, -0.29424, 0, -0.955732, 306.584, 0, -157.424)
@@ -692,7 +692,7 @@ transform = Transform3D(-0.840765, 0, -0.541401, 0, 1, 0, 0.541401, 0, -0.840765
 [node name="Page" parent="Graveyard/mausoleum" instance=ExtResource("20_b2i1c")]
 transform = Transform3D(-0.99858, 0.0531394, -0.0038654, -0.00494174, -0.0201387, 0.999785, 0.0530509, 0.998384, 0.0203726, 0.0213318, 1.61864, 1.52227)
 page_title = "Notice: Graverobbing"
-page_text = "Citizens of of Havenrock, last night multiple graves in this cemetary were desecrated. It is unknown who the fiend who has done this vile act is or for what reason. It seems only skulls were taken. Please report any information to the Mayor."
+page_text = "Citizens of of Angel's Crossing, last night multiple graves in this cemetary were desecrated. It is unknown who the fiend who has done this vile act is or for what reason. It seems only skulls were taken. Please report any information to the Mayor."
 
 [node name="SkullGroup" type="Node3D" parent="."]
 script = ExtResource("34_b82b0")
