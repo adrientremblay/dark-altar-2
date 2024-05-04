@@ -432,17 +432,8 @@ stream = ExtResource("15_ww56w")
 
 [node name="Village" type="Node3D" parent="."]
 
-[node name="House" parent="Village" instance=ExtResource("10_xdnt2")]
-transform = Transform3D(-0.451454, 0, -0.892295, 0, 1, 0, 0.892295, 0, -0.451454, 195.07, 0, -102.136)
-
-[node name="House2" parent="Village" instance=ExtResource("10_xdnt2")]
-transform = Transform3D(-0.250684, 0, 0.968069, 0, 1, 0, -0.968069, 0, -0.250684, 156.029, 0, -99.0062)
-
-[node name="House3" parent="Village" instance=ExtResource("10_xdnt2")]
-transform = Transform3D(0.970038, 0, -0.242955, 0, 1, 0, 0.242955, 0, 0.970038, 213.423, 0, -168.713)
-
 [node name="Stall" parent="Village" instance=ExtResource("36_sa1h6")]
-transform = Transform3D(0.0856602, 0, 0.996324, 0, 1, 0, -0.996324, 0, 0.0856602, 176.804, 0.0615044, -102.713)
+transform = Transform3D(-0.471197, 0, 0.882028, 0, 1, 0, -0.882028, 0, -0.471197, 179.461, 0.0615044, -102.127)
 
 [node name="cart_of_barrels" parent="Village" instance=ExtResource("37_lb2k0")]
 transform = Transform3D(0.954906, 0, 0.296908, 0, 1, 0, -0.296908, 0, 0.954906, 181, 1.32865, -98.0347)
@@ -474,13 +465,13 @@ page_text = "This is an announcement from Mayor Keisel, Mayor of Angel's Crossin
 Rest easy. I have petitioned the King for aid. Though apparently he cannot spare any armsmen, he is sending a priest. The disturbances here seem to be of a supernatural nature anyways."
 
 [node name="MarketStall" parent="Village" instance=ExtResource("40_vn0m4")]
-transform = Transform3D(-0.855409, 0, 0.517952, 0, 1, 0, -0.517952, 0, -0.855409, 173.597, 0, -103.918)
+transform = Transform3D(-0.881303, 0, 0.47255, 0, 1, 0, -0.47255, 0, -0.881303, 175.939, 0, -102.356)
 
 [node name="MarketStall2" parent="Village" instance=ExtResource("39_3fl5x")]
-transform = Transform3D(-0.885345, 0, -0.464935, 0, 1, 0, 0.464935, 0, -0.885345, 180.536, 0, -103.207)
+transform = Transform3D(-0.519504, 0, -0.854468, 0, 1, 0, 0.854468, 0, -0.519504, 182.583, 0, -104.323)
 
 [node name="Well" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 176.907, 0, -107.744)
+transform = Transform3D(0.0291339, 0, 0.00715651, 0, 0.03, 0, -0.00715651, 0, 0.0291339, 175.284, 0, -108.861)
 mesh = ExtResource("17_chujx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Well"]
@@ -757,16 +748,19 @@ transform = Transform3D(-0.835788, 0, -0.549052, 0, 1, 0, 0.549052, 0, -0.835788
 transform = Transform3D(-0.999258, 0, 0.03851, 0, 1, 0, -0.03851, 0, -0.999258, 134.362, 0.134707, -55.2843)
 
 [node name="TableSet" parent="." instance=ExtResource("41_xlfp5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.848, 0.273243, -111.88)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169.931, 0.273243, -104.574)
 
 [node name="Smithy" parent="." instance=ExtResource("42_n6347")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.642, 1.20507, -125.281)
+transform = Transform3D(-0.937246, 0, 0.34867, 0, 1, 0, -0.34867, 0, -0.937246, 164.26, 1.20507, -97.1225)
 
 [node name="Tower" parent="." instance=ExtResource("43_4m4ak")]
-transform = Transform3D(0.0875566, 0, -0.0483099, 0, 0.1, 0, 0.0483099, 0, 0.0875566, 166.05, 0, -120.159)
+transform = Transform3D(0.122579, 0, -0.0676338, 0, 0.14, 0, 0.0676338, 0, 0.122579, 164.146, 0, -121.608)
 
 [node name="Gallows" parent="." instance=ExtResource("44_57ilo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 172.845, 0, -112.369)
+transform = Transform3D(0.474104, 0, -0.880469, 0, 1, 0, 0.880469, 0, 0.474104, 194.154, 0, -126.425)
+
+[node name="House" parent="." instance=ExtResource("10_xdnt2")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 174.049, 0, -124.404)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
