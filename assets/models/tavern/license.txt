@@ -1,0 +1,11 @@
+Model Information:
+* title:	Medieval Tavern (2k vertices) - free game asset
+* source:	https://sketchfab.com/3d-models/medieval-tavern-2k-vertices-free-game-asset-a06dfdc919334bfc95de720ad98f4295
+* author:	Andy Woodhead (https://sketchfab.com/Andywoodhead)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Medieval Tavern (2k vertices) - free game asset" (https://sketchfab.com/3d-models/medieval-tavern-2k-vertices-free-game-asset-a06dfdc919334bfc95de720ad98f4295) by Andy Woodhead (https://sketchfab.com/Andywoodhead) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

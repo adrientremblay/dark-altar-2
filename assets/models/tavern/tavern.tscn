@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq3xfs18sy5cr"]
+
+[ext_resource type="PackedScene" uid="uid://b672okyt4ek4i" path="res://assets/models/tavern/scene.gltf" id="1_rct5n"]
+
+[node name="Tavern" instance=ExtResource("1_rct5n")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
+
+[node name="defaultMaterial" parent="Sketchfab_model/Collada visual scene group/Tavern" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 7.10543e-15, 0, -7.10543e-15, 1, 0, 0.0872311, -3.81299e-09)

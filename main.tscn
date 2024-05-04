@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=51 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -44,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://cu34ecivriip6" path="res://assets/models/medieval_blacksmith/smithy.tscn" id="42_n6347"]
 [ext_resource type="PackedScene" uid="uid://rlwf725f0e6l" path="res://assets/models/tower/tower.tscn" id="43_4m4ak"]
 [ext_resource type="PackedScene" uid="uid://dxlcx2kuw6hfu" path="res://assets/models/gallow_1/gallows.tscn" id="44_57ilo"]
+[ext_resource type="PackedScene" uid="uid://cq3xfs18sy5cr" path="res://assets/models/tavern/tavern.tscn" id="45_kkvic"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -751,16 +752,19 @@ transform = Transform3D(-0.999258, 0, 0.03851, 0, 1, 0, -0.03851, 0, -0.999258, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169.931, 0.273243, -104.574)
 
 [node name="Smithy" parent="." instance=ExtResource("42_n6347")]
-transform = Transform3D(-0.937246, 0, 0.34867, 0, 1, 0, -0.34867, 0, -0.937246, 164.26, 1.20507, -97.1225)
+transform = Transform3D(-0.937246, 0, 0.34867, 0, 1, 0, -0.34867, 0, -0.937246, 164.26, 1.0513, -97.1225)
 
 [node name="Tower" parent="." instance=ExtResource("43_4m4ak")]
-transform = Transform3D(0.122579, 0, -0.0676338, 0, 0.14, 0, 0.0676338, 0, 0.122579, 164.146, 0, -121.608)
+transform = Transform3D(0.122579, 0, -0.0676338, 0, 0.14, 0, 0.0676338, 0, 0.122579, 164.146, 0, -124.196)
 
 [node name="Gallows" parent="." instance=ExtResource("44_57ilo")]
 transform = Transform3D(0.474104, 0, -0.880469, 0, 1, 0, 0.880469, 0, 0.474104, 194.154, 0, -126.425)
 
 [node name="House" parent="." instance=ExtResource("10_xdnt2")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 174.049, 0, -124.404)
+
+[node name="Tavern" parent="." instance=ExtResource("45_kkvic")]
+transform = Transform3D(14.6788, 0, 3.08768, 0, 15, 0, -3.08768, 0, 14.6788, 160.313, -0.155643, -106.979)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
