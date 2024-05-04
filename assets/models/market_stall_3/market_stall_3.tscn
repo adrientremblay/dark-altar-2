@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cb1141gi5g6s0"]
+[gd_scene load_steps=3 format=3 uid="uid://cb1141gi5g6s0"]
 
 [ext_resource type="PackedScene" uid="uid://bri8sxnoxp5ix" path="res://assets/models/market_stall_3/scene.gltf" id="1_37dow"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3gxk7"]
+size = Vector3(2.30075, 2.42084, 1.10303)
 
 [node name="Sketchfab_Scene" instance=ExtResource("1_37dow")]
 
@@ -9,3 +12,9 @@ transform = Transform3D(0.008, 0, 0, 0, -3.49691e-10, 0.008, 0, -0.008, -3.49691
 
 [node name="Plane_008" parent="Sketchfab_model/Collada visual scene group" index="0"]
 visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0352631, 1.12344, -0.0515137)
+shape = SubResource("BoxShape3D_3gxk7")

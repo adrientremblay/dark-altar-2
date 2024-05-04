@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6cidcfjuty3k"]
+[gd_scene load_steps=3 format=3 uid="uid://b6cidcfjuty3k"]
 
 [ext_resource type="PackedScene" uid="uid://b4pksm4antw75" path="res://assets/models/table_set/scene.gltf" id="1_evhx5"]
 
-[node name="Sketchfab_Scene" instance=ExtResource("1_evhx5")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xv3ck"]
+size = Vector3(2.00226, 1.36255, 2.82294)
+
+[node name="TableSet" instance=ExtResource("1_evhx5")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(0.001, 0, 0, 0, -4.37114e-11, 0.001, 0, -0.001, -4.37114e-11, 0, 7.43844e-07, 2.38236e-05)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08548, 0.369019, 0.911469)
+shape = SubResource("BoxShape3D_xv3ck")
