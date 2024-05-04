@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://rlwf725f0e6l"]
+
+[ext_resource type="PackedScene" uid="uid://bgt17ecvry1d" path="res://assets/models/tower/scene.gltf" id="1_p6nec"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1y8gs"]
+height = 96.6314
+radius = 27.0413
+
+[node name="Tower" instance=ExtResource("1_p6nec")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 44.7933, 0)
+shape = SubResource("CylinderShape3D_1y8gs")
