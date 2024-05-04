@@ -1,5 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu34ecivriip6"]
+[gd_scene load_steps=4 format=3 uid="uid://cu34ecivriip6"]
 
 [ext_resource type="PackedScene" uid="uid://d1ncj8juy86y2" path="res://assets/models/medieval_blacksmith/scene.gltf" id="1_l5kga"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_g5t86"]
+size = Vector3(4.80023, 6.75989, 9.35619)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r2cur"]
+size = Vector3(5.70502, 3.65765, 8.02374)
+
 [node name="Smithy" instance=ExtResource("1_l5kga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07861, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.181488, 2.35728, -1.8701)
+shape = SubResource("BoxShape3D_g5t86")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.79813, 0.724762, -0.811859)
+shape = SubResource("BoxShape3D_r2cur")
