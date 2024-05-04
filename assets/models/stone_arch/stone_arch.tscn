@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ssk8lp62jwl"]
+
+[ext_resource type="PackedScene" uid="uid://dc72dxvjjd4q8" path="res://assets/models/stone_arch/scene.gltf" id="1_yer2h"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_whgl1"]
+height = 51.6159
+radius = 9.73403
+
+[node name="StoneArch" instance=ExtResource("1_yer2h")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6329, 26.1199, 0)
+shape = SubResource("CylinderShape3D_whgl1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5899, 26.1199, 0)
+shape = SubResource("CylinderShape3D_whgl1")
