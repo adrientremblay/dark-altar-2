@@ -1,5 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bco8nw2tl48nq"]
+[gd_scene load_steps=3 format=3 uid="uid://dq4vaqx8ea0s1"]
 
 [ext_resource type="PackedScene" uid="uid://cpan0p0njun3m" path="res://assets/models/windmill/scene.gltf" id="1_nsie5"]
 
-[node name="Sketchfab_Scene" instance=ExtResource("1_nsie5")]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_n2bli"]
+height = 4.74379
+radius = 2.81065
+
+[node name="Windmill" instance=ExtResource("1_nsie5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.34515, 0)
+shape = SubResource("CylinderShape3D_n2bli")
