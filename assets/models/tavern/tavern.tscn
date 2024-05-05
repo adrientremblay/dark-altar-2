@@ -1,9 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://cq3xfs18sy5cr"]
+[gd_scene load_steps=4 format=3 uid="uid://cq3xfs18sy5cr"]
 
 [ext_resource type="PackedScene" uid="uid://b672okyt4ek4i" path="res://assets/models/tavern/scene.gltf" id="1_rct5n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pr6u5"]
+size = Vector3(0.331559, 0.511475, 0.513046)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nsoul"]
+size = Vector3(0.206558, 0.193069, 0.238037)
 
 [node name="Tavern" instance=ExtResource("1_rct5n")]
 transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0, 0)
 
 [node name="defaultMaterial" parent="Sketchfab_model/Collada visual scene group/Tavern" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 7.10543e-15, 0, -7.10543e-15, 1, 0, 0.0872311, -3.81299e-09)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -0.00483778, 0.244262, 0.00547036)
+shape = SubResource("BoxShape3D_pr6u5")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0.192422, 0.0280577, 0.121962)
+shape = SubResource("BoxShape3D_nsoul")
