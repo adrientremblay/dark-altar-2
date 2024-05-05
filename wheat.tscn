@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwopijb2yaa6w"]
+
+[ext_resource type="Texture2D" uid="uid://dmv60cb7gsiup" path="res://assets/images/wheat512.png" id="1_iwsf8"]
+
+[node name="Wheat" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.065, 0, -144.598)
+billboard = 2
+shaded = true
+texture = ExtResource("1_iwsf8")
