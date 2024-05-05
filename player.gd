@@ -13,7 +13,7 @@ var movement_mode : MovementMode = MovementMode.STANDING
 @onready var grab_shape : Area3D = $CameraPivot/Camera3D/GrabShape
 @onready var candle_light : OmniLight3D = $CameraPivot/Camera3D/Candle/WorldLight
 
-var health = 100 # out of 100
+var sanity = 100 # out of 100
 var stamina = 100 # out of 100
 
 var camera_max_angle = 80
@@ -133,9 +133,11 @@ func check_if_can_see_me(cedric: CharacterBody3D):
 	var angle_to_me = rad_to_deg(player_direction.signed_angle_to(direction_to_cedric, Vector3(0,1,0)))
 	
 	if abs(angle_to_me) <= 75:
-		cedric.play_boom()
-	#else:
-	cedric.rotate_to_me(self.position)
+		cedric.can_move = false
+	else:
+		cedric.can_move = true
+		
+	cedric.rotate_to_me(self.position) # TODO: move
 	
 	return angle_to_me
 

@@ -26,14 +26,15 @@ func _process(delta: float) -> void:
 	var amplitude = 0.01
 	if (distance_to_cedric <= CEDRIC_DAMAGE_DISTANCE):
 		var damage_scale = (CEDRIC_DAMAGE_DISTANCE - distance_to_cedric) / CEDRIC_DAMAGE_DISTANCE
-		$Player.health -= damage_scale * CEDRIC_DAMAGE * delta
-	elif $Player.health < 100:
-		$Player.health += 20 * delta
+		$Player.sanity -= damage_scale * CEDRIC_DAMAGE * delta
+	elif $Player.sanity < 100:
+		$Player.sanity += 20 * delta
 	
-	if $Player.health < 0:
-		get_tree().change_scene_to_file("res://death_screen.tscn")
-	if $Player.health < 100:
-		var distortion_scale = (100 - $Player.health) / 100
+	if $Player.sanity < 0:
+		$Player.sanity = 0
+	#	get_tree().change_scene_to_file("res://death_screen.tscn")
+	if $Player.sanity < 100:
+		var distortion_scale = (100 - $Player.sanity) / 100
 		ghost = distortion_scale * 0.7
 		choirSound.volume_db = (1 - distortion_scale) * -40
 		

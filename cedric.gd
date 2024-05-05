@@ -5,10 +5,15 @@ var random = RandomNumberGenerator.new()
 var can_boom = false
 var distance_to_spawn = 50
 var agression = 0
+var disabled = false
+var can_move = true
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 
 func _physics_process(delta: float) -> void:
+	if disabled or not can_move:
+		return
+	
 	var direction = Vector3()
 	direction = nav.get_next_path_position() - global_position
 	direction = direction.normalized()
