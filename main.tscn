@@ -494,7 +494,7 @@ page_title = "Dear David"
 page_text = "Dear David, I am the humble village elder of Angel's Crossing. We have been expecting you, though it seems that the King has sent a lone cleric to do the job of a squadrom of armsmen. I wish I could receive you properly. But it seems my days are numbered. I am gravely wounded. The vile demon Cedric Leopold stalks these woods. You must banish him. Collect the skulls of his followers..."
 
 [node name="Church" parent="." instance=ExtResource("27_mapp5")]
-transform = Transform3D(-0.999812, 0, 0.0194238, 0, 1, 0, -0.0194238, 0, -0.999812, 249.704, 0, -222.234)
+transform = Transform3D(0.199804, 0, -0.774647, 0, 0.8, 0, 0.774647, 0, 0.199804, 179.114, 0, -173.453)
 
 [node name="Graveyard" type="Node3D" parent="."]
 
@@ -767,29 +767,55 @@ transform = Transform3D(14.6788, 0, 3.08768, 0, 15, 0, -3.08768, 0, 14.6788, 160
 [node name="Windmill" parent="." instance=ExtResource("45_70ygt")]
 transform = Transform3D(0.542852, 0, 0.839828, 0, 1, 0, -0.839828, 0, 0.542852, 159.6, 0, -123.547)
 
-[node name="Wheat" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat" type="Node3D" parent="."]
+
+[node name="Wheat" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153.417, -4.76837e-07, -140.058)
 
-[node name="Wheat2" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat2" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156.149, 0, -145.942)
 
-[node name="Wheat3" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat3" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.811, 0, -135.347)
 
-[node name="Wheat4" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat4" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.433, 0, -139.625)
 
-[node name="Wheat5" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat5" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.798, 0, -140.064)
 
-[node name="Wheat6" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat6" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.762, 0, -134.64)
 
-[node name="Wheat7" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat7" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.461, 0, -143.969)
 
-[node name="Wheat8" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat8" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.858, 0, -148.023)
+
+[node name="Wheat2" parent="." instance=ExtResource("46_ogrb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.159, 0, -135.112)
+
+[node name="Wheat3" parent="." instance=ExtResource("46_ogrb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.182, 0, -136.516)
+
+[node name="Wheat4" parent="." instance=ExtResource("46_ogrb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.555, 0, -141.262)
+
+[node name="Wheat5" parent="." instance=ExtResource("46_ogrb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.757, 0, -142.199)
+
+[node name="Wheat6" parent="." instance=ExtResource("46_ogrb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.297, 0, -138.517)
+
+[node name="Wheat7" parent="." instance=ExtResource("46_ogrb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.719, 0, -148.03)
+
+[node name="Wheat8" parent="." instance=ExtResource("46_ogrb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.369, 0, -148.384)
+
+[node name="Wheat9" parent="." instance=ExtResource("46_ogrb6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169.253, 0, -143.034)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]

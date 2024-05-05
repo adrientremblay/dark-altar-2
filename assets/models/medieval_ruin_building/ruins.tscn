@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb38oryt1aqro"]
+
+[ext_resource type="PackedScene" uid="uid://cym34jkigaxs" path="res://assets/models/medieval_ruin_building/scene.gltf" id="1_aj7dn"]
+
+[node name="Ruins" instance=ExtResource("1_aj7dn")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.005, 0, 0, 0, -2.18557e-10, 0.005, 0, -0.005, -2.18557e-10, 0, 0, 0)
