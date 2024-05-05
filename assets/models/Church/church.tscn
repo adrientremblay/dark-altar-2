@@ -1,14 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://b54uvt8meaxdf"]
+[gd_scene load_steps=4 format=3 uid="uid://b54uvt8meaxdf"]
 
 [ext_resource type="PackedScene" uid="uid://cct32wxrmdiw1" path="res://assets/models/Church/Cemetery Pack.glb" id="1_2pp5x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o1dhv"]
-size = Vector3(22.9856, 13.7805, 15.2181)
+size = Vector3(22.9856, 13.7805, 6.76408)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xkhmm"]
+size = Vector3(6.98216, 6.47644, 7.30298)
 
 [node name="Church" instance=ExtResource("1_2pp5x")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81352, 6.96863, -3.12222)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81352, 6.96863, -0.117703)
 shape = SubResource("BoxShape3D_o1dhv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.23879, 3.15802, -6.73596)
+shape = SubResource("BoxShape3D_xkhmm")
