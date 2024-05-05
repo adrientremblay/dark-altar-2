@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://yq0dgh71vtjx"
+path="res://.godot/imported/uploads_files_638185_House_1.obj-90dc83e8d93d5c13ad33fb1678074d74.mesh"
+
+[deps]
+
+files=["res://.godot/imported/uploads_files_638185_House_1.obj-90dc83e8d93d5c13ad33fb1678074d74.mesh"]
+
+source_file="res://assets/models/manor/uploads_files_638185_House_1.obj"
+dest_files=["res://.godot/imported/uploads_files_638185_House_1.obj-90dc83e8d93d5c13ad33fb1678074d74.mesh", "res://.godot/imported/uploads_files_638185_House_1.obj-90dc83e8d93d5c13ad33fb1678074d74.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

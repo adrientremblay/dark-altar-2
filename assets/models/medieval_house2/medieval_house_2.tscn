@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkkh43k706sad"]
+
+[ext_resource type="PackedScene" uid="uid://df0uakfh13vt6" path="res://assets/models/medieval_house2/scene.gltf" id="1_wieo5"]
+
+[node name="MedievalHouse2" instance=ExtResource("1_wieo5")]

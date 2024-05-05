@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=55 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -46,6 +46,9 @@
 [ext_resource type="PackedScene" uid="uid://dq4vaqx8ea0s1" path="res://assets/models/windmill/windmill.tscn" id="45_70ygt"]
 [ext_resource type="PackedScene" uid="uid://cq3xfs18sy5cr" path="res://assets/models/tavern/tavern.tscn" id="45_kkvic"]
 [ext_resource type="PackedScene" uid="uid://dwopijb2yaa6w" path="res://wheat.tscn" id="46_ogrb6"]
+[ext_resource type="PackedScene" uid="uid://cb38oryt1aqro" path="res://assets/models/medieval_ruin_building/ruins.tscn" id="47_oog2k"]
+[ext_resource type="PackedScene" uid="uid://dkkh43k706sad" path="res://assets/models/medieval_house2/medieval_house_2.tscn" id="48_qp8wc"]
+[ext_resource type="PackedScene" uid="uid://b6m64cf85vrk7" path="res://assets/models/manor/manor.tscn" id="49_fpo0h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -793,29 +796,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.461, 0, -143.969)
 [node name="Wheat8" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.858, 0, -148.023)
 
-[node name="Wheat2" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat9" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.159, 0, -135.112)
 
-[node name="Wheat3" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat10" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.182, 0, -136.516)
 
-[node name="Wheat4" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat11" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.555, 0, -141.262)
 
-[node name="Wheat5" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat12" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.757, 0, -142.199)
 
-[node name="Wheat6" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat13" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.297, 0, -138.517)
 
-[node name="Wheat7" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat14" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.719, 0, -148.03)
 
-[node name="Wheat8" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat15" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.369, 0, -148.384)
 
-[node name="Wheat9" parent="." instance=ExtResource("46_ogrb6")]
+[node name="Wheat16" parent="Wheat" instance=ExtResource("46_ogrb6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169.253, 0, -143.034)
+
+[node name="Ruins" parent="." instance=ExtResource("47_oog2k")]
+transform = Transform3D(0.967625, 0, -0.25239, 0, 1, 0, 0.25239, 0, 0.967625, 97.0032, 0, -177.764)
+
+[node name="MedievalHouse2" parent="." instance=ExtResource("48_qp8wc")]
+transform = Transform3D(-0.116601, 0, 0.993179, 0, 1, 0, -0.993179, 0, -0.116601, 205.85, 0, -127.221)
+
+[node name="House2" parent="." instance=ExtResource("10_xdnt2")]
+transform = Transform3D(0.0390262, 0, -0.698911, 0, 0.7, 0, 0.698911, 0, 0.0390262, 185.275, 0, -92.0723)
+
+[node name="Manor" parent="." instance=ExtResource("49_fpo0h")]
+transform = Transform3D(-0.240567, 0, -0.970633, 0, 1, 0, 0.970633, 0, -0.240567, 195, 0, -108.277)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]

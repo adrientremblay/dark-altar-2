@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6m64cf85vrk7"]
+
+[ext_resource type="ArrayMesh" uid="uid://yq0dgh71vtjx" path="res://assets/models/manor/uploads_files_638185_House_1.obj" id="1_vub16"]
+[ext_resource type="Texture2D" uid="uid://dq403jlrylfy1" path="res://assets/models/manor/Texture_3.png" id="2_e2r75"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_es3al"]
+albedo_texture = ExtResource("2_e2r75")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7kbmf"]
+size = Vector3(11.0146, 4.74231, 12.0874)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1uw7b"]
+size = Vector3(5.6377, 9.00549, 4.38824)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qnmpi"]
+size = Vector3(10.6958, 2.98788, 2.88226)
+
+[node name="Manor" type="Node3D"]
+
+[node name="UploadsFiles638185House1" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_vub16")
+surface_material_override/0 = SubResource("StandardMaterial3D_es3al")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34326, 1.87115, -5.12036)
+shape = SubResource("BoxShape3D_7kbmf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.36923, 3.58046, 1.27866)
+shape = SubResource("BoxShape3D_1uw7b")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.900612, 0.993938, 4.11566)
+shape = SubResource("BoxShape3D_qnmpi")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.12959)
+depth = 3.0
+polygon = PackedVector2Array(7.71119, -0.491555, 4.4452, 2.51068, 4.36904, -0.491555)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.376513, 2.9351, 2.7028)
+depth = 2.5
+polygon = PackedVector2Array(1.72733, 1.26725, -0.853148, -0.440065, 1.73778, -0.551535)
