@@ -12,6 +12,9 @@ func _ready() -> void:
 	shaderMat  = $CanvasLayer/ColorRect.material
 	choirSound = $Choir
 	$Cedric.increase_agression($Cedric/TeleportTimer)
+	
+func _physics_process(delta: float) -> void:
+	$Cedric/NavigationAgent3D.target_position = $Player.position
 
 func _process(delta: float) -> void:
 	var angle_to_cedric = abs($Player.check_if_can_see_me($Cedric))

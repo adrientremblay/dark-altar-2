@@ -5,6 +5,17 @@ var random = RandomNumberGenerator.new()
 var can_boom = false
 var distance_to_spawn = 50
 var agression = 0
+
+@onready var nav: NavigationAgent3D = $NavigationAgent3D
+
+func _physics_process(delta: float) -> void:
+	var direction = Vector3()
+	direction = nav.get_next_path_position() - global_position
+	direction = direction.normalized()
+	
+	velocity = velocity.lerp(direction * 2, 10 * delta)
+	
+	move_and_slide()
 	
 func increase_agression(timer : Timer):
 	agression += 1
@@ -24,6 +35,7 @@ func change_agression(agression: int, timer : Timer):
 			distance_to_spawn = 8
 
 func teleport(player: Player):
+	return
 	var player_position = player.position
 	
 	var safe_distance = min(player.candle_light.omni_range + 1, distance_to_spawn)

@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdn0o2f8qbgk"]
+[gd_scene load_steps=5 format=3 uid="uid://bdn0o2f8qbgk"]
 
 [ext_resource type="Script" path="res://cedric.gd" id="1_xmn3u"]
 [ext_resource type="AudioStream" uid="uid://b5x14n16kot0p" path="res://assets/audio/sound_effects/boom.mp3" id="4_xhb7r"]
 [ext_resource type="PackedScene" uid="uid://dbue6pqurgujn" path="res://cedric_v_2.tscn" id="5_b5wdq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8hff"]
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_xmn3u")
@@ -25,3 +27,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030338, 1.28721, -0.077486
 light_color = Color(1, 0.286275, 0.247059, 1)
 light_energy = 0.5
 omni_range = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.155787, 0)
+shape = SubResource("CapsuleShape3D_u8hff")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
