@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bco8nw2tl48nq"]
+
+[ext_resource type="PackedScene" uid="uid://cpan0p0njun3m" path="res://assets/models/windmill/scene.gltf" id="1_nsie5"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_nsie5")]

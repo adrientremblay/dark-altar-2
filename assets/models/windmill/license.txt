@@ -1,0 +1,11 @@
+Model Information:
+* title:	Windmill
+* source:	https://sketchfab.com/3d-models/windmill-fe13862b9e3c4dc887d10e297d86f17f
+* author:	KIFIR (https://sketchfab.com/kifir)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Windmill" (https://sketchfab.com/3d-models/windmill-fe13862b9e3c4dc887d10e297d86f17f) by KIFIR (https://sketchfab.com/kifir) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
