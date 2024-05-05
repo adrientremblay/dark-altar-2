@@ -1,9 +1,11 @@
-[gd_resource type="Terrain3DTextureList" load_steps=7 format=3 uid="uid://cxxgwh8nc3h21"]
+[gd_resource type="Terrain3DTextureList" load_steps=10 format=3 uid="uid://cxxgwh8nc3h21"]
 
 [ext_resource type="Texture2D" path="res://grass_alb_ht.dds" id="1_uwalo"]
 [ext_resource type="Texture2D" path="res://grass_nrm_rgh.dds" id="2_6dp6v"]
 [ext_resource type="Texture2D" path="res://ground_alb_ht.dds" id="3_lur0b"]
 [ext_resource type="Texture2D" path="res://ground_normal_roughness.dds" id="4_pxxjp"]
+[ext_resource type="Texture2D" path="res://mud_alb_ht.dds" id="5_d8vqm"]
+[ext_resource type="Texture2D" path="res://mud_normal_rough.dds" id="6_wk2qo"]
 
 [sub_resource type="Terrain3DTexture" id="Terrain3DTexture_bp4ht"]
 albedo_color = Color(0.862745, 0.862745, 0.862745, 1)
@@ -15,5 +17,10 @@ texture_id = 1
 albedo_texture = ExtResource("3_lur0b")
 normal_texture = ExtResource("4_pxxjp")
 
+[sub_resource type="Terrain3DTexture" id="Terrain3DTexture_17ger"]
+texture_id = 2
+albedo_texture = ExtResource("5_d8vqm")
+normal_texture = ExtResource("6_wk2qo")
+
 [resource]
-textures = Array[Terrain3DTexture]([SubResource("Terrain3DTexture_bp4ht"), SubResource("Terrain3DTexture_om7i5")])
+textures = Array[Terrain3DTexture]([SubResource("Terrain3DTexture_bp4ht"), SubResource("Terrain3DTexture_om7i5"), SubResource("Terrain3DTexture_17ger")])
