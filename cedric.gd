@@ -5,7 +5,7 @@ var random = RandomNumberGenerator.new()
 var can_boom = false
 var distance_to_spawn = 50
 var agression = 0
-var disabled = false
+var disabled = true
 var can_move = true
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D

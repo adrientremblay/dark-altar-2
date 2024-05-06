@@ -12,6 +12,7 @@ var movement_mode : MovementMode = MovementMode.STANDING
 @onready var particle_emitter : GPUParticles3D = $CameraPivot/Camera3D/Candle/Flame
 @onready var grab_shape : Area3D = $CameraPivot/Camera3D/GrabShape
 @onready var candle_light : OmniLight3D = $CameraPivot/Camera3D/Candle/WorldLight
+@onready var candle = $CameraPivot/Camera3D/Candle
 
 var sanity = 100 # out of 100
 var stamina = 100 # out of 100
@@ -157,3 +158,5 @@ func return_interactable():
 			return area
 	return null
 			
+func collect_candle():
+	candle.replenish()

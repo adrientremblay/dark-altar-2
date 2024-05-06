@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=58 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://cb38oryt1aqro" path="res://assets/models/medieval_ruin_building/ruins.tscn" id="47_oog2k"]
 [ext_resource type="PackedScene" uid="uid://dkkh43k706sad" path="res://assets/models/medieval_house2/medieval_house_2.tscn" id="48_qp8wc"]
 [ext_resource type="PackedScene" uid="uid://b6m64cf85vrk7" path="res://assets/models/manor/manor.tscn" id="49_fpo0h"]
+[ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -98,7 +99,7 @@ wait_time = 15.0
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.984521, 0, 0.175264, 0, 1, 0, -0.175264, 0, 0.984521, 65.2479, 1.62609, -56.2309)
+transform = Transform3D(0.984521, 0, 0.175264, 0, 1, 0, -0.175264, 0, 0.984521, 59.8319, 1.62609, -51.9358)
 
 [node name="Cricket" parent="." instance=ExtResource("8_ilbwb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
@@ -882,6 +883,9 @@ page_text = "Citizens of of Angel's Crossing, last night multiple graves in this
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.292, -0.5, -119.603)
 visible = false
 mesh = SubResource("BoxMesh_wlmbg")
+
+[node name="PickableCandle" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 
 [connection signal="timeout" from="Cedric/TeleportTimer" to="." method="_on_teleport_timer_timeout"]
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]

@@ -98,7 +98,7 @@ shadow_blur = 0.075
 omni_range = 0.75
 
 [node name="Candle" parent="CameraPivot/Camera3D" instance=ExtResource("4_h756x")]
-transform = Transform3D(0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 0.680277, -0.2342, -0.714636)
+transform = Transform3D(0.08, 0, 0, 0, 0.12, 0, 0, 0, 0.08, 0.680277, -0.2342, -0.714636)
 script = ExtResource("4_om2wh")
 
 [node name="Flame" type="GPUParticles3D" parent="CameraPivot/Camera3D/Candle"]

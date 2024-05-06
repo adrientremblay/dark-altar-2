@@ -77,9 +77,12 @@ func _input(event):
 		if interactable.is_in_group("page"):
 			$Player.reading = not $Player.reading
 			var page: Page = interactable
-			ui.display_page(page)
-			
-		if interactable.is_in_group("skull"):
+			ui.display_page(page)	
+		elif interactable.is_in_group("skull"):
 			var skull = interactable
 			$Player.collect_skull()
 			skull.queue_free()
+		elif interactable.is_in_group("candle"):
+			var candle = interactable
+			$Player.collect_candle()
+			candle.queue_free()
