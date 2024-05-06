@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var flame : GPUParticles3D = $Flame
 @onready var flame_light : OmniLight3D = $WorldLight
+@onready var hand_light : OmniLight3D = $PlayerLight
 
 var MAX_Y_SCALE = 0.12
 var MIN_Y_SCALE = 0.02
@@ -9,6 +10,9 @@ var CANDLE_DET_SPEED = 0.0005 * 2 * 2
 
 var MAX_LIGHT_ENERGY = 10
 var MIN_LIGHT_ENERGY = 2
+
+var MAX_LIGHT_ENERGY_HAND = 13.118
+var MIN_LIGHT_ENERGY_HAND = 3
 
 var MAX_LIGHT_RANGE = 12
 var MIN_LIGHT_RAMGE = 2
@@ -34,6 +38,10 @@ func candle_burn(delta: float):
 	var light_ratio = candle_y_scale / MAX_Y_SCALE
 	var light_energy = light_ratio * MAX_LIGHT_ENERGY
 	flame_light.light_energy = max(MIN_LIGHT_ENERGY, light_energy)
+	
+	# hand energy
+	var hand_light_energy = light_ratio * MAX_LIGHT_ENERGY_HAND
+	hand_light.light_energy = max(MIN_LIGHT_ENERGY_HAND, hand_light_energy)
 	
 	# light range
 	var light_range = max(MIN_LIGHT_RAMGE, light_ratio * MAX_LIGHT_RANGE)
