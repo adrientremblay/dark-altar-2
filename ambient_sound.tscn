@@ -7,4 +7,3 @@
 [node name="LeavesRustlingAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_ksrmx")
 volume_db = -20.0
-autoplay = true

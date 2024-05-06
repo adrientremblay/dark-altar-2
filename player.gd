@@ -13,6 +13,7 @@ var movement_mode : MovementMode = MovementMode.STANDING
 @onready var grab_shape : Area3D = $CameraPivot/Camera3D/GrabShape
 @onready var candle_light : OmniLight3D = $CameraPivot/Camera3D/Candle/WorldLight
 @onready var candle = $CameraPivot/Camera3D/Candle
+@onready var animation_player : AnimationPlayer = $CameraPivot/Camera3D/AnimationPlayer
 
 var sanity = 100 # out of 100
 var stamina = 100 # out of 100
@@ -96,6 +97,7 @@ func _physics_process(delta):
 		dp = direction * speed * delta * sprint_modifier
 	elif movement_mode == MovementMode.WALKING:
 		dp = direction * speed * delta
+		animation_player.play("Head Bob")
 	
 	if dp:
 		position += dp

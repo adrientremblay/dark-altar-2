@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=24 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
@@ -65,6 +65,43 @@ size = Vector2(3, 3)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bp2ix"]
 height = 2.59507
 
+[sub_resource type="Animation" id="Animation_tab8j"]
+resource_name = "Head Bob"
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3672, 0.76355, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.540563, 0), Vector3(0, 0.5, 0), Vector3(0, 0.6, 0), Vector3(0, 0.540563, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k3l5e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.540563, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2si74"]
+_data = {
+"Head Bob": SubResource("Animation_tab8j"),
+"RESET": SubResource("Animation_k3l5e")
+}
+
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07157, 0)
 script = ExtResource("1_fclsx")
@@ -126,6 +163,8 @@ shadow_opacity = 0.96
 shadow_blur = 0.075
 omni_range = 0.75
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CameraPivot/Camera3D/Candle"]
+
 [node name="GrabShape" type="Area3D" parent="CameraPivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00240922, 0)
 
@@ -135,6 +174,11 @@ shape = SubResource("CapsuleShape3D_bp2ix")
 
 [node name="candlestick" parent="CameraPivot/Camera3D" instance=ExtResource("4_xrfnu")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.683026, -0.579627, -0.711785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraPivot/Camera3D"]
+libraries = {
+"": SubResource("AnimationLibrary_2si74")
+}
 
 [node name="Walking" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")
