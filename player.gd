@@ -160,3 +160,4 @@ func return_interactable():
 			
 func collect_candle():
 	candle.replenish()
+	$CandlePickupSound.play()

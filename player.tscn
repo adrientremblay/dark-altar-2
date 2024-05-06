@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=21 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cb7tjjqfo08h0" path="res://assets/audio/sound_effects/scary-foley-86229.mp3" id="5_vv7y3"]
 [ext_resource type="AudioStream" uid="uid://cmauvnhp04ys4" path="res://assets/audio/sound_effects/panting.mp3" id="6_8qrlp"]
 [ext_resource type="AudioStream" uid="uid://dnem3422cvig" path="res://assets/audio/sound_effects/running.mp3" id="7_0qke1"]
+[ext_resource type="AudioStream" uid="uid://bs3pqalo0i2s" path="res://assets/audio/sound_effects/candle_pickup.mp3" id="10_2t33u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwuph"]
 
@@ -147,6 +148,9 @@ volume_db = -4.0
 
 [node name="Sprinting" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_0qke1")
+
+[node name="CandlePickupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_2t33u")
 
 [connection signal="area_entered" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_entered"]
 [connection signal="area_exited" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_exited"]
