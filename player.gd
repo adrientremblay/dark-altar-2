@@ -90,6 +90,7 @@ func _physics_process(delta):
 		
 	if movement_mode == MovementMode.WALKING and not direction:
 		change_movement_mode(MovementMode.STANDING)
+		animation_player.stop()
 	
 	# movement
 	var dp = 0
