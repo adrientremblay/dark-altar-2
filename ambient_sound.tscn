@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cahu2dcqaj8sc"]
+
+[ext_resource type="AudioStream" uid="uid://bheff1drftfi4" path="res://assets/audio/sound_effects/wind_rustling_ambience.mp3" id="1_ksrmx"]
+
+[node name="AmbientSound" type="Node"]
+
+[node name="LeavesRustlingAmbience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ksrmx")
+volume_db = -20.0
+autoplay = true

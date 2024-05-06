@@ -13,7 +13,6 @@
 [ext_resource type="Shader" path="res://main.gdshader" id="12_35pxv"]
 [ext_resource type="PackedScene" uid="uid://bdn0o2f8qbgk" path="res://cedric.tscn" id="12_ax3ba"]
 [ext_resource type="Texture2D" uid="uid://bi7ytov5l6euy" path="res://assets/Skeleton/monkey.jpg" id="12_hbp13"]
-[ext_resource type="AudioStream" uid="uid://j5w3xpbaplrs" path="res://assets/audio/music/horror-background-atmosphere-for-horror-and-mystical-179447.mp3" id="14_y84eg"]
 [ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="16_4ask6"]
 [ext_resource type="ArrayMesh" uid="uid://dpci07ey3ih3n" path="res://assets/models/Well_obj/Well.obj" id="17_chujx"]
@@ -50,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://dkkh43k706sad" path="res://assets/models/medieval_house2/medieval_house_2.tscn" id="48_qp8wc"]
 [ext_resource type="PackedScene" uid="uid://b6m64cf85vrk7" path="res://assets/models/manor/manor.tscn" id="49_fpo0h"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
+[ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhpog"]
 sky_top_color = Color(0.172549, 0.211765, 0.266667, 1)
@@ -430,10 +430,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="AmbientMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_y84eg")
-volume_db = -10.0
 
 [node name="Choir" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_ww56w")
@@ -879,6 +875,9 @@ transform = Transform3D(-0.99858, 0.0531394, -0.0038654, -0.00494174, -0.0201387
 page_title = "Notice: Graverobbing"
 page_text = "Citizens of of Angel's Crossing, last night multiple graves in this cemetary were desecrated. It is unknown who the fiend who has done this vile act is or for what reason. It seems only skulls were taken. Please report any information to the Mayor."
 
+[node name="PickableCandle2" parent="NavigationRegion3D/Graveyard" instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.104, 0.626418, -71.1536)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.292, -0.5, -119.603)
 visible = false
@@ -886,6 +885,8 @@ mesh = SubResource("BoxMesh_wlmbg")
 
 [node name="PickableCandle" parent="." instance=ExtResource("50_81846")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
+
+[node name="AmbientSound" parent="." instance=ExtResource("50_gnthh")]
 
 [connection signal="timeout" from="Cedric/TeleportTimer" to="." method="_on_teleport_timer_timeout"]
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]

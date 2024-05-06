@@ -6,7 +6,7 @@ extends Node3D
 
 var MAX_Y_SCALE = 0.12
 var MIN_Y_SCALE = 0.02
-var CANDLE_DET_SPEED = 0.0005 * 2 * 2
+var CANDLE_DET_SPEED = 0.0005 * 2
 
 var MAX_LIGHT_ENERGY = 10
 var MIN_LIGHT_ENERGY = 2
