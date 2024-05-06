@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://csxn8jgunsulq"]
+
+[ext_resource type="PackedScene" uid="uid://co1mf8u8n8p2" path="res://assets/models/Candle/candle.blend" id="1_5oh0b"]
+
+[node name="candle" instance=ExtResource("1_5oh0b")]

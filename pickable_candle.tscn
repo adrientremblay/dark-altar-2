@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://cucwmwjau6e2n"]
 
-[ext_resource type="PackedScene" uid="uid://dgcgrml4qo4l8" path="res://candle.tscn" id="2_wxlnf"]
+[ext_resource type="PackedScene" uid="uid://co1mf8u8n8p2" path="res://assets/models/Candle/candle.blend" id="1_b46pf"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mnsa0"]
 radius = 0.188194
 
 [node name="PickableCandle" type="Area3D" groups=["candle", "interactable"]]
 
-[node name="Candle" parent="." instance=ExtResource("2_wxlnf")]
-transform = Transform3D(0.08, 0, 0, 0, 0.12, 0, 0, 0, 0.08, 0, 0, 0)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0.178937, -0.00232134)
 shape = SubResource("SphereShape3D_mnsa0")
+
+[node name="candle" parent="." instance=ExtResource("1_b46pf")]
+transform = Transform3D(0.08, 0, 0, 0, 0.12, 0, 0, 0, 0.08, 0, 0, 0)
