@@ -1,9 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://cahu2dcqaj8sc"]
+[gd_scene load_steps=7 format=3 uid="uid://cahu2dcqaj8sc"]
 
 [ext_resource type="AudioStream" uid="uid://bheff1drftfi4" path="res://assets/audio/sound_effects/wind_rustling_ambience.mp3" id="1_ksrmx"]
+[ext_resource type="AudioStream" uid="uid://bq2xj62hoclnk" path="res://assets/audio/sound_effects/night-ambience-17064.mp3" id="2_wu61w"]
+[ext_resource type="AudioStream" uid="uid://nrdv2pni533t" path="res://assets/audio/sound_effects/cricket.mp3" id="3_qwo36"]
+[ext_resource type="Script" path="res://Cricket.gd" id="4_5g3vj"]
+[ext_resource type="AudioStream" uid="uid://be7yrbp8dq517" path="res://assets/audio/sound_effects/owl-hooting-48028.mp3" id="5_a8qsc"]
+[ext_resource type="Script" path="res://Owl.gd" id="6_0essl"]
 
 [node name="AmbientSound" type="Node"]
 
 [node name="LeavesRustlingAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_ksrmx")
 volume_db = -20.0
+
+[node name="NightBugs" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wu61w")
+autoplay = true
+
+[node name="Cricket" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qwo36")
+volume_db = -20.0
+script = ExtResource("4_5g3vj")
+
+[node name="Timer" type="Timer" parent="Cricket"]
+
+[node name="Owl" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_a8qsc")
+volume_db = -10.0
+script = ExtResource("6_0essl")
+
+[node name="Timer" type="Timer" parent="Owl"]
+autostart = true
+
+[connection signal="timeout" from="Cricket/Timer" to="Cricket" method="_on_timer_timeout"]
+[connection signal="timeout" from="Owl/Timer" to="Owl" method="_on_timer_timeout"]

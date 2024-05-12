@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=57 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dinx2n1kr6nxt" path="res://tree.tscn" id="4_gfekl"]
 [ext_resource type="Terrain3DTextureList" uid="uid://cxxgwh8nc3h21" path="res://new_terrain_3d_texture_list.tres" id="5_fqye3"]
 [ext_resource type="Terrain3DStorage" uid="uid://smjxvslnotwx" path="res://new_terrain_3d_storage.res" id="8_a0fla"]
-[ext_resource type="PackedScene" uid="uid://cbbuqe37bac5p" path="res://cricket.tscn" id="8_ilbwb"]
 [ext_resource type="PackedScene" uid="uid://qu8m8i5m2acd" path="res://signpost.tscn" id="9_8itpl"]
 [ext_resource type="PackedScene" uid="uid://030k1q35if8y" path="res://house.tscn" id="10_xdnt2"]
 [ext_resource type="PackedScene" uid="uid://dx1ic8e4exr86" path="res://scenes/ui/ui.tscn" id="11_usrys"]
@@ -100,9 +99,6 @@ autostart = true
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
 transform = Transform3D(0.984521, 0, 0.175264, 0, 1, 0, -0.175264, 0, 0.984521, 59.8319, 1.62609, -51.9358)
-
-[node name="Cricket" parent="." instance=ExtResource("8_ilbwb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.2331, 0, -55.5793)
 
 [node name="Trees" type="Node3D" parent="."]
 
