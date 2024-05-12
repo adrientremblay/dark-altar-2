@@ -14,7 +14,9 @@ func _ready() -> void:
 	$Cedric.increase_agression($Cedric/TeleportTimer)
 	
 func _physics_process(delta: float) -> void:
-	$Cedric/NavigationAgent3D.target_position = $Player.position
+	var safe_distance = $Player.candle_light.omni_range + 1
+	var difference_direction = (-$Player.global_position + $Cedric.global_position).normalized()
+	$Cedric/NavigationAgent3D.target_position = $Player.position + (difference_direction * safe_distance)
 
 func _process(delta: float) -> void:
 	var angle_to_cedric = abs($Player.check_if_can_see_me($Cedric))
