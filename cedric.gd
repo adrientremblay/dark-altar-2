@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name Cedric extends CharacterBody3D
 
 var random = RandomNumberGenerator.new()
 
@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	direction = nav.get_next_path_position() - global_position
 	direction = direction.normalized()
 	
-	velocity = velocity.lerp(direction * 2, 10 * delta)
+	velocity = velocity.lerp(direction * 5, 10 * delta)
 	
 	move_and_slide()
 	
