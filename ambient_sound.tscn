@@ -40,7 +40,6 @@ volume_db = -12.0
 script = ExtResource("8_gtcyf")
 
 [node name="Timer" type="Timer" parent="NightBird"]
-autostart = true
 
 [connection signal="timeout" from="Cricket/Timer" to="Cricket" method="_on_timer_timeout"]
 [connection signal="timeout" from="Owl/Timer" to="Owl" method="_on_timer_timeout"]
