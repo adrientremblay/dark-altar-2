@@ -29,13 +29,13 @@ func increase_agression(timer : Timer):
 func change_agression(agression: int, timer : Timer):
 	match agression:
 		1:
-			distance_to_spawn = 20 # TODO Time to spawn
+			distance_to_spawn = 30 # TODO Time to spawn
 			timer.wait_time = 15
 		2:
-			distance_to_spawn = 10
+			distance_to_spawn = 25
 			timer.wait_time = 15
 		3:
-			distance_to_spawn = 10
+			distance_to_spawn = 20
 		4:
 			distance_to_spawn = 8
 
