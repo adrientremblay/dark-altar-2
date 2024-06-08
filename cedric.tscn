@@ -33,3 +33,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.155787, 0)
 shape = SubResource("CapsuleShape3D_u8hff")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="SpottedTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="SpottedTimer" to="." method="_on_spotted_timer_timeout"]

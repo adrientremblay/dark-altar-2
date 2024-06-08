@@ -9,10 +9,12 @@ var disabled = false
 var can_move = true
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
+@onready var spotted_timer: Timer = $SpottedTimer
 
 enum CEDRIC_MODE {STALKING, HAUNTING, CHASING} 
 
 var cedric_mode: CEDRIC_MODE = CEDRIC_MODE.STALKING
+var player: Player
 
 func _physics_process(delta: float) -> void:
 	if disabled or not can_move:
@@ -62,5 +64,9 @@ func stalk(player: Player):
 	# Checking if player can see me
 	
 	var angle_to_cedric = abs(player.check_if_can_see_me(self))
-	if angle_to_cedric <= 75:
-		teleport(player)
+	if angle_to_cedric <= 75 and spotted_timer.is_stopped():
+		self.player = player
+		spotted_timer.start()
+
+func _on_spotted_timer_timeout() -> void:
+	teleport(player)
