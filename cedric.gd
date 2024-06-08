@@ -10,11 +10,14 @@ var can_move = true
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 @onready var spotted_timer: Timer = $SpottedTimer
+@onready var whispering: AudioStreamPlayer = $Whispering
 
 enum CEDRIC_MODE {STALKING, HAUNTING, CHASING} 
 
 var cedric_mode: CEDRIC_MODE = CEDRIC_MODE.STALKING
 var player: Player
+
+var AGRESSION_COEFF = 1.0
 
 func _physics_process(delta: float) -> void:
 	if disabled or not can_move:
@@ -73,3 +76,20 @@ func stalk(player: Player):
 
 func _on_spotted_timer_timeout() -> void:
 	teleport(player)
+
+func start_haunt():
+	whispering.play()
+	whispering.volume_db = -10.0
+	
+func stop_haunt():
+	whispering.stop()
+	agression = 0
+	cedric_mode = CEDRIC_MODE.STALKING
+
+func haunt(delta: float):
+	agression += delta * AGRESSION_COEFF
+	agression = min(agression, 100)
+	
+	whispering.volume_db = -10.0 + (agression * 0.1)
+	
+	

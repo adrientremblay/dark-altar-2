@@ -9,6 +9,8 @@ var choirSound: AudioStreamPlayer
 var CEDRIC_DAMAGE_DISTANCE = 10
 var CEDRIC_DAMAGE = 30
 
+var haunting = false
+
 func _ready() -> void:
 	shaderMat  = $CanvasLayer/ColorRect.material
 	choirSound = $Choir
@@ -46,6 +48,10 @@ func _process(delta: float) -> void:
 	
 	shaderMat.set_shader_parameter("ghost", ghost)
 	shaderMat.set_shader_parameter("amplitude", amplitude)
+	
+	if haunting:
+		cedric.haunt(delta)
+	
 
 func _on_player_register_skull() -> void:
 	cedric.increase_agression($Cedric/TeleportTimer)
@@ -68,3 +74,11 @@ func _input(event):
 			var candle = interactable
 			$Player.collect_candle()
 			candle.queue_free()
+
+func _on_haunting_area_start_haunting() -> void:
+	haunting = true
+	cedric.start_haunt()
+
+func _on_haunting_area_stop_haunting() -> void:
+	haunting = false
+	cedric.stop_haunt()

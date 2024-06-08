@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=59 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -48,6 +48,7 @@
 [ext_resource type="PackedScene" uid="uid://cb38oryt1aqro" path="res://assets/models/medieval_ruin_building/ruins.tscn" id="47_oog2k"]
 [ext_resource type="PackedScene" uid="uid://dkkh43k706sad" path="res://assets/models/medieval_house2/medieval_house_2.tscn" id="48_qp8wc"]
 [ext_resource type="PackedScene" uid="uid://b6m64cf85vrk7" path="res://assets/models/manor/manor.tscn" id="49_fpo0h"]
+[ext_resource type="PackedScene" uid="uid://dtdwm6ktkiyxk" path="res://haunting_area.tscn" id="50_06oln"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
 
@@ -870,6 +871,8 @@ page_text = "Citizens of of Angel's Crossing, last night multiple graves in this
 [node name="PickableCandle2" parent="NavigationRegion3D/Graveyard" instance=ExtResource("50_81846")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.104, 0.626418, -71.1536)
 
+[node name="HauntingArea" parent="NavigationRegion3D/Graveyard" instance=ExtResource("50_06oln")]
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.292, -0.5, -119.603)
 visible = false
@@ -884,3 +887,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
 [connection signal="register_skull" from="Player" to="." method="_on_player_register_skull"]
 [connection signal="register_skull" from="Player" to="UI" method="_on_player_register_skull"]
+[connection signal="start_haunting" from="NavigationRegion3D/Graveyard/HauntingArea" to="." method="_on_haunting_area_start_haunting"]
+[connection signal="stop_haunting" from="NavigationRegion3D/Graveyard/HauntingArea" to="." method="_on_haunting_area_stop_haunting"]

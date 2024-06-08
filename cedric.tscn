@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdn0o2f8qbgk"]
+[gd_scene load_steps=6 format=3 uid="uid://bdn0o2f8qbgk"]
 
 [ext_resource type="Script" path="res://cedric.gd" id="1_xmn3u"]
+[ext_resource type="AudioStream" uid="uid://bnqd2sc1fuw3m" path="res://assets/audio/sound_effects/schizo_whispers.mp3" id="4_kf1jm"]
 [ext_resource type="AudioStream" uid="uid://b5x14n16kot0p" path="res://assets/audio/sound_effects/boom.mp3" id="4_xhb7r"]
 [ext_resource type="PackedScene" uid="uid://dbue6pqurgujn" path="res://cedric_v_2.tscn" id="5_b5wdq"]
 
@@ -36,5 +37,8 @@ shape = SubResource("CapsuleShape3D_u8hff")
 
 [node name="SpottedTimer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="Whispering" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kf1jm")
 
 [connection signal="timeout" from="SpottedTimer" to="." method="_on_spotted_timer_timeout"]
