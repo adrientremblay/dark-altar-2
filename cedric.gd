@@ -3,7 +3,8 @@ class_name Cedric extends CharacterBody3D
 var random = RandomNumberGenerator.new()
 
 var can_boom = false
-var distance_to_spawn = 10
+var haunt_distance_min = 5
+var haunt_distance_max = 30
 var stalking_distance = 30
 var agression = 0
 var disabled = false
@@ -19,7 +20,7 @@ enum CEDRIC_MODE {STALKING, HAUNTING, CHASING}
 var cedric_mode: CEDRIC_MODE = CEDRIC_MODE.STALKING
 var player: Player
 
-var AGRESSION_COEFF = 1.0
+var AGRESSION_COEFF = 5
 
 func _physics_process(delta: float) -> void:
 	if disabled or not can_move:
@@ -105,6 +106,8 @@ func change_agression(delta: float):
 	
 func haunt(player: Player):
 	var player_position = player.position
+	
+	var distance_to_spawn = (100 - agression) * 0.01 * (haunt_distance_max - haunt_distance_min) + haunt_distance_min
 	var safe_distance = min(player.candle_light.omni_range + 1, distance_to_spawn)
 	
 	# move
