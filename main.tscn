@@ -53,8 +53,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ktigg"]
 shader = ExtResource("2_qsy7k")
-shader_parameter/skyColor = Color(0.0352941, 0.0784314, 0.117647, 1)
-shader_parameter/horizonColor = null
+shader_parameter/skyColor = Color(0, 0, 0, 1)
+shader_parameter/horizonColor = Color(0.0941176, 0.113725, 0.137255, 1)
 
 [sub_resource type="Sky" id="Sky_e7hv7"]
 sky_material = SubResource("ShaderMaterial_ktigg")
