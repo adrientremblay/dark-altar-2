@@ -4,6 +4,7 @@ var random = RandomNumberGenerator.new()
 
 var can_boom = false
 var distance_to_spawn = 10
+var stalking_distance = 30
 var agression = 0
 var disabled = false
 var can_move = true
@@ -66,7 +67,6 @@ func act_based_on_mode(player: Player):
 func stalk(player: Player):
 	# Cedric will keep distance from player
 	var safe_distance = player.candle_light.omni_range + 1
-	var stalking_distance = distance_to_spawn
 	var distance = max(safe_distance, stalking_distance)
 	var difference_direction = -player.get_player_direction()
 	$NavigationAgent3D.target_position = player.global_position + (difference_direction * distance)

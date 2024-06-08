@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	
 	if $Player.sanity < 0:
 		$Player.sanity = 0
-	#	get_tree().change_scene_to_file("res://death_screen.tscn")
+		get_tree().change_scene_to_file("res://death_screen.tscn")
 	if $Player.sanity < 100:
 		var distortion_scale = (100 - $Player.sanity) / 100
 		ghost = distortion_scale * 0.7

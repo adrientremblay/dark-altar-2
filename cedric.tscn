@@ -37,6 +37,7 @@ shape = SubResource("CapsuleShape3D_u8hff")
 
 [node name="SpottedTimer" type="Timer" parent="."]
 wait_time = 2.0
+autostart = true
 
 [node name="Whispering" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_kf1jm")
