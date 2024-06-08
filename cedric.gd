@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func teleport(player: Player):
-	position = nav.target_position
+	position = nav.target_position 
 	
 	# sound
 	can_boom = true
@@ -62,12 +62,10 @@ func stalk(player: Player):
 	$NavigationAgent3D.target_position = player.global_position + (difference_direction * distance)
 	
 	# Checking if player can see me
-	
 	var angle_to_cedric = abs(player.check_if_can_see_me(self))
 	if angle_to_cedric <= 75 and spotted_timer.is_stopped():
 		self.player = player
 		spotted_timer.start()
 
 func _on_spotted_timer_timeout() -> void:
-	print('tp')
 	teleport(player)

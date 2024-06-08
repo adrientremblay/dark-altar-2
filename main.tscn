@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
-[ext_resource type="Shader" path="res://SkyShader.gdshader" id="2_qsy7k"]
+[ext_resource type="Texture2D" uid="uid://b8ygyuirq3w87" path="res://textures/AllSkyFree_Skyboxes/AllSky_Night_MoonBurst Equirect.png" id="2_uljkl"]
 [ext_resource type="Terrain3DMaterial" uid="uid://jj8rehsyihdg" path="res://new_terrain_3d_material.tres" id="4_b3sqw"]
 [ext_resource type="PackedScene" uid="uid://dinx2n1kr6nxt" path="res://tree.tscn" id="4_gfekl"]
 [ext_resource type="Terrain3DTextureList" uid="uid://cxxgwh8nc3h21" path="res://new_terrain_3d_texture_list.tres" id="5_fqye3"]
@@ -51,20 +51,17 @@
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ktigg"]
-shader = ExtResource("2_qsy7k")
-shader_parameter/skyColor = Color(0, 0, 0, 1)
-shader_parameter/horizonColor = Color(0.0941176, 0.113725, 0.137255, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
+panorama = ExtResource("2_uljkl")
 
-[sub_resource type="Sky" id="Sky_e7hv7"]
-sky_material = SubResource("ShaderMaterial_ktigg")
-radiance_size = 0
+[sub_resource type="Sky" id="Sky_oxcog"]
+sky_material = SubResource("PanoramaSkyMaterial_sb5pk")
 
 [sub_resource type="Environment" id="Environment_g4vby"]
 background_mode = 2
 background_color = Color(0.0509804, 0.631373, 0.847059, 1)
-background_energy_multiplier = 2.86
-sky = SubResource("Sky_e7hv7")
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_oxcog")
 ambient_light_source = 1
 ambient_light_energy = 0.0
 reflected_light_source = 1
