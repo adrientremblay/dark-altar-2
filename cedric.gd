@@ -88,5 +88,5 @@ func stalk(player: Player):
 	var safe_distance = player.candle_light.omni_range + 1
 	var stalking_distance = distance_to_spawn
 	var distance = max(safe_distance, stalking_distance)
-	var difference_direction = (global_position - player.global_position).normalized()
+	var difference_direction = -player.get_player_direction()
 	$NavigationAgent3D.target_position = player.global_position + (difference_direction * distance)

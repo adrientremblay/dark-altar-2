@@ -94,14 +94,14 @@ script = ExtResource("1_y3a05")
 environment = SubResource("Environment_g4vby")
 
 [node name="Cedric" parent="." instance=ExtResource("12_ax3ba")]
-transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 79.9043, 0.994264, -70.721)
+transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 51.2963, 0.994264, -48.3976)
 
 [node name="TeleportTimer" type="Timer" parent="Cedric"]
 wait_time = 15.0
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.902299, 0, -0.431109, 0, 1, 0, 0.431109, 0, 0.902299, 59.8319, 1.62609, -51.9358)
+transform = Transform3D(0.902299, 0, -0.431109, 0, 1, 0, 0.431109, 0, 0.902299, 66.865, 1.62609, -62.0925)
 
 [node name="Trees" type="Node3D" parent="."]
 

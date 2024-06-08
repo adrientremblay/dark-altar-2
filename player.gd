@@ -145,6 +145,10 @@ func check_if_can_see_me(cedric: CharacterBody3D):
 	
 	return angle_to_me
 
+func get_player_direction():
+	var player_direction = (transform.basis * neck.transform.basis * Vector3(0, 0, -1)).normalized()
+	return player_direction
+
 func collect_skull():
 	register_skull.emit()
 	$SkullPickupSound.play()
