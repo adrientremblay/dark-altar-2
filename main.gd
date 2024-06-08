@@ -12,7 +12,6 @@ var CEDRIC_DAMAGE = 30
 func _ready() -> void:
 	shaderMat  = $CanvasLayer/ColorRect.material
 	choirSound = $Choir
-	cedric.increase_agression($Cedric/TeleportTimer)
 	
 func _physics_process(delta: float) -> void:
 	cedric.act_based_on_mode($Player)
@@ -44,27 +43,9 @@ func _process(delta: float) -> void:
 			
 	if choirSound.volume_db < -40:
 		choirSound.stop()
-		
-	# Cedric teleports when in light <- Removed don't like this
-	#if distance_to_cedric < $Player.candle_light.omni_range:
-		#cedric.teleport($Player)
 	
 	shaderMat.set_shader_parameter("ghost", ghost)
 	shaderMat.set_shader_parameter("amplitude", amplitude)
-
-func _on_teleport_timer_timeout() -> void:
-	var angle_to_cedric = abs($Player.check_if_can_see_me(cedric))
-	
-	var distance_to_cedric_vec = $Player.global_position - cedric.global_position
-	var distance_to_cedric = distance_to_cedric_vec.length()
-	
-	var ghost = 0
-	var amplitude = 0.01
-	if (angle_to_cedric < 75 && distance_to_cedric <= 10):
-		return
-	
-	var player_position = $Player.position
-	cedric.teleport($Player)
 
 func _on_player_register_skull() -> void:
 	cedric.increase_agression($Cedric/TeleportTimer)

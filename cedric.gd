@@ -25,41 +25,9 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.lerp(direction * 5, 10 * delta)
 	
 	move_and_slide()
-	
-func increase_agression(timer : Timer):
-	agression += 1
-	change_agression(agression, timer)
-
-func change_agression(agression: int, timer : Timer):
-	match agression:
-		1:
-			distance_to_spawn = 30 # TODO Time to spawn
-			timer.wait_time = 15
-		2:
-			distance_to_spawn = 25
-			timer.wait_time = 15
-		3:
-			distance_to_spawn = 20
-		4:
-			distance_to_spawn = 8
 
 func teleport(player: Player):
-	return
-	var player_position = player.position
-	
-	var safe_distance = min(player.candle_light.omni_range + 1, distance_to_spawn)
-	
-	# move
-	var random_direction = Vector3(random.randf_range(-1, 1), 0, random.randf_range(-1, 1)).normalized()
-		
-	var random_distance_vector = random_direction * safe_distance
-	
-	position = player_position + random_distance_vector
-	
-	# rotate
-	var direction_to = position.direction_to(player_position)
-	var new_basis = Basis.looking_at(direction_to)
-	basis = new_basis
+	position = nav.get_next_path_position()
 	
 	# sound
 	can_boom = true
@@ -90,3 +58,9 @@ func stalk(player: Player):
 	var distance = max(safe_distance, stalking_distance)
 	var difference_direction = -player.get_player_direction()
 	$NavigationAgent3D.target_position = player.global_position + (difference_direction * distance)
+	
+	# Checking if player can see me
+	
+	var angle_to_cedric = abs(player.check_if_can_see_me(self))
+	if angle_to_cedric <= 75:
+		teleport(player)
