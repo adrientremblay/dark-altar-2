@@ -63,9 +63,13 @@ func stalk(player: Player):
 	
 	# Checking if player can see me
 	var angle_to_cedric = abs(player.check_if_can_see_me(self))
-	if angle_to_cedric <= 75 and spotted_timer.is_stopped():
-		self.player = player
-		spotted_timer.start()
+	if angle_to_cedric <= 75:
+		can_move = false
+		if spotted_timer.is_stopped():
+			self.player = player
+			spotted_timer.start()
+	else:
+		can_move = true
 
 func _on_spotted_timer_timeout() -> void:
 	teleport(player)
