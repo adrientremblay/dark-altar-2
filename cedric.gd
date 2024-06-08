@@ -104,7 +104,6 @@ func change_agression(delta: float):
 	whispering.volume_db = -10.0 + (agression * 0.1)
 	
 func haunt(player: Player):
-	print('haunt')
 	var player_position = player.position
 	var safe_distance = min(player.candle_light.omni_range + 1, distance_to_spawn)
 	
@@ -121,4 +120,6 @@ func haunt(player: Player):
 	basis = new_basis
 
 func _on_haunt_change_position_timer_timeout() -> void:
-	haunt(player)
+	var angle_to_cedric = abs(player.check_if_can_see_me(self))
+	if angle_to_cedric > 75:
+		haunt(player)
