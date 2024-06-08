@@ -41,4 +41,8 @@ wait_time = 2.0
 [node name="Whispering" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_kf1jm")
 
+[node name="HauntChangePositionTimer" type="Timer" parent="."]
+wait_time = 5.0
+
 [connection signal="timeout" from="SpottedTimer" to="." method="_on_spotted_timer_timeout"]
+[connection signal="timeout" from="HauntChangePositionTimer" to="." method="_on_haunt_change_position_timer_timeout"]

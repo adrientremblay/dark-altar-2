@@ -14,6 +14,7 @@ var haunting = false
 func _ready() -> void:
 	shaderMat  = $CanvasLayer/ColorRect.material
 	choirSound = $Choir
+	cedric.player = $Player
 	
 func _physics_process(delta: float) -> void:
 	cedric.act_based_on_mode($Player)
@@ -50,8 +51,7 @@ func _process(delta: float) -> void:
 	shaderMat.set_shader_parameter("amplitude", amplitude)
 	
 	if haunting:
-		cedric.haunt(delta)
-	
+		cedric.change_agression(delta)
 
 func _on_player_register_skull() -> void:
 	cedric.increase_agression($Cedric/TeleportTimer)

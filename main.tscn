@@ -95,7 +95,7 @@ environment = SubResource("Environment_g4vby")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 51.2963, 0.994264, -48.3976)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.902299, 0, -0.431109, 0, 1, 0, 0.431109, 0, 0.902299, 66.865, 1.62609, -62.0925)
+transform = Transform3D(0.902299, 0, -0.431109, 0, 1, 0, 0.431109, 0, 0.902299, 88.9676, 1.62609, -90.4738)
 
 [node name="Trees" type="Node3D" parent="."]
 
