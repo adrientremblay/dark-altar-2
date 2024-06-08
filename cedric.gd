@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func teleport(player: Player):
-	position = nav.get_next_path_position()
+	position = nav.target_position
 	
 	# sound
 	can_boom = true
@@ -69,4 +69,5 @@ func stalk(player: Player):
 		spotted_timer.start()
 
 func _on_spotted_timer_timeout() -> void:
+	print('tp')
 	teleport(player)
