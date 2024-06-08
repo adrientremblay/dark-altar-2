@@ -15,13 +15,7 @@ func _ready() -> void:
 	cedric.increase_agression($Cedric/TeleportTimer)
 	
 func _physics_process(delta: float) -> void:
-	var safe_distance = $Player.candle_light.omni_range + 1
-	var stalking_distance = cedric.distance_to_spawn
-	var distance = max(safe_distance, stalking_distance)
-	
-	var difference_direction = (cedric.global_position - $Player.global_position).normalized()
-	
-	$Cedric/NavigationAgent3D.target_position = $Player.position + (difference_direction * distance)
+	cedric.act_based_on_mode($Player)
 
 func _process(delta: float) -> void:
 	var angle_to_cedric = abs($Player.check_if_can_see_me(cedric))

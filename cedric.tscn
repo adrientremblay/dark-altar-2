@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8hff"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="Cedric" type="CharacterBody3D"]
 script = ExtResource("1_xmn3u")
 
 [node name="BoomSound" type="AudioStreamPlayer3D" parent="."]

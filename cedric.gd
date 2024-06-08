@@ -10,6 +10,10 @@ var can_move = true
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 
+enum CEDRIC_MODE {STALKING, HAUNTING, CHASING} 
+
+var cedric_mode: CEDRIC_MODE = CEDRIC_MODE.STALKING
+
 func _physics_process(delta: float) -> void:
 	if disabled or not can_move:
 		return
@@ -74,3 +78,15 @@ func rotate_to_me(player_position: Vector3):
 	var new_basis = Basis.looking_at(direction_to)
 	basis = new_basis
 	
+func act_based_on_mode(player: Player):
+	match cedric_mode:
+		CEDRIC_MODE.STALKING:
+			stalk(player)
+
+func stalk(player: Player):
+	# Cedric will keep distance from player
+	var safe_distance = player.candle_light.omni_range + 1
+	var stalking_distance = distance_to_spawn
+	var distance = max(safe_distance, stalking_distance)
+	var difference_direction = (global_position - player.global_position).normalized()
+	$NavigationAgent3D.target_position = player.global_position + (difference_direction * distance)
