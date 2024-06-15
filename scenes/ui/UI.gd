@@ -25,8 +25,10 @@ func display_page(page : Page):
 	$PageFlip.play()
 	if $PageView.visible:
 		$PageView.visible = false
+		$ThemeMusic.stop();
 		return
 	
+	$ThemeMusic.play();
 	$PageView.visible = true
 	$PageView/PageTitle.text = page.page_title
 	$PageView/PageText.text = page.page_text
