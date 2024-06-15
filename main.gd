@@ -71,6 +71,10 @@ func _input(event):
 			$Player.reading = not $Player.reading
 			var page: Page = interactable
 			ui.display_page(page)	
+			if not $Player.reading:
+				unpause()
+			else:
+				pause()
 		elif interactable.is_in_group("skull"):
 			var skull = interactable
 			$Player.collect_skull()
@@ -95,13 +99,17 @@ func _on_haunting_area_stop_haunting() -> void:
 	cedric.stop_haunt()
 
 func pause():
+	Global.game_paused = true
 	var ambience_bus_index = AudioServer.get_bus_index("Ambience")
 	AudioServer.set_bus_volume_db(ambience_bus_index, -100)
 	player.pause_flame()
-	ui.toggle_pause_menu(true)
+	if not $Player.reading:
+		ui.toggle_pause_menu(true)
 	
 func unpause():
+	Global.game_paused = false
 	var ambience_bus_index = AudioServer.get_bus_index("Ambience")
 	AudioServer.set_bus_volume_db(ambience_bus_index, 0)
 	player.unpause_flame()
-	ui.toggle_pause_menu(false)
+	if not $Player.reading:
+		ui.toggle_pause_menu(false)
