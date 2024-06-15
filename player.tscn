@@ -141,19 +141,19 @@ process_material = SubResource("ParticleProcessMaterial_443lx")
 draw_pass_1 = SubResource("QuadMesh_66rta")
 
 [node name="WorldLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Candle"]
-transform = Transform3D(-8.33333, -7.28524e-07, 3.18448e-14, 5.4589e-21, -3.64262e-07, -8.33333, 7.28524e-07, -8.33333, 3.64262e-07, 0.000406742, 3.22024, -0.0149746)
+transform = Transform3D(-12.5, -1.09279e-06, 7.16509e-14, 8.18835e-21, -5.46393e-07, -8.33333, 1.09279e-06, -12.5, 8.1959e-07, -8.92399, 3.22024, -0.0149746)
+layers = 5
 light_color = Color(0.705882, 0.666667, 0.141176, 1)
 light_energy = 10.0
 light_size = 1.0
 light_specular = 0.0
-light_cull_mask = 4294967291
 shadow_enabled = true
 shadow_bias = 0.036
 shadow_blur = 0.04
 omni_range = 8.0
 
 [node name="PlayerLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Candle"]
-transform = Transform3D(-12.5, -1.09278e-06, 4.77672e-14, 0, -3.64262e-07, -8.33333, 1.09278e-06, -12.5, 5.46392e-07, 1.01829, -1.5751, 3.38816)
+transform = Transform3D(-12.5, -1.09278e-06, 4.7767e-14, 0, -3.64262e-07, -8.33333, 1.09278e-06, -12.5, 5.46393e-07, -0.00472164, 3.32983, 0.0380745)
 layers = 4
 light_color = Color(0.705882, 0.666667, 0.141176, 1)
 light_energy = 13.118
