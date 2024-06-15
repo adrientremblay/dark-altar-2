@@ -23,7 +23,6 @@ func _on_player_cannot_interact_with_something() -> void:
 	
 func display_page(page : Page):
 	$PageFlip.play()
-	
 	if $PageView.visible:
 		$PageView.visible = false
 		return

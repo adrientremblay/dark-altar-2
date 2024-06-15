@@ -154,10 +154,12 @@ func collect_skull():
 	$SkullPickupSound.play()
 
 func _on_grab_shape_area_entered(area: Area3D) -> void:
-	can_interact_with_something.emit()
+	if area.is_in_group("interactable"):
+		can_interact_with_something.emit()
 
 func _on_grab_shape_area_exited(area: Area3D) -> void:
-	cannot_interact_with_something.emit()
+	if area.is_in_group("interactable"):
+		cannot_interact_with_something.emit()
 
 func return_interactable():
 	for area in grab_shape.get_overlapping_areas():
