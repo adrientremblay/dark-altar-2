@@ -86,6 +86,9 @@ func stalk(player: Player):
 		can_move = true
 
 func _on_spotted_timer_timeout() -> void:
+	if Global.game_paused:
+		return
+		
 	teleport(player)
 	spotted_timer.stop()
 
@@ -109,6 +112,9 @@ func change_agression(delta: float):
 	whispering.volume_db = -10.0 + (agression * 0.1)
 	
 func haunt(player: Player):
+	if Global.game_paused:
+		return
+	
 	var player_position = player.position
 	
 	var distance_to_spawn = (100 - agression) * 0.01 * (haunt_distance_max - haunt_distance_min) + haunt_distance_min

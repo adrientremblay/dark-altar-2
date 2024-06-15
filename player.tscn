@@ -182,19 +182,24 @@ libraries = {
 
 [node name="Walking" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")
+bus = &"Ambience"
 
 [node name="SkullPickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_vv7y3")
+bus = &"Ambience"
 
 [node name="Panting" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_8qrlp")
 volume_db = -4.0
+bus = &"Ambience"
 
 [node name="Sprinting" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_0qke1")
+bus = &"Ambience"
 
 [node name="CandlePickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_2t33u")
+bus = &"Ambience"
 
 [connection signal="area_entered" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_entered"]
 [connection signal="area_exited" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_exited"]
