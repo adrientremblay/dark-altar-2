@@ -21,7 +21,7 @@ var stamina = 100 # out of 100
 var camera_max_angle = 80
 var camera_min_angle = -80
 
-signal register_skull
+signal register_skull(skulls_found: int)
 signal can_interact_with_something
 signal cannot_interact_with_something
 
@@ -152,8 +152,8 @@ func get_player_direction():
 	var player_direction = (transform.basis * neck.transform.basis * Vector3(0, 0, -1)).normalized()
 	return player_direction
 
-func collect_skull():
-	register_skull.emit()
+func collect_skull(skulls_found: int):
+	register_skull.emit(skulls_found)
 	$SkullPickupSound.play()
 
 func _on_grab_shape_area_entered(area: Area3D) -> void:

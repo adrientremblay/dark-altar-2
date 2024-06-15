@@ -9,10 +9,10 @@ func _on_intro_timer_timeout() -> void:
 			$Label.visible = false
 	intro_label +=1
 
-func _on_player_register_skull() -> void:
+func _on_player_register_skull(skulls_found: int) -> void:
 	intro_label = 1
 	$IntroTimer.start()
-	$Label.text = "skull collected"
+	$Label.text = "skull " + str(skulls_found) + "/5 collected"
 	$Label.visible = true
 
 func _on_player_can_interact_with_something() -> void:

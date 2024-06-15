@@ -11,6 +11,7 @@ var CEDRIC_DAMAGE_DISTANCE = 10
 var CEDRIC_DAMAGE = 30
 
 var haunting = false
+var skulls_found = 0
 
 func _ready() -> void:
 	shaderMat  = $CanvasLayer/ColorRect.material
@@ -77,7 +78,8 @@ func _input(event):
 				pause()
 		elif interactable.is_in_group("skull"):
 			var skull = interactable
-			$Player.collect_skull()
+			skulls_found += 1
+			$Player.collect_skull(skulls_found)
 			skull.queue_free()
 		elif interactable.is_in_group("candle"):
 			var candle = interactable
