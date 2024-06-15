@@ -75,6 +75,9 @@ func _input(event):
 			var candle = interactable
 			$Player.collect_candle()
 			candle.queue_free()
+	elif event.is_action_pressed("pause"):
+		Global.game_paused = not Global.game_paused
+		print(Global.game_paused)
 
 func _on_haunting_area_start_haunting() -> void:
 	haunting = true
