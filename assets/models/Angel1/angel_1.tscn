@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4td5oi06ckg8"]
+[gd_scene load_steps=3 format=3 uid="uid://b4td5oi06ckg8"]
 
 [ext_resource type="PackedScene" uid="uid://dxk850c2llrp1" path="res://assets/models/Angel1/Angel1.gltf" id="1_jwqc1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bb6v1"]
 
 [node name="Angel1" instance=ExtResource("1_jwqc1")]
 
 [node name="Statue_01" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.960751, 0.0474245)
+shape = SubResource("CylinderShape3D_bb6v1")

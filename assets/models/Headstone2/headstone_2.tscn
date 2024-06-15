@@ -1,9 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://chrbsmggm8opq"]
+[gd_scene load_steps=3 format=3 uid="uid://chrbsmggm8opq"]
 
 [ext_resource type="PackedScene" uid="uid://b7xhjycp0l7l8" path="res://assets/models/Headstone2/Headstone2.glb" id="1_tgllu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pnhat"]
+size = Vector3(1.9856, 2.54004, 0.493835)
 
 [node name="Headstone2" instance=ExtResource("1_tgllu")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Cube_001" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0137939, 1.27686, -0.00320435)
+shape = SubResource("BoxShape3D_pnhat")

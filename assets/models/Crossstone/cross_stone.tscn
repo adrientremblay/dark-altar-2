@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://17c4kmj323ib"]
+[gd_scene load_steps=3 format=3 uid="uid://17c4kmj323ib"]
 
 [ext_resource type="ArrayMesh" uid="uid://c8sl6d2hndjlu" path="res://assets/models/Crossstone/crossstone.obj" id="1_221tj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yo5fc"]
+size = Vector3(6.88763, 13.669, 7.36414)
 
 [node name="CrossStone" type="Node3D"]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.130225, 0.152354, 0)
@@ -8,3 +11,9 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.130225, 0.152354, 
 [node name="Crossstone" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20895, 4.00086, -0.561786)
 mesh = ExtResource("1_221tj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47617, 6.3345, -1.01935)
+shape = SubResource("BoxShape3D_yo5fc")
