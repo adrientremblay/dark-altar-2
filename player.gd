@@ -9,6 +9,7 @@ var movement_mode : MovementMode = MovementMode.STANDING
 
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
+@onready var hand_camera = $CanvasLayer/SubViewportContainer/SubViewport/Camera3D
 @onready var particle_emitter : GPUParticles3D = $CameraPivot/Camera3D/Candle/Flame
 @onready var grab_shape : Area3D = $CameraPivot/Camera3D/GrabShape
 @onready var candle_light : OmniLight3D = $CameraPivot/Camera3D/Candle/WorldLight
@@ -26,6 +27,11 @@ signal can_interact_with_something
 signal cannot_interact_with_something
 
 var reading = false
+
+func _ready() -> void:
+	#var main_env = camera.get_camera_projection()
+	#hand_camera.get_camera_projection().set
+	pass
 
 func calculate_flame_direction(direction: Vector3):
 	var flame_direction : Vector3 = Vector3(0,1,0) # -z
@@ -101,7 +107,8 @@ func _physics_process(delta):
 		dp = direction * speed * delta * sprint_modifier
 	elif movement_mode == MovementMode.WALKING:
 		dp = direction * speed * delta
-		animation_player.play("Head Bob")
+		# TODO Fix this with the seperate hand draw layer
+		#animation_player.play("Head Bob")
 	
 	if dp:
 		position += dp
@@ -179,3 +186,6 @@ func pause_flame():
 	
 func unpause_flame():
 	particle_emitter.speed_scale = 1
+
+func _process(delta: float) -> void:
+	hand_camera.global_transform = camera.global_transform

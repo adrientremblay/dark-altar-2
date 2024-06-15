@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://11376fbjjwer"]
+
+[ext_resource type="PackedScene" uid="uid://bxvhdc745xjt" path="res://assets/models/CandleHolder/candlestick.blend" id="1_63upf"]
+
+[node name="candlestick" instance=ExtResource("1_63upf")]
+
+[node name="Candle_Holder_01_OBJ" parent="." index="0"]
+layers = 4

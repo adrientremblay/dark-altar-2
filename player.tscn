@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://dni157qfh4eyi" path="res://assets/audio/sound_effects/Footsteps grass sound effect.mp3" id="2_vbp7b"]
 [ext_resource type="PackedScene" uid="uid://dgcgrml4qo4l8" path="res://candle.tscn" id="4_h756x"]
 [ext_resource type="Script" path="res://candle.gd" id="4_om2wh"]
-[ext_resource type="PackedScene" uid="uid://bxvhdc745xjt" path="res://assets/models/CandleHolder/candlestick.blend" id="4_xrfnu"]
+[ext_resource type="PackedScene" uid="uid://11376fbjjwer" path="res://candlestick.tscn" id="5_re3m2"]
 [ext_resource type="AudioStream" uid="uid://cb7tjjqfo08h0" path="res://assets/audio/sound_effects/scary-foley-86229.mp3" id="5_vv7y3"]
 [ext_resource type="AudioStream" uid="uid://cmauvnhp04ys4" path="res://assets/audio/sound_effects/panting.mp3" id="6_8qrlp"]
 [ext_resource type="AudioStream" uid="uid://dnem3422cvig" path="res://assets/audio/sound_effects/running.mp3" id="7_0qke1"]
@@ -118,6 +118,7 @@ mesh = SubResource("CapsuleMesh_8cwml")
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.540563, 0)
+cull_mask = 1048571
 current = true
 
 [node name="Arm" parent="CameraPivot/Camera3D" instance=ExtResource("2_v36k5")]
@@ -129,6 +130,7 @@ script = ExtResource("4_om2wh")
 
 [node name="Flame" type="GPUParticles3D" parent="CameraPivot/Camera3D/Candle"]
 transform = Transform3D(0.234373, 0, -0.0870042, 0, 0.25, 0, 0.0870042, 0, 0.234373, 0.004076, 3.03378, -0.00397444)
+layers = 4
 material_override = SubResource("StandardMaterial3D_5gllx")
 amount = 100
 lifetime = 0.3
@@ -144,7 +146,7 @@ light_color = Color(0.705882, 0.666667, 0.141176, 1)
 light_energy = 10.0
 light_size = 1.0
 light_specular = 0.0
-light_cull_mask = 4294967293
+light_cull_mask = 4294967291
 shadow_enabled = true
 shadow_bias = 0.036
 shadow_blur = 0.04
@@ -152,11 +154,12 @@ omni_range = 8.0
 
 [node name="PlayerLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Candle"]
 transform = Transform3D(-12.5, -1.09278e-06, 4.77672e-14, 0, -3.64262e-07, -8.33333, 1.09278e-06, -12.5, 5.46392e-07, 1.01829, -1.5751, 3.38816)
+layers = 4
 light_color = Color(0.705882, 0.666667, 0.141176, 1)
 light_energy = 13.118
 light_size = 0.436
 light_specular = 0.0
-light_cull_mask = 4293918722
+light_cull_mask = 4293918724
 shadow_enabled = true
 shadow_bias = 0.001
 shadow_opacity = 0.96
@@ -172,8 +175,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00240922, 0)
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -1.866)
 shape = SubResource("CapsuleShape3D_bp2ix")
 
-[node name="candlestick" parent="CameraPivot/Camera3D" instance=ExtResource("4_xrfnu")]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.683026, -0.579627, -0.711785)
+[node name="candlestick2" parent="CameraPivot/Camera3D" instance=ExtResource("5_re3m2")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.683, -0.58, -0.712)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CameraPivot/Camera3D"]
 libraries = {
@@ -200,6 +203,28 @@ bus = &"Ambience"
 [node name="CandlePickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_2t33u")
 bus = &"Ambience"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+positional_shadow_atlas_size = 4096
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.4743, 2.14533, -89.6611)
+cull_mask = 1047556
 
 [connection signal="area_entered" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_entered"]
 [connection signal="area_exited" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_exited"]

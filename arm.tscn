@@ -30,5 +30,5 @@ bones/18/rotation = Quaternion(-0.0570592, -0.0779907, 0.506342, 0.856901)
 bones/18/scale = Vector3(1, 1, 1)
 
 [node name="Окружность" parent="Скелет/Skeleton3D" index="0"]
-layers = 2
+layers = 4
 material_override = SubResource("StandardMaterial3D_jpkj1")
