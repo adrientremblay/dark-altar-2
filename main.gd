@@ -54,7 +54,8 @@ func _process(delta: float) -> void:
 		cedric.change_agression(delta)
 
 func _on_player_register_skull() -> void:
-	cedric.increase_agression($Cedric/TeleportTimer)
+	#cedric.increase_agression($Cedric/TeleportTimer)
+	pass
 
 func _input(event):
 	if event.is_action_pressed("interact"):

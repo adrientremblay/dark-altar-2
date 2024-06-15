@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtdwm6ktkiyxk"]
+[gd_scene load_steps=4 format=3 uid="uid://dtdwm6ktkiyxk"]
 
 [ext_resource type="Script" path="res://haunting_area.gd" id="1_w2oj1"]
+[ext_resource type="AudioStream" uid="uid://c78k6nwrfd2i7" path="res://assets/audio/sound_effects/long-fade-138693.mp3" id="2_ba7rw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_60n2m"]
 size = Vector3(42.0486, 2.7218, 59.6824)
@@ -11,6 +12,10 @@ script = ExtResource("1_w2oj1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.872351, 0, 0.48888, 0, 1, 0, -0.48888, 0, 0.872351, 124.001, 1.3713, -62.7592)
 shape = SubResource("BoxShape3D_60n2m")
+
+[node name="EnterSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ba7rw")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

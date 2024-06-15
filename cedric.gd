@@ -89,12 +89,12 @@ func _on_spotted_timer_timeout() -> void:
 func start_haunt():
 	spotted_timer.stop()
 	cedric_mode = CEDRIC_MODE.HAUNTING
-	whispering.play()
+	#whispering.play()
 	whispering.volume_db = -10.0
-	haunt_timer.start()
+	#haunt_timer.start()
 	
 func stop_haunt():
-	whispering.stop()
+	#whispering.stop()
 	agression = 0
 	cedric_mode = CEDRIC_MODE.STALKING
 
