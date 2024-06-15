@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dinx2n1kr6nxt"]
+[gd_scene load_steps=3 format=3 uid="uid://dinx2n1kr6nxt"]
 
 [ext_resource type="PackedScene" uid="uid://fx0d583oao8c" path="res://adrien_tree.tscn" id="1_66x82"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hp6tt"]
+height = 4.30525
+radius = 0.21465
 
 [node name="Tree" type="Node3D"]
 
 [node name="adrien_tree" parent="." instance=ExtResource("1_66x82")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09398, 0)
+shape = SubResource("CylinderShape3D_hp6tt")
