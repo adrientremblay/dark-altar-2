@@ -46,7 +46,7 @@ func _unhandled_input(event: InputEvent):
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(camera_min_angle), deg_to_rad(camera_max_angle))
 
 func _physics_process(delta):
-	if reading:
+	if reading or Global.game_paused:
 		return
 	
 	var input_dir = Vector3.ZERO

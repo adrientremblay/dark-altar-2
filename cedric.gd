@@ -23,7 +23,7 @@ var player: Player
 var AGRESSION_COEFF = 5
 
 func _physics_process(delta: float) -> void:
-	if disabled or not can_move:
+	if disabled or not can_move or Global.game_paused:
 		return
 	
 	var direction = Vector3()
@@ -61,6 +61,9 @@ func rotate_to_me(player_position: Vector3):
 	basis = new_basis
 	
 func act_based_on_mode(player: Player):
+	if Global.game_paused:
+		return
+	
 	match cedric_mode:
 		CEDRIC_MODE.STALKING:
 			stalk(player)

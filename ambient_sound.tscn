@@ -14,14 +14,17 @@
 [node name="LeavesRustlingAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_ksrmx")
 volume_db = -20.0
+bus = &"Ambience"
 
 [node name="NightBugs" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_wu61w")
 autoplay = true
+bus = &"Ambience"
 
 [node name="Cricket" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_qwo36")
 volume_db = -20.0
+bus = &"Ambience"
 script = ExtResource("4_5g3vj")
 
 [node name="Timer" type="Timer" parent="Cricket"]
@@ -29,6 +32,7 @@ script = ExtResource("4_5g3vj")
 [node name="Owl" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_a8qsc")
 volume_db = -10.0
+bus = &"Ambience"
 script = ExtResource("6_0essl")
 
 [node name="Timer" type="Timer" parent="Owl"]
@@ -37,6 +41,7 @@ autostart = true
 [node name="NightBird" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_3iisp")
 volume_db = -12.0
+bus = &"Ambience"
 script = ExtResource("8_gtcyf")
 
 [node name="Timer" type="Timer" parent="NightBird"]

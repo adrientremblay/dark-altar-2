@@ -77,7 +77,10 @@ func _input(event):
 			candle.queue_free()
 	elif event.is_action_pressed("pause"):
 		Global.game_paused = not Global.game_paused
-		print(Global.game_paused)
+		if Global.game_paused:
+			pause()
+		else:
+			unpause()
 
 func _on_haunting_area_start_haunting() -> void:
 	haunting = true
@@ -86,3 +89,12 @@ func _on_haunting_area_start_haunting() -> void:
 func _on_haunting_area_stop_haunting() -> void:
 	haunting = false
 	cedric.stop_haunt()
+
+func pause():
+	var ambience_bus_index = AudioServer.get_bus_index("Ambience")
+	print(ambience_bus_index)
+	AudioServer.set_bus_volume_db(ambience_bus_index, -100)
+	
+func unpause():
+	var ambience_bus_index = AudioServer.get_bus_index("Ambience")
+	AudioServer.set_bus_volume_db(ambience_bus_index, 0)
