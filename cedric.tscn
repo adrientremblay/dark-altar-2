@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdn0o2f8qbgk"]
+[gd_scene load_steps=7 format=3 uid="uid://bdn0o2f8qbgk"]
 
 [ext_resource type="Script" path="res://cedric.gd" id="1_xmn3u"]
 [ext_resource type="AudioStream" uid="uid://bnqd2sc1fuw3m" path="res://assets/audio/sound_effects/schizo_whispers.mp3" id="4_kf1jm"]
 [ext_resource type="AudioStream" uid="uid://b5x14n16kot0p" path="res://assets/audio/sound_effects/boom.mp3" id="4_xhb7r"]
 [ext_resource type="PackedScene" uid="uid://dbue6pqurgujn" path="res://cedric_v_2.tscn" id="5_b5wdq"]
+[ext_resource type="PackedScene" uid="uid://x85pl31hfwn5" path="res://assets/models/monk/Monk_v001.gltf" id="5_xsuao"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8hff"]
 
@@ -16,15 +17,16 @@ volume_db = -80.0
 
 [node name="cedric_v2" parent="." instance=ExtResource("5_b5wdq")]
 transform = Transform3D(-0.497888, 0, 0.0459072, 0, 0.5, 0, -0.0459072, 0, -0.497888, 0, -0.980671, 0)
+visible = false
 
 [node name="LeftEye" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0381049, 1.28721, -0.077486)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0381049, 0.719077, -0.441839)
 light_color = Color(1, 0.286275, 0.247059, 1)
 light_energy = 0.5
 omni_range = 1.0
 
 [node name="RightEye" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030338, 1.28721, -0.077486)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030338, 0.652364, -0.682101)
 light_color = Color(1, 0.286275, 0.247059, 1)
 light_energy = 0.5
 omni_range = 1.0
@@ -44,6 +46,9 @@ stream = ExtResource("4_kf1jm")
 
 [node name="HauntChangePositionTimer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="Monk_v001" parent="." instance=ExtResource("5_xsuao")]
+transform = Transform3D(-0.995595, 0, -0.0937608, 0, 1, 0, 0.0937608, 0, -0.995595, -0.807344, -0.846349, 0)
 
 [connection signal="timeout" from="SpottedTimer" to="." method="_on_spotted_timer_timeout"]
 [connection signal="timeout" from="HauntChangePositionTimer" to="." method="_on_haunt_change_position_timer_timeout"]
