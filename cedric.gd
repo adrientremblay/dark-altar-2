@@ -91,12 +91,13 @@ func start_haunt():
 	cedric_mode = CEDRIC_MODE.HAUNTING
 	#whispering.play()
 	whispering.volume_db = -10.0
-	#haunt_timer.start()
+	haunt_timer.start()
 	
 func stop_haunt():
 	#whispering.stop()
 	agression = 0
 	cedric_mode = CEDRIC_MODE.STALKING
+	haunt_timer.stop()
 
 func change_agression(delta: float):
 	agression += delta * AGRESSION_COEFF
@@ -105,6 +106,7 @@ func change_agression(delta: float):
 	whispering.volume_db = -10.0 + (agression * 0.1)
 	
 func haunt(player: Player):
+	print("tping!")
 	var player_position = player.position
 	
 	var distance_to_spawn = (100 - agression) * 0.01 * (haunt_distance_max - haunt_distance_min) + haunt_distance_min
@@ -123,6 +125,6 @@ func haunt(player: Player):
 	basis = new_basis
 
 func _on_haunt_change_position_timer_timeout() -> void:
-	var angle_to_cedric = abs(player.check_if_can_see_me(self))
-	if angle_to_cedric > 75:
-		haunt(player)
+	#var angle_to_cedric = abs(player.check_if_can_see_me(self))
+	#if angle_to_cedric > 75:
+	haunt(player)
