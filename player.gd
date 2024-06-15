@@ -173,3 +173,9 @@ func return_interactable():
 func collect_candle():
 	candle.replenish()
 	$CandlePickupSound.play()
+
+func pause_flame():
+	particle_emitter.speed_scale = 0
+	
+func unpause_flame():
+	particle_emitter.speed_scale = 1

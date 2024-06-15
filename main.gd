@@ -5,6 +5,7 @@ var choirSound: AudioStreamPlayer
 
 @onready var ui = $UI
 @onready var cedric: Cedric = $Cedric
+@onready var player: Player = $Player
 
 var CEDRIC_DAMAGE_DISTANCE = 10
 var CEDRIC_DAMAGE = 30
@@ -92,9 +93,10 @@ func _on_haunting_area_stop_haunting() -> void:
 
 func pause():
 	var ambience_bus_index = AudioServer.get_bus_index("Ambience")
-	print(ambience_bus_index)
 	AudioServer.set_bus_volume_db(ambience_bus_index, -100)
+	player.pause_flame()
 	
 func unpause():
 	var ambience_bus_index = AudioServer.get_bus_index("Ambience")
 	AudioServer.set_bus_volume_db(ambience_bus_index, 0)
+	player.unpause_flame()
