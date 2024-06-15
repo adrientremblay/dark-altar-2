@@ -20,6 +20,8 @@ var MIN_LIGHT_RAMGE = 2
 var candle_y_scale = MAX_Y_SCALE
 
 func _process(delta: float) -> void:
+	if Global.game_paused:
+		return
 	candle_burn(delta)
 
 func candle_burn(delta: float):
