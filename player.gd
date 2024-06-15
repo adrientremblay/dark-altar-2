@@ -34,6 +34,9 @@ func calculate_flame_direction(direction: Vector3):
 	particle_emitter.process_material.direction = flame_direction.normalized()
 
 func _unhandled_input(event: InputEvent):
+	if Global.game_paused:
+		return
+	
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	elif event.is_action_pressed("ui_cancel"):
