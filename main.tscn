@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=62 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -87,6 +87,10 @@ size = Vector3(54.6974, 6.33411, 91.2763)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k6poo"]
 size = Vector3(42.0486, 2.7218, 59.6824)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3omu6"]
+height = 1106.08
+radius = 40.2935
 
 [sub_resource type="BoxMesh" id="BoxMesh_wlmbg"]
 size = Vector3(250, 1, 250)
@@ -407,9 +411,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156.004, -1.90735e-06, -160.3
 
 [node name="Tree101" parent="Trees" instance=ExtResource("4_gfekl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.11, 0, -159.999)
-
-[node name="Signpost" parent="." instance=ExtResource("9_8itpl")]
-transform = Transform3D(0.000500159, 0, -0.00497492, 0, 0.005, 0, 0.00497492, 0, 0.000500159, 110.921, 0, -102.473)
 
 [node name="UI" parent="." instance=ExtResource("11_usrys")]
 
@@ -899,6 +900,14 @@ transform = Transform3D(-0.835788, 0, -0.549052, 0, 1, 0, 0.549052, 0, -0.835788
 
 [node name="Skull2" parent="NavigationRegion3D/Graveyard/SkullGroupGraveyard" instance=ExtResource("16_4ask6")]
 transform = Transform3D(-0.999258, 0, 0.03851, 0, 1, 0, -0.03851, 0, -0.999258, 134.362, 0.134707, -55.2843)
+
+[node name="Signpost" parent="NavigationRegion3D/Graveyard" instance=ExtResource("9_8itpl")]
+transform = Transform3D(0.000500159, 0, -0.00497492, 0, 0.005, 0, 0.00497492, 0, 0.000500159, 110.921, 0, -102.473)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Graveyard/Signpost"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Graveyard/Signpost/StaticBody3D"]
+shape = SubResource("CylinderShape3D_3omu6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.292, -0.5, -119.603)
