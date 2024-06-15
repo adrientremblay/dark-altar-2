@@ -33,3 +33,6 @@ func display_page(page : Page):
 	$PageView/PageTitle.text = page.page_title
 	$PageView/PageText.text = page.page_text
 	$InteractHand.visible = false
+
+func toggle_pause_menu(toggle: bool):
+	$PauseMenu.visible = toggle

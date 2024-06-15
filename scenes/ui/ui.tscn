@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dx1ic8e4exr86"]
+[gd_scene load_steps=10 format=3 uid="uid://dx1ic8e4exr86"]
 
 [ext_resource type="Script" path="res://scenes/ui/UI.gd" id="1_onnvg"]
 [ext_resource type="Texture2D" uid="uid://bt22o018bjsuu" path="res://assets/images/page_template.png" id="2_88ewc"]
@@ -15,6 +15,9 @@ font_size = 50
 [sub_resource type="LabelSettings" id="LabelSettings_hs1hk"]
 font_size = 26
 
+[sub_resource type="LabelSettings" id="LabelSettings_so6hg"]
+font_size = 50
+
 [node name="UI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -27,6 +30,7 @@ mouse_filter = 2
 script = ExtResource("1_onnvg")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -137,5 +141,30 @@ volume_db = -8.0
 [node name="ThemeMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_keeai")
 volume_db = -10.0
+
+[node name="PauseMenu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game is paused"
+label_settings = SubResource("LabelSettings_so6hg")
 
 [connection signal="timeout" from="IntroTimer" to="." method="_on_intro_timer_timeout"]

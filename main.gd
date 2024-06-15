@@ -21,6 +21,9 @@ func _physics_process(delta: float) -> void:
 	cedric.act_based_on_mode($Player)
 
 func _process(delta: float) -> void:
+	if Global.game_paused:
+		return
+	
 	var angle_to_cedric = abs($Player.check_if_can_see_me(cedric))
 	
 	var distance_to_cedric_vec = $Player.global_position - cedric.global_position
@@ -95,8 +98,10 @@ func pause():
 	var ambience_bus_index = AudioServer.get_bus_index("Ambience")
 	AudioServer.set_bus_volume_db(ambience_bus_index, -100)
 	player.pause_flame()
+	ui.toggle_pause_menu(true)
 	
 func unpause():
 	var ambience_bus_index = AudioServer.get_bus_index("Ambience")
 	AudioServer.set_bus_volume_db(ambience_bus_index, 0)
 	player.unpause_flame()
+	ui.toggle_pause_menu(false)
