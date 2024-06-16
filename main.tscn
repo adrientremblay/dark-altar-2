@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=67 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -53,6 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
 [ext_resource type="PackedScene" uid="uid://chge3oc3jhx7a" path="res://assets/models/Rock1/rock_1.tscn" id="51_rbux5"]
 [ext_resource type="PackedScene" uid="uid://c8hkn7joedxsb" path="res://assets/models/Rock2/rock_2.tscn" id="53_ax0e6"]
+[ext_resource type="PackedScene" uid="uid://dwajs1w5xjbyd" path="res://assets/models/Rock4/rock_4.tscn" id="54_c7tgi"]
 [ext_resource type="PackedScene" uid="uid://cxmbux153imhp" path="res://assets/models/Rock3/rock_3.tscn" id="54_kbu1b"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
@@ -112,7 +113,7 @@ environment = SubResource("Environment_g4vby")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 51.2963, 0.994264, -48.3976)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.745242, 0, 0.666792, 0, 1, 0, -0.666792, 0, 0.745242, 88.9676, 1.62609, -153.243)
+transform = Transform3D(0.745242, 0, 0.666792, 0, 1, 0, -0.666792, 0, 0.745242, 88.9676, 1.62609, -83.7429)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -933,6 +934,54 @@ transform = Transform3D(0.794107, 0, 0.607778, 0, 1, 0, -0.607778, 0, 0.794107, 
 [node name="rock2" parent="NavigationRegion3D/StrangeRocks" instance=ExtResource("53_ax0e6")]
 transform = Transform3D(0.865685, 0, 0.500589, 0, 1, 0, -0.500589, 0, 0.865685, 80.0098, 0.977028, -160.958)
 
+[node name="rock3" parent="NavigationRegion3D/StrangeRocks" instance=ExtResource("54_kbu1b")]
+transform = Transform3D(-0.734548, 0, 0.678557, 0, 1, 0, -0.678557, 0, -0.734548, 85.2295, -0.796513, -170.607)
+
+[node name="rock_4" parent="NavigationRegion3D/StrangeRocks" instance=ExtResource("54_c7tgi")]
+transform = Transform3D(0.93895, -0.192546, -0.285129, 0, 0.828735, -0.559641, 0.344053, 0.525475, 0.778141, 95.3046, 1.18344, -158.371)
+
+[node name="rock4" parent="NavigationRegion3D/StrangeRocks" instance=ExtResource("53_ax0e6")]
+transform = Transform3D(-0.850293, -0.526204, 0.010531, -0.137678, 0.203073, -0.969436, 0.507982, -0.825755, -0.245118, 94.7662, 0.433797, -158.329)
+
+[node name="Rock3" parent="NavigationRegion3D/StrangeRocks" instance=ExtResource("51_rbux5")]
+transform = Transform3D(-0.45925, 0.370008, 0.110381, 0, 0.171523, -0.574961, -0.386122, -0.440084, -0.131287, 86.2299, 0.292398, -155.976)
+
+[node name="rock_5" parent="NavigationRegion3D/StrangeRocks" instance=ExtResource("54_c7tgi")]
+transform = Transform3D(0.685577, 0, 0.728, 0, 1, 0, -0.728, 0, 0.685577, 102.443, 0, -165.305)
+
+[node name="rock5" parent="NavigationRegion3D/StrangeRocks" instance=ExtResource("54_kbu1b")]
+transform = Transform3D(0.948113, 0.235624, -0.213456, 0, 0.671384, 0.741109, 0.317934, -0.702655, 0.636548, 101.515, 0, -163.147)
+
+[node name="rock_6" parent="NavigationRegion3D/StrangeRocks" instance=ExtResource("54_c7tgi")]
+transform = Transform3D(0.0430041, 0, 0.498147, 0, 0.5, 0, -0.498147, 0, 0.0430041, 102.315, 1.52643, -165.256)
+
+[node name="rock6" parent="NavigationRegion3D/StrangeRocks" instance=ExtResource("53_ax0e6")]
+transform = Transform3D(0.0640713, -0.231897, 0.179217, -0.292487, -0.0389422, 0.0541769, -0.0186145, -0.186299, -0.234406, 102.363, 2.57949, -165.182)
+
+[node name="Rock4" parent="NavigationRegion3D/StrangeRocks" instance=ExtResource("51_rbux5")]
+transform = Transform3D(-0.0410079, 0.279871, -0.0999529, -0.10623, -0.108038, -0.258926, -0.277549, 0, 0.113871, 102.064, 3.16817, -165.248)
+
+[node name="SkullGroupStrangeRocks" type="Node3D" parent="NavigationRegion3D/StrangeRocks"]
+script = ExtResource("34_b82b0")
+
+[node name="Skull" parent="NavigationRegion3D/StrangeRocks/SkullGroupStrangeRocks" instance=ExtResource("16_4ask6")]
+transform = Transform3D(0.137331, 0.982689, -0.124352, -0.958887, 0.100416, -0.265428, -0.248347, 0.155691, 0.956078, 79.831, 1.70974, -160.785)
+
+[node name="Skull2" parent="NavigationRegion3D/StrangeRocks/SkullGroupStrangeRocks" instance=ExtResource("16_4ask6")]
+transform = Transform3D(-0.83377, 0, -0.552112, 0, 1, 0, 0.552112, 0, -0.83377, 84.6136, 0, -171.414)
+
+[node name="Skull3" parent="NavigationRegion3D/StrangeRocks/SkullGroupStrangeRocks" instance=ExtResource("16_4ask6")]
+transform = Transform3D(-0.998997, 0, -0.0447876, 0, 1, 0, 0.0447876, 0, -0.998997, 86.5117, 0.739227, -156.256)
+
+[node name="Skull4" parent="NavigationRegion3D/StrangeRocks/SkullGroupStrangeRocks" instance=ExtResource("16_4ask6")]
+transform = Transform3D(0.539976, 0, -0.84168, 0, 1, 0, 0.84168, 0, 0.539976, 94.3719, 0, -158.104)
+
+[node name="Skull5" parent="NavigationRegion3D/StrangeRocks/SkullGroupStrangeRocks" instance=ExtResource("16_4ask6")]
+transform = Transform3D(-0.371175, 0.692006, 0.619158, 0.300951, -0.541147, 0.785231, 0.878441, 0.477794, -0.00739977, 102.008, 2.01937, -164.916)
+
+[node name="Skull6" parent="NavigationRegion3D/StrangeRocks/SkullGroupStrangeRocks" instance=ExtResource("16_4ask6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.0269, 0, -175.007)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.292, -0.5, -119.603)
 visible = false
@@ -942,9 +991,6 @@ mesh = SubResource("BoxMesh_wlmbg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 
 [node name="AmbientSound" parent="." instance=ExtResource("50_gnthh")]
-
-[node name="rock3" parent="." instance=ExtResource("54_kbu1b")]
-transform = Transform3D(-0.734548, 0, 0.678557, 0, 1, 0, -0.678557, 0, -0.734548, 85.2295, -0.261088, -170.607)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
