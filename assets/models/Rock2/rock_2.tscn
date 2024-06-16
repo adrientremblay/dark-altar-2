@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8hkn7joedxsb"]
+
+[ext_resource type="PackedScene" uid="uid://diaoakea5oo6f" path="res://assets/models/Rock2/rock2.gltf" id="1_0hjdt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ujwyy"]
+radius = 0.908764
+height = 1.81753
+
+[node name="rock2" instance=ExtResource("1_0hjdt")]
+
+[node name="Boulder08" parent="." index="0"]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0, -3.70299)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.101051, 0.656642, 0)
+shape = SubResource("CapsuleShape3D_ujwyy")

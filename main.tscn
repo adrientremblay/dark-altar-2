@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=66 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -51,6 +51,9 @@
 [ext_resource type="PackedScene" uid="uid://dtdwm6ktkiyxk" path="res://haunting_area.tscn" id="50_06oln"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
+[ext_resource type="PackedScene" uid="uid://chge3oc3jhx7a" path="res://assets/models/Rock1/rock_1.tscn" id="51_rbux5"]
+[ext_resource type="PackedScene" uid="uid://c8hkn7joedxsb" path="res://assets/models/Rock2/rock_2.tscn" id="53_ax0e6"]
+[ext_resource type="PackedScene" uid="uid://cxmbux153imhp" path="res://assets/models/Rock3/rock_3.tscn" id="54_kbu1b"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -921,6 +924,15 @@ transform = Transform3D(0.967625, 0, -0.25239, 0, 1, 0, 0.25239, 0, 0.967625, 94
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.4247, 0, -167.207)
 shape = SubResource("CylinderShape3D_05rw2")
 
+[node name="Rock1" parent="NavigationRegion3D/StrangeRocks" instance=ExtResource("51_rbux5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.9059, 0, -161.152)
+
+[node name="Rock2" parent="NavigationRegion3D/StrangeRocks" instance=ExtResource("51_rbux5")]
+transform = Transform3D(0.794107, 0, 0.607778, 0, 1, 0, -0.607778, 0, 0.794107, 95.2786, 0, -158.013)
+
+[node name="rock2" parent="NavigationRegion3D/StrangeRocks" instance=ExtResource("53_ax0e6")]
+transform = Transform3D(0.865685, 0, 0.500589, 0, 1, 0, -0.500589, 0, 0.865685, 80.0098, 0.977028, -160.958)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.292, -0.5, -119.603)
 visible = false
@@ -930,6 +942,9 @@ mesh = SubResource("BoxMesh_wlmbg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 
 [node name="AmbientSound" parent="." instance=ExtResource("50_gnthh")]
+
+[node name="rock3" parent="." instance=ExtResource("54_kbu1b")]
+transform = Transform3D(-0.734548, 0, 0.678557, 0, 1, 0, -0.678557, 0, -0.734548, 85.2295, -0.261088, -170.607)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
