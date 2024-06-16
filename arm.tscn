@@ -54,7 +54,6 @@ bones/24/rotation = Quaternion(0.210714, 0.111933, 0.165821, 0.956856)
 bones/24/scale = Vector3(1, 1, 0.999999)
 bones/25/position = Vector3(2.70204e-07, 1.58473, -2.96944e-07)
 bones/25/rotation = Quaternion(0.396253, -0.0958405, 0.499569, 0.764349)
-bones/25/scale = Vector3(1, 1, 1)
 
 [node name="Окружность" parent="Скелет/Skeleton3D" index="0"]
 layers = 4

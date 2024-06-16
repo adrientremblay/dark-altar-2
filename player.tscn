@@ -125,7 +125,7 @@ current = true
 transform = Transform3D(-0.05, -4.37114e-09, 1.91069e-16, 0, -2.18557e-09, -0.05, 4.37114e-09, -0.05, 2.18557e-09, 0.741275, -0.423212, -0.443583)
 
 [node name="Candle" parent="CameraPivot/Camera3D" instance=ExtResource("4_h756x")]
-transform = Transform3D(0.08, 0, 0, 0, 0.12, 0, 0, 0, 0.08, 0.680277, -0.2342, -0.714636)
+transform = Transform3D(0.08, 0, 0, 0, 0.12, 0, 0, 0, 0.08, 0.683, -0.234, -0.712)
 script = ExtResource("4_om2wh")
 
 [node name="Flame" type="GPUParticles3D" parent="CameraPivot/Camera3D/Candle"]
@@ -135,6 +135,7 @@ material_override = SubResource("StandardMaterial3D_5gllx")
 amount = 100
 lifetime = 0.3
 randomness = 1.0
+visibility_aabb = AABB(-4, -4.02881, -3.97363, 8, 8, 8)
 local_coords = true
 draw_order = 3
 process_material = SubResource("ParticleProcessMaterial_443lx")
