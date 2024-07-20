@@ -114,7 +114,7 @@ environment = SubResource("Environment_g4vby")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 51.2963, 0.994264, -48.3976)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.745242, 0, 0.666792, 0, 1, 0, -0.666792, 0, 0.745242, 88.9676, 1.62609, -211.901)
+transform = Transform3D(0.745242, 0, 0.666792, 0, 1, 0, -0.666792, 0, 0.745242, 192.101, 1.62609, -156.406)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -995,6 +995,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
+visible = false
 mesh_library = ExtResource("56_0n7ge")
 cell_scale = 2.0
 data = {
