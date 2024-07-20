@@ -6,6 +6,7 @@ var sprint_regen = 10
 var sprint_degen = 30
 enum MovementMode {STANDING, WALKING, SPRINTING}
 var movement_mode : MovementMode = MovementMode.STANDING
+var in_dungeon = false
 
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
@@ -15,6 +16,7 @@ var movement_mode : MovementMode = MovementMode.STANDING
 @onready var candle_light : OmniLight3D = $CameraPivot/Camera3D/Candle/WorldLight
 @onready var candle = $CameraPivot/Camera3D/Candle
 @onready var animation_player : AnimationPlayer = $CameraPivot/Camera3D/AnimationPlayer
+@onready var walking : AudioStreamPlayer = $Walking
 
 var sanity = 100 # out of 100
 var stamina = 100 # out of 100
@@ -121,15 +123,15 @@ func change_movement_mode(new_movement_mode : MovementMode):
 		MovementMode.STANDING:
 			match new_movement_mode:
 				MovementMode.WALKING:
-					$Walking.play()
+					walking.play()
 				MovementMode.SPRINTING:
 					$Sprinting.play()
 		MovementMode.WALKING:
 			match new_movement_mode:
 				MovementMode.STANDING:
-					$Walking.stop()
+					walking.stop()
 				MovementMode.SPRINTING:
-					$Walking.stop()
+					walking.stop()
 					$Sprinting.play()
 		MovementMode.SPRINTING:
 			match new_movement_mode:
@@ -137,7 +139,7 @@ func change_movement_mode(new_movement_mode : MovementMode):
 					$Sprinting.stop()
 				MovementMode.WALKING:
 					$Sprinting.stop()
-					$Walking.play()
+					walking.play()
 	
 	movement_mode = new_movement_mode
 
@@ -189,3 +191,23 @@ func unpause_flame():
 
 func _process(delta: float) -> void:
 	hand_camera.global_transform = camera.global_transform
+
+
+func _on_gate_to_hell_body_entered(body: Node3D) -> void:
+	if (not body.is_in_group("player")):
+		return
+	
+	in_dungeon = not in_dungeon
+	
+	if (in_dungeon):
+		walking.stop()
+		walking = $StoneWalking
+		walking.play()
+	else:
+		walking.stop()
+		walking = $Walking
+		walking.play()
+
+
+func _on_gate_to_hell_body_exited(body: Node3D) -> void:
+	pass

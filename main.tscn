@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=73 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -112,6 +112,9 @@ albedo_texture = ExtResource("57_u5lli")
 [sub_resource type="PlaneMesh" id="PlaneMesh_nqbti"]
 material = SubResource("StandardMaterial3D_u5e14")
 size = Vector2(0.5, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xdjah"]
+size = Vector3(1, 4.8241, 7.58618)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_y3a05")
@@ -1026,6 +1029,17 @@ mesh = SubResource("PlaneMesh_nqbti")
 [node name="archglb" parent="." instance=ExtResource("58_nw45n")]
 transform = Transform3D(0.00595851, 0, 0.0998223, 0, 0.1, 0, -0.0998223, 0, 0.00595851, 317.077, 29.3034, -99.8211)
 
+[node name="PreviewFlashlight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 367.278, 29.0363, -146.6)
+light_energy = 3.46
+omni_range = 31.6906
+
+[node name="GateToHell" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GateToHell"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 315.691, 29.2603, -100.077)
+shape = SubResource("BoxShape3D_xdjah")
+
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
 [connection signal="register_skull" from="Player" to="." method="_on_player_register_skull"]
@@ -1036,3 +1050,5 @@ transform = Transform3D(0.00595851, 0, 0.0998223, 0, 0.1, 0, -0.0998223, 0, 0.00
 [connection signal="stop_haunting" from="NavigationRegion3D/Graveyard/HauntingAreaGraveyard" to="." method="_on_haunting_area_stop_haunting"]
 [connection signal="start_haunting" from="NavigationRegion3D/StrangeRocks/HauntingArea" to="." method="_on_haunting_area_start_haunting"]
 [connection signal="stop_haunting" from="NavigationRegion3D/StrangeRocks/HauntingArea" to="." method="_on_haunting_area_stop_haunting"]
+[connection signal="body_entered" from="GateToHell" to="Player" method="_on_gate_to_hell_body_entered"]
+[connection signal="body_exited" from="GateToHell" to="Player" method="_on_gate_to_hell_body_exited"]
