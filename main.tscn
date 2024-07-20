@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=72 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -57,6 +57,7 @@
 [ext_resource type="PackedScene" uid="uid://cxmbux153imhp" path="res://assets/models/Rock3/rock_3.tscn" id="54_kbu1b"]
 [ext_resource type="MeshLibrary" uid="uid://b58cb358rt6wo" path="res://assets/dungeon/tileset.tres" id="56_0n7ge"]
 [ext_resource type="Texture2D" path="res://grass_alb_ht.dds" id="57_u5lli"]
+[ext_resource type="PackedScene" uid="uid://dcyu34kf0fsbu" path="res://assets/models/dungeon_enterance/archglb.tscn" id="58_nw45n"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -1020,6 +1021,9 @@ mesh = SubResource("PlaneMesh_nqbti")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="GridMap"]
 transform = Transform3D(-2.50019e-07, -1.55, 0, 4.04448, -4.79083e-08, -7.88334, 4.04448, -4.79083e-08, 7.88334, 76.0113, 5.01431, -195.972)
 mesh = SubResource("PlaneMesh_nqbti")
+
+[node name="archglb" parent="." instance=ExtResource("58_nw45n")]
+transform = Transform3D(0.00595851, 0, 0.0998223, 0, 0.1, 0, -0.0998223, 0, 0.00595851, 317.077, 29.3034, -99.8211)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]

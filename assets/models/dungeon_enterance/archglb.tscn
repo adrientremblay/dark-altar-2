@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcyu34kf0fsbu"]
+
+[ext_resource type="PackedScene" uid="uid://dx728orgr07aw" path="res://assets/models/dungeon_enterance/archglb.glb" id="1_qvuoy"]
+
+[node name="archglb" instance=ExtResource("1_qvuoy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.5537, 0)
