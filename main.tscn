@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=68 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -55,6 +55,7 @@
 [ext_resource type="PackedScene" uid="uid://c8hkn7joedxsb" path="res://assets/models/Rock2/rock_2.tscn" id="53_ax0e6"]
 [ext_resource type="PackedScene" uid="uid://dwajs1w5xjbyd" path="res://assets/models/Rock4/rock_4.tscn" id="54_c7tgi"]
 [ext_resource type="PackedScene" uid="uid://cxmbux153imhp" path="res://assets/models/Rock3/rock_3.tscn" id="54_kbu1b"]
+[ext_resource type="MeshLibrary" uid="uid://b58cb358rt6wo" path="res://assets/dungeon/tileset.tres" id="56_0n7ge"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -113,7 +114,7 @@ environment = SubResource("Environment_g4vby")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 51.2963, 0.994264, -48.3976)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.745242, 0, 0.666792, 0, 1, 0, -0.666792, 0, 0.745242, 88.9676, 1.62609, -83.7429)
+transform = Transform3D(0.745242, 0, 0.666792, 0, 1, 0, -0.666792, 0, 0.745242, 88.9676, 1.62609, -211.901)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -991,6 +992,14 @@ mesh = SubResource("BoxMesh_wlmbg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 
 [node name="AmbientSound" parent="." instance=ExtResource("50_gnthh")]
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
+mesh_library = ExtResource("56_0n7ge")
+cell_scale = 2.0
+data = {
+"cells": PackedInt32Array(45, 65428, 2, 44, 65428, 2, 44, 65427, 2, 45, 65427, 2, 46, 65428, 1441792, 46, 65427, 1441792, 43, 65427, 1048576, 43, 65428, 1048576, 44, 65426, 0, 45, 65426, 0, 43, 65426, 1048577, 46, 65426, 1)
+}
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
