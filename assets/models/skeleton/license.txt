@@ -1,0 +1,11 @@
+Model Information:
+* title:	Skeleton
+* source:	https://sketchfab.com/3d-models/skeleton-06959a2724884c6994b6f15d39cfd163
+* author:	DJMaesen (https://sketchfab.com/bumstrum)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Skeleton" (https://sketchfab.com/3d-models/skeleton-06959a2724884c6994b6f15d39cfd163) by DJMaesen (https://sketchfab.com/bumstrum) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

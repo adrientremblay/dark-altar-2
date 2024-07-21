@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=90 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -69,6 +69,8 @@
 [ext_resource type="Texture2D" uid="uid://blakbhshf8jn3" path="res://assets/images/banner.png" id="67_s2xpi"]
 [ext_resource type="PackedScene" uid="uid://c2ssk8lp62jwl" path="res://assets/models/stone_arch/stone_arch.tscn" id="68_fwymy"]
 [ext_resource type="PackedScene" uid="uid://dtjioflahwr5s" path="res://assets/models/book_stand_with_book/bookstand.tscn" id="69_jfqy0"]
+[ext_resource type="PackedScene" uid="uid://b0n6hw1kisv1f" path="res://assets/models/gore/fullbody.tscn" id="70_3fkx7"]
+[ext_resource type="PackedScene" uid="uid://6pk26ev4n5ug" path="res://assets/models/head_crusher/headcrusher.tscn" id="71_ciqmk"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -1055,7 +1057,8 @@ transform = Transform3D(0.00595851, 0, 0.0998223, 0, 0.1, 0, -0.0998223, 0, 0.00
 visible = false
 
 [node name="PreviewFlashlight" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371.512, 29.8284, -142.917)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 357.427, 29.8284, -59.5237)
+visible = false
 light_energy = 3.46
 omni_range = 31.6906
 
@@ -1133,6 +1136,12 @@ transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 
 
 [node name="Bookstand" parent="." instance=ExtResource("69_jfqy0")]
 transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 370.13, 26.9914, -149.764)
+
+[node name="fullbody" parent="." instance=ExtResource("70_3fkx7")]
+transform = Transform3D(-0.995807, 0, -0.0914843, 0, 1, 0, 0.0914843, 0, -0.995807, 361.233, 26.9, -60.2972)
+
+[node name="headcrusher" parent="." instance=ExtResource("71_ciqmk")]
+transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, 361.237, 26.9689, -58.6535)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0n6hw1kisv1f"]
+
+[ext_resource type="PackedScene" uid="uid://bkjojfddltddq" path="res://assets/models/gore/scene.gltf" id="1_154a4"]
+
+[node name="fullbody" instance=ExtResource("1_154a4")]

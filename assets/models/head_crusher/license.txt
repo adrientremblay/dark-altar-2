@@ -1,0 +1,11 @@
+Model Information:
+* title:	Head Crusher
+* source:	https://sketchfab.com/3d-models/head-crusher-ef97871e17c24a45bcec0f193e6e604e
+* author:	Nudluria (https://sketchfab.com/nudluria)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Head Crusher" (https://sketchfab.com/3d-models/head-crusher-ef97871e17c24a45bcec0f193e6e604e) by Nudluria (https://sketchfab.com/nudluria) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
