@@ -17,6 +17,7 @@ var in_dungeon = false
 @onready var candle = $CameraPivot/Camera3D/Candle
 @onready var animation_player : AnimationPlayer = $CameraPivot/Camera3D/AnimationPlayer
 @onready var walking : AudioStreamPlayer = $Walking
+@onready var sprinting : AudioStreamPlayer = $Sprinting
 
 var sanity = 100 # out of 100
 var stamina = 100 # out of 100
@@ -125,20 +126,20 @@ func change_movement_mode(new_movement_mode : MovementMode):
 				MovementMode.WALKING:
 					walking.play()
 				MovementMode.SPRINTING:
-					$Sprinting.play()
+					sprinting.play()
 		MovementMode.WALKING:
 			match new_movement_mode:
 				MovementMode.STANDING:
 					walking.stop()
 				MovementMode.SPRINTING:
 					walking.stop()
-					$Sprinting.play()
+					sprinting.play()
 		MovementMode.SPRINTING:
 			match new_movement_mode:
 				MovementMode.STANDING:
-					$Sprinting.stop()
+					sprinting.stop()
 				MovementMode.WALKING:
-					$Sprinting.stop()
+					sprinting.stop()
 					walking.play()
 	
 	movement_mode = new_movement_mode
@@ -203,11 +204,25 @@ func _on_gate_to_hell_body_exited(body: Node3D) -> void:
 	
 	in_dungeon = not in_dungeon
 	
-	if (in_dungeon):
-		walking.stop()
-		walking = $StoneWalking
-		walking.play()
+	if movement_mode == MovementMode.WALKING:
+		if (in_dungeon):
+			walking.stop()
+			walking = $StoneWalking
+			sprinting = $StoneSprinting
+			walking.play()
+		else:
+			walking.stop()
+			walking = $Walking
+			sprinting = $Sprinting
+			walking.play()
 	else:
-		walking.stop()
-		walking = $Walking
-		walking.play()
+		if (in_dungeon):
+			sprinting.stop()
+			sprinting = $StoneSprinting
+			walking = $StoneWalking
+			sprinting.play()
+		else:
+			sprinting.stop()
+			sprinting = $Sprinting
+			walking = $Walking
+			sprinting.play()

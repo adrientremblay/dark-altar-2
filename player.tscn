@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=26 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://dnem3422cvig" path="res://assets/audio/sound_effects/running.mp3" id="7_0qke1"]
 [ext_resource type="AudioStream" uid="uid://cmeujy0jwgmkq" path="res://assets/audio/sound_effects/walking_stone.mp3" id="7_c5k3q"]
 [ext_resource type="AudioStream" uid="uid://bs3pqalo0i2s" path="res://assets/audio/sound_effects/candle_pickup.mp3" id="10_2t33u"]
+[ext_resource type="AudioStream" uid="uid://pk2rt2mkq0j2" path="res://assets/audio/sound_effects/running_stone.mp3" id="11_vdl85"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwuph"]
 
@@ -204,6 +205,9 @@ bus = &"Ambience"
 [node name="Sprinting" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_0qke1")
 bus = &"Ambience"
+
+[node name="StoneSprinting" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_vdl85")
 
 [node name="CandlePickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_2t33u")
