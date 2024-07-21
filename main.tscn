@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=78 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -60,6 +60,7 @@
 [ext_resource type="PackedScene" uid="uid://dcyu34kf0fsbu" path="res://assets/models/dungeon_enterance/archglb.tscn" id="58_nw45n"]
 [ext_resource type="Texture2D" uid="uid://cv2glboxhsx8t" path="res://assets/images/dungeon/pentagram.png" id="59_hbgev"]
 [ext_resource type="PackedScene" uid="uid://b86a1pi8r3spt" path="res://assets/models/altar/altar.tscn" id="60_cdoyy"]
+[ext_resource type="PackedScene" uid="uid://d3bg727m32k24" path="res://assets/models/altar2/altar2.tscn" id="61_akjxv"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -1050,12 +1051,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 315.386, 29.2603, -100.077)
 shape = SubResource("BoxShape3D_xdjah")
 
 [node name="Pentagram" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 370.181, 26.9022, -144.259)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.747, 26.9022, -144.259)
 material_override = SubResource("StandardMaterial3D_wbqgk")
 mesh = SubResource("PlaneMesh_kpy7j")
 
 [node name="altar" parent="." instance=ExtResource("60_cdoyy")]
-transform = Transform3D(-0.00276599, 0, 0.0999617, 0, 0.1, 0, -0.0999617, 0, -0.00276599, 370.571, 27.1545, -144.732)
+transform = Transform3D(-0.00276599, 0, 0.0999617, 0, 0.1, 0, -0.0999617, 0, -0.00276599, 370.137, 27.1545, -144.732)
+
+[node name="atlar_wood" parent="." instance=ExtResource("61_akjxv")]
+transform = Transform3D(0.000458862, 0, -0.014993, 0, 0.015, 0, 0.014993, 0, 0.000458862, 369.958, 26.8578, -153.501)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]

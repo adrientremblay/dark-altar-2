@@ -1,0 +1,11 @@
+Model Information:
+* title:	Alchemy Table - game model
+* source:	https://sketchfab.com/3d-models/alchemy-table-game-model-ecc545e35e7c4d5dba91f94b98ba95b5
+* author:	Marcin Cecot (https://sketchfab.com/MarcinCecot)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Alchemy Table - game model" (https://sketchfab.com/3d-models/alchemy-table-game-model-ecc545e35e7c4d5dba91f94b98ba95b5) by Marcin Cecot (https://sketchfab.com/MarcinCecot) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
