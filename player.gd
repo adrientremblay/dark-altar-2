@@ -204,6 +204,11 @@ func _on_gate_to_hell_body_exited(body: Node3D) -> void:
 	
 	in_dungeon = not in_dungeon
 	
+	if in_dungeon:
+		$DungeonAmbience.play()
+	else:
+		$DungeonAmbience.stop()
+	
 	if movement_mode == MovementMode.WALKING:
 		if (in_dungeon):
 			walking.stop()
