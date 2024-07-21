@@ -194,6 +194,10 @@ func _process(delta: float) -> void:
 
 
 func _on_gate_to_hell_body_entered(body: Node3D) -> void:
+	pass
+
+
+func _on_gate_to_hell_body_exited(body: Node3D) -> void:
 	if (not body.is_in_group("player")):
 		return
 	
@@ -207,7 +211,3 @@ func _on_gate_to_hell_body_entered(body: Node3D) -> void:
 		walking.stop()
 		walking = $Walking
 		walking.play()
-
-
-func _on_gate_to_hell_body_exited(body: Node3D) -> void:
-	pass

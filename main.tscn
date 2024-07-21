@@ -114,7 +114,7 @@ material = SubResource("StandardMaterial3D_u5e14")
 size = Vector2(0.5, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xdjah"]
-size = Vector3(1, 4.8241, 7.58618)
+size = Vector3(3.92401, 4.8241, 7.58618)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_y3a05")
@@ -1037,7 +1037,7 @@ omni_range = 31.6906
 [node name="GateToHell" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GateToHell"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 315.691, 29.2603, -100.077)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 315.386, 29.2603, -100.077)
 shape = SubResource("BoxShape3D_xdjah")
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
