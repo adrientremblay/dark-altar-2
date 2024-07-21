@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0m7r5lhq6xrf"]
+
+[ext_resource type="PackedScene" uid="uid://b7kar8ahst3ax" path="res://assets/models/throne/scene.gltf" id="1_8en84"]
+
+[node name="woodthrone" instance=ExtResource("1_8en84")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.015, 0, 0, 0, -6.55671e-10, 0.015, 0, -0.015, -6.55671e-10, 0, 0, 0)

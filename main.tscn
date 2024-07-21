@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=82 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -64,6 +64,7 @@
 [ext_resource type="PackedScene" uid="uid://df0hqofkbpdt0" path="res://assets/models/demon_skull/demonskull.tscn" id="62_mn4nb"]
 [ext_resource type="PackedScene" uid="uid://c6dyrbvg3kax8" path="res://assets/models/broken_house/broken_house.tscn" id="63_q2viu"]
 [ext_resource type="PackedScene" uid="uid://xfychre3jhas" path="res://assets/models/stone_throne/stone_throne.tscn" id="64_n08jh"]
+[ext_resource type="PackedScene" uid="uid://d0m7r5lhq6xrf" path="res://assets/models/throne/woodthrone.tscn" id="65_ynyw6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -1043,7 +1044,7 @@ mesh = SubResource("PlaneMesh_nqbti")
 transform = Transform3D(0.00595851, 0, 0.0998223, 0, 0.1, 0, -0.0998223, 0, 0.00595851, 317.077, 29.3034, -99.8211)
 
 [node name="PreviewFlashlight" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 368.811, 29.8284, -145.905)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 349.503, 29.8284, -83.8055)
 light_energy = 3.46
 omni_range = 31.6906
 
@@ -1062,7 +1063,7 @@ mesh = SubResource("PlaneMesh_kpy7j")
 transform = Transform3D(-0.00276599, 0, 0.0999617, 0, 0.1, 0, -0.0999617, 0, -0.00276599, 370.137, 27.1545, -144.732)
 
 [node name="atlar_wood" parent="." instance=ExtResource("61_akjxv")]
-transform = Transform3D(0.000458862, 0, -0.014993, 0, 0.015, 0, 0.014993, 0, 0.000458862, 369.958, 26.8578, -152.782)
+transform = Transform3D(-0.000396842, 0, 0.0149948, 0, 0.015, 0, -0.0149948, 0, -0.000396842, 350.075, 26.8578, -81.9198)
 
 [node name="demonskull" parent="." instance=ExtResource("62_mn4nb")]
 transform = Transform3D(0.654253, -0.749512, 0.100925, 0, 0.13345, 0.991056, -0.756276, -0.648401, 0.08731, 353.882, 27.0237, -97.6372)
@@ -1084,6 +1085,9 @@ transform = Transform3D(-0.975604, 0, 0.21954, 0, 1, 0, -0.21954, 0, -0.975604, 
 
 [node name="stone_throne5" parent="." instance=ExtResource("64_n08jh")]
 transform = Transform3D(0.6193, 0, -0.785155, 0, 1, 0, 0.785155, 0, 0.6193, 373.909, 26.9, -148.522)
+
+[node name="woodthrone" parent="." instance=ExtResource("65_ynyw6")]
+transform = Transform3D(-0.01829, 0, -0.999833, 0, 1, 0, 0.999833, 0, -0.01829, 350.185, 26.9, -83.2872)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
