@@ -1,0 +1,11 @@
+Model Information:
+* title:	#9 Magic Book - 3December2019
+* source:	https://sketchfab.com/3d-models/9-magic-book-3december2019-4e245fa384fb486ba7bbc519bdc24464
+* author:	Canary Games (https://sketchfab.com/CapAlatriste)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "#9 Magic Book - 3December2019" (https://sketchfab.com/3d-models/9-magic-book-3december2019-4e245fa384fb486ba7bbc519bdc24464) by Canary Games (https://sketchfab.com/CapAlatriste) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

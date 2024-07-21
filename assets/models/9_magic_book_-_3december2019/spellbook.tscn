@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2xxnasill7vw"]
+
+[ext_resource type="PackedScene" uid="uid://bjtlj5ggrmg18" path="res://assets/models/9_magic_book_-_3december2019/scene.gltf" id="1_07hdj"]
+
+[node name="spellbook" instance=ExtResource("1_07hdj")]
