@@ -1052,7 +1052,7 @@ mesh = SubResource("PlaneMesh_nqbti")
 transform = Transform3D(0.00595851, 0, 0.0998223, 0, 0.1, 0, -0.0998223, 0, 0.00595851, 317.077, 29.3034, -99.8211)
 
 [node name="PreviewFlashlight" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 349.503, 29.8284, -83.8055)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371.512, 29.8284, -142.917)
 light_energy = 3.46
 omni_range = 31.6906
 
@@ -1102,6 +1102,26 @@ transform = Transform3D(-0.0470795, 0.0011079, 0.0168016, 0.0123162, 0.0362867, 
 
 [node name="Bannar" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.0491287, -1.49819, 0, 0.998792, 0.0736931, 350.005, 29.1304, -85.8788)
+material_override = SubResource("StandardMaterial3D_yfrx1")
+mesh = SubResource("PlaneMesh_s4s7d")
+
+[node name="Bannar3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, -4.37114e-08, -1.5, 0, 1, -6.55671e-08, 364.016, 28.7907, -151.872)
+material_override = SubResource("StandardMaterial3D_yfrx1")
+mesh = SubResource("PlaneMesh_s4s7d")
+
+[node name="Bannar4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, -4.37114e-08, -1.5, 0, 1, -6.55671e-08, 376.197, 28.7907, -151.872)
+material_override = SubResource("StandardMaterial3D_yfrx1")
+mesh = SubResource("PlaneMesh_s4s7d")
+
+[node name="Bannar5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.75, 8.74227e-08, -5.73206e-15, 0, -4.37114e-08, -1.5, -6.55671e-08, -1, 6.55671e-08, 364.041, 28.7907, -136.048)
+material_override = SubResource("StandardMaterial3D_yfrx1")
+mesh = SubResource("PlaneMesh_s4s7d")
+
+[node name="Bannar6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.75, 8.74227e-08, -5.73206e-15, 0, -4.37114e-08, -1.5, -6.55671e-08, -1, 6.55671e-08, 376.213, 28.7907, -136.048)
 material_override = SubResource("StandardMaterial3D_yfrx1")
 mesh = SubResource("PlaneMesh_s4s7d")
 
