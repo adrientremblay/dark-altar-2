@@ -1,0 +1,11 @@
+Model Information:
+* title:	Broken Coffin
+* source:	https://sketchfab.com/3d-models/broken-coffin-715fd5c8503b4a0e8106168535c186ff
+* author:	DivyeSh PanchAl (https://sketchfab.com/DivyeSh.PanchAl)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Broken Coffin" (https://sketchfab.com/3d-models/broken-coffin-715fd5c8503b4a0e8106168535c186ff) by DivyeSh PanchAl (https://sketchfab.com/DivyeSh.PanchAl) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
