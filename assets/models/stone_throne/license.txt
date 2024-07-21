@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stone Throne
+* source:	https://sketchfab.com/3d-models/stone-throne-1199906e09794ac9bb349ea8ab93f048
+* author:	JKrauzer (https://sketchfab.com/jkrauzer)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stone Throne" (https://sketchfab.com/3d-models/stone-throne-1199906e09794ac9bb349ea8ab93f048) by JKrauzer (https://sketchfab.com/jkrauzer) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

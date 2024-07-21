@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://xfychre3jhas"]
+
+[ext_resource type="PackedScene" uid="uid://88ti0aatqmiv" path="res://assets/models/stone_throne/scene.gltf" id="1_taar5"]
+
+[node name="stone_throne" instance=ExtResource("1_taar5")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.3, -4.82437e-17, -2.1088e-24, 0, -1.31134e-08, 0.3, -4.82437e-17, -0.3, -1.31134e-08, 0, 0, 0)
