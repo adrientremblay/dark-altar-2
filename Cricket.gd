@@ -2,6 +2,9 @@ extends AudioStreamPlayer
 
 var random = RandomNumberGenerator.new()
 
+var enabled = true
+
 func _on_timer_timeout() -> void:
-	play()
+	if enabled:
+		play()
 	$Timer.start(random.randi_range(10, 15))

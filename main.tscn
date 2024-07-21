@@ -1052,3 +1052,4 @@ shape = SubResource("BoxShape3D_xdjah")
 [connection signal="stop_haunting" from="NavigationRegion3D/StrangeRocks/HauntingArea" to="." method="_on_haunting_area_stop_haunting"]
 [connection signal="body_entered" from="GateToHell" to="Player" method="_on_gate_to_hell_body_entered"]
 [connection signal="body_exited" from="GateToHell" to="Player" method="_on_gate_to_hell_body_exited"]
+[connection signal="body_exited" from="GateToHell" to="AmbientSound" method="_on_gate_to_hell_body_exited"]
