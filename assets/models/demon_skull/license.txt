@@ -1,0 +1,11 @@
+Model Information:
+* title:	Demon Skull
+* source:	https://sketchfab.com/3d-models/demon-skull-0cb0efd8bd8a405f89ce5f757ecf6e8d
+* author:	Auxiar Molkhun (https://sketchfab.com/AuxiarMolkhun)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Demon Skull" (https://sketchfab.com/3d-models/demon-skull-0cb0efd8bd8a405f89ce5f757ecf6e8d) by Auxiar Molkhun (https://sketchfab.com/AuxiarMolkhun) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

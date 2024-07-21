@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://df0hqofkbpdt0"]
+
+[ext_resource type="PackedScene" uid="uid://8347y4io2d2j" path="res://assets/models/demon_skull/scene.gltf" id="1_ke08p"]
+
+[node name="demonskull" instance=ExtResource("1_ke08p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0541434, 0)
+
+[node name="DemonSkull" parent="Sketchfab_model/635b2fa1e0e14d9aad6bf35525509005_fbx/RootNode" index="0"]
+transform = Transform3D(0.992877, 0, 0, 0, 0.992877, 0, 0, 0, 0.992877, 0.732845, -1.52301, -1.06782)
