@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtjioflahwr5s"]
+
+[ext_resource type="PackedScene" uid="uid://6ep7k88t1e0j" path="res://assets/models/book_stand_with_book/scene.gltf" id="1_ajaqm"]
+
+[node name="Bookstand" instance=ExtResource("1_ajaqm")]

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Book stand with book
+* source:	https://sketchfab.com/3d-models/book-stand-with-book-a62f4e2ffde948fda73ed5ac6dee1661
+* author:	Kristiyan Marinov (https://sketchfab.com/kristiyan)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Book stand with book" (https://sketchfab.com/3d-models/book-stand-with-book-a62f4e2ffde948fda73ed5ac6dee1661) by Kristiyan Marinov (https://sketchfab.com/kristiyan) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
