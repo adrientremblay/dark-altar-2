@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=86 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -66,6 +66,7 @@
 [ext_resource type="PackedScene" uid="uid://xfychre3jhas" path="res://assets/models/stone_throne/stone_throne.tscn" id="64_n08jh"]
 [ext_resource type="PackedScene" uid="uid://d0m7r5lhq6xrf" path="res://assets/models/throne/woodthrone.tscn" id="65_ynyw6"]
 [ext_resource type="PackedScene" uid="uid://b2xxnasill7vw" path="res://assets/models/9_magic_book_-_3december2019/spellbook.tscn" id="66_y8qkg"]
+[ext_resource type="Texture2D" uid="uid://blakbhshf8jn3" path="res://assets/images/banner.png" id="67_s2xpi"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -130,6 +131,12 @@ albedo_texture = ExtResource("59_hbgev")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_kpy7j"]
 size = Vector2(10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfrx1"]
+transparency = 1
+albedo_texture = ExtResource("67_s2xpi")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_s4s7d"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_y3a05")
@@ -1092,6 +1099,11 @@ transform = Transform3D(-0.01829, 0, -0.999833, 0, 1, 0, 0.999833, 0, -0.01829, 
 
 [node name="spellbook" parent="." instance=ExtResource("66_y8qkg")]
 transform = Transform3D(-0.0470795, 0.0011079, 0.0168016, 0.0123162, 0.0362867, 0.0321183, -0.0114818, 0.0343809, -0.0344401, 350.067, 27.6485, -82.2271)
+
+[node name="Bannar" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.0491287, -1.49819, 0, 0.998792, 0.0736931, 350.005, 29.1304, -85.8788)
+material_override = SubResource("StandardMaterial3D_yfrx1")
+mesh = SubResource("PlaneMesh_s4s7d")
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
