@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=80 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -62,6 +62,7 @@
 [ext_resource type="PackedScene" uid="uid://b86a1pi8r3spt" path="res://assets/models/altar/altar.tscn" id="60_cdoyy"]
 [ext_resource type="PackedScene" uid="uid://d3bg727m32k24" path="res://assets/models/altar2/altar2.tscn" id="61_akjxv"]
 [ext_resource type="PackedScene" uid="uid://df0hqofkbpdt0" path="res://assets/models/demon_skull/demonskull.tscn" id="62_mn4nb"]
+[ext_resource type="PackedScene" uid="uid://c6dyrbvg3kax8" path="res://assets/models/broken_house/broken_house.tscn" id="63_q2viu"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -1064,6 +1065,9 @@ transform = Transform3D(0.000458862, 0, -0.014993, 0, 0.015, 0, 0.014993, 0, 0.0
 
 [node name="demonskull" parent="." instance=ExtResource("62_mn4nb")]
 transform = Transform3D(0.654253, -0.749512, 0.100925, 0, 0.13345, 0.991056, -0.756276, -0.648401, 0.08731, 353.882, 27.0237, -97.6372)
+
+[node name="BrokenHouse" parent="." instance=ExtResource("63_q2viu")]
+transform = Transform3D(4.76065, 0, -1.52848, 0, 5, 0, 1.52848, 0, 4.76065, 131, 0.0860325, -200.612)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]

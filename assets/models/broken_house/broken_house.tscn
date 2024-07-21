@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6dyrbvg3kax8"]
+
+[ext_resource type="PackedScene" uid="uid://clo5a2k6xw8sx" path="res://assets/models/broken_house/scene.gltf" id="1_oamxl"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_oamxl")]
