@@ -1,0 +1,11 @@
+Model Information:
+* title:	Corpse v02
+* source:	https://sketchfab.com/3d-models/corpse-v02-e5de11d7b18d4db5a87494afc7de1b5f
+* author:	Alexandr Zhilkin (https://sketchfab.com/allexandr007)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Corpse v02" (https://sketchfab.com/3d-models/corpse-v02-e5de11d7b18d4db5a87494afc7de1b5f) by Alexandr Zhilkin (https://sketchfab.com/allexandr007) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

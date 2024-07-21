@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=93 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -73,6 +73,7 @@
 [ext_resource type="PackedScene" uid="uid://6pk26ev4n5ug" path="res://assets/models/head_crusher/headcrusher.tscn" id="71_ciqmk"]
 [ext_resource type="PackedScene" uid="uid://d0eeur0pdlobi" path="res://assets/models/broken_coffin/broken_coffin.tscn" id="72_5gf6a"]
 [ext_resource type="PackedScene" uid="uid://ce3ffunmaaorj" path="res://assets/models/wooden_coffin/wooden_coffin.tscn" id="73_0bmh0"]
+[ext_resource type="PackedScene" uid="uid://c5jrkwo55eefx" path="res://assets/models/corpse_v02/corpse.tscn" id="74_0xmi2"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -1147,6 +1148,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 357.427, 30.0803, -59.8937)
 light_energy = 3.46
 omni_range = 31.6906
 
+[node name="PREVIEW_FLASHLIGHT3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 367.803, 30.2368, -146.228)
+light_energy = 3.46
+omni_range = 31.6906
+
 [node name="PREVIEW_FLASHLIGHT2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 358.878, 30.1699, -47.7541)
 light_energy = 3.46
@@ -1163,6 +1169,12 @@ transform = Transform3D(0.989553, 0, 0.144166, 0, 1, 0, -0.144166, 0, 0.989553, 
 
 [node name="wooden_coffin4" parent="." instance=ExtResource("73_0bmh0")]
 transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, -1.90796e-08, 0.218245, -0.975894, 8.53154e-08, -0.975894, -0.218245, 357.018, 28.2467, -44.1032)
+
+[node name="Corpse" parent="." instance=ExtResource("74_0xmi2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 358.673, 26.9, -47.9975)
+
+[node name="Corpse2" parent="." instance=ExtResource("74_0xmi2")]
+transform = Transform3D(-0.991644, 0, -0.129003, 0, 1, 0, 0.129003, 0, -0.991644, 357.603, 26.9, -47.9975)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
