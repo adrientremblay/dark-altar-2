@@ -1187,7 +1187,7 @@ transform = Transform3D(0.672509, 0, 0.740089, 0, 1, 0, -0.740089, 0, 0.672509, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7, 362.978, 27.4026, -60)
 
 [node name="stocks" parent="." instance=ExtResource("77_j7pox")]
-transform = Transform3D(0.996266, 0, 0.0863385, 0, 1, 0, -0.0863385, 0, 0.996266, 360.373, 26.8682, -57.8935)
+transform = Transform3D(0.996266, 0, 0.0863385, 0, 1, 0, -0.0863385, 0, 0.996266, 373.578, 26.8682, -67.4008)
 
 [node name="torture_table2" parent="." instance=ExtResource("76_g2c8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7, 352.949, 27.4026, -60)
