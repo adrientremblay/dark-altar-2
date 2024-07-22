@@ -1,0 +1,8 @@
+Model Information:
+* title:	Medieval Style Single Bed
+* source:	https://sketchfab.com/3d-models/medieval-style-single-bed-60dbac456bd4405499c144ebf0dca7cb
+* author:	GetDeadEntertainment (https://sketchfab.com/GetDeadEntertainment)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

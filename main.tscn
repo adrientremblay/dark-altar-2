@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=105 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -85,6 +85,7 @@
 [ext_resource type="PackedScene" uid="uid://bc2iivdmlhk46" path="res://assets/models/medieval_bookcase/bookcase.tscn" id="83_p8m3w"]
 [ext_resource type="PackedScene" uid="uid://brvyqmyj5at3v" path="res://assets/models/book_open/alchemy_book.tscn" id="84_3teg0"]
 [ext_resource type="PackedScene" uid="uid://dfskrpbqjisld" path="res://assets/models/otherwoodenchair/otherwoodenchair.tscn" id="85_3cnim"]
+[ext_resource type="PackedScene" uid="uid://bwkq4pxkuw470" path="res://assets/models/medieval_style_single_bed/bed.tscn" id="86_1oecy"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -166,7 +167,7 @@ environment = SubResource("Environment_g4vby")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 51.2963, 0.994264, -48.3976)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.5184, 0, -0.855137, 0, 1, 0, 0.855137, 0, 0.5184, 304.459, 28.0225, -102.925)
+transform = Transform3D(0.5184, 0, -0.855137, 0, 1, 0, 0.855137, 0, 0.5184, 434.595, 28.0225, -85.2694)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -1204,7 +1205,7 @@ transform = Transform3D(0.672509, 0, 0.740089, 0, 1, 0, -0.740089, 0, 0.672509, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7, 362.978, 27.4026, -60)
 
 [node name="stocks" parent="." instance=ExtResource("77_j7pox")]
-transform = Transform3D(0.996266, 0, 0.0863385, 0, 1, 0, -0.0863385, 0, 0.996266, 373.518, 26.8492, -67.3826)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 372.162, 26.8492, -68.5624)
 
 [node name="torture_table2" parent="." instance=ExtResource("76_g2c8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7, 352.949, 27.4026, -60)
@@ -1269,6 +1270,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 356.737, 30.1699, -95.0811)
 light_energy = 3.46
 omni_range = 31.6906
 
+[node name="PREVIEW_FLASHLIGHT7" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 373.324, 30.1699, -71.2027)
+light_energy = 3.46
+omni_range = 31.6906
+
 [node name="bookcase" parent="." instance=ExtResource("83_p8m3w")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 352.212, 27, -92)
 
@@ -1299,6 +1305,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 358.274, 27, -98.1705)
 
 [node name="otherwoodenchair4" parent="." instance=ExtResource("85_3cnim")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 356.196, 27, -94.1253)
+
+[node name="PREVIEW_FLASHLIGHT8" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 436.208, 30.1699, -79.3587)
+light_energy = 3.46
+omni_range = 31.6906
+
+[node name="bed" parent="." instance=ExtResource("86_1oecy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 433.562, 26.8987, -79.591)
+
+[node name="bed2" parent="." instance=ExtResource("86_1oecy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 433.562, 26.8987, -76.5896)
+
+[node name="bed3" parent="." instance=ExtResource("86_1oecy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 438.493, 26.8987, -79.591)
+
+[node name="bed4" parent="." instance=ExtResource("86_1oecy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 438.493, 26.8987, -76.5896)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
