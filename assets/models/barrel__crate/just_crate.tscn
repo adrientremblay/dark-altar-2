@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5gmcae7fygph"]
+
+[ext_resource type="PackedScene" uid="uid://conxyotsfkl50" path="res://assets/models/barrel__crate/just_crate.glb" id="1_bo3m2"]
+
+[node name="just_crate" instance=ExtResource("1_bo3m2")]
+
+[node name="crate_cratebarrel_0" parent="crate" index="0"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 199.858, -39.3808, 0)

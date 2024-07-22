@@ -1,0 +1,11 @@
+Model Information:
+* title:	Barrel & Crate
+* source:	https://sketchfab.com/3d-models/barrel-crate-ed9f90ec662b4b3c972b4567899b8293
+* author:	DJMaesen (https://sketchfab.com/bumstrum)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Barrel & Crate" (https://sketchfab.com/3d-models/barrel-crate-ed9f90ec662b4b3c972b4567899b8293) by DJMaesen (https://sketchfab.com/bumstrum) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

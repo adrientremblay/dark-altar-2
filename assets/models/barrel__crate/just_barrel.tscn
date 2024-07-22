@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dibmyslxnh0h8"]
+
+[ext_resource type="PackedScene" uid="uid://bw0g8g3ydu13j" path="res://assets/models/barrel__crate/just_barrel.glb" id="1_rvr53"]
+
+[node name="just_barrel" instance=ExtResource("1_rvr53")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0)
+
+[node name="barrel_cratebarrel_0" parent="Sketchfab_model/abda27c02f1c444eb849d527f16260ae_fbx/RootNode/barrel" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4856, -7.62939e-06, 0)

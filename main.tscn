@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=100 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -78,6 +78,9 @@
 [ext_resource type="PackedScene" uid="uid://c2ucjs4dfau85" path="res://assets/models/wooden_table/torture_table.tscn" id="76_g2c8i"]
 [ext_resource type="PackedScene" uid="uid://birces084a6q0" path="res://assets/models/stocks/stocks.tscn" id="77_j7pox"]
 [ext_resource type="PackedScene" uid="uid://dv3klj0b6x0y2" path="res://assets/models/torture_tools/torture_tools.tscn" id="78_f5bme"]
+[ext_resource type="PackedScene" uid="uid://bkxqnwo3km2wh" path="res://assets/models/rusty_dungeon_cage/cage.tscn" id="79_gcq5x"]
+[ext_resource type="PackedScene" uid="uid://dibmyslxnh0h8" path="res://assets/models/barrel__crate/just_barrel.tscn" id="81_drwsh"]
+[ext_resource type="PackedScene" uid="uid://c5gmcae7fygph" path="res://assets/models/barrel__crate/just_crate.tscn" id="81_vg0g7"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -159,7 +162,7 @@ environment = SubResource("Environment_g4vby")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 51.2963, 0.994264, -48.3976)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.5184, 0, -0.855137, 0, 1, 0, 0.855137, 0, 0.5184, 304.35, 28.539, -101.4)
+transform = Transform3D(0.5184, 0, -0.855137, 0, 1, 0, 0.855137, 0, 0.5184, 304.459, 28.0225, -102.925)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -1162,6 +1165,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 358.878, 30.1699, -47.7541)
 light_energy = 3.46
 omni_range = 31.6906
 
+[node name="PREVIEW_FLASHLIGHT4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 330.05, 30.1699, -116.526)
+light_energy = 3.46
+omni_range = 31.6906
+
 [node name="wooden_coffin" parent="." instance=ExtResource("73_0bmh0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360.852, 26.7107, -48)
 
@@ -1187,13 +1195,52 @@ transform = Transform3D(0.672509, 0, 0.740089, 0, 1, 0, -0.740089, 0, 0.672509, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7, 362.978, 27.4026, -60)
 
 [node name="stocks" parent="." instance=ExtResource("77_j7pox")]
-transform = Transform3D(0.996266, 0, 0.0863385, 0, 1, 0, -0.0863385, 0, 0.996266, 373.578, 26.8682, -67.4008)
+transform = Transform3D(0.996266, 0, 0.0863385, 0, 1, 0, -0.0863385, 0, 0.996266, 373.518, 26.8492, -67.3826)
 
 [node name="torture_table2" parent="." instance=ExtResource("76_g2c8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7, 352.949, 27.4026, -60)
 
 [node name="torture_tools" parent="." instance=ExtResource("78_f5bme")]
 transform = Transform3D(-0.0191764, 0, 0.499632, 0, 0.5, 0, -0.499632, 0, -0.0191764, 352.805, 27.8135, -59.9643)
+
+[node name="cage" parent="." instance=ExtResource("79_gcq5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355.062, 26.9, -63.0124)
+
+[node name="just_barrel" parent="." instance=ExtResource("81_drwsh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 327.3, 26.8753, -118.639)
+
+[node name="just_barrel2" parent="." instance=ExtResource("81_drwsh")]
+transform = Transform3D(0.875414, 0, 0.483374, 0, 1, 0, -0.483374, 0, 0.875414, 328.104, 26.8753, -118.792)
+
+[node name="just_barrel3" parent="." instance=ExtResource("81_drwsh")]
+transform = Transform3D(0.850251, 0, -0.526377, 0, 1, 0, 0.526377, 0, 0.850251, 327.865, 26.8753, -118.022)
+
+[node name="just_barrel4" parent="." instance=ExtResource("81_drwsh")]
+transform = Transform3D(0.850251, 0, -0.526377, 0, 1, 0, 0.526377, 0, 0.850251, 329.896, 26.8753, -119.194)
+
+[node name="just_barrel5" parent="." instance=ExtResource("81_drwsh")]
+transform = Transform3D(0.927406, 0, 0.374056, 0, 1, 0, -0.374056, 0, 0.927406, 327.277, 26.8753, -113.134)
+
+[node name="just_barrel6" parent="." instance=ExtResource("81_drwsh")]
+transform = Transform3D(0.927406, 0, 0.374056, 0, 1, 0, -0.374056, 0, 0.927406, 327.826, 26.8753, -112.472)
+
+[node name="just_barrel7" parent="." instance=ExtResource("81_drwsh")]
+transform = Transform3D(0.59062, 0, 0.80695, 0, 1, 0, -0.80695, 0, 0.59062, 333.148, 26.8753, -115.524)
+
+[node name="just_barrel8" parent="." instance=ExtResource("81_drwsh")]
+transform = Transform3D(0.47653, 0, 0.879158, 0, 1, 0, -0.879158, 0, 0.47653, 333.072, 26.8753, -112.948)
+
+[node name="just_crate" parent="." instance=ExtResource("81_vg0g7")]
+transform = Transform3D(0.225801, 0, 0.974173, 0, 1, 0, -0.974173, 0, 0.225801, 327.012, 26.89, -115.396)
+
+[node name="just_crate2" parent="." instance=ExtResource("81_vg0g7")]
+transform = Transform3D(-0.131409, 0, 0.991328, 0, 1, 0, -0.991328, 0, -0.131409, 327.169, 26.89, -116.328)
+
+[node name="just_crate3" parent="." instance=ExtResource("81_vg0g7")]
+transform = Transform3D(0.757223, 0, 0.653156, 0, 1, 0, -0.653156, 0, 0.757223, 327.012, 27.6338, -115.866)
+
+[node name="just_crate4" parent="." instance=ExtResource("81_vg0g7")]
+transform = Transform3D(0.164996, 0, 0.986294, 0, 1, 0, -0.986294, 0, 0.164996, 331.434, 26.89, -117.362)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
