@@ -1,0 +1,11 @@
+Model Information:
+* title:	Witch's chair
+* source:	https://sketchfab.com/3d-models/witchs-chair-e18002149e2a479d9798ec4fe8833947
+* author:	Nudluria (https://sketchfab.com/nudluria)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Witch's chair" (https://sketchfab.com/3d-models/witchs-chair-e18002149e2a479d9798ec4fe8833947) by Nudluria (https://sketchfab.com/nudluria) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
