@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=104 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -84,6 +84,7 @@
 [ext_resource type="PackedScene" uid="uid://b2wnamjxer2ji" path="res://assets/models/medieval_table_drink/dinnertable.tscn" id="82_sidku"]
 [ext_resource type="PackedScene" uid="uid://bc2iivdmlhk46" path="res://assets/models/medieval_bookcase/bookcase.tscn" id="83_p8m3w"]
 [ext_resource type="PackedScene" uid="uid://brvyqmyj5at3v" path="res://assets/models/book_open/alchemy_book.tscn" id="84_3teg0"]
+[ext_resource type="PackedScene" uid="uid://dfskrpbqjisld" path="res://assets/models/otherwoodenchair/otherwoodenchair.tscn" id="85_3cnim"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -1276,6 +1277,28 @@ transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 
 
 [node name="alchemy_book" parent="." instance=ExtResource("84_3teg0")]
 transform = Transform3D(0.999719, -0.0236994, 0, 0.0236994, 0.999719, 0, 0, 0, 1, 355.554, 27.7343, -96.1375)
+
+[node name="Bannar9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, -4.37114e-08, -1.5, 0, 1, -6.55671e-08, 356.032, 28.7907, -99.8691)
+material_override = SubResource("StandardMaterial3D_yfrx1")
+mesh = SubResource("PlaneMesh_s4s7d")
+
+[node name="Bannar10" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.75, -8.74228e-08, 5.73206e-15, 0, -4.37114e-08, -1.5, 6.55671e-08, -1, 6.55671e-08, 357.054, 28.7907, -86.0613)
+material_override = SubResource("StandardMaterial3D_yfrx1")
+mesh = SubResource("PlaneMesh_s4s7d")
+
+[node name="otherwoodenchair" parent="." instance=ExtResource("85_3cnim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 356.196, 27, -98.0529)
+
+[node name="otherwoodenchair2" parent="." instance=ExtResource("85_3cnim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 354.096, 27, -98.1705)
+
+[node name="otherwoodenchair3" parent="." instance=ExtResource("85_3cnim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 358.274, 27, -98.1705)
+
+[node name="otherwoodenchair4" parent="." instance=ExtResource("85_3cnim")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 356.196, 27, -94.1253)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
