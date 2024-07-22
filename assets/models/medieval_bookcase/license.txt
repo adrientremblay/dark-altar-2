@@ -1,0 +1,11 @@
+Model Information:
+* title:	Medieval bookcase
+* source:	https://sketchfab.com/3d-models/medieval-bookcase-86d0148ab525424ea3bdea13430d476e
+* author:	KIFIR (https://sketchfab.com/kifir)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Medieval bookcase" (https://sketchfab.com/3d-models/medieval-bookcase-86d0148ab525424ea3bdea13430d476e) by KIFIR (https://sketchfab.com/kifir) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
