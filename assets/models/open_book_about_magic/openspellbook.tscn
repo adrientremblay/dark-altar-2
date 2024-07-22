@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://boc8tk8so0niu"]
+
+[ext_resource type="PackedScene" uid="uid://c1t7erp8sr432" path="res://assets/models/open_book_about_magic/scene.gltf" id="1_itcm6"]
+
+[node name="openspellbook" instance=ExtResource("1_itcm6")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(7.79308e-18, -1.78285e-10, 0.00407868, -0.00407868, -1.78285e-10, 0, 1.78285e-10, -0.00407868, -1.78285e-10, -0.0429914, -0.00785396, -0.00558136)

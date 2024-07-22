@@ -1,0 +1,11 @@
+Model Information:
+* title:	Open Book about Magic
+* source:	https://sketchfab.com/3d-models/open-book-about-magic-f7b51b38db5f41c7a283c11e94b72743
+* author:	salo_nya (https://sketchfab.com/salovvolas)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Open Book about Magic" (https://sketchfab.com/3d-models/open-book-about-magic-f7b51b38db5f41c7a283c11e94b72743) by salo_nya (https://sketchfab.com/salovvolas) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
