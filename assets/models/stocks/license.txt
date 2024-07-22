@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stocks
+* source:	https://sketchfab.com/3d-models/stocks-da412e6e5b86434684a4b2ddd48e7b4e
+* author:	Dirtrock (https://sketchfab.com/dirtrock)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stocks" (https://sketchfab.com/3d-models/stocks-da412e6e5b86434684a4b2ddd48e7b4e) by Dirtrock (https://sketchfab.com/dirtrock) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=96 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -76,6 +76,7 @@
 [ext_resource type="PackedScene" uid="uid://c5jrkwo55eefx" path="res://assets/models/corpse_v02/corpse.tscn" id="74_0xmi2"]
 [ext_resource type="PackedScene" uid="uid://cekiftm41v311" path="res://assets/models/witchs_chair/torture_chair.tscn" id="75_0e36c"]
 [ext_resource type="PackedScene" uid="uid://c2ucjs4dfau85" path="res://assets/models/wooden_table/torture_table.tscn" id="76_g2c8i"]
+[ext_resource type="PackedScene" uid="uid://birces084a6q0" path="res://assets/models/stocks/stocks.tscn" id="77_j7pox"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -1183,6 +1184,9 @@ transform = Transform3D(0.672509, 0, 0.740089, 0, 1, 0, -0.740089, 0, 0.672509, 
 
 [node name="torture_table" parent="." instance=ExtResource("76_g2c8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7, 362.978, 27.4026, -60)
+
+[node name="stocks" parent="." instance=ExtResource("77_j7pox")]
+transform = Transform3D(-0.00310662, 0, 0.999995, 0, 1, 0, -0.999995, 0, -0.00310662, 360.373, 26.8682, -57.3564)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
