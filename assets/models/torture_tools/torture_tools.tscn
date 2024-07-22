@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv3klj0b6x0y2"]
+
+[ext_resource type="PackedScene" uid="uid://y65xjde6ksfo" path="res://assets/models/torture_tools/scene.gltf" id="1_3m2hj"]
+
+[node name="torture_tools" instance=ExtResource("1_3m2hj")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, 0.01, 0, -0.01, -4.37114e-10, 1.05266, 1.5971, 2.60696)
+
+[node name="RootNode" parent="Sketchfab_model/39d10a40ac5d40e1832f581ed452fde2_fbx" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -344.094, 7.64042e-14)
