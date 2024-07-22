@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp1r268x5qefl"]
+
+[ext_resource type="PackedScene" uid="uid://vuy8q4ewu3sn" path="res://assets/models/wooden_bucket/scene.gltf" id="1_ym2mi"]
+
+[node name="bucket" instance=ExtResource("1_ym2mi")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.0119639, 0, 0, 0, 5.42859e-05, -0.0119637, 0, 0.0119637, 5.42859e-05, 0, -0.005629, 0.00855052)

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wooden Bucket
+* source:	https://sketchfab.com/3d-models/wooden-bucket-68d83e2d634940f594df30998aba652c
+* author:	FlukierJupiter (https://sketchfab.com/FlukierJupiter)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wooden Bucket" (https://sketchfab.com/3d-models/wooden-bucket-68d83e2d634940f594df30998aba652c) by FlukierJupiter (https://sketchfab.com/FlukierJupiter) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,310 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 685,
+      "max": [
+        1.3039034605026245,
+        0.19809454679489136,
+        1.8323302268981934
+      ],
+      "min": [
+        0.6916711330413818,
+        -0.38336604833602905,
+        1.3205223083496094
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 8220,
+      "componentType": 5126,
+      "count": 685,
+      "max": [
+        0.9896116852760315,
+        0.9896116852760315,
+        1.0
+      ],
+      "min": [
+        -0.9896116852760315,
+        -0.9896117448806763,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 685,
+      "max": [
+        0.9848077893257141,
+        0.9848078489303589,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -0.9848077893257141,
+        -0.9848101139068604,
+        -1.0,
+        -1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 685,
+      "max": [
+        0.9924651980400085,
+        0.9204460978507996
+      ],
+      "min": [
+        0.0106377974152565,
+        0.009936410002410412
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 2136,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "FlukierJupiter (https://sketchfab.com/FlukierJupiter)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/wooden-bucket-68d83e2d634940f594df30998aba652c",
+      "title": "Wooden Bucket"
+    },
+    "generator": "Sketchfab-12.68.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 8544,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 5480,
+      "byteOffset": 8544,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 16440,
+      "byteOffset": 14024,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 10960,
+      "byteOffset": 30464,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 41424,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/FloorExtension_1_VarA_LOD0_FloorExtension_1_VarA_mdl_mso_baseColor.png"
+    },
+    {
+      "uri": "textures/FloorExtension_1_VarA_LOD0_FloorExtension_1_VarA_mdl_mso_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/FloorExtension_1_VarA_LOD0_FloorExtension_1_VarA_mdl_mso_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "name": "FloorExtension_1_VarA_LOD0_FloorExtension_1_VarA_mdl_mso",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Bucket_LP_FloorExtension_1_VarA_LOD0_FloorExtension_1_VarA_mdl_mso_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.01196386106312275,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        5.428591899983738e-05,
+        0.011963737696530585,
+        0.0,
+        0.0,
+        -0.011963737696530585,
+        5.428591899983738e-05,
+        0.0,
+        0.0,
+        -32.80403518676758,
+        -0.3680777847766949,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "7478b943609b47669091b4cb6d6f9ad9.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        49.11334611250596,
+        41.21099473107568,
+        0.0,
+        0.0,
+        -41.21099473107568,
+        49.11334611250596,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        64.11292266845703,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Bucket_LP"
+    },
+    {
+      "children": [
+        5
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        -1.08162999153137,
+        0.158483266830444,
+        -1.32059693336487,
+        1.0
+      ],
+      "name": "Object_4"
+    },
+    {
+      "mesh": 0,
+      "name": "Bucket_LP_FloorExtension_1_VarA_LOD0_FloorExtension_1_VarA_mdl_mso_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
