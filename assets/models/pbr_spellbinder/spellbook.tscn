@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuorg5tpvfysw"]
+
+[ext_resource type="PackedScene" uid="uid://ccwme43e31yxt" path="res://assets/models/pbr_spellbinder/scene.gltf" id="1_lbl6j"]
+
+[node name="spellbook" instance=ExtResource("1_lbl6j")]

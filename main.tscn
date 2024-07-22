@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=112 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -92,6 +92,7 @@
 [ext_resource type="PackedScene" uid="uid://bmmufo133csrs" path="res://assets/models/medieval_chest/chest.tscn" id="90_mooy0"]
 [ext_resource type="PackedScene" uid="uid://ccjxfyys7t1be" path="res://assets/models/candle_holder_low/candleholder.tscn" id="91_i7vry"]
 [ext_resource type="PackedScene" uid="uid://vbpfjufld3yw" path="res://assets/models/satan/satan.tscn" id="92_6vnrg"]
+[ext_resource type="PackedScene" uid="uid://cuorg5tpvfysw" path="res://assets/models/pbr_spellbinder/spellbook.tscn" id="93_b8iyb"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -1425,6 +1426,9 @@ transform = Transform3D(0.614684, 0.786012, 0.0659448, -0.00715404, -0.0780453, 
 
 [node name="Satan" parent="." instance=ExtResource("92_6vnrg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 370.081, 27, -151.916)
+
+[node name="spellbook2" parent="." instance=ExtResource("93_b8iyb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 449.943, 27.6894, -86.8452)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
