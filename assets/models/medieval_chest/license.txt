@@ -1,0 +1,11 @@
+Model Information:
+* title:	Medieval Chest
+* source:	https://sketchfab.com/3d-models/medieval-chest-1be4b664c1774fb080a9b0520c3ac786
+* author:	Melon Polygons (https://sketchfab.com/Melonpolygons)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Medieval Chest" (https://sketchfab.com/3d-models/medieval-chest-1be4b664c1774fb080a9b0520c3ac786) by Melon Polygons (https://sketchfab.com/Melonpolygons) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,317 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1963,
+      "max": [
+        0.5662242770195007,
+        0.48727765679359436,
+        2.0267386436462402
+      ],
+      "min": [
+        -0.5662249326705933,
+        -0.4872717261314392,
+        -2.024742603302002
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 23556,
+      "componentType": 5126,
+      "count": 1963,
+      "max": [
+        0.9997156858444214,
+        0.9997156262397766,
+        1.0
+      ],
+      "min": [
+        -0.9997159242630005,
+        -0.9997159838676453,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 1963,
+      "max": [
+        0.9992949962615967,
+        0.999142587184906,
+        1.0,
+        1.0
+      ],
+      "min": [
+        -0.9885240197181702,
+        -0.9991479516029358,
+        -1.0,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1963,
+      "max": [
+        0.9964290261268616,
+        0.9970690011978149
+      ],
+      "min": [
+        0.0019480000482872128,
+        0.0019480000482872128
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 15704,
+      "componentType": 5126,
+      "count": 1963,
+      "max": [
+        0.9964290261268616,
+        0.9970690011978149
+      ],
+      "min": [
+        0.0019480000482872128,
+        0.0019480000482872128
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 31408,
+      "componentType": 5126,
+      "count": 1963,
+      "max": [
+        0.9964290261268616,
+        0.9970690011978149
+      ],
+      "min": [
+        0.0019480000482872128,
+        0.0019480000482872128
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 6336,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Batuhan13 (https://sketchfab.com/Batuhan13)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/candle-holder-low-a68a5ead8c9942fe87da40bf879b57f7",
+      "title": "Candle Holder Low"
+    },
+    "generator": "Sketchfab-12.65.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 25344,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 47112,
+      "byteOffset": 25344,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 47112,
+      "byteOffset": 72456,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 31408,
+      "byteOffset": 119568,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 150976,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/CandleHolder_baseColor.png"
+    },
+    {
+      "uri": "textures/CandleHolder_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/CandleHolder_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "CandleHolder",
+      "normalTexture": {
+        "index": 2
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        },
+        "roughnessFactor": 0.49935665703183324
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Cylinder.023_CandleHolder_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5
+          },
+          "indices": 6,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "CandleHolderLow.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        37.074062446870016,
+        0.0,
+        26.053156665919886,
+        0.0,
+        26.05315666591986,
+        -1.9806870257958842e-06,
+        -37.07406244686998,
+        0.0,
+        1.1388196902331747e-06,
+        45.31283569335933,
+        -1.6205587972175584e-06,
+        0.0,
+        479.3143615722656,
+        91.6620101928711,
+        1035.15234375,
+        1.0
+      ],
+      "name": "Cylinder.023"
+    },
+    {
+      "mesh": 0,
+      "name": "Cylinder.023_CandleHolder_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}

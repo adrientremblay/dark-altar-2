@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccjxfyys7t1be"]
+
+[ext_resource type="PackedScene" uid="uid://l0h2frknuap2" path="res://assets/models/candle_holder_low/scene.gltf" id="1_0w8h8"]
+
+[node name="candleholder" instance=ExtResource("1_0w8h8")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.008, 0, 0, 0, -3.49691e-10, 0.008, 0, -0.008, -3.49691e-10, 0, 0, 0)
+
+[node name="Cylinder_023" parent="Sketchfab_model/CandleHolderLow_fbx/RootNode" index="0"]
+transform = Transform3D(37.0741, 26.0532, 1.13882e-06, 0, -1.98069e-06, 45.3128, 26.0532, -37.0741, -1.62056e-06, -0.729214, 91.662, 1.08543)
