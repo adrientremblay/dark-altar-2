@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://brvyqmyj5at3v"]
+
+[ext_resource type="PackedScene" uid="uid://daxigmh0jqn1i" path="res://assets/models/book_open/scene.gltf" id="1_tyi0y"]
+
+[node name="alchemy_book" instance=ExtResource("1_tyi0y")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, 0.01, 0, -0.01, -4.37114e-10, 0, 0, 0)

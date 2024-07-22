@@ -1,0 +1,11 @@
+Model Information:
+* title:	Book Open
+* source:	https://sketchfab.com/3d-models/book-open-bcc69dacd1bc4eadaf4b9fc0d6e2430b
+* author:	FlukierJupiter (https://sketchfab.com/FlukierJupiter)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Book Open" (https://sketchfab.com/3d-models/book-open-bcc69dacd1bc4eadaf4b9fc0d6e2430b) by FlukierJupiter (https://sketchfab.com/FlukierJupiter) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

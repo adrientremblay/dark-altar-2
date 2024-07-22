@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=103 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -83,6 +83,7 @@
 [ext_resource type="PackedScene" uid="uid://c5gmcae7fygph" path="res://assets/models/barrel__crate/just_crate.tscn" id="81_vg0g7"]
 [ext_resource type="PackedScene" uid="uid://b2wnamjxer2ji" path="res://assets/models/medieval_table_drink/dinnertable.tscn" id="82_sidku"]
 [ext_resource type="PackedScene" uid="uid://bc2iivdmlhk46" path="res://assets/models/medieval_bookcase/bookcase.tscn" id="83_p8m3w"]
+[ext_resource type="PackedScene" uid="uid://brvyqmyj5at3v" path="res://assets/models/book_open/alchemy_book.tscn" id="84_3teg0"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -1086,7 +1087,7 @@ transform = Transform3D(-0.00276599, 0, 0.0999617, 0, 0.1, 0, -0.0999617, 0, -0.
 transform = Transform3D(-0.000396842, 0, 0.0149948, 0, 0.015, 0, -0.0149948, 0, -0.000396842, 350.075, 26.8578, -81.9198)
 
 [node name="demonskull" parent="." instance=ExtResource("62_mn4nb")]
-transform = Transform3D(0.654253, -0.749512, 0.100925, 0, 0.13345, 0.991056, -0.756276, -0.648401, 0.08731, 353.882, 27.0237, -97.6372)
+transform = Transform3D(0.994911, -0.0998598, 0.0134465, -7.60131e-10, 0.13345, 0.991056, -0.100761, -0.986012, 0.132771, 356.105, 27.8419, -96.0511)
 
 [node name="BrokenHouse" parent="." instance=ExtResource("63_q2viu")]
 transform = Transform3D(4.76065, 0, -1.52848, 0, 5, 0, 1.52848, 0, 4.76065, 131, 0.0860325, -200.612)
@@ -1269,6 +1270,12 @@ omni_range = 31.6906
 
 [node name="bookcase" parent="." instance=ExtResource("83_p8m3w")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 352.212, 27, -92)
+
+[node name="torture_table3" parent="." instance=ExtResource("76_g2c8i")]
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 356.129, 27.3132, -96.1917)
+
+[node name="alchemy_book" parent="." instance=ExtResource("84_3teg0")]
+transform = Transform3D(0.999719, -0.0236994, 0, 0.0236994, 0.999719, 0, 0, 0, 1, 355.554, 27.7343, -96.1375)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
