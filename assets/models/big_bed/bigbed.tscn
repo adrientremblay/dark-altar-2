@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b55k2b5qsua4e"]
+
+[ext_resource type="PackedScene" uid="uid://cubu6dtqeaaov" path="res://assets/models/big_bed/scene.gltf" id="1_kmd1s"]
+
+[node name="bigbed" instance=ExtResource("1_kmd1s")]

@@ -1275,6 +1275,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 373.324, 30.1699, -71.2027)
 light_energy = 3.46
 omni_range = 31.6906
 
+[node name="PREVIEW_FLASHLIGHT8" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 436.208, 30.1699, -79.3587)
+light_energy = 3.46
+omni_range = 31.6906
+
 [node name="bookcase" parent="." instance=ExtResource("83_p8m3w")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 352.212, 27, -92)
 
@@ -1306,11 +1311,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 358.274, 27, -98.1705)
 [node name="otherwoodenchair4" parent="." instance=ExtResource("85_3cnim")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 356.196, 27, -94.1253)
 
-[node name="PREVIEW_FLASHLIGHT8" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 436.208, 30.1699, -79.3587)
-light_energy = 3.46
-omni_range = 31.6906
-
 [node name="bed" parent="." instance=ExtResource("86_1oecy")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 433.562, 26.8987, -79.591)
 
@@ -1322,6 +1322,11 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 438.49
 
 [node name="bed4" parent="." instance=ExtResource("86_1oecy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 438.493, 26.8987, -76.5896)
+
+[node name="PREVIEW_FLASHLIGHT9" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 448.328, 30.1699, -90.0423)
+light_energy = 3.46
+omni_range = 31.6906
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
