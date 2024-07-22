@@ -1,0 +1,11 @@
+Model Information:
+* title:	Medieval Wardrobe
+* source:	https://sketchfab.com/3d-models/medieval-wardrobe-72a3d1373b1044299b02d35acc552d7a
+* author:	Seth Santos (https://sketchfab.com/Seth7Santos)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Medieval Wardrobe" (https://sketchfab.com/3d-models/medieval-wardrobe-72a3d1373b1044299b02d35acc552d7a) by Seth Santos (https://sketchfab.com/Seth7Santos) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

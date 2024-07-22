@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=108 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -88,6 +88,7 @@
 [ext_resource type="PackedScene" uid="uid://bwkq4pxkuw470" path="res://assets/models/medieval_style_single_bed/bed.tscn" id="86_1oecy"]
 [ext_resource type="PackedScene" uid="uid://b55k2b5qsua4e" path="res://assets/models/big_bed/bigbed.tscn" id="87_nm1me"]
 [ext_resource type="PackedScene" uid="uid://dp1r268x5qefl" path="res://assets/models/wooden_bucket/bucket.tscn" id="88_rurmf"]
+[ext_resource type="PackedScene" uid="uid://coj4ll0flwoj8" path="res://assets/models/medieval_wardrobe/wardrobe.tscn" id="89_h0km6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
 panorama = ExtResource("2_uljkl")
@@ -1207,7 +1208,7 @@ transform = Transform3D(0.672509, 0, 0.740089, 0, 1, 0, -0.740089, 0, 0.672509, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7, 362.978, 27.4026, -60)
 
 [node name="stocks" parent="." instance=ExtResource("77_j7pox")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 451.943, 26.8492, -91.9488)
+transform = Transform3D(0.059411, 0, -0.998233, 0, 1, 0, 0.998233, 0, 0.059411, 450.231, 26.8492, -89.8394)
 
 [node name="torture_table2" parent="." instance=ExtResource("76_g2c8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7, 352.949, 27.4026, -60)
@@ -1348,13 +1349,8 @@ transform = Transform3D(-0.75, -8.74228e-08, 5.73206e-15, 0, -4.37114e-08, -1.5,
 material_override = SubResource("StandardMaterial3D_yfrx1")
 mesh = SubResource("PlaneMesh_s4s7d")
 
-[node name="Bannar14" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.75, 0, 0, 0, -4.37114e-08, -1.5, 0, 1, -6.55671e-08, 450.032, 28.7907, -93.7873)
-material_override = SubResource("StandardMaterial3D_yfrx1")
-mesh = SubResource("PlaneMesh_s4s7d")
-
 [node name="woodthrone2" parent="." instance=ExtResource("65_ynyw6")]
-transform = Transform3D(0.669442, 0, 0.742865, 0, 1, 0, -0.742865, 0, 0.669442, 451.724, 26.9, -87.3566)
+transform = Transform3D(0.669442, 0, 0.742865, 0, 1, 0, -0.742865, 0, 0.669442, 452.572, 26.9, -88.3128)
 
 [node name="bucket" parent="." instance=ExtResource("88_rurmf")]
 transform = Transform3D(0.953528, 0, 0.301305, 0, 1, 0, -0.301305, 0, 0.953528, 375, 26.9017, -70)
@@ -1364,6 +1360,35 @@ transform = Transform3D(0.429455, 0, 0.903088, 0, 1, 0, -0.903088, 0, 0.429455, 
 
 [node name="just_barrel9" parent="." instance=ExtResource("81_drwsh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371.499, 26.9, -67.6008)
+
+[node name="just_crate5" parent="." instance=ExtResource("81_vg0g7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 438.764, 26.9, -84.9843)
+
+[node name="just_crate6" parent="." instance=ExtResource("81_vg0g7")]
+transform = Transform3D(0.944903, 0, 0.32735, 0, 1, 0, -0.32735, 0, 0.944903, 439.124, 26.9, -83.9337)
+
+[node name="bookcase2" parent="." instance=ExtResource("83_p8m3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 447.772, 26.9, -93.7945)
+
+[node name="bookcase3" parent="." instance=ExtResource("83_p8m3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 452.308, 26.9, -93.69)
+
+[node name="cage2" parent="." instance=ExtResource("79_gcq5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 446.945, 26.9, -87.1857)
+
+[node name="atlar_wood2" parent="." instance=ExtResource("61_akjxv")]
+transform = Transform3D(-0.000396842, 0, 0.0149948, 0, 0.015, 0, -0.0149948, 0, -0.000396842, 449.97, 26.8578, -86.6099)
+
+[node name="wardrobe" parent="." instance=ExtResource("89_h0km6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 450.024, 27, -93.5673)
+
+[node name="wardrobe2" parent="." instance=ExtResource("89_h0km6")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 346.552, 27.142, -82.1065)
+
+[node name="PREVIEW_FLASHLIGHT10" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 349.93, 30.1699, -82.2417)
+light_energy = 3.46
+omni_range = 31.6906
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
