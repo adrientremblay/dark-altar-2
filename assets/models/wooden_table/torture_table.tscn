@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2ucjs4dfau85"]
+[gd_scene load_steps=3 format=3 uid="uid://c2ucjs4dfau85"]
 
 [ext_resource type="PackedScene" uid="uid://daw3ifblmtw1i" path="res://assets/models/wooden_table/scene.gltf" id="1_j0x1m"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qy7dh"]
+size = Vector3(1.21365, 1.02448, 1.9817)
+
 [node name="torture_table" instance=ExtResource("1_j0x1m")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0136261, 0.0367126, 0.00608063)
+shape = SubResource("BoxShape3D_qy7dh")

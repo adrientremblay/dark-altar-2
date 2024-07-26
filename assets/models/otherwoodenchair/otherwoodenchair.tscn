@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfskrpbqjisld"]
+[gd_scene load_steps=3 format=3 uid="uid://dfskrpbqjisld"]
 
 [ext_resource type="PackedScene" uid="uid://b88143pjga2g2" path="res://assets/models/otherwoodenchair/scene.gltf" id="1_vi8vd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_26ow1"]
+size = Vector3(0.794556, 1.2677, 0.698486)
 
 [node name="otherwoodenchair" instance=ExtResource("1_vi8vd")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0134888, 0.634071, 0.0491943)
+shape = SubResource("BoxShape3D_26ow1")

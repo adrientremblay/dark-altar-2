@@ -1,5 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtjioflahwr5s"]
+[gd_scene load_steps=3 format=3 uid="uid://dtjioflahwr5s"]
 
 [ext_resource type="PackedScene" uid="uid://6ep7k88t1e0j" path="res://assets/models/book_stand_with_book/scene.gltf" id="1_ajaqm"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jxcdk"]
+height = 5.60064
+radius = 1.23216
+
 [node name="Bookstand" instance=ExtResource("1_ajaqm")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24526, 0)
+shape = SubResource("CylinderShape3D_jxcdk")

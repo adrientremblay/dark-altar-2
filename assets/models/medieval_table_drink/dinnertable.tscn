@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2wnamjxer2ji"]
+[gd_scene load_steps=3 format=3 uid="uid://b2wnamjxer2ji"]
 
 [ext_resource type="PackedScene" uid="uid://mvf0dnpkfcwc" path="res://assets/models/medieval_table_drink/scene.gltf" id="1_a2k2v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k2hyw"]
+size = Vector3(3.37091, 1.20905, 2.27429)
 
 [node name="dinnertable" instance=ExtResource("1_a2k2v")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 0, 0.995968)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0560608, 0.638668, -0.0380039)
+shape = SubResource("BoxShape3D_k2hyw")

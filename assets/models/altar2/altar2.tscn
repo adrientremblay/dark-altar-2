@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3bg727m32k24"]
+[gd_scene load_steps=3 format=3 uid="uid://d3bg727m32k24"]
 
 [ext_resource type="PackedScene" uid="uid://cxonfrcgj8i7f" path="res://assets/models/altar2/scene.gltf" id="1_m6ydn"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_acyn2"]
+size = Vector3(68.4193, 55.3532, 162.172)
+
 [node name="Sketchfab_Scene" instance=ExtResource("1_m6ydn")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2016, 27.1766, 1.62108)
+shape = SubResource("BoxShape3D_acyn2")

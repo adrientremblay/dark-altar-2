@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://ce3ffunmaaorj"]
+[gd_scene load_steps=3 format=3 uid="uid://ce3ffunmaaorj"]
 
 [ext_resource type="PackedScene" uid="uid://d4duxagkfrucy" path="res://assets/models/wooden_coffin/scene.gltf" id="1_cvi0c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u1dvu"]
+size = Vector3(0.947754, 0.658691, 3.01215)
 
 [node name="wooden_coffin" instance=ExtResource("1_cvi0c")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(2.3, 0, 0, 0, -1.00536e-07, 2.3, 0, -2.3, -1.00536e-07, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00268555, 0.561584, -0.00820923)
+shape = SubResource("BoxShape3D_u1dvu")

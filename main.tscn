@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=112 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -57,7 +57,6 @@
 [ext_resource type="PackedScene" uid="uid://cxmbux153imhp" path="res://assets/models/Rock3/rock_3.tscn" id="54_kbu1b"]
 [ext_resource type="MeshLibrary" uid="uid://b58cb358rt6wo" path="res://assets/dungeon/tileset.tres" id="56_0n7ge"]
 [ext_resource type="Texture2D" path="res://grass_alb_ht.dds" id="57_u5lli"]
-[ext_resource type="PackedScene" uid="uid://dcyu34kf0fsbu" path="res://assets/models/dungeon_enterance/archglb.tscn" id="58_nw45n"]
 [ext_resource type="Texture2D" uid="uid://cv2glboxhsx8t" path="res://assets/images/dungeon/pentagram.png" id="59_hbgev"]
 [ext_resource type="PackedScene" uid="uid://b86a1pi8r3spt" path="res://assets/models/altar/altar.tscn" id="60_cdoyy"]
 [ext_resource type="PackedScene" uid="uid://d3bg727m32k24" path="res://assets/models/altar2/altar2.tscn" id="61_akjxv"]
@@ -175,7 +174,7 @@ environment = SubResource("Environment_g4vby")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 51.2963, 0.994264, -48.3976)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.5184, 0, -0.855137, 0, 1, 0, 0.855137, 0, 0.5184, 434.595, 28.0225, -85.2694)
+transform = Transform3D(0.5184, 0, -0.855137, 0, 1, 0, 0.855137, 0, 0.5184, 308.978, 27.7629, -101.886)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -1075,10 +1074,6 @@ mesh = SubResource("PlaneMesh_nqbti")
 transform = Transform3D(-2.50019e-07, -1.55, 0, 4.04448, -4.79083e-08, -7.88334, 4.04448, -4.79083e-08, 7.88334, 76.0113, 5.01431, -195.972)
 mesh = SubResource("PlaneMesh_nqbti")
 
-[node name="archglb" parent="." instance=ExtResource("58_nw45n")]
-transform = Transform3D(0.00595851, 0, 0.0998223, 0, 0.1, 0, -0.0998223, 0, 0.00595851, 317.077, 29.3034, -99.8211)
-visible = false
-
 [node name="GateToHell" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GateToHell"]
@@ -1188,6 +1183,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 373.324, 30.1699, -101.03)
 light_energy = 3.46
 omni_range = 31.6906
 
+[node name="PREVIEW_FLASHLIGHT6" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 356.737, 30.1699, -95.0811)
+light_energy = 3.46
+omni_range = 31.6906
+
+[node name="PREVIEW_FLASHLIGHT7" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 373.324, 30.1699, -71.2027)
+light_energy = 3.46
+omni_range = 31.6906
+
+[node name="PREVIEW_FLASHLIGHT8" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 436.208, 30.1699, -79.3587)
+light_energy = 3.46
+omni_range = 31.6906
+
+[node name="PREVIEW_FLASHLIGHT9" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 448.328, 30.1699, -90.0423)
+light_energy = 3.46
+omni_range = 31.6906
+
+[node name="PREVIEW_FLASHLIGHT10" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 349.93, 30.1699, -82.2417)
+light_energy = 3.46
+omni_range = 31.6906
+
 [node name="wooden_coffin" parent="." instance=ExtResource("73_0bmh0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360.852, 26.7107, -48)
 
@@ -1273,21 +1293,6 @@ transform = Transform3D(-3.27835e-08, -1, 6.55671e-08, 0, -4.37114e-08, -1.5, 0.
 material_override = SubResource("StandardMaterial3D_yfrx1")
 mesh = SubResource("PlaneMesh_s4s7d")
 
-[node name="PREVIEW_FLASHLIGHT6" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 356.737, 30.1699, -95.0811)
-light_energy = 3.46
-omni_range = 31.6906
-
-[node name="PREVIEW_FLASHLIGHT7" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 373.324, 30.1699, -71.2027)
-light_energy = 3.46
-omni_range = 31.6906
-
-[node name="PREVIEW_FLASHLIGHT8" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 436.208, 30.1699, -79.3587)
-light_energy = 3.46
-omni_range = 31.6906
-
 [node name="bookcase" parent="." instance=ExtResource("83_p8m3w")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 352.212, 27, -92)
 
@@ -1330,11 +1335,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 438.49
 
 [node name="bed4" parent="." instance=ExtResource("86_1oecy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 438.493, 26.8987, -76.5896)
-
-[node name="PREVIEW_FLASHLIGHT9" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 448.328, 30.1699, -90.0423)
-light_energy = 3.46
-omni_range = 31.6906
 
 [node name="Bannar11" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.75, -8.74228e-08, 5.73206e-15, 0, -4.37114e-08, -1.5, 6.55671e-08, -1, 6.55671e-08, 436.064, 28.7907, -74.0121)
@@ -1390,11 +1390,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 450.024, 27, -93.5673)
 [node name="wardrobe2" parent="." instance=ExtResource("89_h0km6")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 346.552, 27.142, -82.1065)
 
-[node name="PREVIEW_FLASHLIGHT10" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 349.93, 30.1699, -82.2417)
-light_energy = 3.46
-omni_range = 31.6906
-
 [node name="chest" parent="." instance=ExtResource("90_mooy0")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 353.598, 26.8955, -82.1374)
 
@@ -1433,6 +1428,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 449.943, 27.6894, -86.8452)
 
 [node name="openspellbook" parent="." instance=ExtResource("94_6figf")]
 transform = Transform3D(-0.451579, 0, -0.892231, 0, 1, 0, 0.892231, 0, -0.451579, 449.201, 27.6881, -86.9515)
+
+[node name="PickableCandle2" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 327.519, 26.9, -114.017)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]

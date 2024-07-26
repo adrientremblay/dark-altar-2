@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dibmyslxnh0h8"]
+[gd_scene load_steps=3 format=3 uid="uid://dibmyslxnh0h8"]
 
 [ext_resource type="PackedScene" uid="uid://bw0g8g3ydu13j" path="res://assets/models/barrel__crate/just_barrel.glb" id="1_rvr53"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7ss6p"]
+height = 0.990074
+radius = 0.429982
 
 [node name="just_barrel" instance=ExtResource("1_rvr53")]
 
@@ -9,3 +13,9 @@ transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 
 
 [node name="barrel_cratebarrel_0" parent="Sketchfab_model/abda27c02f1c444eb849d527f16260ae_fbx/RootNode/barrel" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4856, -7.62939e-06, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.511694, 0)
+shape = SubResource("CylinderShape3D_7ss6p")

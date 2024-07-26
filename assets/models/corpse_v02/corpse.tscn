@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5jrkwo55eefx"]
+[gd_scene load_steps=3 format=3 uid="uid://c5jrkwo55eefx"]
 
 [ext_resource type="PackedScene" uid="uid://cwqky6rr07uca" path="res://assets/models/corpse_v02/scene.gltf" id="1_a7lym"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oql7o"]
+radius = 0.290847
+height = 2.27071
 
 [node name="Corpse" instance=ExtResource("1_a7lym")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(1.1, 0, 0, 0, -1.1, -9.61651e-08, 0, 9.61651e-08, -1.1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_oql7o")

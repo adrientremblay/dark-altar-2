@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0eeur0pdlobi"]
+[gd_scene load_steps=3 format=3 uid="uid://d0eeur0pdlobi"]
 
 [ext_resource type="PackedScene" uid="uid://bnvlwaxjojxa7" path="res://assets/models/broken_coffin/scene.gltf" id="1_lj31x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3p1dx"]
+size = Vector3(2.06616, 1.64642, 7.34135)
 
 [node name="broken_coffin" instance=ExtResource("1_lj31x")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0296631, 0.889557, 0.00188446)
+shape = SubResource("BoxShape3D_3p1dx")
