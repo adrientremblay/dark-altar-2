@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmmufo133csrs"]
+[gd_scene load_steps=3 format=3 uid="uid://bmmufo133csrs"]
 
 [ext_resource type="PackedScene" uid="uid://cmlhrnonmhdnv" path="res://assets/models/medieval_chest/scene.gltf" id="1_thjo4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yt7hv"]
+size = Vector3(1.53787, 0.663239, 0.700958)
 
 [node name="chest" instance=ExtResource("1_thjo4")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(0.3, 0, 0, 0, -1.31134e-08, 0.3, 0, -0.3, -1.31134e-08, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00602722, 0.325589, -0.000747681)
+shape = SubResource("BoxShape3D_yt7hv")

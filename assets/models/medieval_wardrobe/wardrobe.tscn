@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://coj4ll0flwoj8"]
+[gd_scene load_steps=3 format=3 uid="uid://coj4ll0flwoj8"]
 
 [ext_resource type="PackedScene" uid="uid://dk7kfbdbw3gtk" path="res://assets/models/medieval_wardrobe/scene.gltf" id="1_4qavf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gcsbw"]
+size = Vector3(1.56847, 2.42627, 0.758942)
 
 [node name="wardrobe" instance=ExtResource("1_4qavf")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(1.2, 0, 0, 0, -5.24537e-08, 1.2, 0, -1.2, -5.24537e-08, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0014267, 1.20776, 0.00160217)
+shape = SubResource("BoxShape3D_gcsbw")

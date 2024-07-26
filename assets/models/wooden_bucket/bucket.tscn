@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dp1r268x5qefl"]
+[gd_scene load_steps=3 format=3 uid="uid://dp1r268x5qefl"]
 
 [ext_resource type="PackedScene" uid="uid://vuy8q4ewu3sn" path="res://assets/models/wooden_bucket/scene.gltf" id="1_ym2mi"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lool6"]
+height = 0.391248
+radius = 0.197973
 
 [node name="bucket" instance=ExtResource("1_ym2mi")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(0.0119639, 0, 0, 0, 5.42859e-05, -0.0119637, 0, 0.0119637, 5.42859e-05, 0, -0.005629, 0.00855052)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.190551, 0)
+shape = SubResource("CylinderShape3D_lool6")

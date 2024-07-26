@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwkq4pxkuw470"]
+[gd_scene load_steps=3 format=3 uid="uid://bwkq4pxkuw470"]
 
 [ext_resource type="PackedScene" uid="uid://c5yft18lwr4bw" path="res://assets/models/medieval_style_single_bed/scene.gltf" id="1_d521b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4g4wh"]
+size = Vector3(1.10915, 0.839844, 2.55725)
 
 [node name="bed" instance=ExtResource("1_d521b")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(0.012, 0, 0, 0, -5.24537e-10, 0.012, 0, -0.012, -5.24537e-10, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00246429, 0.43005, 0.0109253)
+shape = SubResource("BoxShape3D_4g4wh")

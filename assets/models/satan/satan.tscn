@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://vbpfjufld3yw"]
+[gd_scene load_steps=3 format=3 uid="uid://vbpfjufld3yw"]
 
 [ext_resource type="PackedScene" uid="uid://dlwa1w6ci6o20" path="res://assets/models/satan/scene.gltf" id="1_oupw1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_64k0u"]
+height = 3.18755
+radius = 1.34764
 
 [node name="Satan" instance=ExtResource("1_oupw1")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(0.015, 0, 0, 0, -6.55671e-10, 0.015, 0, -0.015, -6.55671e-10, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54449, 0)
+shape = SubResource("CylinderShape3D_64k0u")

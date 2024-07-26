@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0m7r5lhq6xrf"]
+[gd_scene load_steps=3 format=3 uid="uid://d0m7r5lhq6xrf"]
 
 [ext_resource type="PackedScene" uid="uid://b7kar8ahst3ax" path="res://assets/models/throne/scene.gltf" id="1_8en84"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wg7li"]
+size = Vector3(0.670837, 2.00793, 0.908936)
 
 [node name="woodthrone" instance=ExtResource("1_8en84")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(0.015, 0, 0, 0, -6.55671e-10, 0.015, 0, -0.015, -6.55671e-10, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.106049, 1.03118, 0.00793457)
+shape = SubResource("BoxShape3D_wg7li")
