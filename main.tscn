@@ -1208,6 +1208,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 349.93, 30.1699, -82.2417)
 light_energy = 3.46
 omni_range = 31.6906
 
+[node name="PREVIEW_FLASHLIGHT11" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 390.356, 30.1699, -18.3116)
+light_energy = 3.46
+omni_range = 31.6906
+
 [node name="wooden_coffin" parent="." instance=ExtResource("73_0bmh0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360.852, 26.7107, -48)
 
@@ -1431,6 +1436,30 @@ transform = Transform3D(-0.451579, 0, -0.892231, 0, 1, 0, 0.892231, 0, -0.451579
 
 [node name="PickableCandle2" parent="." instance=ExtResource("50_81846")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 327.519, 26.9, -114.017)
+
+[node name="PickableCandle3" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 370.169, 27.5886, -144.529)
+
+[node name="PickableCandle4" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 360.936, 26.9, -46.2577)
+
+[node name="PickableCandle5" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 379.057, 26.9431, -67.951)
+
+[node name="PickableCandle6" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 389.68, 26.9, -14.8604)
+
+[node name="PickableCandle7" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 450.831, 27.6806, -86.7469)
+
+[node name="PickableCandle8" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 447.792, 27.703, -93.4809)
+
+[node name="PickableCandle9" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 356.563, 27.7524, -96.2096)
+
+[node name="PickableCandle10" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 268.773, 24.0438, -239.168)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
