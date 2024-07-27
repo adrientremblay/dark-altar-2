@@ -1120,7 +1120,7 @@ transform = Transform3D(-0.0470795, 0.0011079, 0.0168016, 0.0123162, 0.0362867, 
 transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 315.675, 26.9594, -100.034)
 
 [node name="Bookstand" parent="NavigationRegion3D/Dungeon" instance=ExtResource("69_jfqy0")]
-transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 370.13, 26.9914, -149.764)
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 370.13, 26.9914, -149.033)
 
 [node name="fullbody" parent="NavigationRegion3D/Dungeon" instance=ExtResource("70_3fkx7")]
 transform = Transform3D(-0.995807, 0, -0.0914843, 0, 1, 0, 0.0914843, 0, -0.995807, 362.95, 27.9303, -60.1614)
@@ -1144,10 +1144,10 @@ transform = Transform3D(0.989553, 0, 0.144166, 0, 1, 0, -0.144166, 0, 0.989553, 
 transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, -1.90796e-08, 0.218245, -0.975894, 8.53154e-08, -0.975894, -0.218245, 357.018, 28.2467, -44.1032)
 
 [node name="Corpse" parent="NavigationRegion3D/Dungeon" instance=ExtResource("74_0xmi2")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 358.673, 26.9, -47.9975)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 358.673, 27.0354, -47.9975)
 
 [node name="Corpse2" parent="NavigationRegion3D/Dungeon" instance=ExtResource("74_0xmi2")]
-transform = Transform3D(-0.991644, 0, -0.129003, 0, 1, 0, 0.129003, 0, -0.991644, 357.603, 26.9, -47.9975)
+transform = Transform3D(-0.991644, 0, -0.129003, 0, 1, 0, 0.129003, 0, -0.991644, 357.603, 27.0354, -47.9975)
 
 [node name="TortureChair" parent="NavigationRegion3D/Dungeon" instance=ExtResource("75_0e36c")]
 transform = Transform3D(0.672509, 0, 0.740089, 0, 1, 0, -0.740089, 0, 0.672509, 355.374, 27, -57.2154)
@@ -1346,6 +1346,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 356.563, 27.7524, -96.2096)
 [node name="PickableCandle10" parent="NavigationRegion3D/Dungeon/Candles" instance=ExtResource("50_81846")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 268.773, 24.0438, -239.168)
 
+[node name="PickableCandle11" parent="NavigationRegion3D/Dungeon/Candles" instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 390.966, 26.9, -14.9051)
+
 [node name="Bannars" type="Node3D" parent="NavigationRegion3D/Dungeon"]
 
 [node name="Bannar" type="MeshInstance3D" parent="NavigationRegion3D/Dungeon/Bannars"]
@@ -1476,6 +1479,45 @@ omni_range = 31.6906
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 390.356, 30.1699, -18.3116)
 light_energy = 3.46
 omni_range = 31.6906
+
+[node name="SkullGroupDungeon" type="Node3D" parent="NavigationRegion3D/Dungeon"]
+script = ExtResource("34_b82b0")
+
+[node name="Skull" parent="NavigationRegion3D/Dungeon/SkullGroupDungeon" instance=ExtResource("16_4ask6")]
+transform = Transform3D(-0.991649, 0, -0.128969, 0, 1, 0, 0.128969, 0, -0.991649, 355.196, 26.9539, -47.4844)
+
+[node name="Skull2" parent="NavigationRegion3D/Dungeon/SkullGroupDungeon" instance=ExtResource("16_4ask6")]
+transform = Transform3D(0.729219, 0, 0.68428, 0, 1, 0, -0.68428, 0, 0.729219, 354.496, 26.9, -62.2387)
+
+[node name="Skull3" parent="NavigationRegion3D/Dungeon/SkullGroupDungeon" instance=ExtResource("16_4ask6")]
+transform = Transform3D(-0.9627, 0.245022, -0.11477, 0.00539503, 0.44148, 0.897255, 0.270516, 0.863169, -0.426335, 374.973, 27.2964, -70.1617)
+
+[node name="Skull4" parent="NavigationRegion3D/Dungeon/SkullGroupDungeon" instance=ExtResource("16_4ask6")]
+transform = Transform3D(-0.994043, 0, -0.108988, 0, 1, 0, 0.108988, 0, -0.994043, 390.302, 26.9, -14.9047)
+
+[node name="Skull5" parent="NavigationRegion3D/Dungeon/SkullGroupDungeon" instance=ExtResource("16_4ask6")]
+transform = Transform3D(-0.999984, 0, -0.00563729, 0, 1, 0, 0.00563729, 0, -0.999984, 449.945, 27.7244, -86.8786)
+
+[node name="Skull6" parent="NavigationRegion3D/Dungeon/SkullGroupDungeon" instance=ExtResource("16_4ask6")]
+transform = Transform3D(0.795812, -3.70035e-09, 0.605544, 0.0479529, 0.99686, -0.0630202, -0.603642, 0.0791899, 0.793313, 437.922, 27.4392, -76.6806)
+
+[node name="Skull7" parent="NavigationRegion3D/Dungeon/SkullGroupDungeon" instance=ExtResource("16_4ask6")]
+transform = Transform3D(0.128459, 0.880683, -0.455956, -0.991675, 0.109967, -0.0669882, -0.00885521, 0.460765, 0.887478, 371.774, 27.0005, -101.636)
+
+[node name="Skull8" parent="NavigationRegion3D/Dungeon/SkullGroupDungeon" instance=ExtResource("16_4ask6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 356.223, 27.5633, -97.9088)
+
+[node name="Skull9" parent="NavigationRegion3D/Dungeon/SkullGroupDungeon" instance=ExtResource("16_4ask6")]
+transform = Transform3D(-0.999238, 0, 0.0390332, 0, 1, 0, -0.0390332, 0, -0.999238, 350.184, 26.9, -84.0143)
+
+[node name="Skull10" parent="NavigationRegion3D/Dungeon/SkullGroupDungeon" instance=ExtResource("16_4ask6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.378, 26.9, -150.535)
+
+[node name="Skull11" parent="NavigationRegion3D/Dungeon/SkullGroupDungeon" instance=ExtResource("16_4ask6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 370.199, 26.9, -150.39)
+
+[node name="Skull12" parent="NavigationRegion3D/Dungeon/SkullGroupDungeon" instance=ExtResource("16_4ask6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371.019, 26.9, -150.708)
 
 [node name="PickableCandle" parent="." instance=ExtResource("50_81846")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
