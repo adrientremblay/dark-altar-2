@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdn0o2f8qbgk"]
+[gd_scene load_steps=7 format=3 uid="uid://bdn0o2f8qbgk"]
 
 [ext_resource type="Script" path="res://cedric.gd" id="1_xmn3u"]
 [ext_resource type="AudioStream" uid="uid://dvkkfudlgwcpa" path="res://assets/audio/sound_effects/schizo_whispers.mp3" id="4_kf1jm"]
 [ext_resource type="AudioStream" uid="uid://b5x14n16kot0p" path="res://assets/audio/sound_effects/boom.mp3" id="4_xhb7r"]
 [ext_resource type="PackedScene" uid="uid://dbue6pqurgujn" path="res://cedric_v_2.tscn" id="5_b5wdq"]
+[ext_resource type="PackedScene" uid="uid://cy56qixibkanx" path="res://assets/models/monk/monk.glb" id="5_hbmsy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8hff"]
 
@@ -16,6 +17,7 @@ volume_db = -80.0
 
 [node name="cedric_v2" parent="." instance=ExtResource("5_b5wdq")]
 transform = Transform3D(-0.497888, 0, 0.0459072, 0, 0.5, 0, -0.0459072, 0, -0.497888, 0, -0.980671, 0)
+visible = false
 
 [node name="Light" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030338, 0.652364, -0.510796)
@@ -38,6 +40,9 @@ stream = ExtResource("4_kf1jm")
 
 [node name="HauntChangePositionTimer" type="Timer" parent="."]
 wait_time = 5.0
+
+[node name="monk" parent="." instance=ExtResource("5_hbmsy")]
+transform = Transform3D(-0.01, 0, -8.74228e-10, 0, 0.01, 0, 8.74228e-10, 0, -0.01, 0, -0.579289, 0)
 
 [connection signal="timeout" from="SpottedTimer" to="." method="_on_spotted_timer_timeout"]
 [connection signal="timeout" from="HauntChangePositionTimer" to="." method="_on_haunt_change_position_timer_timeout"]
