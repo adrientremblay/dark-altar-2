@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=3 uid="uid://dgnxbfgem1yhk"]
+
+[ext_resource type="PackedScene" uid="uid://c7xxhqgfuhhov" path="res://rock_arch.tscn" id="1_d0h6n"]
+[ext_resource type="PackedScene" uid="uid://cb38oryt1aqro" path="res://assets/models/medieval_ruin_building/ruins.tscn" id="2_y2cnj"]
+[ext_resource type="PackedScene" uid="uid://dtdwm6ktkiyxk" path="res://haunting_area.tscn" id="3_yv7mi"]
+[ext_resource type="PackedScene" uid="uid://chge3oc3jhx7a" path="res://assets/models/Rock1/rock_1.tscn" id="4_0xm8u"]
+[ext_resource type="PackedScene" uid="uid://c8hkn7joedxsb" path="res://assets/models/Rock2/rock_2.tscn" id="5_2xavo"]
+[ext_resource type="PackedScene" uid="uid://cxmbux153imhp" path="res://assets/models/Rock3/rock_3.tscn" id="6_75rs8"]
+[ext_resource type="PackedScene" uid="uid://dwajs1w5xjbyd" path="res://assets/models/Rock4/rock_4.tscn" id="7_rlfpf"]
+[ext_resource type="Script" path="res://SkullGroup.gd" id="8_q2eqs"]
+[ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="9_t4bt5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_05rw2"]
+height = 13.383
+radius = 12.5957
+
+[node name="StrangeRocks" type="Node3D"]
+
+[node name="RockArch" parent="." instance=ExtResource("1_d0h6n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.8657, 0, -163.956)
+
+[node name="Ruins" parent="." instance=ExtResource("2_y2cnj")]
+transform = Transform3D(0.967625, 0, -0.25239, 0, 1, 0, 0.25239, 0, 0.967625, 94.5574, 0, -174.34)
+
+[node name="HauntingArea" parent="." instance=ExtResource("3_yv7mi")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HauntingArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.4247, 0, -167.207)
+shape = SubResource("CylinderShape3D_05rw2")
+
+[node name="Rock1" parent="." instance=ExtResource("4_0xm8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.9059, 0, -161.152)
+
+[node name="Rock2" parent="." instance=ExtResource("4_0xm8u")]
+transform = Transform3D(0.794107, 0, 0.607778, 0, 1, 0, -0.607778, 0, 0.794107, 95.2786, 0, -158.013)
+
+[node name="rock2" parent="." instance=ExtResource("5_2xavo")]
+transform = Transform3D(0.865685, 0, 0.500589, 0, 1, 0, -0.500589, 0, 0.865685, 80.0098, 0.977028, -160.958)
+
+[node name="rock3" parent="." instance=ExtResource("6_75rs8")]
+transform = Transform3D(-0.734548, 0, 0.678557, 0, 1, 0, -0.678557, 0, -0.734548, 85.2295, -0.796513, -170.607)
+
+[node name="rock_4" parent="." instance=ExtResource("7_rlfpf")]
+transform = Transform3D(0.93895, -0.192546, -0.285129, 0, 0.828735, -0.559641, 0.344053, 0.525475, 0.778141, 95.3046, 1.18344, -158.371)
+
+[node name="rock4" parent="." instance=ExtResource("5_2xavo")]
+transform = Transform3D(-0.850293, -0.526204, 0.010531, -0.137678, 0.203073, -0.969436, 0.507982, -0.825755, -0.245118, 94.7662, 0.433797, -158.329)
+
+[node name="Rock3" parent="." instance=ExtResource("4_0xm8u")]
+transform = Transform3D(-0.45925, 0.370008, 0.110381, 0, 0.171523, -0.574961, -0.386122, -0.440084, -0.131287, 86.2299, 0.292398, -155.976)
+
+[node name="rock_5" parent="." instance=ExtResource("7_rlfpf")]
+transform = Transform3D(0.685577, 0, 0.728, 0, 1, 0, -0.728, 0, 0.685577, 102.443, 0, -165.305)
+
+[node name="rock5" parent="." instance=ExtResource("6_75rs8")]
+transform = Transform3D(0.948113, 0.235624, -0.213456, 0, 0.671384, 0.741109, 0.317934, -0.702655, 0.636548, 101.515, 0, -163.147)
+
+[node name="rock_6" parent="." instance=ExtResource("7_rlfpf")]
+transform = Transform3D(0.0430041, 0, 0.498147, 0, 0.5, 0, -0.498147, 0, 0.0430041, 102.315, 1.52643, -165.256)
+
+[node name="rock6" parent="." instance=ExtResource("5_2xavo")]
+transform = Transform3D(0.0640713, -0.231897, 0.179217, -0.292487, -0.0389422, 0.0541769, -0.0186145, -0.186299, -0.234406, 102.363, 2.57949, -165.182)
+
+[node name="Rock4" parent="." instance=ExtResource("4_0xm8u")]
+transform = Transform3D(-0.0410079, 0.279871, -0.0999529, -0.10623, -0.108038, -0.258926, -0.277549, 0, 0.113871, 102.064, 3.16817, -165.248)
+
+[node name="SkullGroupStrangeRocks" type="Node3D" parent="."]
+script = ExtResource("8_q2eqs")
+
+[node name="Skull" parent="SkullGroupStrangeRocks" instance=ExtResource("9_t4bt5")]
+transform = Transform3D(0.137331, 0.982689, -0.124352, -0.958887, 0.100416, -0.265428, -0.248347, 0.155691, 0.956078, 79.831, 1.70974, -160.785)
+
+[node name="Skull2" parent="SkullGroupStrangeRocks" instance=ExtResource("9_t4bt5")]
+transform = Transform3D(-0.83377, 0, -0.552112, 0, 1, 0, 0.552112, 0, -0.83377, 84.6136, 0, -171.414)
+
+[node name="Skull3" parent="SkullGroupStrangeRocks" instance=ExtResource("9_t4bt5")]
+transform = Transform3D(-0.998997, 0, -0.0447876, 0, 1, 0, 0.0447876, 0, -0.998997, 86.5117, 0.739227, -156.256)
+
+[node name="Skull4" parent="SkullGroupStrangeRocks" instance=ExtResource("9_t4bt5")]
+transform = Transform3D(0.539976, 0, -0.84168, 0, 1, 0, 0.84168, 0, 0.539976, 94.3719, 0, -158.104)
+
+[node name="Skull5" parent="SkullGroupStrangeRocks" instance=ExtResource("9_t4bt5")]
+transform = Transform3D(-0.371175, 0.692006, 0.619158, 0.300951, -0.541147, 0.785231, 0.878441, 0.477794, -0.00739977, 102.008, 2.01937, -164.916)
+
+[node name="Skull6" parent="SkullGroupStrangeRocks" instance=ExtResource("9_t4bt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.0269, 0, -175.007)

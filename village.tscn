@@ -1,0 +1,212 @@
+[gd_scene load_steps=24 format=3 uid="uid://bqjgeepv2ax3l"]
+
+[ext_resource type="PackedScene" uid="uid://cr4i4u2jhdyq" path="res://assets/models/market_stall_1/stall.tscn" id="1_uyb56"]
+[ext_resource type="PackedScene" uid="uid://0ca7iald35bs" path="res://assets/models/CartOfBarrels/cart_of_barrels.tscn" id="2_c8xqc"]
+[ext_resource type="PackedScene" uid="uid://c85ubr2r1vi8o" path="res://assets/models/notice_board_low-poly/notice_board.tscn" id="3_gbg74"]
+[ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="4_hqpic"]
+[ext_resource type="PackedScene" uid="uid://cb1141gi5g6s0" path="res://assets/models/market_stall_3/market_stall_3.tscn" id="5_xokc7"]
+[ext_resource type="PackedScene" uid="uid://bxwxiga4urkxo" path="res://assets/models/market_stall_2/market_stall_2.tscn" id="6_7f4al"]
+[ext_resource type="PackedScene" uid="uid://b6cidcfjuty3k" path="res://assets/models/table_set/TableSet.tscn" id="7_tjs73"]
+[ext_resource type="PackedScene" uid="uid://cu34ecivriip6" path="res://assets/models/medieval_blacksmith/smithy.tscn" id="8_cupgg"]
+[ext_resource type="PackedScene" uid="uid://dxlcx2kuw6hfu" path="res://assets/models/gallow_1/gallows.tscn" id="9_jxc08"]
+[ext_resource type="PackedScene" uid="uid://030k1q35if8y" path="res://house.tscn" id="10_0frnx"]
+[ext_resource type="PackedScene" uid="uid://cq3xfs18sy5cr" path="res://assets/models/tavern/tavern.tscn" id="11_ig53y"]
+[ext_resource type="PackedScene" uid="uid://dq4vaqx8ea0s1" path="res://assets/models/windmill/windmill.tscn" id="12_o6s5x"]
+[ext_resource type="PackedScene" uid="uid://dwopijb2yaa6w" path="res://wheat.tscn" id="13_aeqne"]
+[ext_resource type="PackedScene" uid="uid://dkkh43k706sad" path="res://assets/models/medieval_house2/medieval_house_2.tscn" id="14_5x7rv"]
+[ext_resource type="PackedScene" uid="uid://b6m64cf85vrk7" path="res://assets/models/manor/manor.tscn" id="15_u4ru2"]
+[ext_resource type="PackedScene" uid="uid://b54uvt8meaxdf" path="res://assets/models/Church/church.tscn" id="16_5y6u1"]
+[ext_resource type="Script" path="res://SkullGroup.gd" id="17_gf04q"]
+[ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="18_4ln1x"]
+[ext_resource type="ArrayMesh" uid="uid://dpci07ey3ih3n" path="res://assets/models/Well_obj/Well.obj" id="19_0samu"]
+[ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="20_82pcc"]
+[ext_resource type="PackedScene" uid="uid://dtdwm6ktkiyxk" path="res://haunting_area.tscn" id="21_bwjhw"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_18whr"]
+height = 127.807
+radius = 35.3178
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xp7s"]
+size = Vector3(54.6974, 6.33411, 91.2763)
+
+[node name="Village" type="Node3D"]
+
+[node name="Stall" parent="." instance=ExtResource("1_uyb56")]
+transform = Transform3D(-0.471197, 0, 0.882028, 0, 1, 0, -0.882028, 0, -0.471197, 179.461, 0.0615044, -102.127)
+
+[node name="cart_of_barrels" parent="." instance=ExtResource("2_c8xqc")]
+transform = Transform3D(0.954906, 0, 0.296908, 0, 1, 0, -0.296908, 0, 0.954906, 181, 1.32865, -98.0347)
+
+[node name="NoticeBoard" parent="." instance=ExtResource("3_gbg74")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 165.71, -0.415468, -109.365)
+
+[node name="NoticeBoardPage1" parent="NoticeBoard" instance=ExtResource("4_hqpic")]
+transform = Transform3D(-0.00881386, 0.999961, 3.85264e-10, -4.37114e-08, 4.55692e-15, -1, -0.999961, -0.00881386, 4.37097e-08, 0.0785065, 1.79837, -0.744495)
+page_title = "Recruiting! Society of the Dark Altar"
+page_text = "Greetings fellow citizen. My name is Cedric Leopold. I, like you have walked through the trees, among the animals, climbed mountains, traversed seas and stared up at the night sky. I, like many would be content to marry a sweet girl, have many children and spend my days in the village square and my nights in a warm bed.
+
+One thing has always bothered me... The night sky! Every night, when I look up and see the speckled white stars, I think of them as souls. I see the souls of my father, grandfather, friend Jorvald and dear late daughter Bodil. They live on in the great beyond. I must know what it is like. I must know why so many of us down on earth live short miserable lives. Why men lead themselves to ruin.
+
+[TODO]"
+
+[node name="NoticeBoardPage2" parent="NoticeBoard" instance=ExtResource("4_hqpic")]
+transform = Transform3D(-0.00872648, 0.999962, -4.37097e-08, 0, -4.37114e-08, -1, -0.999962, -0.00872648, 3.81446e-10, 0.0475922, 2.15872, 0.0517921)
+page_title = "Leave this accursed town!"
+page_text = "A great tragedy has befallen us. Ever since Cedric Leopold rode back into town after his long absense of 30 years, Angel's Crossing has not felt the same!. When I look outside at the village square, I don't see many faces anymore. Every night it seems more and more people are missing. Left in the middle of the night our Mayor says. Who believes him?
+
+It seems the only people I see here anymore are the members of the \"Society of the Dark Altar\". The damned fools that rode in with Cedric Leopold. They're heretics I say! Cultists! I would say we should drive them out. But it seems they outnumber us now. I am leaving this town. And I suggest anyone else left of sound-mind and honest-heart leave too."
+
+[node name="NoticeBoardPage3" parent="NoticeBoard" instance=ExtResource("4_hqpic")]
+transform = Transform3D(-0.0087266, 0.999964, -4.37098e-08, 0, -4.37114e-08, -1, -0.999964, -0.0087266, 3.81456e-10, 0.049469, 1.87923, 0.798996)
+page_title = "The king is sending aid"
+page_text = "This is an announcement from Mayor Keisel, Mayor of Angel's Crossing. I am well aware of the numerous reports of strange occurences of recent. I am also aware of the numerous sightings of a strange \"monster\" lurking the woods at night since Cedric Leopold arrived in town and then dissapeared. 
+
+Rest easy. I have petitioned the King for aid. Though apparently he cannot spare any armsmen, he is sending a priest. The disturbances here seem to be of a supernatural nature anyways."
+
+[node name="MarketStall" parent="." instance=ExtResource("5_xokc7")]
+transform = Transform3D(-0.10793, 0, -0.994158, 0, 1, 0, 0.994158, 0, -0.10793, 181.257, 0, -110.238)
+
+[node name="MarketStall2" parent="." instance=ExtResource("6_7f4al")]
+transform = Transform3D(0.171121, 0, -0.98525, 0, 1, 0, 0.98525, 0, 0.171121, 181.62, 0, -114.022)
+
+[node name="TableSet" parent="." instance=ExtResource("7_tjs73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169.931, 0.273243, -104.574)
+
+[node name="Smithy" parent="." instance=ExtResource("8_cupgg")]
+transform = Transform3D(-0.937246, 0, 0.34867, 0, 1, 0, -0.34867, 0, -0.937246, 164.26, 1.0513, -97.1225)
+
+[node name="Gallows" parent="." instance=ExtResource("9_jxc08")]
+transform = Transform3D(0.474104, 0, -0.880469, 0, 1, 0, 0.880469, 0, 0.474104, 194.154, 0, -126.425)
+
+[node name="House" parent="." instance=ExtResource("10_0frnx")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 174.049, 0, -124.404)
+
+[node name="Tavern" parent="." instance=ExtResource("11_ig53y")]
+transform = Transform3D(14.6788, 0, 3.08768, 0, 15, 0, -3.08768, 0, 14.6788, 160.313, -0.155643, -106.979)
+
+[node name="Windmill" parent="." instance=ExtResource("12_o6s5x")]
+transform = Transform3D(0.542852, 0, 0.839828, 0, 1, 0, -0.839828, 0, 0.542852, 159.6, 0, -123.547)
+
+[node name="Wheat" type="Node3D" parent="."]
+
+[node name="Wheat" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153.417, -4.76837e-07, -140.058)
+
+[node name="Wheat2" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156.149, 0, -145.942)
+
+[node name="Wheat3" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.811, 0, -135.347)
+
+[node name="Wheat4" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.433, 0, -139.625)
+
+[node name="Wheat5" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.798, 0, -140.064)
+
+[node name="Wheat6" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.762, 0, -134.64)
+
+[node name="Wheat7" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.461, 0, -143.969)
+
+[node name="Wheat8" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.858, 0, -148.023)
+
+[node name="Wheat9" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.159, 0, -135.112)
+
+[node name="Wheat10" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.182, 0, -136.516)
+
+[node name="Wheat11" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.555, 0, -141.262)
+
+[node name="Wheat12" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.757, 0, -142.199)
+
+[node name="Wheat13" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.297, 0, -138.517)
+
+[node name="Wheat14" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 174.719, 0, -148.03)
+
+[node name="Wheat15" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.369, 0, -148.384)
+
+[node name="Wheat16" parent="Wheat" instance=ExtResource("13_aeqne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 169.253, 0, -143.034)
+
+[node name="MedievalHouse2" parent="." instance=ExtResource("14_5x7rv")]
+transform = Transform3D(-0.116601, 0, 0.993179, 0, 1, 0, -0.993179, 0, -0.116601, 205.85, 0, -127.221)
+
+[node name="House2" parent="." instance=ExtResource("10_0frnx")]
+transform = Transform3D(0.0390262, 0, -0.698911, 0, 0.7, 0, 0.698911, 0, 0.0390262, 185.275, 0, -92.0723)
+
+[node name="Manor" parent="." instance=ExtResource("15_u4ru2")]
+transform = Transform3D(-0.240567, 0, -0.970633, 0, 1, 0, 0.970633, 0, -0.240567, 195, 0, -108.277)
+
+[node name="Church" parent="." instance=ExtResource("16_5y6u1")]
+transform = Transform3D(0.199804, 0, -0.774647, 0, 0.8, 0, 0.774647, 0, 0.199804, 179.114, 0, -173.453)
+
+[node name="SkullGroupVillage" type="Node3D" parent="."]
+script = ExtResource("17_gf04q")
+
+[node name="Skull" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 161.968, 0, -90.4096)
+
+[node name="Skull2" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156.785, 0, -108.863)
+
+[node name="Skull3" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+transform = Transform3D(0.700299, 0, -0.71385, 0, 1, 0, 0.71385, 0, 0.700299, 174.426, 0.208265, -109.257)
+
+[node name="Skull4" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+transform = Transform3D(-0.22245, 0, -0.974944, 0, 1, 0, 0.974944, 0, -0.22245, 179.872, 1.10631, -102.991)
+
+[node name="Skull5" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+transform = Transform3D(0.591563, 0, -0.806259, 0, 1, 0, 0.806259, 0, 0.591563, 181.564, 0.750403, -110.339)
+
+[node name="Skull6" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+transform = Transform3D(-0.886026, 0, -0.463636, 0, 1, 0, 0.463636, 0, -0.886026, 181.01, 0.755982, -113.357)
+
+[node name="Skull7" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+transform = Transform3D(0.605461, 0, 0.795875, 0, 1, 0, -0.795875, 0, 0.605461, 168.943, 0.628696, -102.431)
+
+[node name="Skull8" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.293, 4.2423, -100.832)
+
+[node name="Skull9" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+transform = Transform3D(0.525353, 0, -0.850884, 0, 1, 0, 0.850884, 0, 0.525353, 194.06, 0.792324, -126.447)
+
+[node name="Skull10" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+transform = Transform3D(0.334498, 0, -0.942397, 0, 1, 0, 0.942397, 0, 0.334498, 202.959, 2.99977, -124.584)
+
+[node name="Skull11" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.015, 0, -159.788)
+
+[node name="Well" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0291339, 0, 0.00715651, 0, 0.03, 0, -0.00715651, 0, 0.0291339, 175.284, 0, -108.861)
+mesh = ExtResource("19_0samu")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Well"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Well/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.54492, 17.9887, -5.6665)
+shape = SubResource("CylinderShape3D_18whr")
+
+[node name="PickableCandle2" parent="." instance=ExtResource("20_82pcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.853, 0.988491, -103.859)
+
+[node name="PickableCandle3" parent="." instance=ExtResource("20_82pcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.77, 0.755981, -114.324)
+
+[node name="PickableCandle4" parent="." instance=ExtResource("20_82pcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.26, 0, -160.247)
+
+[node name="HauntingAreaVillage" parent="." instance=ExtResource("21_bwjhw")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HauntingAreaVillage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.705, 2.66705, -130.734)
+shape = SubResource("BoxShape3D_0xp7s")
