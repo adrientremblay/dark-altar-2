@@ -65,7 +65,6 @@ albedo_texture = ExtResource("38_jt308")
 [sub_resource type="PlaneMesh" id="PlaneMesh_s4s7d"]
 
 [node name="Dungeon" type="Node3D"]
-visible = false
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240, 25.9, 100)
