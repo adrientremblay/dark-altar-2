@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dx1ic8e4exr86"]
+[gd_scene load_steps=11 format=3 uid="uid://dx1ic8e4exr86"]
 
 [ext_resource type="Script" path="res://scenes/ui/UI.gd" id="1_onnvg"]
 [ext_resource type="Texture2D" uid="uid://bt22o018bjsuu" path="res://assets/images/page_template.png" id="2_88ewc"]
 [ext_resource type="Texture2D" uid="uid://ctg4enhb3qais" path="res://assets/images/gauntletCursor/outlines/cursor_outline_yellow.png" id="3_eqyhu"]
 [ext_resource type="AudioStream" uid="uid://deyxjil4sab1s" path="res://assets/audio/sound_effects/page-flip-01a.mp3" id="4_2mdbe"]
 [ext_resource type="AudioStream" uid="uid://b4plvq8gy0xnv" path="res://assets/audio/music/dark_altar_theme.mp3" id="5_keeai"]
+[ext_resource type="Script" path="res://scenes/ui/FPSLabel.gd" id="6_feolo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_17whb"]
 font_size = 40
@@ -166,5 +167,12 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Game is paused"
 label_settings = SubResource("LabelSettings_so6hg")
+
+[node name="FPSLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 97.0
+offset_bottom = 60.0
+text = "FPS: 123"
+script = ExtResource("6_feolo")
 
 [connection signal="timeout" from="IntroTimer" to="." method="_on_intro_timer_timeout"]
