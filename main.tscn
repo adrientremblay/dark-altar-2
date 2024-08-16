@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=32 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -14,7 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
 [ext_resource type="Script" path="res://SpawnTrigger.gd" id="16_35i5q"]
 [ext_resource type="PackedScene" uid="uid://bqjgeepv2ax3l" path="res://village.tscn" id="16_h2xav"]
-[ext_resource type="PackedScene" uid="uid://bu7rovvuhl8u8" path="res://graveyard.tscn" id="17_skva6"]
 [ext_resource type="PackedScene" uid="uid://dgnxbfgem1yhk" path="res://strange_rocks.tscn" id="18_d5151"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="20_b2i1c"]
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
@@ -52,8 +51,14 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Arr
 [sub_resource type="BoxShape3D" id="BoxShape3D_8xyxr"]
 size = Vector3(148.624, 3.92212, 149.465)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ehsq3"]
+size = Vector3(67.1332, 5.88721, 99.3967)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_qi70t"]
 size = Vector3(59.0279, 3.56152, 85.5585)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mnta0"]
+size = Vector3(30.6826, 2.42566, 30.9131)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wlmbg"]
 size = Vector3(250, 1, 250)
@@ -425,17 +430,29 @@ level = ExtResource("56_ogdja")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 384.181, 28.4579, -81.3038)
 shape = SubResource("BoxShape3D_8xyxr")
 
-[node name="Village" parent="NavigationRegion3D" instance=ExtResource("16_h2xav")]
+[node name="VillageSpawnTrigger" type="Area3D" parent="NavigationRegion3D"]
+script = ExtResource("16_35i5q")
+level = ExtResource("16_h2xav")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/VillageSpawnTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.528, 2.89915, -126.392)
+shape = SubResource("BoxShape3D_ehsq3")
 
 [node name="GraveyardSpawnTrigger" type="Area3D" parent="NavigationRegion3D"]
 script = ExtResource("16_35i5q")
-level = ExtResource("17_skva6")
+level = ExtResource("56_ogdja")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GraveyardSpawnTrigger"]
 transform = Transform3D(0.863422, 0, 0.504482, 0, 1, 0, -0.504482, 0, 0.863422, 123.33, 1.41015, -62.1436)
 shape = SubResource("BoxShape3D_qi70t")
 
-[node name="StrangeRocks" parent="NavigationRegion3D" instance=ExtResource("18_d5151")]
+[node name="StrangeRocksTrigger" type="Area3D" parent="NavigationRegion3D"]
+script = ExtResource("16_35i5q")
+level = ExtResource("18_d5151")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StrangeRocksTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.7891, 0.71283, -166.499)
+shape = SubResource("BoxShape3D_mnta0")
 
 [node name="Floor" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.292, -0.5, -119.603)
@@ -452,4 +469,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 [connection signal="register_skull" from="Player" to="." method="_on_player_register_skull"]
 [connection signal="register_skull" from="Player" to="UI" method="_on_player_register_skull"]
 [connection signal="body_entered" from="NavigationRegion3D/DungeonSpawnTrigger" to="NavigationRegion3D/DungeonSpawnTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/VillageSpawnTrigger" to="NavigationRegion3D/VillageSpawnTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="NavigationRegion3D/GraveyardSpawnTrigger" to="NavigationRegion3D/GraveyardSpawnTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="NavigationRegion3D/StrangeRocksTrigger" to="NavigationRegion3D/StrangeRocksTrigger" method="_on_body_entered"]
