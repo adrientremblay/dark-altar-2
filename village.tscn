@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://bqjgeepv2ax3l"]
+[gd_scene load_steps=25 format=3 uid="uid://bqjgeepv2ax3l"]
 
+[ext_resource type="Script" path="res://level.gd" id="1_766ux"]
 [ext_resource type="PackedScene" uid="uid://cr4i4u2jhdyq" path="res://assets/models/market_stall_1/stall.tscn" id="1_uyb56"]
 [ext_resource type="PackedScene" uid="uid://0ca7iald35bs" path="res://assets/models/CartOfBarrels/cart_of_barrels.tscn" id="2_c8xqc"]
 [ext_resource type="PackedScene" uid="uid://c85ubr2r1vi8o" path="res://assets/models/notice_board_low-poly/notice_board.tscn" id="3_gbg74"]
@@ -29,7 +30,9 @@ radius = 35.3178
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xp7s"]
 size = Vector3(54.6974, 6.33411, 91.2763)
 
-[node name="Village" type="Node3D"]
+[node name="Village" type="Node3D" node_paths=PackedStringArray("skull_group")]
+script = ExtResource("1_766ux")
+skull_group = NodePath("SkullGroupVillage")
 
 [node name="Stall" parent="." instance=ExtResource("1_uyb56")]
 transform = Transform3D(-0.471197, 0, 0.882028, 0, 1, 0, -0.882028, 0, -0.471197, 179.461, 0.0615044, -102.127)

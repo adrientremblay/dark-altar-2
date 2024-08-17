@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://bu7rovvuhl8u8"]
+[gd_scene load_steps=23 format=3 uid="uid://bu7rovvuhl8u8"]
 
 [ext_resource type="PackedScene" uid="uid://du42fl1gkhb0h" path="res://assets/models/Headstone4/headstone_4.tscn" id="1_6tely"]
+[ext_resource type="Script" path="res://level.gd" id="1_ehmek"]
 [ext_resource type="PackedScene" uid="uid://chrbsmggm8opq" path="res://assets/models/Headstone2/headstone_2.tscn" id="2_w6ovn"]
 [ext_resource type="PackedScene" uid="uid://d2vyr3cat8e6o" path="res://assets/models/Headstone3/headstone_3.tscn" id="3_83myx"]
 [ext_resource type="PackedScene" uid="uid://17c4kmj323ib" path="res://assets/models/Crossstone/cross_stone.tscn" id="4_v00yk"]
@@ -27,7 +28,9 @@ size = Vector3(42.0486, 2.7218, 59.6824)
 height = 1106.08
 radius = 40.2935
 
-[node name="Graveyard" type="Node3D"]
+[node name="Graveyard" type="Node3D" node_paths=PackedStringArray("skull_group")]
+script = ExtResource("1_ehmek")
+skull_group = NodePath("SkullGroupGraveyard")
 
 [node name="Headstone16" parent="." instance=ExtResource("1_6tely")]
 transform = Transform3D(0.42901, 0, 0.256808, 0, 0.5, 0, -0.256808, 0, 0.42901, 110.208, 0, -67.327)

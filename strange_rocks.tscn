@@ -1,5 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgnxbfgem1yhk"]
+[gd_scene load_steps=12 format=3 uid="uid://dgnxbfgem1yhk"]
 
+[ext_resource type="Script" path="res://level.gd" id="1_18pke"]
 [ext_resource type="PackedScene" uid="uid://c7xxhqgfuhhov" path="res://rock_arch.tscn" id="1_d0h6n"]
 [ext_resource type="PackedScene" uid="uid://cb38oryt1aqro" path="res://assets/models/medieval_ruin_building/ruins.tscn" id="2_y2cnj"]
 [ext_resource type="PackedScene" uid="uid://dtdwm6ktkiyxk" path="res://haunting_area.tscn" id="3_yv7mi"]
@@ -14,7 +15,9 @@
 height = 13.383
 radius = 12.5957
 
-[node name="StrangeRocks" type="Node3D"]
+[node name="StrangeRocks" type="Node3D" node_paths=PackedStringArray("skull_group")]
+script = ExtResource("1_18pke")
+skull_group = NodePath("SkullGroupStrangeRocks")
 
 [node name="RockArch" parent="." instance=ExtResource("1_d0h6n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.8657, 0, -163.956)
