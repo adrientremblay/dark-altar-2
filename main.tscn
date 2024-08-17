@@ -73,7 +73,7 @@ environment = SubResource("Environment_g4vby")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 306.359, 26.8452, -102.176)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.5184, 0, -0.855137, 0, 1, 0, 0.855137, 0, 0.5184, 308.978, 27.7629, -101.886)
+transform = Transform3D(0.5184, 0, -0.855137, 0, 1, 0, 0.855137, 0, 0.5184, 124.375, 2.34665, -169.157)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -459,6 +459,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.292, -0.5, -119.603)
 visible = false
 mesh = SubResource("BoxMesh_wlmbg")
 
+[node name="Node3D" type="Node3D" parent="NavigationRegion3D"]
+
 [node name="PickableCandle" parent="." instance=ExtResource("50_81846")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 
@@ -469,6 +471,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 [connection signal="register_skull" from="Player" to="." method="_on_player_register_skull"]
 [connection signal="register_skull" from="Player" to="UI" method="_on_player_register_skull"]
 [connection signal="body_entered" from="NavigationRegion3D/DungeonSpawnTrigger" to="NavigationRegion3D/DungeonSpawnTrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="NavigationRegion3D/DungeonSpawnTrigger" to="NavigationRegion3D/DungeonSpawnTrigger" method="_on_body_exited"]
 [connection signal="body_entered" from="NavigationRegion3D/VillageSpawnTrigger" to="NavigationRegion3D/VillageSpawnTrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="NavigationRegion3D/VillageSpawnTrigger" to="NavigationRegion3D/VillageSpawnTrigger" method="_on_body_exited"]
 [connection signal="body_entered" from="NavigationRegion3D/GraveyardSpawnTrigger" to="NavigationRegion3D/GraveyardSpawnTrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="NavigationRegion3D/GraveyardSpawnTrigger" to="NavigationRegion3D/GraveyardSpawnTrigger" method="_on_body_exited"]
 [connection signal="body_entered" from="NavigationRegion3D/StrangeRocksTrigger" to="NavigationRegion3D/StrangeRocksTrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="NavigationRegion3D/StrangeRocksTrigger" to="NavigationRegion3D/StrangeRocksTrigger" method="_on_body_exited"]
