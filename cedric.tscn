@@ -1,12 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdn0o2f8qbgk"]
+[gd_scene load_steps=9 format=3 uid="uid://bdn0o2f8qbgk"]
 
 [ext_resource type="Script" path="res://cedric.gd" id="1_xmn3u"]
 [ext_resource type="AudioStream" uid="uid://bnqd2sc1fuw3m" path="res://assets/audio/sound_effects/schizo_whispers.mp3" id="4_kf1jm"]
 [ext_resource type="AudioStream" uid="uid://b5x14n16kot0p" path="res://assets/audio/sound_effects/boom.mp3" id="4_xhb7r"]
 [ext_resource type="PackedScene" uid="uid://dbue6pqurgujn" path="res://cedric_v_2.tscn" id="5_b5wdq"]
 [ext_resource type="PackedScene" uid="uid://cy56qixibkanx" path="res://assets/models/monk/monk.glb" id="5_hbmsy"]
+[ext_resource type="AudioStream" uid="uid://tb1rv82ntw3e" path="res://assets/audio/dialog/perfect_world.mp3" id="6_2o42h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8hff"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d1u4a"]
+radius = 10.1208
 
 [node name="Cedric" type="CharacterBody3D"]
 script = ExtResource("1_xmn3u")
@@ -44,5 +48,14 @@ wait_time = 5.0
 [node name="monk" parent="." instance=ExtResource("5_hbmsy")]
 transform = Transform3D(-0.01, 0, -8.74228e-10, 0, 0.01, 0, 8.74228e-10, 0, -0.01, 0, -0.579289, 0)
 
+[node name="PerfectWorld" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_2o42h")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_d1u4a")
+
 [connection signal="timeout" from="SpottedTimer" to="." method="_on_spotted_timer_timeout"]
 [connection signal="timeout" from="HauntChangePositionTimer" to="." method="_on_haunt_change_position_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

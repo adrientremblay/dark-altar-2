@@ -3,7 +3,7 @@ class_name Cedric extends CharacterBody3D
 var random = RandomNumberGenerator.new()
 
 var can_boom = false
-var haunt_distance_min = 5
+var haunt_distance_min = 1
 var haunt_distance_max = 30
 var stalking_distance = 30
 var agression = 0
@@ -14,6 +14,7 @@ var can_move = true
 @onready var spotted_timer: Timer = $SpottedTimer
 @onready var haunt_timer: Timer = $HauntChangePositionTimer
 @onready var whispering: AudioStreamPlayer = $Whispering
+@onready var perfect_world: AudioStreamPlayer3D = $PerfectWorld
 
 enum CEDRIC_MODE {STALKING, HAUNTING, CHASING} 
 
@@ -136,3 +137,8 @@ func _on_haunt_change_position_timer_timeout() -> void:
 	#var angle_to_cedric = abs(player.check_if_can_see_me(self))
 	#if angle_to_cedric > 75:
 	haunt(player)
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		perfect_world.play()
