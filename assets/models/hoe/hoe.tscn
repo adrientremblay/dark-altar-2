@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5eycasrs2yk2"]
+
+[ext_resource type="PackedScene" uid="uid://cxid3cai3wwo3" path="res://assets/models/hoe/scene.gltf" id="1_5sx2l"]
+
+[node name="Hoe" instance=ExtResource("1_5sx2l")]

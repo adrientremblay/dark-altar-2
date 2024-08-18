@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=33 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="20_b2i1c"]
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
 [ext_resource type="PackedScene" uid="uid://620ol4bktvi4" path="res://assets/models/fence/fence_3.tscn" id="21_xpn3k"]
+[ext_resource type="PackedScene" uid="uid://c5eycasrs2yk2" path="res://assets/models/hoe/hoe.tscn" id="22_6e628"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
 [ext_resource type="PackedScene" uid="uid://c6dyrbvg3kax8" path="res://assets/models/broken_house/broken_house.tscn" id="63_q2viu"]
@@ -617,6 +618,9 @@ transform = Transform3D(0.0065678, 0, 0.00719237, 0, 0.008, 0, -0.0134857, 0, 0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 
 [node name="AmbientSound" parent="." instance=ExtResource("50_gnthh")]
+
+[node name="Hoe" parent="." instance=ExtResource("22_6e628")]
+transform = Transform3D(0.999038, -0.0160796, -0.0407912, -0.0438461, -0.366376, -0.929433, 0, 0.930328, -0.366729, 123.831, 0.0401723, -207.994)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]

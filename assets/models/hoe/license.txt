@@ -1,0 +1,11 @@
+Model Information:
+* title:	Tool Practice- Hoe
+* source:	https://sketchfab.com/3d-models/tool-practice-hoe-fd508dade2bb4f7c9b56f01b29435b58
+* author:	Mateus Schwaab (https://sketchfab.com/Mehrus)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Tool Practice- Hoe" (https://sketchfab.com/3d-models/tool-practice-hoe-fd508dade2bb4f7c9b56f01b29435b58) by Mateus Schwaab (https://sketchfab.com/Mehrus) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
