@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=32 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -13,9 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://bi7ytov5l6euy" path="res://assets/Skeleton/monkey.jpg" id="12_hbp13"]
 [ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
 [ext_resource type="Script" path="res://SpawnTrigger.gd" id="16_irgr7"]
+[ext_resource type="PackedScene" uid="uid://ku8vgvidtajj" path="res://assets/models/fence/fence_2.tscn" id="18_3uus2"]
 [ext_resource type="PackedScene" uid="uid://t82pm107s5ln" path="res://assets/models/fence/fence_1.tscn" id="19_v4elq"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="20_b2i1c"]
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
+[ext_resource type="PackedScene" uid="uid://620ol4bktvi4" path="res://assets/models/fence/fence_3.tscn" id="21_xpn3k"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
 [ext_resource type="PackedScene" uid="uid://c6dyrbvg3kax8" path="res://assets/models/broken_house/broken_house.tscn" id="63_q2viu"]
@@ -467,13 +469,21 @@ mesh = SubResource("BoxMesh_wlmbg")
 [node name="BrokenHouse" parent="NavigationRegion3D/Cabin" instance=ExtResource("63_q2viu")]
 transform = Transform3D(4.76065, 0, -1.52848, 0, 5, 0, 1.52848, 0, 4.76065, 131, 0.0860325, -200.612)
 
+[node name="Fences" type="Node3D" parent="NavigationRegion3D/Cabin"]
+
+[node name="fence1" parent="NavigationRegion3D/Cabin/Fences" instance=ExtResource("19_v4elq")]
+transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 138.67, 0, -213.967)
+
+[node name="fence2" parent="NavigationRegion3D/Cabin/Fences" instance=ExtResource("18_3uus2")]
+transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 140.484, 1.16936, -213.278)
+
 [node name="PickableCandle" parent="." instance=ExtResource("50_81846")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 
 [node name="AmbientSound" parent="." instance=ExtResource("50_gnthh")]
 
-[node name="fence1" parent="." instance=ExtResource("19_v4elq")]
-transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 138.67, 0, -213.967)
+[node name="fence3" parent="." instance=ExtResource("21_xpn3k")]
+transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 142, 1.19556, -210.815)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
