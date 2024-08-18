@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://t1lyj1wuxghb"]
+
+[ext_resource type="PackedScene" uid="uid://cuit4jmtgswhw" path="res://assets/models/cow_skull/scene.gltf" id="1_nndp6"]
+
+[node name="Cowskull" instance=ExtResource("1_nndp6")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(0.150528, 0, 0, 0, 3.3424e-17, 0.150528, 0, -0.150528, 3.3424e-17, 0, 0.15701, 0)
