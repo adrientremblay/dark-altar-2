@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=29 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -12,15 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://bdn0o2f8qbgk" path="res://cedric.tscn" id="12_ax3ba"]
 [ext_resource type="Texture2D" uid="uid://bi7ytov5l6euy" path="res://assets/Skeleton/monkey.jpg" id="12_hbp13"]
 [ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
-[ext_resource type="Script" path="res://SpawnTrigger.gd" id="16_35i5q"]
-[ext_resource type="PackedScene" uid="uid://bqjgeepv2ax3l" path="res://village.tscn" id="16_h2xav"]
-[ext_resource type="PackedScene" uid="uid://dgnxbfgem1yhk" path="res://strange_rocks.tscn" id="18_d5151"]
-[ext_resource type="PackedScene" uid="uid://bu7rovvuhl8u8" path="res://graveyard.tscn" id="19_4djfp"]
+[ext_resource type="Script" path="res://SpawnTrigger.gd" id="16_irgr7"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="20_b2i1c"]
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
-[ext_resource type="PackedScene" uid="uid://b6ac21nqglin5" path="res://dungeon.tscn" id="56_ogdja"]
 [ext_resource type="PackedScene" uid="uid://c6dyrbvg3kax8" path="res://assets/models/broken_house/broken_house.tscn" id="63_q2viu"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sb5pk"]
@@ -424,36 +420,28 @@ transform = Transform3D(4.76065, 0, -1.52848, 0, 5, 0, 1.52848, 0, 4.76065, 131,
 navigation_mesh = SubResource("NavigationMesh_kpyqy")
 
 [node name="DungeonSpawnTrigger" type="Area3D" parent="NavigationRegion3D"]
-script = ExtResource("16_35i5q")
-level = ExtResource("56_ogdja")
-number_skull_options = 12
+script = ExtResource("16_irgr7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/DungeonSpawnTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 384.181, 28.4579, -81.3038)
 shape = SubResource("BoxShape3D_8xyxr")
 
 [node name="VillageSpawnTrigger" type="Area3D" parent="NavigationRegion3D"]
-script = ExtResource("16_35i5q")
-level = ExtResource("16_h2xav")
-number_skull_options = 11
+script = ExtResource("16_irgr7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/VillageSpawnTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.528, 2.89915, -126.392)
 shape = SubResource("BoxShape3D_ehsq3")
 
 [node name="GraveyardSpawnTrigger" type="Area3D" parent="NavigationRegion3D"]
-script = ExtResource("16_35i5q")
-level = ExtResource("19_4djfp")
-number_skull_options = 4
+script = ExtResource("16_irgr7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GraveyardSpawnTrigger"]
 transform = Transform3D(0.863422, 0, 0.504482, 0, 1, 0, -0.504482, 0, 0.863422, 123.33, 1.41015, -62.1436)
 shape = SubResource("BoxShape3D_qi70t")
 
 [node name="StrangeRocksTrigger" type="Area3D" parent="NavigationRegion3D"]
-script = ExtResource("16_35i5q")
-level = ExtResource("18_d5151")
-number_skull_options = 6
+script = ExtResource("16_irgr7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StrangeRocksTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.7891, 0.71283, -166.499)
