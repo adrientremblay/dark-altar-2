@@ -442,6 +442,7 @@ shape = SubResource("BoxShape3D_qi70t")
 
 [node name="StrangeRocksTrigger" type="Area3D" parent="NavigationRegion3D"]
 script = ExtResource("16_irgr7")
+level_path = "res://strange_rocks.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StrangeRocksTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.7891, 0.71283, -166.499)

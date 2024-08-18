@@ -13,6 +13,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		print("starting load")
 		ResourceLoader.load_threaded_request(level_path, "PackedScene")
 
 func _on_body_exited(body: Node3D) -> void:
@@ -24,6 +25,9 @@ func _on_skull_collected() -> void:
 	skull_keep_index = -1
 	
 func _process(delta: float) -> void:
+	if spawned_level:
+		return
+	
 	var result = ResourceLoader.load_threaded_get_status(level_path, progress)
 	if result == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
 		print("Loading in progress: " + str(progress[0]))
