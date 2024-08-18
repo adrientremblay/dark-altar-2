@@ -155,38 +155,49 @@ transform = Transform3D(0.199804, 0, -0.774647, 0, 0.8, 0, 0.774647, 0, 0.199804
 [node name="SkullGroupVillage" type="Node3D" parent="."]
 script = ExtResource("17_gf04q")
 
-[node name="Skull" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+[node name="Skull" parent="SkullGroupVillage" node_paths=PackedStringArray("level") instance=ExtResource("18_4ln1x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 161.968, 0, -90.4096)
+level = NodePath("../..")
 
-[node name="Skull2" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+[node name="Skull2" parent="SkullGroupVillage" node_paths=PackedStringArray("level") instance=ExtResource("18_4ln1x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156.785, 0, -108.863)
+level = NodePath("../..")
 
-[node name="Skull3" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+[node name="Skull3" parent="SkullGroupVillage" node_paths=PackedStringArray("level") instance=ExtResource("18_4ln1x")]
 transform = Transform3D(0.700299, 0, -0.71385, 0, 1, 0, 0.71385, 0, 0.700299, 174.426, 0.208265, -109.257)
+level = NodePath("../..")
 
-[node name="Skull4" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+[node name="Skull4" parent="SkullGroupVillage" node_paths=PackedStringArray("level") instance=ExtResource("18_4ln1x")]
 transform = Transform3D(-0.22245, 0, -0.974944, 0, 1, 0, 0.974944, 0, -0.22245, 179.872, 1.10631, -102.991)
+level = NodePath("../..")
 
-[node name="Skull5" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+[node name="Skull5" parent="SkullGroupVillage" node_paths=PackedStringArray("level") instance=ExtResource("18_4ln1x")]
 transform = Transform3D(0.591563, 0, -0.806259, 0, 1, 0, 0.806259, 0, 0.591563, 181.564, 0.750403, -110.339)
+level = NodePath("../..")
 
-[node name="Skull6" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+[node name="Skull6" parent="SkullGroupVillage" node_paths=PackedStringArray("level") instance=ExtResource("18_4ln1x")]
 transform = Transform3D(-0.886026, 0, -0.463636, 0, 1, 0, 0.463636, 0, -0.886026, 181.01, 0.755982, -113.357)
+level = NodePath("../..")
 
-[node name="Skull7" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+[node name="Skull7" parent="SkullGroupVillage" node_paths=PackedStringArray("level") instance=ExtResource("18_4ln1x")]
 transform = Transform3D(0.605461, 0, 0.795875, 0, 1, 0, -0.795875, 0, 0.605461, 168.943, 0.628696, -102.431)
+level = NodePath("../..")
 
-[node name="Skull8" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+[node name="Skull8" parent="SkullGroupVillage" node_paths=PackedStringArray("level") instance=ExtResource("18_4ln1x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.293, 4.2423, -100.832)
+level = NodePath("../..")
 
-[node name="Skull9" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+[node name="Skull9" parent="SkullGroupVillage" node_paths=PackedStringArray("level") instance=ExtResource("18_4ln1x")]
 transform = Transform3D(0.525353, 0, -0.850884, 0, 1, 0, 0.850884, 0, 0.525353, 194.06, 0.792324, -126.447)
+level = NodePath("../..")
 
-[node name="Skull10" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+[node name="Skull10" parent="SkullGroupVillage" node_paths=PackedStringArray("level") instance=ExtResource("18_4ln1x")]
 transform = Transform3D(0.334498, 0, -0.942397, 0, 1, 0, 0.942397, 0, 0.334498, 202.959, 2.99977, -124.584)
+level = NodePath("../..")
 
-[node name="Skull11" parent="SkullGroupVillage" instance=ExtResource("18_4ln1x")]
+[node name="Skull11" parent="SkullGroupVillage" node_paths=PackedStringArray("level") instance=ExtResource("18_4ln1x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.015, 0, -159.788)
+level = NodePath("../..")
 
 [node name="Well" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0291339, 0, 0.00715651, 0, 0.03, 0, -0.00715651, 0, 0.0291339, 175.284, 0, -108.861)

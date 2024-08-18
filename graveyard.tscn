@@ -280,17 +280,21 @@ shape = SubResource("BoxShape3D_k6poo")
 [node name="SkullGroupGraveyard" type="Node3D" parent="."]
 script = ExtResource("17_sey8s")
 
-[node name="SkullMausoleum" parent="SkullGroupGraveyard" instance=ExtResource("18_vvncj")]
+[node name="SkullMausoleum" parent="SkullGroupGraveyard" node_paths=PackedStringArray("level") instance=ExtResource("18_vvncj")]
 transform = Transform3D(-0.374703, 0, -0.927145, 0, 1, 0, 0.927145, 0, -0.374703, 115.222, 0.674559, -72.7598)
+level = NodePath("../..")
 
-[node name="SkullAngel" parent="SkullGroupGraveyard" instance=ExtResource("18_vvncj")]
+[node name="SkullAngel" parent="SkullGroupGraveyard" node_paths=PackedStringArray("level") instance=ExtResource("18_vvncj")]
 transform = Transform3D(-0.82374, 0, -0.566967, 0, 1, 0, 0.566967, 0, -0.82374, 105.171, 0, -78.0177)
+level = NodePath("../..")
 
-[node name="Skull" parent="SkullGroupGraveyard" instance=ExtResource("18_vvncj")]
+[node name="Skull" parent="SkullGroupGraveyard" node_paths=PackedStringArray("level") instance=ExtResource("18_vvncj")]
 transform = Transform3D(-0.835788, 0, -0.549052, 0, 1, 0, 0.549052, 0, -0.835788, 124.618, 0, -82.1521)
+level = NodePath("../..")
 
-[node name="Skull2" parent="SkullGroupGraveyard" instance=ExtResource("18_vvncj")]
+[node name="Skull2" parent="SkullGroupGraveyard" node_paths=PackedStringArray("level") instance=ExtResource("18_vvncj")]
 transform = Transform3D(-0.999258, 0, 0.03851, 0, 1, 0, -0.03851, 0, -0.999258, 134.362, 0.134707, -55.2843)
+level = NodePath("../..")
 
 [node name="Signpost" parent="." instance=ExtResource("19_eucrl")]
 transform = Transform3D(0.000500159, 0, -0.00497492, 0, 0.005, 0, 0.00497492, 0, 0.000500159, 110.921, 0, -102.473)
