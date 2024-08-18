@@ -17,7 +17,8 @@ func _on_body_entered(body: Node3D) -> void:
 		ResourceLoader.load_threaded_request(level_path, "PackedScene")
 
 func _on_body_exited(body: Node3D) -> void:
-	if spawned_level:
+	if body.is_in_group("player") and spawned_level:
+		print("deleting level")
 		spawned_level.queue_free()
 		spawned_level = null
 		
@@ -29,9 +30,7 @@ func _process(delta: float) -> void:
 		return
 	
 	var result = ResourceLoader.load_threaded_get_status(level_path, progress)
-	if result == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-		print("Loading in progress: " + str(progress[0]))
-	elif result == ResourceLoader.THREAD_LOAD_LOADED:
+	if result == ResourceLoader.THREAD_LOAD_LOADED:
 		var scene_to_load = ResourceLoader.load_threaded_get(level_path)
 		spawned_level = scene_to_load.instantiate()
 		spawned_level.init(skull_keep_index)

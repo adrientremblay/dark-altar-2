@@ -55,7 +55,7 @@ size = Vector3(67.1332, 5.88721, 99.3967)
 size = Vector3(59.0279, 3.56152, 85.5585)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mnta0"]
-size = Vector3(30.6826, 2.42566, 30.9131)
+size = Vector3(44.1472, 5.25323, 44.6886)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wlmbg"]
 size = Vector3(250, 1, 250)
@@ -421,6 +421,7 @@ navigation_mesh = SubResource("NavigationMesh_kpyqy")
 
 [node name="DungeonSpawnTrigger" type="Area3D" parent="NavigationRegion3D"]
 script = ExtResource("16_irgr7")
+level_path = "res://dungeon.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/DungeonSpawnTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 384.181, 28.4579, -81.3038)
@@ -428,6 +429,7 @@ shape = SubResource("BoxShape3D_8xyxr")
 
 [node name="VillageSpawnTrigger" type="Area3D" parent="NavigationRegion3D"]
 script = ExtResource("16_irgr7")
+level_path = "res://village.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/VillageSpawnTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.528, 2.89915, -126.392)
@@ -435,6 +437,7 @@ shape = SubResource("BoxShape3D_ehsq3")
 
 [node name="GraveyardSpawnTrigger" type="Area3D" parent="NavigationRegion3D"]
 script = ExtResource("16_irgr7")
+level_path = "res://graveyard.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GraveyardSpawnTrigger"]
 transform = Transform3D(0.863422, 0, 0.504482, 0, 1, 0, -0.504482, 0, 0.863422, 123.33, 1.41015, -62.1436)
@@ -445,7 +448,7 @@ script = ExtResource("16_irgr7")
 level_path = "res://strange_rocks.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StrangeRocksTrigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.7891, 0.71283, -166.499)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.7614, 2.33004, -164.044)
 shape = SubResource("BoxShape3D_mnta0")
 
 [node name="Floor" type="MeshInstance3D" parent="NavigationRegion3D"]
