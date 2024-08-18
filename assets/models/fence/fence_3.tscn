@@ -6,10 +6,22 @@
 size = Vector3(200.36, 200.968, 17.1362)
 
 [node name="fence3" instance=ExtResource("1_upbpb")]
-transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 1.84142, 1.19291, 0)
+transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, -0.00269783, -0.00437918, 0)
+
+[node name="Wood_01_001" parent="." index="0"]
+transform = Transform3D(1.19209e-07, -1, -1.19209e-07, 0, -1.19209e-07, 1, -1, -1.19209e-07, 0, -1.88432, 152.833, 0.00154227)
+
+[node name="Wood_02_001" parent="." index="1"]
+transform = Transform3D(1.19209e-07, -1, -1.19209e-07, 0, -1.19209e-07, 1, -1, -1.19209e-07, 0, -1.88432, 64.2126, 0.00154227)
+
+[node name="Wood_03_004" parent="." index="2"]
+transform = Transform3D(3.57628e-07, 1.94707e-07, -1, -1.94707e-07, -1, -1.94707e-07, -1, 1.94707e-07, -3.57628e-07, 81.6249, 101.295, 4.3534)
+
+[node name="Wood_03_005" parent="." index="3"]
+transform = Transform3D(3.57628e-07, 1.94707e-07, -1, -1.94707e-07, -1, -1.94707e-07, -1, 1.94707e-07, -3.57628e-07, -82.4497, 101.295, 4.3534)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -218.054, -152.147, 40.6668)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.58195, 0.685696, 40.6683)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.24913, 99.9868, -37.2681)
