@@ -1,14 +1,14 @@
 extends Area3D
 
-signal start_haunting
-signal stop_haunting
+signal haunting_area_entered
+signal haunting_area_exited
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group('player'):
-		start_haunting.emit()
+		haunting_area_entered.emit()
 		$EnterSound.play()
 		
 func _on_body_exited(body: Node3D) -> void:
 	if body.is_in_group('player'):
-		stop_haunting.emit()
+		haunting_area_exited.emit()
 		$EnterSound.play()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdn0o2f8qbgk"]
 
 [ext_resource type="Script" path="res://cedric.gd" id="1_xmn3u"]
-[ext_resource type="AudioStream" uid="uid://dvkkfudlgwcpa" path="res://assets/audio/sound_effects/schizo_whispers.mp3" id="4_kf1jm"]
+[ext_resource type="AudioStream" uid="uid://bnqd2sc1fuw3m" path="res://assets/audio/sound_effects/schizo_whispers.mp3" id="4_kf1jm"]
 [ext_resource type="AudioStream" uid="uid://b5x14n16kot0p" path="res://assets/audio/sound_effects/boom.mp3" id="4_xhb7r"]
 [ext_resource type="PackedScene" uid="uid://dbue6pqurgujn" path="res://cedric_v_2.tscn" id="5_b5wdq"]
 [ext_resource type="PackedScene" uid="uid://cy56qixibkanx" path="res://assets/models/monk/monk.glb" id="5_hbmsy"]
@@ -20,7 +20,7 @@ transform = Transform3D(-0.497888, 0, 0.0459072, 0, 0.5, 0, -0.0459072, 0, -0.49
 visible = false
 
 [node name="Light" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030338, 0.652364, -0.510796)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0967544, 0.652364, -0.510796)
 visible = false
 light_energy = 0.5
 omni_range = 1.0

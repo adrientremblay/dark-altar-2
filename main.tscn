@@ -67,10 +67,10 @@ script = ExtResource("1_y3a05")
 environment = SubResource("Environment_g4vby")
 
 [node name="Cedric" parent="." instance=ExtResource("12_ax3ba")]
-transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 306.359, 26.8452, -102.176)
+transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 101.93, 0.940194, -86.2726)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(-0.198479, 0, 0.980104, 0, 1, 0, -0.980104, 0, -0.198479, 124.375, 2.34665, -169.157)
+transform = Transform3D(0.989248, 0, 0.146239, 0, 1, 0, -0.146239, 0, 0.989248, 78.5408, 2.34665, -69.1663)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -419,33 +419,37 @@ transform = Transform3D(4.76065, 0, -1.52848, 0, 5, 0, 1.52848, 0, 4.76065, 131,
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_kpyqy")
 
-[node name="DungeonSpawnTrigger" type="Area3D" parent="NavigationRegion3D"]
+[node name="DungeonSpawnTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
 script = ExtResource("16_irgr7")
 level_path = "res://dungeon.tscn"
+cedric = NodePath("../../Cedric")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/DungeonSpawnTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 384.181, 28.4579, -81.3038)
 shape = SubResource("BoxShape3D_8xyxr")
 
-[node name="VillageSpawnTrigger" type="Area3D" parent="NavigationRegion3D"]
+[node name="VillageSpawnTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
 script = ExtResource("16_irgr7")
 level_path = "res://village.tscn"
+cedric = NodePath("../../Cedric")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/VillageSpawnTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.528, 2.89915, -126.392)
 shape = SubResource("BoxShape3D_ehsq3")
 
-[node name="GraveyardSpawnTrigger" type="Area3D" parent="NavigationRegion3D"]
+[node name="GraveyardSpawnTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
 script = ExtResource("16_irgr7")
 level_path = "res://graveyard.tscn"
+cedric = NodePath("../../Cedric")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GraveyardSpawnTrigger"]
 transform = Transform3D(0.863422, 0, 0.504482, 0, 1, 0, -0.504482, 0, 0.863422, 123.33, 1.41015, -62.1436)
 shape = SubResource("BoxShape3D_qi70t")
 
-[node name="StrangeRocksTrigger" type="Area3D" parent="NavigationRegion3D"]
+[node name="StrangeRocksTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
 script = ExtResource("16_irgr7")
 level_path = "res://strange_rocks.tscn"
+cedric = NodePath("../../Cedric")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StrangeRocksTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.7614, 2.33004, -164.044)
