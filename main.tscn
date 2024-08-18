@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=32 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://t82pm107s5ln" path="res://assets/models/fence/fence_1.tscn" id="19_v4elq"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="20_b2i1c"]
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
+[ext_resource type="PackedScene" uid="uid://620ol4bktvi4" path="res://assets/models/fence/fence_3.tscn" id="21_xpn3k"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
 [ext_resource type="PackedScene" uid="uid://c6dyrbvg3kax8" path="res://assets/models/broken_house/broken_house.tscn" id="63_q2viu"]
@@ -470,16 +471,78 @@ transform = Transform3D(4.76065, 0, -1.52848, 0, 5, 0, 1.52848, 0, 4.76065, 131,
 
 [node name="Fences" type="Node3D" parent="NavigationRegion3D/Cabin"]
 
-[node name="fence1" parent="NavigationRegion3D/Cabin/Fences" instance=ExtResource("19_v4elq")]
-transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 138.67, 0, -213.967)
+[node name="Enclosure1" type="Node3D" parent="NavigationRegion3D/Cabin/Fences"]
+
+[node name="fence1" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("19_v4elq")]
+transform = Transform3D(0.0113952, 0, 0.00520238, 0, 0.008, 0, -0.00975446, 0, 0.00607744, 133.704, 0, -223.688)
+
+[node name="fence2" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("18_3uus2")]
+transform = Transform3D(-0.00125021, 0, 0.00797216, 0, 0.008, 0, -0.0149478, 0, -0.000666779, 132.634, 0, -221.135)
+
+[node name="fence3" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("18_3uus2")]
+transform = Transform3D(0.0144594, 0, 0.00212835, 0, 0.008, 0, -0.00399066, 0, 0.00771169, 136.268, 0, -225.177)
+
+[node name="fence4" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("21_xpn3k")]
+transform = Transform3D(0.015, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 139.311, 0, -225.671)
+
+[node name="fence5" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("21_xpn3k")]
+transform = Transform3D(0.0139074, 0, 0.00299737, 0, 0.008, 0, -0.00562007, 0, 0.00741726, 142.302, 0, -226.349)
+
+[node name="fence6" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("19_v4elq")]
+transform = Transform3D(0.015, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 145.272, 0, -226.861)
+
+[node name="fence7" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("18_3uus2")]
+transform = Transform3D(0.0149174, 0, -0.000838588, 0, 0.008, 0, 0.00157235, 0, 0.00795593, 148.18, 0, -226.708)
+
+[node name="fence8" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("19_v4elq")]
+transform = Transform3D(0.00830698, 0, -0.0066612, 0, 0.008, 0, 0.0124898, 0, 0.00443039, 153.376, 0, -225.134)
+
+[node name="fence9" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("18_3uus2")]
+transform = Transform3D(0.0149894, 0, -0.000300824, 0, 0.008, 0, 0.000564046, 0, 0.00799434, 150.97, 0, -226.504)
+
+[node name="fence10" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("18_3uus2")]
+transform = Transform3D(0.00221533, 0, -0.00791227, 0, 0.008, 0, 0.0148355, 0, 0.00118151, 154.545, 0, -222.409)
+
+[node name="fence11" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("21_xpn3k")]
+transform = Transform3D(-0.00181141, 0, -0.00794145, 0, 0.008, 0, 0.0148902, 0, -0.000966084, 154.667, 0, -219.329)
+
+[node name="fence12" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("21_xpn3k")]
+transform = Transform3D(0.00389948, 0, -0.00772494, 0, 0.008, 0, 0.0144843, 0, 0.00207972, 154.979, 0, -216.278)
+
+[node name="fence13" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("19_v4elq")]
+transform = Transform3D(-0.00181141, 0, -0.00794145, 0, 0.008, 0, 0.0148902, 0, -0.000966084, 155.128, 0, -213.268)
+
+[node name="fence14" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("18_3uus2")]
+transform = Transform3D(-0.00336228, 0, -0.00779644, 0, 0.008, 0, 0.0146183, 0, -0.00179321, 154.626, 0, -210.4)
+
+[node name="fence15" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("19_v4elq")]
+transform = Transform3D(-0.0149345, 0, 0.000747027, 0, 0.008, 0, -0.00140067, 0, -0.00796505, 150.612, 0, -206.635)
+
+[node name="fence16" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("18_3uus2")]
+transform = Transform3D(-0.00986871, 0, -0.00602474, 0, 0.008, 0, 0.0112964, 0, -0.00526331, 153.191, 0, -207.643)
+
+[node name="fence17" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("18_3uus2")]
+transform = Transform3D(-0.0129254, 0, 0.00405946, 0, 0.008, 0, -0.00761149, 0, -0.00689353, 147.759, 0, -207.441)
+
+[node name="fence18" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("21_xpn3k")]
+transform = Transform3D(-0.0104346, 0, 0.00574715, 0, 0.008, 0, -0.0107759, 0, -0.0055651, 145.288, 0, -209.284)
+
+[node name="fence19" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("21_xpn3k")]
+transform = Transform3D(-0.0137119, 0, 0.00324343, 0, 0.008, 0, -0.00608143, 0, -0.00731301, 142.72, 0, -210.961)
+
+[node name="fence20" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("19_v4elq")]
+transform = Transform3D(-0.0123574, 0, 0.0045347, 0, 0.008, 0, -0.00850256, 0, -0.00659064, 139.97, 0, -212.495)
+
+[node name="fence21" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("18_3uus2")]
+transform = Transform3D(-0.0142853, 0, 0.00243998, 0, 0.008, 0, -0.00457496, 0, -0.00761883, 137.133, 0, -213.677)
+
+[node name="fence22" parent="NavigationRegion3D/Cabin/Fences/Enclosure1" instance=ExtResource("19_v4elq")]
+transform = Transform3D(0.00100429, 0, -0.00798205, 0, 0.008, 0, 0.0149663, 0, 0.000535625, 132.875, 2.38419e-07, -218.038)
 
 [node name="PickableCandle" parent="." instance=ExtResource("50_81846")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 
 [node name="AmbientSound" parent="." instance=ExtResource("50_gnthh")]
-
-[node name="fence2" parent="." instance=ExtResource("18_3uus2")]
-transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 139.736, 0, -211.784)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]

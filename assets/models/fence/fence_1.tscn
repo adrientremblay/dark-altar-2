@@ -6,7 +6,7 @@
 size = Vector3(200.36, 200.968, 17.1362)
 
 [node name="fence1" instance=ExtResource("1_h25cj")]
-transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 0, 0, -0.000397801)
+transform = Transform3D(0.015, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 0, 0, -0.000397801)
 
 [node name="Wood_01_002" parent="." index="0"]
 transform = Transform3D(7.54979e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, -7.54979e-08, -3.30012e-15, -4.66302, 151.015, -5.03929)
