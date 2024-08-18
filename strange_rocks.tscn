@@ -93,3 +93,6 @@ level = NodePath("../..")
 [node name="Skull6" parent="SkullGroupStrangeRocks" node_paths=PackedStringArray("level") instance=ExtResource("9_t4bt5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.0269, 0, -175.007)
 level = NodePath("../..")
+
+[connection signal="haunting_area_entered" from="HauntingArea" to="." method="_on_haunting_area_graveyard_haunting_area_entered"]
+[connection signal="haunting_area_exited" from="HauntingArea" to="." method="_on_haunting_area_graveyard_haunting_area_exited"]

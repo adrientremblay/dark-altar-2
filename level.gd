@@ -9,7 +9,6 @@ func init(skull_keep_index: int):
 	if skull_group:
 		skull_group.init(skull_keep_index)
 
-
 func _on_haunting_area_graveyard_haunting_area_entered() -> void:
 	start_haunting.emit()
 

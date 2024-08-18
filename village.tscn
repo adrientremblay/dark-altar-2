@@ -224,3 +224,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.26, 0, -160.247)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HauntingAreaVillage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.705, 2.66705, -130.734)
 shape = SubResource("BoxShape3D_0xp7s")
+
+[connection signal="haunting_area_entered" from="HauntingAreaVillage" to="." method="_on_haunting_area_graveyard_haunting_area_entered"]
+[connection signal="haunting_area_exited" from="HauntingAreaVillage" to="." method="_on_haunting_area_graveyard_haunting_area_exited"]

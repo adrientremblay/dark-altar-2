@@ -421,7 +421,7 @@ navigation_mesh = SubResource("NavigationMesh_kpyqy")
 
 [node name="DungeonSpawnTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
 script = ExtResource("16_irgr7")
-level_path = "res://dungeon.tscn"
+level_path = "res://levels/dungeon.tscn"
 cedric = NodePath("../../Cedric")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/DungeonSpawnTrigger"]
