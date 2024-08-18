@@ -10,7 +10,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8hff"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_d1u4a"]
-radius = 10.1208
+radius = 3.49531
 
 [node name="Cedric" type="CharacterBody3D"]
 script = ExtResource("1_xmn3u")

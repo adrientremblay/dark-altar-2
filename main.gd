@@ -10,7 +10,6 @@ var choirSound: AudioStreamPlayer
 var CEDRIC_DAMAGE_DISTANCE = 10
 var CEDRIC_DAMAGE = 30
 
-var haunting = false
 var skulls_found = 0
 
 func _ready() -> void:
@@ -54,9 +53,6 @@ func _process(delta: float) -> void:
 	
 	shaderMat.set_shader_parameter("ghost", ghost)
 	shaderMat.set_shader_parameter("amplitude", amplitude)
-	
-	if haunting:
-		cedric.change_agression(delta)
 
 func _on_player_register_skull() -> void:
 	#cedric.increase_agression($Cedric/TeleportTimer)
@@ -92,14 +88,6 @@ func _input(event):
 			pause()
 		else:
 			unpause()
-
-func _on_haunting_area_start_haunting() -> void:
-	haunting = true
-	cedric.start_haunt()
-
-func _on_haunting_area_stop_haunting() -> void:
-	haunting = false
-	cedric.stop_haunt()
 
 func pause():
 	Global.game_paused = true
