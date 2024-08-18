@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1gbfxplyr1gu"]
+
+[ext_resource type="PackedScene" uid="uid://e07bstisfp6m" path="res://assets/models/trough/scene.gltf" id="1_0aapi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gkupa"]
+size = Vector3(2.27026, 0.684082, 1.02783)
+
+[node name="Trough" instance=ExtResource("1_0aapi")]
+
+[node name="Sketchfab_model" parent="." index="0"]
+transform = Transform3D(1.12931, 0, 0, 0, 2.50758e-16, 1.12931, 0, -1.12931, 2.50758e-16, 0, 0.385822, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.385822, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00646973, 0.00805664, -0.013916)
+shape = SubResource("BoxShape3D_gkupa")
