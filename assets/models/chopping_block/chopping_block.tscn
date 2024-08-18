@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://br8v55x2clyph"]
+
+[ext_resource type="PackedScene" uid="uid://cnhhuiom2o65r" path="res://assets/models/chopping_block/chopping_block.gltf" id="1_4hjv8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7diwj"]
+height = 1.01026
+
+[node name="chopping_block" instance=ExtResource("1_4hjv8")]
+
+[node name="axe_Tool_0" parent="." index="0"]
+transform = Transform3D(-0.00996574, 0.000787065, 0.000253906, -0.000553374, -0.00406471, -0.00911986, -0.000614587, -0.00910267, 0.00409434, -0.0374475, 0.805039, 0.260502)
+
+[node name="chopping log" parent="." index="1"]
+transform = Transform3D(-0.003689, -0.0130647, 4.4504e-09, 0, -4.85498e-09, -0.0135755, 0.0130647, -0.003689, 8.09163e-10, 0.0250341, 0, -1.11163e-05)
+
+[node name="firewood01" parent="." index="2"]
+transform = Transform3D(0.00359479, 0.00486481, 0.00796311, -0.00923133, 0.00310119, 0.00227272, -0.00136388, -0.008168, 0.00560568, -0.490076, 0.103354, 0.496886)
+
+[node name="firewood02" parent="." index="3"]
+transform = Transform3D(0.00902849, -0.00429722, -0.000142039, 0.000165787, 1.78272e-05, 0.00999861, -0.00429637, -0.0090296, 8.73375e-05, -0.385373, 0.033942, 0.461961)
+
+[node name="firewood03" parent="." index="4"]
+transform = Transform3D(-0.000599676, -0.00781965, 0.00620431, -0.00997739, 0.000658479, -0.000134445, -0.000303409, -0.00619834, -0.00784146, -0.354561, 0.174063, 0.254205)
+
+[node name="firewood04" parent="." index="5"]
+transform = Transform3D(0.00170358, 0.00977027, -0.00128046, -0.00221976, 0.00164657, 0.00961049, 0.00960055, -0.00135299, 0.00244927, -0.579434, 0.0690346, 0.240259)
+
+[node name="firewood05" parent="." index="6"]
+transform = Transform3D(0.00673041, -0.00707998, 0.00213903, -0.00134483, 0.00167241, 0.00976701, -0.00727276, -0.00686126, 0.000173463, -0.176073, 0.0663213, 0.41474)
+
+[node name="firewood06" parent="." index="7"]
+transform = Transform3D(0.00853849, -0.00473732, -0.00215687, 0.00257302, 0.000239285, 0.00966035, -0.0045248, -0.00880344, 0.00142323, -0.390867, 0.0457215, 0.184535)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.500997, 0)
+shape = SubResource("CylinderShape3D_7diwj")
