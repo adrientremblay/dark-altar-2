@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5xo6uttca2jt"]
+[gd_scene load_steps=3 format=3 uid="uid://c5xo6uttca2jt"]
 
 [ext_resource type="PackedScene" uid="uid://t6ew8b6qe2fg" path="res://assets/models/haystack/scene.gltf" id="1_c65iq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w8gv4"]
+size = Vector3(1.38559, 1.33826, 1.30275)
 
 [node name="Haystack" instance=ExtResource("1_c65iq")]
 
 [node name="Sketchfab_model" parent="." index="0"]
 transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, 0.01, 0, -0.01, -4.37114e-10, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00279236, 0.676889, -0.0199814)
+shape = SubResource("BoxShape3D_w8gv4")
