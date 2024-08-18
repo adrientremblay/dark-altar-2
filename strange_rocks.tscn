@@ -70,20 +70,26 @@ transform = Transform3D(-0.0410079, 0.279871, -0.0999529, -0.10623, -0.108038, -
 [node name="SkullGroupStrangeRocks" type="Node3D" parent="."]
 script = ExtResource("8_q2eqs")
 
-[node name="Skull" parent="SkullGroupStrangeRocks" instance=ExtResource("9_t4bt5")]
+[node name="Skull" parent="SkullGroupStrangeRocks" node_paths=PackedStringArray("level") instance=ExtResource("9_t4bt5")]
 transform = Transform3D(0.137331, 0.982689, -0.124352, -0.958887, 0.100416, -0.265428, -0.248347, 0.155691, 0.956078, 79.831, 1.70974, -160.785)
+level = NodePath("../..")
 
-[node name="Skull2" parent="SkullGroupStrangeRocks" instance=ExtResource("9_t4bt5")]
+[node name="Skull2" parent="SkullGroupStrangeRocks" node_paths=PackedStringArray("level") instance=ExtResource("9_t4bt5")]
 transform = Transform3D(-0.83377, 0, -0.552112, 0, 1, 0, 0.552112, 0, -0.83377, 84.6136, 0, -171.414)
+level = NodePath("../..")
 
-[node name="Skull3" parent="SkullGroupStrangeRocks" instance=ExtResource("9_t4bt5")]
+[node name="Skull3" parent="SkullGroupStrangeRocks" node_paths=PackedStringArray("level") instance=ExtResource("9_t4bt5")]
 transform = Transform3D(-0.998997, 0, -0.0447876, 0, 1, 0, 0.0447876, 0, -0.998997, 86.5117, 0.739227, -156.256)
+level = NodePath("../..")
 
-[node name="Skull4" parent="SkullGroupStrangeRocks" instance=ExtResource("9_t4bt5")]
+[node name="Skull4" parent="SkullGroupStrangeRocks" node_paths=PackedStringArray("level") instance=ExtResource("9_t4bt5")]
 transform = Transform3D(0.539976, 0, -0.84168, 0, 1, 0, 0.84168, 0, 0.539976, 94.3719, 0, -158.104)
+level = NodePath("../..")
 
-[node name="Skull5" parent="SkullGroupStrangeRocks" instance=ExtResource("9_t4bt5")]
+[node name="Skull5" parent="SkullGroupStrangeRocks" node_paths=PackedStringArray("level") instance=ExtResource("9_t4bt5")]
 transform = Transform3D(-0.371175, 0.692006, 0.619158, 0.300951, -0.541147, 0.785231, 0.878441, 0.477794, -0.00739977, 102.008, 2.01937, -164.916)
+level = NodePath("../..")
 
-[node name="Skull6" parent="SkullGroupStrangeRocks" instance=ExtResource("9_t4bt5")]
+[node name="Skull6" parent="SkullGroupStrangeRocks" node_paths=PackedStringArray("level") instance=ExtResource("9_t4bt5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.0269, 0, -175.007)
+level = NodePath("../..")

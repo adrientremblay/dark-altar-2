@@ -1,6 +1,6 @@
 class_name SkullGroup extends Node3D
 
-func _init(keep_index: int) -> void:
+func init(keep_index: int) -> void:
 	var children = self.get_children()
 	for i in range(children.size()):
 		var child = children[i]

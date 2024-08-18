@@ -13,9 +13,14 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		spawned_level = level.instantiate()
+		spawned_level.init(skull_keep_index)
+		spawned_level.connect("skull_collected", self._on_skull_collected)
 		add_child(spawned_level)
 
 func _on_body_exited(body: Node3D) -> void:
 	if spawned_level:
 		spawned_level.queue_free()
 		spawned_level = null
+		
+func _on_skull_collected() -> void:
+	skull_keep_index = -1
