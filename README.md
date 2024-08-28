@@ -37,7 +37,7 @@
     - Born in Chambly in 1752
     - He is an upper class man who's family was important for the founding of Chambly
     - He enters priests training at tthe seminaire de saint suplice in Montreal in 1768
-    - He is kicked out for [Heinous Act] in 1770
+    - He is kicked out for [Heinous Act] in 1771
     - He becomes a clerk/scribe for a government official until 1771
     - He leaves to become a beaver pelt trapper
     - One day on his travels in 1773, he takes shelter from a snowstorm and encounters a man from the Ahuyuga tribe
@@ -47,12 +47,23 @@
     - He spends the next 10 years looking for them and some sacred object?
     - Until he finally does in the cave in New Yarmouth
         - And he's happy because he also has a fresh supply of bones
-    - 
+    - People start to go missing
+    - The mayor appeals for aide from the government
+    - The government sends a priest: David Beaumont
 - Mayor leaves David a note
 
 ## Notes
 
 ### Report on 
+
+### Cedric Leopold's Diary (1/4)
+
+July 17, 1771
+
+I have been explused from the Seminaire de Saint Suplice in Montreal. And my crime? Asking heretical questions they say. I simply desire to know why God has seemingly revealed his true message to us alone. Meanwhile, so many believe in God but have warped his message. Even more perculiar are the savages here in the new world who do not even believe in god. They believe in animals, spirits, and soforth. Why would god allow all these people to be misguided? To be damned to hell? Why is it our burden as Jesuit missionaries to lead them back to the light? Why is this not the burden of God?
+
+I am to return to Chambly. Though I have not completed my training, there I am to meet Pere Hugues. My punishment is that we are to travel far east into the uncivilized parts of Acadia. We are to make contact with and convert remote Mik'Maq communities. The voyage will be perillous. We are to travel by boat from Chambly to Louisbourg, Ile Royale. After resting, we are to take another boat to the Lunenburg. From there, we shall travel deep inland towards the north.
+
 
 ### Cedric Leopold's Diary (1/4)
 
