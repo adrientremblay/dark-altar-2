@@ -58,20 +58,23 @@
 
 ### Cedric Leopold's Diary (1/4)
 
-July 17, 1771
+Febuary 17, 1771
 
 I have been explused from the Seminaire de Saint Suplice in Montreal. And my crime? Asking heretical questions they say. I simply desire to know why God has seemingly revealed his true message to us alone. Meanwhile, so many believe in God but have warped his message. Even more perculiar are the savages here in the new world who do not even believe in god. They believe in animals, spirits, and soforth. Why would god allow all these people to be misguided? To be damned to hell? Why is it our burden as Jesuit missionaries to lead them back to the light? Why is this not the burden of God?
 
-I am to return to Chambly. Though I have not completed my training, there I am to meet Pere Hugues. My punishment is that we are to travel far east into the uncivilized parts of Acadia. We are to make contact with and convert remote Mik'Maq communities. The voyage will be perillous. We are to travel by boat from Chambly to Louisbourg, Ile Royale. After resting, we are to take another boat to the Lunenburg. From there, we shall travel deep inland towards the north.
+My punishment is that we are to travel far east into the uncivilized parts of Acadia. We are to make contact with and convert remote Mik'Maq communities. The voyage will be perillous. We are to travel by boat from Chambly to Louisbourg, Ile Royale. After resting, we are to take another boat to the Lunenburg. From there, we shall travel deep inland towards the north.
 
+
+### Cedric Leopold's Diary (2/4)
+
+March 18, 1773
+
+Today, I met Father Hugues who is to be my mentor for the expedition. With him is Niskwa, an Algonquin who will serve as interpreter, though I speak the fundamentals. Also, there is Gauthier the voyageur who will help us with navigation and labour. We also have two merceneries named Armand and Gaspard.
+
+Hugues has apparently already made the voyage and has already met with several groups of Mik'Maq. He showed me a map with multiple villages marked on it. I am anxious to begin our work. I seek to redeem myself before the Lord and before the church. Part of me also secretly yearns to learn of the strange religion of these savage peoples.
 
 ### Cedric Leopold's Diary (1/4)
 
-April 10, 1773 
-
-On this day there was a mighty storm 
-
-### Cedric Leopold's Diary (1/4)
 
 ### History of the ... people
 
