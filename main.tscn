@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://bdn0o2f8qbgk" path="res://cedric.tscn" id="12_ax3ba"]
 [ext_resource type="Texture2D" uid="uid://bi7ytov5l6euy" path="res://assets/Skeleton/monkey.jpg" id="12_hbp13"]
 [ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
-[ext_resource type="PackedScene" uid="uid://bw1kyibwxh7vf" path="res://animal_farm.tscn" id="16_hnc6i"]
 [ext_resource type="Script" path="res://SpawnTrigger.gd" id="16_irgr7"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="20_b2i1c"]
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
@@ -56,6 +55,9 @@ size = Vector3(59.0279, 3.56152, 85.5585)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mnta0"]
 size = Vector3(44.1472, 5.25323, 44.6886)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_st1qi"]
+size = Vector3(60.1612, 5.30359, 43.7548)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wlmbg"]
 size = Vector3(250, 1, 250)
@@ -448,22 +450,30 @@ cedric = NodePath("../../Cedric")
 transform = Transform3D(0.863422, 0, 0.504482, 0, 1, 0, -0.504482, 0, 0.863422, 123.33, 1.41015, -62.1436)
 shape = SubResource("BoxShape3D_qi70t")
 
-[node name="StrangeRocksTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
+[node name="StrangeRocksSpawnTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
 script = ExtResource("16_irgr7")
 level_path = "res://strange_rocks.tscn"
 number_skull_options = 6
 cedric = NodePath("../../Cedric")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StrangeRocksTrigger"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StrangeRocksSpawnTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.7614, 2.33004, -164.044)
 shape = SubResource("BoxShape3D_mnta0")
+
+[node name="FarmSpawnTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
+script = ExtResource("16_irgr7")
+level_path = "res://animal_farm.tscn"
+number_skull_options = 3
+cedric = NodePath("../../Cedric")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/FarmSpawnTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.646, 2.15179, -210.379)
+shape = SubResource("BoxShape3D_st1qi")
 
 [node name="Floor" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.292, -0.5, -119.603)
 visible = false
 mesh = SubResource("BoxMesh_wlmbg")
-
-[node name="AnimalFarm" parent="NavigationRegion3D" instance=ExtResource("16_hnc6i")]
 
 [node name="PickableCandle" parent="." instance=ExtResource("50_81846")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
@@ -480,5 +490,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 [connection signal="body_exited" from="NavigationRegion3D/VillageSpawnTrigger" to="NavigationRegion3D/VillageSpawnTrigger" method="_on_body_exited"]
 [connection signal="body_entered" from="NavigationRegion3D/GraveyardSpawnTrigger" to="NavigationRegion3D/GraveyardSpawnTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/GraveyardSpawnTrigger" to="NavigationRegion3D/GraveyardSpawnTrigger" method="_on_body_exited"]
-[connection signal="body_entered" from="NavigationRegion3D/StrangeRocksTrigger" to="NavigationRegion3D/StrangeRocksTrigger" method="_on_body_entered"]
-[connection signal="body_exited" from="NavigationRegion3D/StrangeRocksTrigger" to="NavigationRegion3D/StrangeRocksTrigger" method="_on_body_exited"]
+[connection signal="body_entered" from="NavigationRegion3D/StrangeRocksSpawnTrigger" to="NavigationRegion3D/StrangeRocksSpawnTrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="NavigationRegion3D/StrangeRocksSpawnTrigger" to="NavigationRegion3D/StrangeRocksSpawnTrigger" method="_on_body_exited"]
+[connection signal="body_entered" from="NavigationRegion3D/FarmSpawnTrigger" to="NavigationRegion3D/FarmSpawnTrigger" method="_on_body_entered"]
+[connection signal="body_exited" from="NavigationRegion3D/FarmSpawnTrigger" to="NavigationRegion3D/FarmSpawnTrigger" method="_on_body_exited"]

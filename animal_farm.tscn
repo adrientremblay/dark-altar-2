@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bw1kyibwxh7vf"]
+[gd_scene load_steps=17 format=3 uid="uid://bw1kyibwxh7vf"]
 
 [ext_resource type="PackedScene" uid="uid://c6dyrbvg3kax8" path="res://assets/models/broken_house/broken_house.tscn" id="1_pbjr3"]
 [ext_resource type="Script" path="res://level.gd" id="1_ps7n4"]
@@ -13,12 +13,15 @@
 [ext_resource type="PackedScene" uid="uid://dibmyslxnh0h8" path="res://assets/models/barrel__crate/just_barrel.tscn" id="10_gcmcn"]
 [ext_resource type="PackedScene" uid="uid://cmlhrnonmhdnv" path="res://assets/models/medieval_chest/scene.gltf" id="11_28brd"]
 [ext_resource type="PackedScene" uid="uid://dtdwm6ktkiyxk" path="res://haunting_area.tscn" id="13_8oxvo"]
+[ext_resource type="Script" path="res://SkullGroup.gd" id="14_0ypnk"]
+[ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="15_1kgu2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ao05m"]
 size = Vector3(51.7847, 6.05713, 36.5114)
 
-[node name="AnimalFarm" type="Node3D"]
+[node name="AnimalFarm" type="Node3D" node_paths=PackedStringArray("skull_group")]
 script = ExtResource("1_ps7n4")
+skull_group = NodePath("SkullGroupFarm")
 
 [node name="BrokenHouse" parent="." instance=ExtResource("1_pbjr3")]
 transform = Transform3D(4.76065, 0, -1.52848, 0, 5, 0, 1.52848, 0, 4.76065, 131, 0.0860325, -200.612)
@@ -208,3 +211,18 @@ transform = Transform3D(-0.0810138, 0, -0.288854, 0, 0.3, 0, 0.288854, 0, -0.081
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HauntingArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.099, 2.52856, -210.072)
 shape = SubResource("BoxShape3D_ao05m")
+
+[node name="SkullGroupFarm" type="Node3D" parent="."]
+script = ExtResource("14_0ypnk")
+
+[node name="Skull" parent="SkullGroupFarm" node_paths=PackedStringArray("level") instance=ExtResource("15_1kgu2")]
+transform = Transform3D(-0.413041, 0, 0.910713, 0, 1, 0, -0.910713, 0, -0.413041, 151.186, 0, -218.99)
+level = NodePath("../..")
+
+[node name="Skull2" parent="SkullGroupFarm" node_paths=PackedStringArray("level") instance=ExtResource("15_1kgu2")]
+transform = Transform3D(-0.879524, 0, -0.475855, 0, 1, 0, 0.475855, 0, -0.879524, 138.219, 0, -201.002)
+level = NodePath("../..")
+
+[node name="Skull3" parent="SkullGroupFarm" node_paths=PackedStringArray("level") instance=ExtResource("15_1kgu2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.195, 0, -202.298)
+level = NodePath("../..")

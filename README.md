@@ -73,8 +73,13 @@ Today, I met Father Hugues who is to be my mentor for the expedition. With him i
 
 Hugues has apparently already made the voyage and has already met with several groups of Mik'Maq. He showed me a map with multiple villages marked on it. I am anxious to begin our work. I seek to redeem myself before the Lord and before the church. Part of me also secretly yearns to learn of the strange religion of these savage peoples.
 
-### Cedric Leopold's Diary (1/4)
+We leave in a week.
 
+### Cedric Leopold's Diary (3/4)
+
+April 29, 1773
+
+Today, we encountered a group of hunters. They readied their bows and appeared to be on the verge of attacking us
 
 ### History of the ... people
 
