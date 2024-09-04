@@ -1,6 +1,7 @@
-[gd_scene load_steps=50 format=3 uid="uid://crympftnsrmwa"]
+[gd_scene load_steps=51 format=3 uid="uid://crympftnsrmwa"]
 
 [ext_resource type="MeshLibrary" uid="uid://b58cb358rt6wo" path="res://assets/dungeon/tileset.tres" id="1_tdmtu"]
+[ext_resource type="Script" path="res://level.gd" id="1_yh6qk"]
 [ext_resource type="Texture2D" path="res://grass_alb_ht.dds" id="2_ky368"]
 [ext_resource type="PackedScene" uid="uid://b86a1pi8r3spt" path="res://assets/models/altar/altar.tscn" id="3_7m27l"]
 [ext_resource type="Texture2D" uid="uid://cv2glboxhsx8t" path="res://assets/images/dungeon/pentagram.png" id="4_nwrdt"]
@@ -70,7 +71,9 @@ albedo_texture = ExtResource("38_sgllw")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_s4s7d"]
 
-[node name="Dungeon" type="Node3D"]
+[node name="Dungeon" type="Node3D" node_paths=PackedStringArray("skull_group")]
+script = ExtResource("1_yh6qk")
+skull_group = NodePath("SkullGroupDungeon")
 
 [node name="GridMapPerennial" type="Area3D" parent="."]
 
@@ -137,7 +140,6 @@ transform = Transform3D(-0.0459034, 0, -0.998946, 0, 1, 0, 0.998946, 0, -0.04590
 
 [node name="stone_throne4" parent="." instance=ExtResource("7_a6lss")]
 transform = Transform3D(-0.975604, 0, 0.21954, 0, 1, 0, -0.21954, 0, -0.975604, 369.245, 26.9, -138.662)
-visible = false
 
 [node name="stone_throne5" parent="." instance=ExtResource("7_a6lss")]
 transform = Transform3D(0.6193, 0, -0.785155, 0, 1, 0, 0.785155, 0, 0.6193, 373.909, 26.9, -148.522)
@@ -376,9 +378,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 447.792, 27.703, -93.4809)
 [node name="PickableCandle9" parent="Candles" instance=ExtResource("37_a657x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 356.563, 27.7524, -96.2096)
 
-[node name="PickableCandle10" parent="Candles" instance=ExtResource("37_a657x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 268.773, 24.0438, -239.168)
-
 [node name="PickableCandle11" parent="Candles" instance=ExtResource("37_a657x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 390.966, 26.9, -14.9051)
 
@@ -457,6 +456,7 @@ mesh = SubResource("PlaneMesh_s4s7d")
 skeleton = NodePath("../../../..")
 
 [node name="Test Flashlights" type="Node3D" parent="."]
+visible = false
 
 [node name="PREVIEW_FLASHLIGHT" type="OmniLight3D" parent="Test Flashlights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 354.717, 30.0803, -59.8937)
@@ -516,38 +516,50 @@ omni_range = 31.6906
 [node name="SkullGroupDungeon" type="Node3D" parent="."]
 script = ExtResource("39_8riw2")
 
-[node name="Skull" parent="SkullGroupDungeon" instance=ExtResource("40_gmqui")]
+[node name="Skull" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
 transform = Transform3D(-0.991649, 0, -0.128969, 0, 1, 0, 0.128969, 0, -0.991649, 355.196, 26.9539, -47.4844)
+level = NodePath("../..")
 
-[node name="Skull2" parent="SkullGroupDungeon" instance=ExtResource("40_gmqui")]
+[node name="Skull2" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
 transform = Transform3D(0.729219, 0, 0.68428, 0, 1, 0, -0.68428, 0, 0.729219, 354.496, 26.9, -62.2387)
+level = NodePath("../..")
 
-[node name="Skull3" parent="SkullGroupDungeon" instance=ExtResource("40_gmqui")]
+[node name="Skull3" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
 transform = Transform3D(-0.9627, 0.245022, -0.11477, 0.00539503, 0.44148, 0.897255, 0.270516, 0.863169, -0.426335, 374.973, 27.2964, -70.1617)
+level = NodePath("../..")
 
-[node name="Skull4" parent="SkullGroupDungeon" instance=ExtResource("40_gmqui")]
+[node name="Skull4" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
 transform = Transform3D(-0.994043, 0, -0.108988, 0, 1, 0, 0.108988, 0, -0.994043, 390.302, 26.9, -14.9047)
+level = NodePath("../..")
 
-[node name="Skull5" parent="SkullGroupDungeon" instance=ExtResource("40_gmqui")]
+[node name="Skull5" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
 transform = Transform3D(-0.999984, 0, -0.00563729, 0, 1, 0, 0.00563729, 0, -0.999984, 449.945, 27.7244, -86.8786)
+level = NodePath("../..")
 
-[node name="Skull6" parent="SkullGroupDungeon" instance=ExtResource("40_gmqui")]
+[node name="Skull6" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
 transform = Transform3D(0.795812, -3.70035e-09, 0.605544, 0.0479529, 0.99686, -0.0630202, -0.603642, 0.0791899, 0.793313, 437.922, 27.4392, -76.6806)
+level = NodePath("../..")
 
-[node name="Skull7" parent="SkullGroupDungeon" instance=ExtResource("40_gmqui")]
+[node name="Skull7" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
 transform = Transform3D(0.128459, 0.880683, -0.455956, -0.991675, 0.109967, -0.0669882, -0.00885521, 0.460765, 0.887478, 371.774, 27.0005, -101.636)
+level = NodePath("../..")
 
-[node name="Skull8" parent="SkullGroupDungeon" instance=ExtResource("40_gmqui")]
+[node name="Skull8" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 356.223, 27.5633, -97.9088)
+level = NodePath("../..")
 
-[node name="Skull9" parent="SkullGroupDungeon" instance=ExtResource("40_gmqui")]
+[node name="Skull9" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
 transform = Transform3D(-0.999238, 0, 0.0390332, 0, 1, 0, -0.0390332, 0, -0.999238, 350.184, 26.9, -84.0143)
+level = NodePath("../..")
 
-[node name="Skull10" parent="SkullGroupDungeon" instance=ExtResource("40_gmqui")]
+[node name="Skull10" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.378, 26.9, -150.535)
+level = NodePath("../..")
 
-[node name="Skull11" parent="SkullGroupDungeon" instance=ExtResource("40_gmqui")]
+[node name="Skull11" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 370.199, 26.9, -150.39)
+level = NodePath("../..")
 
-[node name="Skull12" parent="SkullGroupDungeon" instance=ExtResource("40_gmqui")]
+[node name="Skull12" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371.019, 26.9, -150.708)
+level = NodePath("../..")

@@ -3,7 +3,7 @@ class_name Cedric extends CharacterBody3D
 var random = RandomNumberGenerator.new()
 
 var can_boom = false
-var haunt_distance_min = 5
+var haunt_distance_min = 10
 var haunt_distance_max = 30
 var stalking_distance = 30
 var agression = 0
@@ -21,7 +21,7 @@ enum CEDRIC_MODE {STALKING, HAUNTING, CHASING}
 var cedric_mode: CEDRIC_MODE = CEDRIC_MODE.STALKING
 var player: Player
 
-var AGRESSION_COEFF = 5
+var AGRESSION_COEFF = 3
 
 func _process(delta: float) -> void:
 	if cedric_mode == CEDRIC_MODE.HAUNTING:
