@@ -55,16 +55,16 @@ I have thusly devoted myself to this cause. The cause of knowledge. Not selfish 
 [node name="NoticeBoardPage2" parent="NoticeBoard" instance=ExtResource("4_hqpic")]
 transform = Transform3D(-0.00872648, 0.999962, -4.37097e-08, 0, -4.37114e-08, -1, -0.999962, -0.00872648, 3.81446e-10, 0.0475922, 2.15872, 0.0517921)
 page_title = "Leave this accursed town!"
-page_text = "A great tragedy has befallen us. Ever since Cedric Leopold rode back into town after his long absense of 30 years, Angel's Crossing has not felt the same!. When I look outside at the village square, I don't see many faces anymore. Every night it seems more and more people are missing. Left in the middle of the night our Mayor says. Who believes him?
+page_text = "A great tragedy has befallen us. Ever since Cedric Leopold rode back into town after his long absense of over 20 years, Angel's Crossing has not been the same!. Faces once familiar in the village square are now missing and replaced by strange foreigners. Where have they all gone? Left in the middle of the night the mayer says. Who believes him.
 
-It seems the only people I see here anymore are the members of the \"Society of the Dark Altar\". The damned fools that rode in with Cedric Leopold. They're heretics I say! Cultists! I would say we should drive them out. But it seems they outnumber us now. I am leaving this town. And I suggest anyone else left of sound-mind and honest-heart leave too."
+This Society of the Dark Altar? Heretics I say! Cultists! We must drive them out. Am Am I the only honest citizen left in this town?"
 
 [node name="NoticeBoardPage3" parent="NoticeBoard" instance=ExtResource("4_hqpic")]
 transform = Transform3D(-0.0087266, 0.999964, -4.37098e-08, 0, -4.37114e-08, -1, -0.999964, -0.0087266, 3.81456e-10, 0.049469, 1.87923, 0.798996)
 page_title = "The king is sending aid"
-page_text = "This is an announcement from Mayor Keisel, Mayor of Angel's Crossing. I am well aware of the numerous reports of strange occurences of recent. I am also aware of the numerous sightings of a strange \"monster\" lurking the woods at night since Cedric Leopold arrived in town and then dissapeared. 
+page_text = "This is an announcement from Mayor Keisel. I am well aware of the numerous reports of strange occurences of recent. I am also aware of the numerous sightings of a strange \"monster\" lurking the woods at night since Cedric Leopold arrived in town and then dissapeared. 
 
-Rest easy. I have petitioned the King for aid. Though apparently he cannot spare any armsmen, he is sending a priest. The disturbances here seem to be of a supernatural nature anyways."
+Rest easy. I have petitioned the King for aid. Though apparently he cannot spare any armsmen, he is sending a priest."
 
 [node name="MarketStall" parent="." instance=ExtResource("5_xokc7")]
 transform = Transform3D(-0.10793, 0, -0.994158, 0, 1, 0, 0.994158, 0, -0.10793, 181.257, 0, -110.238)
