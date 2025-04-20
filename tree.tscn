@@ -1,18 +1,137 @@
-[gd_scene load_steps=3 format=3 uid="uid://dinx2n1kr6nxt"]
+tool
+extends Node3D
 
-[ext_resource type="PackedScene" uid="uid://fx0d583oao8c" path="res://adrien_tree.tscn" id="1_66x82"]
+@export var wind_sway_speed: float = 1.0
+@export var wind_sway_strength: float = 0.05
+@export var lod_distances: Array[float] = [10.0, 30.0]
+@export var rustle_sound: AudioStreamSample
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_hp6tt"]
-height = 4.30525
-radius = 0.21465
+var random_offset: float
 
-[node name="Tree" type="Node3D"]
+func _ready():
+	random_offset = randf_range(0.0, TAU)
+	setup_lod()
+	setup_physics()
+	setup_sound_trigger()
 
-[node name="adrien_tree" parent="." instance=ExtResource("1_66x82")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+func _process(delta):
+	update_wind_sway()
+	update_lod()
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+func setup_lod():
+	# Ensure the base tree scene exists
+	if get_child("adrien_tree") == null:
+		printerr("Error: 'adrien_tree' instance not found.")
+		return
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09398, 0)
-shape = SubResource("CylinderShape3D_hp6tt")
+	# Create LOD nodes
+	var lod0_node = get_child("adrien_tree")
+	var lod1_node = lod0_node.duplicate()
+	var lod2_node = load("res://billboard_plane.tscn").instantiate() # Replace with your billboard scene
+
+	# Configure LOD1 (reduce triangles, remove collision)
+	if lod1_node is Node3D:
+		# This is a placeholder - you'll need to implement actual triangle reduction
+		# For example, by accessing the mesh and removing vertices/triangles
+		# This often requires editor scripting or custom mesh processing.
+		lod1_node.name = "adrien_tree_lod1"
+		var colliders = lod1_node.find_children("CollisionShape3D", true)
+		for collider in colliders:
+			collider.queue_free()
+	else:
+		printerr("Error: Could not duplicate 'adrien_tree' for LOD1.")
+
+	# Configure LOD2 (billboard)
+	lod2_node.name = "billboard"
+	# You might need to adjust the billboard's material and texture here
+	if lod2_node is Node3D:
+		lod2_node.look_at(get_viewport().get_camera_3d().global_position, Vector3.UP) # Initial orientation
+	else:
+		printerr("Error: Could not instantiate billboard scene for LOD2.")
+
+	# Add LOD nodes as children
+	add_child(lod1_node)
+	add_child(lod2_node)
+
+	# Set initial visibility
+	_update_lod_visibility(0)
+
+func _update_lod_visibility(lod_level: int):
+	if is_instance_valid(get_child("adrien_tree")):
+		get_child("adrien_tree").visible = (lod_level == 0)
+		var collision = get_node_or_null("StaticBody3D")
+		if is_instance_valid(collision):
+			collision.monitoring = (lod_level == 0)
+			collision.process_mode = PROCESS_MODE_INHERIT if (lod_level == 0) else PROCESS_MODE_DISABLED
+
+	if is_instance_valid(get_child("adrien_tree_lod1")):
+		get_child("adrien_tree_lod1").visible = (lod_level == 1)
+
+	if is_instance_valid(get_child("billboard")):
+		get_child("billboard").visible = (lod_level == 2)
+
+func update_lod():
+	if get_viewport().get_camera_3d():
+		var distance_to_camera = global_position.distance_to(get_viewport().get_camera_3d().global_position)
+		if distance_to_camera < lod_distances[0]:
+			_update_lod_visibility(0)
+		elif distance_to_camera < lod_distances[1]:
+			_update_lod_visibility(1)
+		else:
+			_update_lod_visibility(2)
+
+func update_wind_sway():
+	if is_instance_valid(get_child("adrien_tree")):
+		var shader_material = get_child("adrien_tree").get_active_material(0)
+		if shader_material is StandardMaterial3D:
+			shader_material.set_shader_parameter("time", Time.get_singleton().get_time() * wind_sway_speed + random_offset)
+			shader_material.set_shader_parameter("strength", wind_sway_strength)
+		elif shader_material is ShaderMaterial:
+			shader_material.set_shader_parameter("time", Time.get_singleton().get_time() * wind_sway_speed + random_offset)
+			shader_material.set_shader_parameter("strength", wind_sway_strength)
+		else:
+			# Try setting on all materials if unsure which one has the shader
+			var materials = get_child("adrien_tree").get_surface_override_materials()
+			if materials.is_empty():
+				materials = [get_child("adrien_tree").material_override]
+			for material in materials:
+				if material is StandardMaterial3D:
+					material.set_shader_parameter("time", Time.get_singleton().get_time() * wind_sway_speed + random_offset)
+					material.set_shader_parameter("strength", wind_sway_strength)
+				elif material is ShaderMaterial:
+					material.set_shader_parameter("time", Time.get_singleton().get_time() * wind_sway_speed + random_offset)
+					material.set_shader_parameter("strength", wind_sway_strength)
+
+func setup_physics():
+	var trunk_collision = get_node_or_null("StaticBody3D/CollisionShape3D")
+	if trunk_collision:
+		trunk_collision.get_parent().collision_layer = 0 # Disable all layers initially
+		trunk_collision.get_parent().collision_mask = 0
+		trunk_collision.get_parent().set_collision_layer_value(3, true) # Set to "Nature" layer (assuming layer 3 is Nature)
+		# You might need to configure the project's physics layers in Project Settings
+
+func setup_sound_trigger():
+	if rustle_sound == null:
+		return
+
+	var sound_area = Area3D.new()
+	sound_area.name = "RustleSoundTrigger"
+
+	var collision_shape = CollisionShape3D.new()
+	var sphere_shape = SphereShape3D.new()
+	sphere_shape.radius = 1.5 # Adjust radius as needed
+	collision_shape.shape = sphere_shape
+	sound_area.add_child(collision_shape)
+
+	var audio_player = AudioStreamPlayer3D.new()
+	audio_player.stream = rustle_sound
+	audio_player.autoplay = false
+	sound_area.add_child(audio_player)
+
+	sound_area.connect("body_entered", _on_rustle_area_body_entered.bind(audio_player))
+
+	add_child(sound_area)
+
+func _on_rustle_area_body_entered(body, audio_player: AudioStreamPlayer3D):
+	if body.has_method("is_player") and body.is_player(): # Example check for player
+		audio_player.play()
