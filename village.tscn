@@ -46,11 +46,11 @@ transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 
 [node name="NoticeBoardPage1" parent="NoticeBoard" instance=ExtResource("4_hqpic")]
 transform = Transform3D(-0.00881386, 0.999961, 3.85264e-10, -4.37114e-08, 4.55692e-15, -1, -0.999961, -0.00881386, 4.37097e-08, 0.0785065, 1.79837, -0.744495)
 page_title = "Recruiting! Society of the Dark Altar"
-page_text = "Greetings fellow citizen. My name is Cedric Leopold. I, like you have walked through the trees, among the animals, climbed mountains, traversed seas and stared up at the night sky. I, like many would be content to marry a sweet girl, have many children and spend my days in the village square and my nights in a warm bed.
+page_text = "Greetings fellow citizen. My name is Cedric Leopold. I have walked among the trees, among the animals, climbed mountains, traversed seas and read the wisdom of great men. I, like many would be content to marry a sweet girl, have many children and spend my days in a village square and my nights in a warm bed.
 
 One thing has always bothered me... The night sky! Every night, when I look up and see the speckled white stars, I think of them as souls. I see the souls of my father, grandfather, friend Jorvald and dear late daughter Bodil. They live on in the great beyond. I must know what it is like. I must know why so many of us down on earth live short miserable lives. Why men lead themselves to ruin.
 
-[TODO]"
+I have thusly devoted myself to this cause. The cause of knowledge. Not selfish knowledge of so-called science. But the true knowledge that can only be discovered from beyond this world. If you are like me, come seek me out. Seek out the Society of the Dark Altar."
 
 [node name="NoticeBoardPage2" parent="NoticeBoard" instance=ExtResource("4_hqpic")]
 transform = Transform3D(-0.00872648, 0.999962, -4.37097e-08, 0, -4.37114e-08, -1, -0.999962, -0.00872648, 3.81446e-10, 0.0475922, 2.15872, 0.0517921)
