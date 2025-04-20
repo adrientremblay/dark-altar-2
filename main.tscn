@@ -27,8 +27,9 @@ sky_material = SubResource("PanoramaSkyMaterial_sb5pk")
 [sub_resource type="Environment" id="Environment_g4vby"]
 background_mode = 2
 background_color = Color(0.0509804, 0.631373, 0.847059, 1)
-background_energy_multiplier = 9.26
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_oxcog")
+ambient_light_source = 1
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 3.1
 reflected_light_source = 1
@@ -72,7 +73,7 @@ environment = SubResource("Environment_g4vby")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 129.622, 0.940194, -86.2726)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(-0.852201, 0, 0.523211, 0, 1, 0, -0.523211, 0, -0.852201, 115.741, 2.99247, -174.49)
+transform = Transform3D(-0.852201, 0, 0.523211, 0, 1, 0, -0.523211, 0, -0.852201, 96.7906, 2.33176, -190.143)
 
 [node name="Trees" type="Node3D" parent="."]
 

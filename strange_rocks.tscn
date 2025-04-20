@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dgnxbfgem1yhk"]
+[gd_scene load_steps=14 format=3 uid="uid://dgnxbfgem1yhk"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_18pke"]
 [ext_resource type="PackedScene" uid="uid://c7xxhqgfuhhov" path="res://rock_arch.tscn" id="1_d0h6n"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://SkullGroup.gd" id="8_q2eqs"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="9_t4bt5"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="11_00f51"]
+[ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="12_7paw2"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_05rw2"]
 height = 13.383
@@ -109,6 +110,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0288, -1.52073, 2.91054)
 
 [node name="PickableCandle4" parent="Candles" instance=ExtResource("11_00f51")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1638, -1.55335, -11.7864)
+
+[node name="Page" parent="." instance=ExtResource("12_7paw2")]
+transform = Transform3D(0.967981, -0.251022, 1.09725e-08, 0, -4.37114e-08, -1, 0.251022, 0.967981, -4.23118e-08, 92.9514, 1.208, -173.197)
+page_title = "Strange House"
+page_text = "In this house there once lived an old hermit. The village enders say this now decrepit dwelling predate Angel's Crossing. Inhabited always by the old hermit. Up until the about 10 years ago."
+
+[node name="Page2" parent="." instance=ExtResource("12_7paw2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.0083, 0.0195518, -162.957)
+page_title = "Note from Cedric"
+page_text = "It was here we found the altar. It's so called guardian was a frail and pathetic abomination that I slew with a single swing of my sword.
+
+God only knows how long the altar has been here. Scorched by the opressive rays of the sun. No one truly understanding it's power. It's safe now. Far from prying eyes."
 
 [connection signal="haunting_area_entered" from="HauntingArea" to="." method="_on_haunting_area_graveyard_haunting_area_entered"]
 [connection signal="haunting_area_exited" from="HauntingArea" to="." method="_on_haunting_area_graveyard_haunting_area_exited"]

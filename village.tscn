@@ -60,7 +60,7 @@ page_text = "A great tragedy has befallen us. Ever since Cedric Leopold rode bac
 This Society of the Dark Altar? Heretics I say! Cultists! We must drive them out. Am Am I the only honest citizen left in this town?"
 
 [node name="NoticeBoardPage3" parent="NoticeBoard" instance=ExtResource("4_hqpic")]
-transform = Transform3D(-0.0087266, 0.999964, -4.37098e-08, 0, -4.37114e-08, -1, -0.999964, -0.0087266, 3.81456e-10, 0.049469, 1.87923, 0.798996)
+transform = Transform3D(-0.00872657, 0.999964, -4.37098e-08, 0, -4.37114e-08, -1, -0.999964, -0.00872657, 3.81456e-10, 0.0494843, 1.87923, 0.799)
 page_title = "The king is sending aid"
 page_text = "This is an announcement from Mayor Keisel. I am well aware of the numerous reports of strange occurences of recent. I am also aware of the numerous sightings of a strange \"monster\" lurking the woods at night since Cedric Leopold arrived in town and then dissapeared. 
 
