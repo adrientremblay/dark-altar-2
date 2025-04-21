@@ -19,6 +19,8 @@ var MIN_LIGHT_RAMGE = 2
 
 var candle_y_scale = MAX_Y_SCALE
 
+var light_range = 0.0
+
 func _process(delta: float) -> void:
 	if Global.game_paused:
 		return
@@ -46,7 +48,7 @@ func candle_burn(delta: float):
 	hand_light.light_energy = max(MIN_LIGHT_ENERGY_HAND, hand_light_energy)
 	
 	# light range
-	var light_range = max(MIN_LIGHT_RAMGE, light_ratio * MAX_LIGHT_RANGE)
+	light_range = max(MIN_LIGHT_RAMGE, light_ratio * MAX_LIGHT_RANGE)
 	flame_light.omni_range = light_range
 
 func replenish():

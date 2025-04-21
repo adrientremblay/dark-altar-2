@@ -149,6 +149,12 @@ func check_if_can_see_me(cedric: CharacterBody3D):
 	var direction_to_cedric = position.direction_to(cedric.position)
 	var angle_to_me = rad_to_deg(player_direction.signed_angle_to(direction_to_cedric, Vector3(0,1,0)))
 	
+	var distance_to_cedric_vec = self.global_position - cedric.global_position
+	var distance_to_cedric = distance_to_cedric_vec.length()
+	
+	if (distance_to_cedric <= candle.light_range):
+		cedric.play_boom()
+	
 	#if abs(angle_to_me) <= 75:
 	#	cedric.can_move = false
 	#else:
@@ -193,10 +199,8 @@ func unpause_flame():
 func _process(delta: float) -> void:
 	hand_camera.global_transform = camera.global_transform
 
-
 func _on_gate_to_hell_body_entered(body: Node3D) -> void:
 	pass
-
 
 func _on_gate_to_hell_body_exited(body: Node3D) -> void:
 	if (not body.is_in_group("player")):

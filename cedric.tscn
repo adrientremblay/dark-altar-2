@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bdn0o2f8qbgk"]
 
 [ext_resource type="Script" path="res://cedric.gd" id="1_xmn3u"]
+[ext_resource type="AudioStream" uid="uid://n1u68hvc4yo7" path="res://assets/audio/sound_effects/cedric_reveal_sound.mp3" id="2_xvglx"]
 [ext_resource type="AudioStream" uid="uid://bnqd2sc1fuw3m" path="res://assets/audio/sound_effects/schizo_whispers.mp3" id="4_kf1jm"]
-[ext_resource type="AudioStream" uid="uid://b5x14n16kot0p" path="res://assets/audio/sound_effects/boom.mp3" id="4_xhb7r"]
 [ext_resource type="PackedScene" uid="uid://dbue6pqurgujn" path="res://cedric_v_2.tscn" id="5_b5wdq"]
 [ext_resource type="PackedScene" uid="uid://cy56qixibkanx" path="res://assets/models/monk/monk.glb" id="5_hbmsy"]
 [ext_resource type="AudioStream" uid="uid://tb1rv82ntw3e" path="res://assets/audio/dialog/perfect_world.mp3" id="6_2o42h"]
@@ -16,8 +16,7 @@ radius = 3.49531
 script = ExtResource("1_xmn3u")
 
 [node name="BoomSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_xhb7r")
-volume_db = -80.0
+stream = ExtResource("2_xvglx")
 
 [node name="cedric_v2" parent="." instance=ExtResource("5_b5wdq")]
 transform = Transform3D(-0.497888, 0, 0.0459072, 0, 0.5, 0, -0.0459072, 0, -0.497888, 0, -0.980671, 0)
