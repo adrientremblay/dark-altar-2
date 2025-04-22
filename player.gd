@@ -152,8 +152,8 @@ func check_if_can_see_me(cedric: CharacterBody3D):
 	var distance_to_cedric_vec = self.global_position - cedric.global_position
 	var distance_to_cedric = distance_to_cedric_vec.length()
 	
-	if (distance_to_cedric <= candle.light_range):
-		cedric.play_boom()
+	#if (distance_to_cedric <= candle.light_range):
+		#cedric.play_boom()
 	
 	#if abs(angle_to_me) <= 75:
 	#	cedric.can_move = false

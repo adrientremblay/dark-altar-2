@@ -5,7 +5,7 @@ var random = RandomNumberGenerator.new()
 var can_boom = false
 var haunt_distance_min = 10
 var haunt_distance_max = 30
-var stalking_distance = 30
+var stalking_distance = 15
 var agression = 0
 var disabled = false
 var can_move = true
@@ -75,7 +75,7 @@ func act_based_on_mode(player: Player):
 
 func stalk(player: Player):
 	# Cedric will keep distance from player
-	var safe_distance = player.candle_light.omni_range + 1
+	var safe_distance = player.candle_light.omni_range
 	var distance = max(safe_distance, stalking_distance)
 	var difference_direction = -player.get_player_direction()
 	$NavigationAgent3D.target_position = player.global_position + (difference_direction * distance)
@@ -120,6 +120,7 @@ func haunt(player: Player):
 	if Global.game_paused:
 		return
 	
+	can_boom = true
 	var player_position = player.position
 	
 	var distance_to_spawn = (100 - agression) * 0.01 * (haunt_distance_max - haunt_distance_min) + haunt_distance_min

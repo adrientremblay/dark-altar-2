@@ -113,15 +113,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1638, -1.55335, -11.7864)
 
 [node name="Page" parent="." instance=ExtResource("12_7paw2")]
 transform = Transform3D(0.967981, -0.251022, 1.09725e-08, 0, -4.37114e-08, -1, 0.251022, 0.967981, -4.23118e-08, 92.9514, 1.208, -173.197)
-page_title = "Strange House"
-page_text = "In this house there once lived an old hermit. The village enders say this now decrepit dwelling predate Angel's Crossing. Inhabited always by the old hermit. Up until the about 10 years ago."
+page_title = "Historian's Note"
+page_text = "They say In this house there once lived a hermit. The village elders are adamant about it. The youth of the village have no such memory. Therefore I must conclude that this hermit departed roughly a decade ago.
+
+Strangely, the village elders claim that their fathers and their forefathers also knew of the hermit. This would mean the hermit was of an impossible age. Could this be magic?"
 
 [node name="Page2" parent="." instance=ExtResource("12_7paw2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.0083, 0.0195518, -162.957)
-page_title = "Note from Cedric"
-page_text = "It was here we found the altar. It's so called guardian was a frail and pathetic abomination that I slew with a single swing of my sword.
+page_title = "Historians Note"
+page_text = "What is this arch? Is it a natural formation or a creation of man and his muscle? I see no chisel marks therefore I must conclude it natural. This shape however is most perculiar. I struggle to understand what phenomenna could have produced it.
 
-God only knows how long the altar has been here. Scorched by the opressive rays of the sun. No one truly understanding it's power. It's safe now. Far from prying eyes."
+Something else of note is the earth here where I lay this note. It is darker than the surrounding earth. It is more moist. There is something strange about it."
 
 [connection signal="haunting_area_entered" from="HauntingArea" to="." method="_on_haunting_area_graveyard_haunting_area_entered"]
 [connection signal="haunting_area_exited" from="HauntingArea" to="." method="_on_haunting_area_graveyard_haunting_area_exited"]
