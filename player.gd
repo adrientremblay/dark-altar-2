@@ -145,24 +145,31 @@ func change_movement_mode(new_movement_mode : MovementMode):
 	movement_mode = new_movement_mode
 
 func check_if_can_see_me(cedric: CharacterBody3D):
+	# FOV check
 	var player_direction = (transform.basis * neck.transform.basis * Vector3(0, 0, -1)).normalized()
 	var direction_to_cedric = position.direction_to(cedric.position)
 	var angle_to_me = rad_to_deg(player_direction.signed_angle_to(direction_to_cedric, Vector3(0,1,0)))
+	if abs(angle_to_me) > 75:
+		return false
 	
+	# Distance check
 	var distance_to_cedric_vec = self.global_position - cedric.global_position
 	var distance_to_cedric = distance_to_cedric_vec.length()
+	var candle_light_range = self.candle_light.omni_range;
+	if (distance_to_cedric > candle_light_range):
+		return false
 	
-	#if (distance_to_cedric <= candle.light_range):
-		#cedric.play_boom()
+	# Ray trace check
+	var space_state = get_world_3d().direct_space_state
+	var ray_trace_obj = PhysicsRayQueryParameters3D.new()
+	ray_trace_obj.from = neck.global_position
+	ray_trace_obj.to = cedric.global_position
+	var ray_trace_result = space_state.intersect_ray(ray_trace_obj)
+	var ray_trace_collider = ray_trace_result.collider
+	if ray_trace_collider != cedric:
+		return false
 	
-	#if abs(angle_to_me) <= 75:
-	#	cedric.can_move = false
-	#else:
-	#	cedric.can_move = true
-		
-	cedric.rotate_to_me(self.position) # TODO: move
-	
-	return angle_to_me
+	return true
 
 func get_player_direction():
 	var player_direction = (transform.basis * neck.transform.basis * Vector3(0, 0, -1)).normalized()

@@ -16,15 +16,12 @@ func _ready() -> void:
 	shaderMat  = $CanvasLayer/ColorRect.material
 	choirSound = $Choir
 	cedric.player = $Player
-	
-func _physics_process(delta: float) -> void:
-	cedric.act_based_on_mode($Player)
 
 func _process(delta: float) -> void:
 	if Global.game_paused:
 		return
 	
-	var angle_to_cedric = abs($Player.check_if_can_see_me(cedric))
+	#var angle_to_cedric = abs($Player.check_if_can_see_me(cedric))
 	
 	var distance_to_cedric_vec = $Player.global_position - cedric.global_position
 	var distance_to_cedric = distance_to_cedric_vec.length()

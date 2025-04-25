@@ -26,6 +26,7 @@ var AGRESSION_COEFF = 3
 func _process(delta: float) -> void:
 	if cedric_mode == CEDRIC_MODE.HAUNTING:
 		change_agression(delta)
+	act_based_on_mode()
 
 func _physics_process(delta: float) -> void:
 	if disabled or not can_move or Global.game_paused:
@@ -65,13 +66,17 @@ func rotate_to_me(player_position: Vector3):
 	var new_basis = Basis.looking_at(direction_to)
 	basis = new_basis
 	
-func act_based_on_mode(player: Player):
+func act_based_on_mode():
 	if Global.game_paused:
 		return
 	
 	match cedric_mode:
 		CEDRIC_MODE.STALKING:
 			stalk(player)
+		CEDRIC_MODE.HAUNTING:
+			# play sound if player sees cedric
+			if player.check_if_can_see_me(self):
+				play_boom()
 
 func stalk(player: Player):
 	# Cedric will keep distance from player
@@ -81,11 +86,9 @@ func stalk(player: Player):
 	$NavigationAgent3D.target_position = player.global_position + (difference_direction * distance)
 	
 	# Checking if player can see me
-	var angle_to_cedric = abs(player.check_if_can_see_me(self))
-	if angle_to_cedric <= 75:
+	if player.check_if_can_see_me(self):
 		can_move = false
 		if spotted_timer.is_stopped():
-			self.player = player
 			spotted_timer.start()
 	else:
 		can_move = true
@@ -119,6 +122,9 @@ func change_agression(delta: float):
 func haunt(player: Player):
 	if Global.game_paused:
 		return
+		
+	if player.check_if_can_see_me(self):
+		return
 	
 	can_boom = true
 	var player_position = player.position
@@ -137,12 +143,10 @@ func haunt(player: Player):
 	var direction_to = position.direction_to(player_position)
 	var new_basis = Basis.looking_at(direction_to)
 	basis = new_basis
+	#cedric.rotate_to_me(self.position) # TODO: move
 
 func _on_haunt_change_position_timer_timeout() -> void:
-	#var angle_to_cedric = abs(player.check_if_can_see_me(self))
-	#if angle_to_cedric > 75:
 	haunt(player)
-
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
