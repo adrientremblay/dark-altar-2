@@ -55,7 +55,7 @@ size = Vector3(67.1332, 5.88721, 99.3967)
 size = Vector3(59.0279, 3.56152, 85.5585)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mnta0"]
-size = Vector3(44.1472, 5.25323, 44.6886)
+size = Vector3(54.5026, 5.25323, 60.0435)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_st1qi"]
 size = Vector3(60.1612, 5.30359, 43.7548)
@@ -458,7 +458,7 @@ number_skull_options = 6
 cedric = NodePath("../../Cedric")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StrangeRocksSpawnTrigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.7614, 2.33004, -164.044)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.7503, 2.33004, -162.435)
 shape = SubResource("BoxShape3D_mnta0")
 
 [node name="FarmSpawnTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
