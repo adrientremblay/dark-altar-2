@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdn0o2f8qbgk"]
+[gd_scene load_steps=8 format=3 uid="uid://bdn0o2f8qbgk"]
 
 [ext_resource type="Script" path="res://cedric.gd" id="1_xmn3u"]
 [ext_resource type="AudioStream" uid="uid://n1u68hvc4yo7" path="res://assets/audio/sound_effects/cedric_reveal_sound.mp3" id="2_xvglx"]
 [ext_resource type="AudioStream" uid="uid://bnqd2sc1fuw3m" path="res://assets/audio/sound_effects/schizo_whispers.mp3" id="4_kf1jm"]
-[ext_resource type="PackedScene" uid="uid://dbue6pqurgujn" path="res://cedric_v_2.tscn" id="5_b5wdq"]
 [ext_resource type="PackedScene" uid="uid://cy56qixibkanx" path="res://assets/models/monk/monk.glb" id="5_hbmsy"]
 [ext_resource type="AudioStream" uid="uid://tb1rv82ntw3e" path="res://assets/audio/dialog/perfect_world.mp3" id="6_2o42h"]
 
@@ -17,10 +16,6 @@ script = ExtResource("1_xmn3u")
 
 [node name="BoomSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_xvglx")
-
-[node name="cedric_v2" parent="." instance=ExtResource("5_b5wdq")]
-transform = Transform3D(-0.497888, 0, 0.0459072, 0, 0.5, 0, -0.0459072, 0, -0.497888, 0, -0.980671, 0)
-visible = false
 
 [node name="Light" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0967544, 0.652364, -0.510796)
@@ -45,7 +40,7 @@ stream = ExtResource("4_kf1jm")
 wait_time = 5.0
 
 [node name="monk" parent="." instance=ExtResource("5_hbmsy")]
-transform = Transform3D(-0.01, 0, -8.74228e-10, 0, 0.01, 0, 8.74228e-10, 0, -0.01, 0, -0.579289, 0)
+transform = Transform3D(-0.01, 0, -8.74228e-10, 0, 0.01, 0, 8.74228e-10, 0, -0.01, 0, -0.844259, 0)
 
 [node name="PerfectWorld" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_2o42h")
