@@ -24,9 +24,7 @@ var player: Player
 var AGRESSION_COEFF = 3
 
 func _process(delta: float) -> void:
-	if cedric_mode == CEDRIC_MODE.HAUNTING:
-		change_agression(delta)
-	act_based_on_mode()
+	act_based_on_mode(delta)
 
 func _physics_process(delta: float) -> void:
 	if disabled or not can_move or Global.game_paused:
@@ -66,7 +64,7 @@ func rotate_to_me(player_position: Vector3):
 	var new_basis = Basis.looking_at(direction_to)
 	basis = new_basis
 	
-func act_based_on_mode():
+func act_based_on_mode(delta):
 	if Global.game_paused:
 		return
 	
@@ -74,9 +72,14 @@ func act_based_on_mode():
 		CEDRIC_MODE.STALKING:
 			stalk(player)
 		CEDRIC_MODE.HAUNTING:
+			change_agression(delta)
 			# play sound if player sees cedric
 			if player.check_if_can_see_me(self):
 				play_boom()
+			else:
+				# if haunting and Cedric moves out of view then instantly teleport away
+				if not can_boom:
+					haunt(player)
 
 func stalk(player: Player):
 	# Cedric will keep distance from player
