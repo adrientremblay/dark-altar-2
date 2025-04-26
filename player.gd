@@ -105,19 +105,20 @@ func _physics_process(delta):
 		animation_player.stop()
 	
 	# movement
-	var dp = 0
+	var move_speed = speed
 	if movement_mode == MovementMode.SPRINTING:
-		dp = direction * speed * delta * sprint_modifier
-	elif movement_mode == MovementMode.WALKING:
-		dp = direction * speed * delta
-		# TODO Fix this with the seperate hand draw layer
-		#animation_player.play("Head Bob")
+		move_speed *= sprint_modifier
 	
-	if dp:
-		position += dp
+	if direction != Vector3.ZERO:
+		velocity = direction * move_speed
+	else:
+		velocity = Vector3.ZERO
+		
+	# TODO Fix this with the seperate hand draw layer
+	#animation_player.play("Head Bob")
 	
-	calculate_flame_direction(input_dir.normalized())
 	move_and_slide()
+	calculate_flame_direction(input_dir.normalized())
 
 func change_movement_mode(new_movement_mode : MovementMode):
 	match movement_mode:
