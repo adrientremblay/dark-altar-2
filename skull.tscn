@@ -26,4 +26,4 @@ omni_range = 2.47571
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.160957, -0.0975996)
 stream = ExtResource("3_1fhpn")
-volume_db = -5.0
+volume_db = -14.143
