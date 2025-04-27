@@ -6,11 +6,8 @@ var spotted = true
 
 var agression_level = 0 # corresponds to the number of skulls the player has collected
 # The following are indexed by agression_level
-const TELEPORT_COOLDOWNS = [100, 30, 25, 20, 10, 5] # the cooldown (s) for cedric's teleport ability is
+const TELEPORT_COOLDOWNS = [100, 5, 25, 20, 10, 5] # the cooldown (s) for cedric's teleport ability is
 const TELEPORT_DISTANCE = [100, 25, 20, 15, 10, 0] # the distance added to the safe distance that cedric tps
-
-var disabled = false
-var can_move = true
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 @onready var teleport_timer: Timer = $TeleportTimer 
@@ -30,7 +27,7 @@ func _process(delta: float) -> void:
 	spotted_behaviour()
 
 func _physics_process(delta: float) -> void:
-	if disabled or not can_move or Global.game_paused:
+	if Global.game_paused:
 		return
 	
 	var direction = Vector3()
@@ -82,10 +79,11 @@ func rotate_to_me(player_position: Vector3):
 
 func increase_agression():
 	agression_level += 1
-	
 	# Update the teleport timer and start it
 	teleport_timer.wait_time = TELEPORT_COOLDOWNS[agression_level]
 	teleport_timer.start()
 
 func _on_haunt_change_position_timer_timeout() -> void:
+		
+	print("tp")
 	teleport()

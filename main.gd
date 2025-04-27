@@ -51,10 +51,6 @@ func _process(delta: float) -> void:
 	shaderMat.set_shader_parameter("ghost", ghost)
 	shaderMat.set_shader_parameter("amplitude", amplitude)
 
-func _on_player_register_skull() -> void:
-	cedric.increase_agression()
-	pass
-
 func _input(event):
 	if event.is_action_pressed("interact"):
 		var interactable : Area3D = $Player.return_interactable()
@@ -73,6 +69,7 @@ func _input(event):
 			var skull = interactable
 			skulls_found += 1
 			$Player.collect_skull(skulls_found)
+			cedric.increase_agression()
 			if skull.level: # the starting skull has no level
 				skull.level.skull_collected.emit()
 			skull.queue_free()

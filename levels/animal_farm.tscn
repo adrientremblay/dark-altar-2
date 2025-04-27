@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bw1kyibwxh7vf"]
+[gd_scene load_steps=16 format=3 uid="uid://bw1kyibwxh7vf"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_pp86i"]
 [ext_resource type="PackedScene" uid="uid://c6dyrbvg3kax8" path="res://assets/models/broken_house/broken_house.tscn" id="2_smyo8"]
@@ -12,13 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://t1lyj1wuxghb" path="res://assets/models/cow_skull/cowskull.tscn" id="10_gh3dl"]
 [ext_resource type="PackedScene" uid="uid://dibmyslxnh0h8" path="res://assets/models/barrel__crate/just_barrel.tscn" id="11_nkwl3"]
 [ext_resource type="PackedScene" uid="uid://cmlhrnonmhdnv" path="res://assets/models/medieval_chest/scene.gltf" id="12_woluw"]
-[ext_resource type="PackedScene" uid="uid://dtdwm6ktkiyxk" path="res://haunting_area.tscn" id="13_f3d0h"]
 [ext_resource type="Script" path="res://SkullGroup.gd" id="14_vcbv1"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="15_80u7m"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="16_mtbrl"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ao05m"]
-size = Vector3(51.7847, 6.05713, 36.5114)
 
 [node name="AnimalFarm" type="Node3D" node_paths=PackedStringArray("skull_group")]
 script = ExtResource("1_pp86i")
@@ -206,12 +202,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.672, 0, -203.842)
 
 [node name="chest" parent="." instance=ExtResource("12_woluw")]
 transform = Transform3D(-0.0810138, 0, -0.288854, 0, 0.3, 0, 0.288854, 0, -0.0810138, 133.794, 0, -199.832)
-
-[node name="HauntingArea" parent="." instance=ExtResource("13_f3d0h")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HauntingArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.099, 2.52856, -210.072)
-shape = SubResource("BoxShape3D_ao05m")
 
 [node name="SkullGroupFarm" type="Node3D" parent="."]
 script = ExtResource("14_vcbv1")

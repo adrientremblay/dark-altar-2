@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bqjgeepv2ax3l"]
+[gd_scene load_steps=23 format=3 uid="uid://bqjgeepv2ax3l"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_766ux"]
 [ext_resource type="PackedScene" uid="uid://cr4i4u2jhdyq" path="res://assets/models/market_stall_1/stall.tscn" id="1_uyb56"]
@@ -21,14 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="18_4ln1x"]
 [ext_resource type="ArrayMesh" uid="uid://dpci07ey3ih3n" path="res://assets/models/Well_obj/Well.obj" id="19_0samu"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="20_82pcc"]
-[ext_resource type="PackedScene" uid="uid://dtdwm6ktkiyxk" path="res://haunting_area.tscn" id="21_bwjhw"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_18whr"]
 height = 127.807
 radius = 35.3178
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0xp7s"]
-size = Vector3(54.6974, 6.33411, 91.2763)
 
 [node name="Village" type="Node3D" node_paths=PackedStringArray("skull_group")]
 script = ExtResource("1_766ux")
@@ -218,12 +214,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.77, 0.755981, -114.324)
 
 [node name="PickableCandle4" parent="." instance=ExtResource("20_82pcc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.26, 0, -160.247)
-
-[node name="HauntingAreaVillage" parent="." instance=ExtResource("21_bwjhw")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HauntingAreaVillage"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.705, 2.66705, -130.734)
-shape = SubResource("BoxShape3D_0xp7s")
-
-[connection signal="haunting_area_entered" from="HauntingAreaVillage" to="." method="_on_haunting_area_graveyard_haunting_area_entered"]
-[connection signal="haunting_area_exited" from="HauntingAreaVillage" to="." method="_on_haunting_area_graveyard_haunting_area_exited"]
