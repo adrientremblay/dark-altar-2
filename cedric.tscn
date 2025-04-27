@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdn0o2f8qbgk"]
+[gd_scene load_steps=9 format=3 uid="uid://bdn0o2f8qbgk"]
 
 [ext_resource type="Script" path="res://cedric.gd" id="1_xmn3u"]
 [ext_resource type="AudioStream" uid="uid://n1u68hvc4yo7" path="res://assets/audio/sound_effects/cedric_reveal_sound.mp3" id="2_xvglx"]
 [ext_resource type="AudioStream" uid="uid://bnqd2sc1fuw3m" path="res://assets/audio/sound_effects/schizo_whispers.mp3" id="4_kf1jm"]
 [ext_resource type="PackedScene" uid="uid://cy56qixibkanx" path="res://assets/models/monk/monk.glb" id="5_hbmsy"]
 [ext_resource type="AudioStream" uid="uid://tb1rv82ntw3e" path="res://assets/audio/dialog/perfect_world.mp3" id="6_2o42h"]
+[ext_resource type="AudioStream" uid="uid://4xw15k4ijsk3" path="res://assets/audio/sound_effects/cedric_movement_sound.mp3" id="6_i8uy8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8hff"]
 
@@ -49,6 +50,9 @@ stream = ExtResource("6_2o42h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_d1u4a")
+
+[node name="MovementSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_i8uy8")
 
 [connection signal="timeout" from="SpottedTimer" to="." method="_on_spotted_timer_timeout"]
 [connection signal="timeout" from="HauntChangePositionTimer" to="." method="_on_haunt_change_position_timer_timeout"]

@@ -146,6 +146,7 @@ func haunt(player: Player):
 	var target_position = player_position + random_distance_vector
 	nav.target_position = target_position
 	position = target_position
+	$MovementSound.play()
 
 func _on_haunt_change_position_timer_timeout() -> void:
 	haunt(player)
