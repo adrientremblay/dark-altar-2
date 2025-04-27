@@ -72,6 +72,11 @@ func act_based_on_mode(delta):
 		CEDRIC_MODE.STALKING:
 			stalk(player)
 		CEDRIC_MODE.HAUNTING:
+			# rotate
+			var direction_to = position.direction_to(player.position)
+			var new_basis = Basis.looking_at(direction_to)
+			basis = new_basis
+			#cedric.rotate_to_me(self.position) # TODO: move
 			change_agression(delta)
 			# play sound if player sees cedric
 			if player.check_if_can_see_me(self):
@@ -141,12 +146,6 @@ func haunt(player: Player):
 	var target_position = player_position + random_distance_vector
 	nav.target_position = target_position
 	position = target_position
-	
-	# rotate
-	var direction_to = position.direction_to(player_position)
-	var new_basis = Basis.looking_at(direction_to)
-	basis = new_basis
-	#cedric.rotate_to_me(self.position) # TODO: move
 
 func _on_haunt_change_position_timer_timeout() -> void:
 	haunt(player)

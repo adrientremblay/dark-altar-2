@@ -27,11 +27,11 @@ sky_material = SubResource("PanoramaSkyMaterial_sb5pk")
 [sub_resource type="Environment" id="Environment_g4vby"]
 background_mode = 2
 background_color = Color(0.0509804, 0.631373, 0.847059, 1)
-background_energy_multiplier = 0.0
 sky = SubResource("Sky_oxcog")
-ambient_light_source = 1
+ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 3.1
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
 reflected_light_source = 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_coeak"]
@@ -52,7 +52,7 @@ size = Vector3(189.231, 23.4694, 149.465)
 size = Vector3(67.1332, 5.88721, 99.3967)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qi70t"]
-size = Vector3(59.0279, 3.56152, 85.5585)
+size = Vector3(73.0636, 3.56152, 94.1811)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mnta0"]
 size = Vector3(54.5026, 5.25323, 60.0435)
@@ -446,7 +446,7 @@ number_skull_options = 4
 cedric = NodePath("../../Cedric")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/GraveyardSpawnTrigger"]
-transform = Transform3D(0.863422, 0, 0.504482, 0, 1, 0, -0.504482, 0, 0.863422, 123.33, 1.41015, -62.1436)
+transform = Transform3D(0.863422, 0, 0.504482, 0, 1, 0, -0.504482, 0, 0.863422, 117.923, 1.41015, -63.9775)
 shape = SubResource("BoxShape3D_qi70t")
 
 [node name="StrangeRocksSpawnTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
