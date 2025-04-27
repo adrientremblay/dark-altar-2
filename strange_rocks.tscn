@@ -113,17 +113,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1638, -1.55335, -11.7864)
 
 [node name="Page" parent="." instance=ExtResource("12_7paw2")]
 transform = Transform3D(0.967981, -0.251022, 1.09725e-08, 0, -4.37114e-08, -1, 0.251022, 0.967981, -4.23118e-08, 92.9514, 1.208, -173.197)
-page_title = "Historian's Note"
-page_text = "They say In this house there once lived a hermit. The village elders are adamant about it. The youth of the village have no such memory. Therefore I must conclude that this hermit departed roughly a decade ago.
-
-Strangely, the village elders claim that their fathers and their forefathers also knew of the hermit. This would mean the hermit was of an impossible age. Could this be magic?"
+page_title = "Scholar's Note 1"
+page_text = "The elders in the village call this cobblestone ruin the \"devil's house\". They say in it, there used to live a powerfull sorcerer. A sorcerer that guarded this location from all others but him. A particularly excentric village woman told me that the sorcerer would turn anyone who dared come close to this arch into stone then carve them up into boulders. Surely a tall tale made up to explain these rocks. The sorcerer dissapeared roughly a decade ago. This place is still cursed and has largely been untouched. The villagers pointed it out to me and refused to accompany me here. Simpletons."
 
 [node name="Page2" parent="." instance=ExtResource("12_7paw2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.0083, 0.0195518, -162.957)
-page_title = "Historians Note"
-page_text = "What is this arch? Is it a natural formation or a creation of man and his muscle? I see no chisel marks therefore I must conclude it natural. This shape however is most perculiar. I struggle to understand what phenomenna could have produced it.
+page_title = "Historians Note 2"
+page_text = "What is this arch? Is it a natural formation or a creation of man and his muscle? I see no chisel marks therefore I must conclude it natural. This shape however is most perculiar. I struggle to understand what phenomenna could have produced it. Something else of note is the earth here where I lay this note. It is darker than the surrounding earth. It is more moist. There is something strange about it. There was another stone here I am sure of it. A stone with a perculiar rectangular shape. An artifact was moved from here. But what villager would dare to do so."
 
-Something else of note is the earth here where I lay this note. It is darker than the surrounding earth. It is more moist. There is something strange about it."
+[node name="Page3" parent="." instance=ExtResource("12_7paw2")]
+transform = Transform3D(0.733279, -0.679928, 2.97206e-08, 0, -4.37114e-08, -1, 0.679928, 0.733279, -3.20526e-08, 94.6721, 1.78218, -157.454)
+page_title = "Historian's Note 3"
+page_text = "There are five stacks of boulders. God only knows who and how stacked them. I only know that this is not the work of christan hands. I conclude these boulders must date from the time when these woods were ruled by pagans. The stone itself does not seem native to this area. It must have been transported from elsewhere somehow."
 
 [connection signal="haunting_area_entered" from="HauntingArea" to="." method="_on_haunting_area_graveyard_haunting_area_entered"]
 [connection signal="haunting_area_exited" from="HauntingArea" to="." method="_on_haunting_area_graveyard_haunting_area_exited"]
