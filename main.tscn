@@ -73,7 +73,7 @@ environment = SubResource("Environment_g4vby")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 129.622, 0.564528, -86.2726)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(-0.852201, 0, 0.523211, 0, 1, 0, -0.523211, 0, -0.852201, 96.7906, 2.33176, -190.143)
+transform = Transform3D(0.390394, 0, -0.920646, 0, 1, 0, 0.920646, 0, 0.390394, 57.4193, 2.33176, -51.134)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -408,10 +408,8 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 69.8289, -0.0624461, -6
 
 [node name="RemainsPage" parent="." instance=ExtResource("20_b2i1c")]
 transform = Transform3D(0.608997, 0, -0.793173, 0, 1, 0, 0.793173, 0, 0.608997, 69.4602, 0.0106834, -63.5473)
-page_title = "Letter From The Mayor"
-page_text = "Dear David, Welcome to New Yarmouth. 
-
-Signed, Mayor Martin Wells"
+page_title = "Ominous Note"
+page_text = "To whoever reads this note, know that there is no return. Your doom as was mine was wrought by Cedric Leopold. A wayward priest who with his five loyal followers brought ruin to this village. He betrayed them all. Find their skulls. It is the only way to break the seal."
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 storage = ExtResource("8_a0fla")
