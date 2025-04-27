@@ -152,6 +152,7 @@ light_color = Color(0.705882, 0.666667, 0.141176, 1)
 light_energy = 10.0
 light_size = 1.0
 light_specular = 0.0
+light_cull_mask = 4294967291
 shadow_enabled = true
 shadow_bias = 0.036
 shadow_blur = 0.04
