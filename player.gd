@@ -238,3 +238,11 @@ func _on_gate_to_hell_body_exited(body: Node3D) -> void:
 			sprinting = $Sprinting
 			walking = $Walking
 			sprinting.play()
+
+func start_flame_flicker():
+	candle.flickering = true
+	$FlameFlickerTimer.start()
+	$FlameFlickerSound.play()
+
+func _on_flame_flicker_timer_timeout() -> void:
+	candle.flickering = false

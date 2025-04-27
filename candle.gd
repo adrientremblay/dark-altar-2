@@ -17,9 +17,14 @@ var MIN_LIGHT_ENERGY_HAND = 0.1
 var MAX_LIGHT_RANGE = 12
 var MIN_LIGHT_RAMGE = 2
 
+var NORMAL_FLAME_PARTICLES = 100 # get whatever is set in the UI
+var FLICKERING_FLAME_PARTICLES = 25
+
 var candle_y_scale = MAX_Y_SCALE
 
 var light_range = 0.0
+
+var flickering = false
 
 func _process(delta: float) -> void:
 	if Global.game_paused:
@@ -37,6 +42,15 @@ func candle_burn(delta: float):
 		$WorldLight.visible = false
 		$PlayerLight.visible = false
 		return
+	
+	if flickering:
+		flame_light.light_energy = MIN_LIGHT_ENERGY
+		hand_light.light_energy = MIN_LIGHT_ENERGY_HAND * 0.5
+		flame_light.omni_range = MIN_LIGHT_RAMGE
+		flame.amount = FLICKERING_FLAME_PARTICLES
+		return
+	else:
+		flame.amount = NORMAL_FLAME_PARTICLES
 	
 	# light energy
 	var light_ratio = candle_y_scale / MAX_Y_SCALE

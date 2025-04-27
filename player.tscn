@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=27 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cmeujy0jwgmkq" path="res://assets/audio/sound_effects/walking_stone.mp3" id="7_c5k3q"]
 [ext_resource type="AudioStream" uid="uid://bs3pqalo0i2s" path="res://assets/audio/sound_effects/candle_pickup.mp3" id="10_2t33u"]
 [ext_resource type="AudioStream" uid="uid://pk2rt2mkq0j2" path="res://assets/audio/sound_effects/running_stone.mp3" id="11_vdl85"]
+[ext_resource type="AudioStream" uid="uid://dr5csb57jmyhf" path="res://assets/audio/sound_effects/flame_flicker.mp3" id="13_xvj01"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwuph"]
 
@@ -236,5 +237,11 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.4743, 2.14533, -89.6611)
 cull_mask = 1047556
 
+[node name="FlameFlickerTimer" type="Timer" parent="."]
+
+[node name="FlameFlickerSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_xvj01")
+
 [connection signal="area_entered" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_entered"]
 [connection signal="area_exited" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_exited"]
+[connection signal="timeout" from="FlameFlickerTimer" to="." method="_on_flame_flicker_timer_timeout"]

@@ -36,6 +36,4 @@ func _process(delta: float) -> void:
 		spawned_level = scene_to_load.instantiate()
 		spawned_level.init(skull_keep_index)
 		spawned_level.connect("skull_collected", self._on_skull_collected)
-		spawned_level.connect("start_haunting", cedric.start_haunt)
-		spawned_level.connect("stop_haunting", cedric.stop_haunt)
 		add_child(spawned_level)

@@ -2,29 +2,32 @@ class_name Cedric extends CharacterBody3D
 
 var random = RandomNumberGenerator.new()
 
-var can_boom = false
-var haunt_distance_min = 10
-var haunt_distance_max = 30
-var stalking_distance = 15
-var agression = 0
+var spotted = true
+
+var agression_level = 0 # corresponds to the number of skulls the player has collected
+# The following are indexed by agression_level
+const TELEPORT_COOLDOWNS = [100, 30, 25, 20, 10, 5] # the cooldown (s) for cedric's teleport ability is
+const TELEPORT_DISTANCE = [100, 25, 20, 15, 10, 0] # the distance added to the safe distance that cedric tps
+
 var disabled = false
 var can_move = true
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
-@onready var spotted_timer: Timer = $SpottedTimer
-@onready var haunt_timer: Timer = $HauntChangePositionTimer
-@onready var whispering: AudioStreamPlayer = $Whispering
-@onready var perfect_world: AudioStreamPlayer3D = $PerfectWorld
+@onready var teleport_timer: Timer = $TeleportTimer 
 
-enum CEDRIC_MODE {STALKING, HAUNTING, CHASING} 
-
-var cedric_mode: CEDRIC_MODE = CEDRIC_MODE.STALKING
 var player: Player
 
-var AGRESSION_COEFF = 3
-
 func _process(delta: float) -> void:
-	act_based_on_mode(delta)
+	if Global.game_paused:
+		return
+	
+	# always rotate towards player
+	var direction_to = position.direction_to(player.position)
+	var new_basis = Basis.looking_at(direction_to)
+	basis = new_basis
+	
+	# flickering when cedric is first spotted after he TPs
+	spotted_behaviour()
 
 func _physics_process(delta: float) -> void:
 	if disabled or not can_move or Global.game_paused:
@@ -34,123 +37,55 @@ func _physics_process(delta: float) -> void:
 	direction = nav.get_next_path_position() - global_position
 	direction = direction.normalized()
 	
-	var speed
-	if cedric_mode == CEDRIC_MODE.STALKING:
-		speed = 10
-	else:
-		speed = 100
-	
+	var speed = 100
 	velocity = velocity.lerp(direction * 10, speed * delta)
-	
 	move_and_slide()
 
-func teleport(player: Player):
-	position = nav.target_position 
-	
-	# sound
-	can_boom = true
-
-func play_boom():
-	if not can_boom:
+func teleport():
+	if Global.game_paused || player.check_if_can_see_me(self) || agression_level < 1:
 		return
 	
-	$BoomSound.play()
+	var safe_distance = min(player.candle_light.omni_range + 1, TELEPORT_DISTANCE[agression_level])
 	
-	can_boom = false
+	# move
+	var random_direction = Vector3(random.randf_range(-1, 1), 0, random.randf_range(-1, 1)).normalized()
+	var random_distance_vector = random_direction * safe_distance
+	var target_position = player.position + random_distance_vector
+	nav.target_position = target_position
+	position = target_position
+	position = nav.target_position 
+	
+	$MovementSound.play()
+	
+	spotted = false
+	
+	teleport_timer.start()
+
+func spotted_behaviour():
+	if spotted:
+		return
+	
+	if player.check_if_can_see_me(self):
+		return
+	
+	# the sound is a bit cheesy so disabling for a sec
+	#$BoomSound.play()
+	player.start_flame_flicker()
+	
+	spotted = true
 
 func rotate_to_me(player_position: Vector3):
 	# rotate
 	var direction_to = position.direction_to(player_position)
 	var new_basis = Basis.looking_at(direction_to)
 	basis = new_basis
-	
-func act_based_on_mode(delta):
-	if Global.game_paused:
-		return
-	
-	match cedric_mode:
-		CEDRIC_MODE.STALKING:
-			stalk(player)
-		CEDRIC_MODE.HAUNTING:
-			# rotate
-			var direction_to = position.direction_to(player.position)
-			var new_basis = Basis.looking_at(direction_to)
-			basis = new_basis
-			#cedric.rotate_to_me(self.position) # TODO: move
-			change_agression(delta)
-			# play sound if player sees cedric
-			if player.check_if_can_see_me(self):
-				play_boom()
-			else:
-				# if haunting and Cedric moves out of view then instantly teleport away
-				if not can_boom:
-					haunt(player)
 
-func stalk(player: Player):
-	# Cedric will keep distance from player
-	var safe_distance = player.candle_light.omni_range
-	var distance = max(safe_distance, stalking_distance)
-	var difference_direction = -player.get_player_direction()
-	$NavigationAgent3D.target_position = player.global_position + (difference_direction * distance)
+func increase_agression():
+	agression_level += 1
 	
-	# Checking if player can see me
-	if player.check_if_can_see_me(self):
-		can_move = false
-		if spotted_timer.is_stopped():
-			spotted_timer.start()
-	else:
-		can_move = true
-
-func _on_spotted_timer_timeout() -> void:
-	if Global.game_paused:
-		return
-		
-	teleport(player)
-	spotted_timer.stop()
-
-func start_haunt():
-	spotted_timer.stop()
-	cedric_mode = CEDRIC_MODE.HAUNTING
-	#whispering.play()
-	whispering.volume_db = -10.0
-	haunt_timer.start()
-	
-func stop_haunt():
-	#whispering.stop()
-	agression = 0
-	cedric_mode = CEDRIC_MODE.STALKING
-	haunt_timer.stop()
-
-func change_agression(delta: float):
-	agression += delta * AGRESSION_COEFF
-	agression = min(agression, 100)
-	
-	whispering.volume_db = -10.0 + (agression * 0.1)
-	
-func haunt(player: Player):
-	if Global.game_paused:
-		return
-		
-	if player.check_if_can_see_me(self):
-		return
-	
-	can_boom = true
-	var player_position = player.position
-	
-	var distance_to_spawn = (100 - agression) * 0.01 * (haunt_distance_max - haunt_distance_min) + haunt_distance_min
-	var safe_distance = min(player.candle_light.omni_range + 1, distance_to_spawn)
-	
-	# move
-	var random_direction = Vector3(random.randf_range(-1, 1), 0, random.randf_range(-1, 1)).normalized()
-	var random_distance_vector = random_direction * safe_distance
-	var target_position = player_position + random_distance_vector
-	nav.target_position = target_position
-	position = target_position
-	$MovementSound.play()
+	# Update the teleport timer and start it
+	teleport_timer.wait_time = TELEPORT_COOLDOWNS[agression_level]
+	teleport_timer.start()
 
 func _on_haunt_change_position_timer_timeout() -> void:
-	haunt(player)
-
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player"):
-		perfect_world.play()
+	teleport()

@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 	shaderMat.set_shader_parameter("amplitude", amplitude)
 
 func _on_player_register_skull() -> void:
-	#cedric.increase_agression($Cedric/TeleportTimer)
+	cedric.increase_agression()
 	pass
 
 func _input(event):
@@ -73,7 +73,8 @@ func _input(event):
 			var skull = interactable
 			skulls_found += 1
 			$Player.collect_skull(skulls_found)
-			skull.level.skull_collected.emit()
+			if skull.level: # the starting skull has no level
+				skull.level.skull_collected.emit()
 			skull.queue_free()
 		elif interactable.is_in_group("candle"):
 			var candle = interactable

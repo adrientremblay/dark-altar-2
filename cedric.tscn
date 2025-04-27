@@ -1,16 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdn0o2f8qbgk"]
+[gd_scene load_steps=6 format=3 uid="uid://bdn0o2f8qbgk"]
 
 [ext_resource type="Script" path="res://cedric.gd" id="1_xmn3u"]
 [ext_resource type="AudioStream" uid="uid://n1u68hvc4yo7" path="res://assets/audio/sound_effects/cedric_reveal_sound.mp3" id="2_xvglx"]
-[ext_resource type="AudioStream" uid="uid://bnqd2sc1fuw3m" path="res://assets/audio/sound_effects/schizo_whispers.mp3" id="4_kf1jm"]
 [ext_resource type="PackedScene" uid="uid://cy56qixibkanx" path="res://assets/models/monk/monk.glb" id="5_hbmsy"]
-[ext_resource type="AudioStream" uid="uid://tb1rv82ntw3e" path="res://assets/audio/dialog/perfect_world.mp3" id="6_2o42h"]
 [ext_resource type="AudioStream" uid="uid://4xw15k4ijsk3" path="res://assets/audio/sound_effects/cedric_movement_sound.mp3" id="6_i8uy8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8hff"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_d1u4a"]
-radius = 3.49531
 
 [node name="Cedric" type="CharacterBody3D"]
 script = ExtResource("1_xmn3u")
@@ -19,9 +14,9 @@ script = ExtResource("1_xmn3u")
 stream = ExtResource("2_xvglx")
 
 [node name="Light" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0967544, 0.652364, -0.510796)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00367258, 0.968026, -0.146495)
 visible = false
-light_energy = 0.5
+light_energy = 0.2
 omni_range = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -30,30 +25,13 @@ shape = SubResource("CapsuleShape3D_u8hff")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
-[node name="SpottedTimer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
-
-[node name="Whispering" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_kf1jm")
-
-[node name="HauntChangePositionTimer" type="Timer" parent="."]
-wait_time = 5.0
+[node name="TeleportTimer" type="Timer" parent="."]
+wait_time = 4096.0
 
 [node name="monk" parent="." instance=ExtResource("5_hbmsy")]
 transform = Transform3D(-0.01, 0, -8.74228e-10, 0, 0.01, 0, 8.74228e-10, 0, -0.01, 0, -0.844259, 0)
 
-[node name="PerfectWorld" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("6_2o42h")
-
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("SphereShape3D_d1u4a")
-
 [node name="MovementSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_i8uy8")
 
-[connection signal="timeout" from="SpottedTimer" to="." method="_on_spotted_timer_timeout"]
-[connection signal="timeout" from="HauntChangePositionTimer" to="." method="_on_haunt_change_position_timer_timeout"]
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="TeleportTimer" to="." method="_on_haunt_change_position_timer_timeout"]
