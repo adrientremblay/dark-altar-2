@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dgnxbfgem1yhk"]
+[gd_scene load_steps=12 format=3 uid="uid://dgnxbfgem1yhk"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_18pke"]
 [ext_resource type="PackedScene" uid="uid://c7xxhqgfuhhov" path="res://rock_arch.tscn" id="1_d0h6n"]
 [ext_resource type="PackedScene" uid="uid://cb38oryt1aqro" path="res://assets/models/medieval_ruin_building/ruins.tscn" id="2_y2cnj"]
-[ext_resource type="PackedScene" uid="uid://dtdwm6ktkiyxk" path="res://haunting_area.tscn" id="3_yv7mi"]
 [ext_resource type="PackedScene" uid="uid://chge3oc3jhx7a" path="res://assets/models/Rock1/rock_1.tscn" id="4_0xm8u"]
 [ext_resource type="PackedScene" uid="uid://c8hkn7joedxsb" path="res://assets/models/Rock2/rock_2.tscn" id="5_2xavo"]
 [ext_resource type="PackedScene" uid="uid://cxmbux153imhp" path="res://assets/models/Rock3/rock_3.tscn" id="6_75rs8"]
@@ -12,10 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="9_t4bt5"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="11_00f51"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="12_7paw2"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_05rw2"]
-height = 13.383
-radius = 14.5805
 
 [node name="StrangeRocks" type="Node3D" node_paths=PackedStringArray("skull_group")]
 script = ExtResource("1_18pke")
@@ -26,12 +21,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.8657, 0, -163.956)
 
 [node name="Ruins" parent="." instance=ExtResource("2_y2cnj")]
 transform = Transform3D(0.967625, 0, -0.25239, 0, 1, 0, 0.25239, 0, 0.967625, 94.5574, 0, -174.34)
-
-[node name="HauntingArea" parent="." instance=ExtResource("3_yv7mi")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HauntingArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.0381, 0, -164.537)
-shape = SubResource("CylinderShape3D_05rw2")
 
 [node name="Rock1" parent="." instance=ExtResource("4_0xm8u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.9059, 0, -161.152)
@@ -114,17 +103,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1638, -1.55335, -11.7864)
 [node name="Page" parent="." instance=ExtResource("12_7paw2")]
 transform = Transform3D(0.967981, -0.251022, 1.09725e-08, 0, -4.37114e-08, -1, 0.251022, 0.967981, -4.23118e-08, 92.9514, 1.208, -173.197)
 page_title = "Scholar's Note 1"
-page_text = "The elders in the village call this cobblestone ruin the \"devil's house\". They say in it, there used to live a powerfull sorcerer. A sorcerer that guarded this location from all others but him. A particularly excentric village woman told me that the sorcerer would turn anyone who dared come close to this arch into stone then carve them up into boulders. Surely a tall tale made up to explain these rocks. The sorcerer dissapeared roughly a decade ago. This place is still cursed and has largely been untouched. The villagers pointed it out to me and refused to accompany me here. Simpletons."
+page_text = "The elders in the village call this cobblestone ruin the \"devil's house\". They say in it, there used to live a powerfull sorcerer. A sorcerer that guarded this location from all others but him. A particularly excentric village woman told me that the sorcerer would turn anyone who dared come close to this arch into stone then carve them up into boulders. Surely a tall tale made up to explain these rock stacks. The sorcerer dissapeared roughly a decade ago. This place is still cursed and has largely been untouched. The villagers pointed it out to me and refused to accompany me here. Superstious folk."
 
 [node name="Page2" parent="." instance=ExtResource("12_7paw2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.0083, 0.0195518, -162.957)
-page_title = "Historians Note 2"
-page_text = "What is this arch? Is it a natural formation or a creation of man and his muscle? I see no chisel marks therefore I must conclude it natural. This shape however is most perculiar. I struggle to understand what phenomenna could have produced it. Something else of note is the earth here where I lay this note. It is darker than the surrounding earth. It is more moist. There is something strange about it. There was another stone here I am sure of it. A stone with a perculiar rectangular shape. An artifact was moved from here. But what villager would dare to do so."
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.4313, 0.0195518, -164.055)
+page_title = "Scholar's Note 2"
+page_text = "What is this arch? Is it a natural formation or a creation of man and his muscle? I see no chisel marks therefore I must conclude it natural. This shape however is most perculiar. I struggle to understand what phenomenna could have produced it. Something else of note is the earth here where I lay this note: It is darker than the surrounding earth. It is more moist. There is something strange about it. There was another stone here I am sure of it. A stone of rectangular shape. An artifact was moved from here. But what villager would dare to make any alteration to a place so cursed."
 
 [node name="Page3" parent="." instance=ExtResource("12_7paw2")]
 transform = Transform3D(0.733279, -0.679928, 2.97206e-08, 0, -4.37114e-08, -1, 0.679928, 0.733279, -3.20526e-08, 94.6721, 1.78218, -157.454)
-page_title = "Historian's Note 3"
-page_text = "There are five stacks of boulders. God only knows who and how stacked them. I only know that this is not the work of christan hands. I conclude these boulders must date from the time when these woods were ruled by pagans. The stone itself does not seem native to this area. It must have been transported from elsewhere somehow."
-
-[connection signal="haunting_area_entered" from="HauntingArea" to="." method="_on_haunting_area_graveyard_haunting_area_entered"]
-[connection signal="haunting_area_exited" from="HauntingArea" to="." method="_on_haunting_area_graveyard_haunting_area_exited"]
+page_title = "Scholar's Note 3"
+page_text = "There are five stacks of boulders. What is the signification of this number? God only knows who stacked them and how. I know only that this is not the work of christan hands. I would conclude that these boulders date from a time when these woods were ruled by pagans, but I see no moss on any of the stones. Even stranger, some of the rocks seem to be stacked in impossible ways. They are stacked in a manner that defies the laws of nature defined by the lord God. I push against them and yet they do not tumble down. Could this be magic?"

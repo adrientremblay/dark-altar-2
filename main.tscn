@@ -410,7 +410,9 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 69.8289, -0.0624461, -6
 [node name="RemainsPage" parent="." instance=ExtResource("20_b2i1c")]
 transform = Transform3D(0.608997, 0, -0.793173, 0, 1, 0, 0.793173, 0, 0.608997, 69.4602, 0.0106834, -63.5473)
 page_title = "Ominous Note"
-page_text = "To whoever reads this note, know that your doom was wrought by Cedric Leopold. A wayward priest who with his five loyal followers brought ruin to this village. He betrayed them all. He betrayed this village and he betrayed god himself. Find the skulls of his followers. The so called \"Order of the Dark Altar\". Bring their skulls to the summoning chamber atop the mountain. It is the only way to break the seal. My days are numbered. Christ grant you strength whoever you may be."
+page_text = "To whoever reads this note, know that your doom was wrought by the wayward priest Cedric Leopold. Who with his five loyal followers, brought ruin to this village. He betrayed them all. He betrayed this village and he betrayed mighty god himself. You must find the five skulls of his followers: the so called \"Order of the Dark Altar\". They are hidden nearby. Bring their skulls to the summoning chamber atop the mountain. It is the only way to break the seal. My days are numbered. Christ grant you strength whoever you may be.
+
+- Mayor Kiesel"
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 storage = ExtResource("8_a0fla")
