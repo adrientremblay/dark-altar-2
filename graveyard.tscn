@@ -261,8 +261,8 @@ transform = Transform3D(-0.840765, 0, -0.541401, 0, 1, 0, 0.541401, 0, -0.840765
 
 [node name="Page" parent="mausoleum" instance=ExtResource("14_s8dln")]
 transform = Transform3D(-0.99858, 0.0531394, -0.0038654, -0.00494174, -0.0201387, 0.999785, 0.0530509, 0.998384, 0.0203726, 0.0213318, 1.61864, 1.52227)
-page_title = "Notice: Graverobbing"
-page_text = "Citizens of of Angel's Crossing, last night multiple graves in this cemetary were desecrated. It is unknown who the fiend who has done this vile act is or for what reason. It seems only skulls were taken. Please report any information to the Mayor."
+page_title = "Leopold Mausoleum Note"
+page_text = "Here lies the noble Leopold family. Notably, Sir Gregor Leopold: the founder of Angel's Crossing. Gregor Leopold was a Crusader Knight who made his forture in the arab land of Palestina. He was rewarded greatly for his success in the holy war and brought home many treasures. He elected to construct a manor which eventually turned into a thriving community.This is also the final resting place of lady Mabel Leopold, wife of Sir Gregor Leopold. They had one daughter: beloved Valeria. She is also enterred here. She is succeeded by her son Cedric Leopold."
 
 [node name="PickableCandle2" parent="." instance=ExtResource("15_dvaux")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.104, 0.626418, -71.1536)
