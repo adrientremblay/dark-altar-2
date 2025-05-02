@@ -6,8 +6,8 @@ var spotted = true
 
 var agression_level = 0 # corresponds to the number of skulls the player has collected
 # The following are indexed by agression_level
-const TELEPORT_COOLDOWNS = [100, 30, 25, 20, 10, 5] # the cooldown (s) for cedric's teleport ability is
-const TELEPORT_DISTANCE = [100, 25, 20, 15, 10, 0] # the distance added to the safe distance that cedric tps
+const TELEPORT_COOLDOWNS = [100, 30, 15, 10, 5, 1] # the cooldown (s) for cedric's teleport ability is
+const TELEPORT_DISTANCE = [100, 25, 20, 15, 5, 0] # the distance added to the safe distance that cedric tps
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 @onready var teleport_timer: Timer = $TeleportTimer 

@@ -39,8 +39,8 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://death_screen.tscn")
 	if $Player.sanity < 100:
 		var distortion_scale = (100 - $Player.sanity) / 100
-		ghost = distortion_scale * 0.7
-		choirSound.volume_db = (1 - distortion_scale) * -40
+		ghost = distortion_scale * 1.2
+		choirSound.volume_db = (1 - distortion_scale) * -20
 		
 		if (!choirSound.playing):
 			choirSound.play()

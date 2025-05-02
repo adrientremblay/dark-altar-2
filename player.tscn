@@ -242,6 +242,7 @@ cull_mask = 1047556
 
 [node name="FlameFlickerSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_xvj01")
+volume_db = 4.685
 
 [connection signal="area_entered" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_entered"]
 [connection signal="area_exited" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_exited"]
