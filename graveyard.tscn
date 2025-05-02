@@ -262,7 +262,12 @@ transform = Transform3D(-0.840765, 0, -0.541401, 0, 1, 0, 0.541401, 0, -0.840765
 [node name="Page" parent="mausoleum" instance=ExtResource("14_s8dln")]
 transform = Transform3D(-0.99858, 0.0531394, -0.0038654, -0.00494174, -0.0201387, 0.999785, 0.0530509, 0.998384, 0.0203726, 0.0213318, 1.61864, 1.52227)
 page_title = "Leopold Mausoleum Note"
-page_text = "Here lies the noble Leopold family. Notably, Sir Gregor Leopold: the founder of Angel's Crossing. Gregor Leopold was a Crusader Knight who made his forture in the arab land of Palestina. He was rewarded greatly for his success in the holy war and brought home many treasures. He elected to construct a manor which eventually turned into a thriving community.This is also the final resting place of lady Mabel Leopold, wife of Sir Gregor Leopold. They had one daughter: beloved Valeria. She is also enterred here. She is succeeded by her son Cedric Leopold."
+page_text = "Here lies the noble Leopold family. Notably, Sir Gregor Leopold: the founder of Angel's Crossing. Gregor Leopold was a Crusader Knight who made his forture in the arab land of Palestina. He was rewarded greatly for his success in the holy war and brought home many treasures. He elected to construct a manor which eventually became the thriving community we know today. This is also the final resting place of lady Mabel Leopold, wife of Sir Gregor Leopold. Their daughter, beloved Valeria is also enterred here. She is succeeded by her son Cedric Leopold who presides over the town as the village priest."
+
+[node name="Page2" parent="mausoleum" instance=ExtResource("14_s8dln")]
+transform = Transform3D(-0.990097, -0.140361, 0.00242052, 8.98844e-08, -0.0172431, -0.999851, 0.140382, -0.98995, 0.0170723, 7.16535, 0.911275, -2.73888)
+page_title = "Mourner's Note"
+page_text = "My beloved daughter. I do not understand why god has taken you so soon. I pray for your soul every night."
 
 [node name="PickableCandle2" parent="." instance=ExtResource("15_dvaux")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.104, 0.626418, -71.1536)
@@ -293,3 +298,23 @@ transform = Transform3D(0.000500159, 0, -0.00497492, 0, 0.005, 0, 0.00497492, 0,
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Signpost/StaticBody3D"]
 shape = SubResource("CylinderShape3D_3omu6")
+
+[node name="Page" parent="." instance=ExtResource("14_s8dln")]
+transform = Transform3D(0.097496, 0.995236, 9.23178e-10, 0.000955403, -9.35923e-05, 1, 0.995236, -0.097496, -0.000959948, 126.395, 1.71524, -80.2178)
+page_title = "Mourner's Note"
+page_text = "Sweet Mother. I will see you again in heaven."
+
+[node name="Page2" parent="." instance=ExtResource("14_s8dln")]
+transform = Transform3D(0.848636, -0.528921, 0.00778801, -0.00921385, -5.95209e-05, 0.999958, -0.528898, -0.848671, -0.00492401, 110.334, 1.51839, -90.3941)
+page_title = "Graverobberies!"
+page_text = "It has come to the attention of the groundskeeper that numerous graves have been disturbed as well as numberous mausoleums broken into. If anyone has information related to the scoundrel committing these acts of degeneracy, please report to the Mayor."
+
+[node name="Page3" parent="." instance=ExtResource("14_s8dln")]
+transform = Transform3D(0.871805, -0.489506, -0.0184649, 0.00384074, -0.0308629, 0.999517, -0.489839, -0.871454, -0.0250263, 119.555, 0.839262, -85.8789)
+page_title = "Mourner's Note"
+page_text = "In perfect health and dead so soon. If only we had access to a better doctor here in the village. I will love you forever."
+
+[node name="Page4" parent="." instance=ExtResource("14_s8dln")]
+transform = Transform3D(-0.69977, -0.71434, 0.00627649, -0.00393488, -0.00493154, -0.99998, 0.714357, -0.699781, 0.000640168, 127.351, 1.52141, -56.0332)
+page_title = "Madman's Note"
+page_text = "Why are so many young people dying? It is almost as if this village is struck by plague yet no one coughs or has hives. There is something more sinister going on: somesort of conspiracy. A murderer or a poisoner. Why are the graves disturbed after the people are buried? Must I stand guard here every night?"
