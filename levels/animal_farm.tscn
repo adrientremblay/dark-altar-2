@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bw1kyibwxh7vf"]
+[gd_scene load_steps=17 format=3 uid="uid://bw1kyibwxh7vf"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_pp86i"]
 [ext_resource type="PackedScene" uid="uid://c6dyrbvg3kax8" path="res://assets/models/broken_house/broken_house.tscn" id="2_smyo8"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cmlhrnonmhdnv" path="res://assets/models/medieval_chest/scene.gltf" id="12_woluw"]
 [ext_resource type="Script" path="res://SkullGroup.gd" id="14_vcbv1"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="15_80u7m"]
+[ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="16_5x5l8"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="16_mtbrl"]
 
 [node name="AnimalFarm" type="Node3D" node_paths=PackedStringArray("skull_group")]
@@ -235,3 +236,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.187, 0, 8.449)
 
 [node name="PickableCandle5" parent="Candles" instance=ExtResource("16_mtbrl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.47321, 0, 12.3912)
+
+[node name="Page" parent="." instance=ExtResource("16_5x5l8")]
+transform = Transform3D(0.982562, -0.185124, 0.0173183, 0.00675264, -0.0575521, -0.99832, 0.18581, 0.981029, -0.0552985, 129.366, 1.51007, -203.264)
+page_title = "Farmers Note 3"
+page_text = "God has abondened this place. The devils will not have it. If this place is to go down in flames it shall be my hand."
+
+[node name="Page2" parent="." instance=ExtResource("16_5x5l8")]
+transform = Transform3D(-0.0333122, -0.999445, 0, -0.00341897, 0.000113956, -0.999994, 0.999439, -0.033312, -0.00342087, 149.652, 0.708268, -217.859)
+page_title = "Farmer's Note 1"
+page_text = "All the animals are dead. Wolves got them in the night. Took me a week to clean up the mess. I sit here every night with my axe hoping they come back."
+
+[node name="Page3" parent="." instance=ExtResource("16_5x5l8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.691, 0.455782, -200.639)
+page_title = "Farmer's Note 2"
+page_text = "I wasn't wolves. It was men. They came again looking for beasts but they found only me. A beast of a man. I chopped one up pretty good before they all fled. Up the path towards the mountain. Not before they chanted some sort of inantation. What sort of vile black magic is this? I do not feel myself."
