@@ -50,7 +50,7 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 size = Vector3(189.231, 23.4694, 149.465)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ehsq3"]
-size = Vector3(67.1332, 5.88721, 99.3967)
+size = Vector3(89.6974, 5.88721, 120.02)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qi70t"]
 size = Vector3(73.0636, 3.56152, 94.1811)
@@ -439,7 +439,7 @@ number_skull_options = 11
 cedric = NodePath("../../Cedric")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/VillageSpawnTrigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.528, 2.89915, -126.392)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.277, 2.89915, -129.156)
 shape = SubResource("BoxShape3D_ehsq3")
 
 [node name="GraveyardSpawnTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
