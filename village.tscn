@@ -41,26 +41,20 @@ transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 
 
 [node name="NoticeBoardPage1" parent="NoticeBoard" instance=ExtResource("4_hqpic")]
 transform = Transform3D(-0.00881386, 0.999961, 3.85264e-10, -4.37114e-08, 4.55692e-15, -1, -0.999961, -0.00881386, 4.37097e-08, 0.0785065, 1.79837, -0.744495)
-page_title = "Recruiting! Society of the Dark Altar"
-page_text = "Greetings fellow citizen. My name is Cedric Leopold. I have walked among the trees, among the animals, climbed mountains, traversed seas and read the wisdom of great men. I, like many would be content to marry a sweet girl, have many children and spend my days in a village square and my nights in a warm bed.
+page_title = "Midnight Mass"
+page_text = "Greetings fellow citizens. In the wake of these unsettling events of late, I have decided to hold a midnight mass. Join me in the church tonight. We will pray for all those souls who have gone missing. We will cleanse ourselves of sin and drive out the dark forces that plague us.
 
-One thing has always bothered me... The night sky! Every night, when I look up and see the speckled white stars, I think of them as souls. I see the souls of my father, grandfather, friend Jorvald and dear late daughter Bodil. They live on in the great beyond. I must know what it is like. I must know why so many of us down on earth live short miserable lives. Why men lead themselves to ruin.
-
-I have thusly devoted myself to this cause. The cause of knowledge. Not selfish knowledge of so-called science. But the true knowledge that can only be discovered from beyond this world. If you are like me, come seek me out. Seek out the Society of the Dark Altar."
+- Father Cedric Leopold"
 
 [node name="NoticeBoardPage2" parent="NoticeBoard" instance=ExtResource("4_hqpic")]
 transform = Transform3D(-0.00872648, 0.999962, -4.37097e-08, 0, -4.37114e-08, -1, -0.999962, -0.00872648, 3.81446e-10, 0.0475922, 2.15872, 0.0517921)
 page_title = "Leave this accursed town!"
-page_text = "A great tragedy has befallen us. Ever since Cedric Leopold rode back into town after his long absense of over 20 years, Angel's Crossing has not been the same!. Faces once familiar in the village square are now missing and replaced by strange foreigners. Where have they all gone? Left in the middle of the night the mayer says. Who believes him.
-
-This Society of the Dark Altar? Heretics I say! Cultists! We must drive them out. Am Am I the only honest citizen left in this town?"
+page_text = "Faces once familiar in the village square are now missing. Where have they all gone? Left in the middle of the night the mayor says. Who believes him. Anders farm has burned down. All his livestock mutilated. The graveyard has been descecrated. Our crops are failing. This  is witchcraft I say. Am I the only honest citizen left in this town? I am going to the accursed stone arch tonight. Whoever else has a backbone meet me here at sundown."
 
 [node name="NoticeBoardPage3" parent="NoticeBoard" instance=ExtResource("4_hqpic")]
 transform = Transform3D(-0.00872657, 0.999964, -4.37098e-08, 0, -4.37114e-08, -1, -0.999964, -0.00872657, 3.81456e-10, 0.0494843, 1.87923, 0.799)
 page_title = "The king is sending aid"
-page_text = "This is an announcement from Mayor Keisel. I am well aware of the numerous reports of strange occurences of recent. I am also aware of the numerous sightings of a strange \"monster\" lurking the woods at night since Cedric Leopold arrived in town and then dissapeared. 
-
-Rest easy. I have petitioned the King for aid. Though apparently he cannot spare any armsmen, he is sending a priest."
+page_text = "This is an announcement from Chief Alric of the village guard. I am well aware of the numerous reports of strange occurences of recent. I am also aware of the numerous sightings of a strange \"monster\" lurking the woods at night. Rest easy. My own investigation into these matters is well underway. In addition, I have petitioned the King for aid. In the meantime, avoid wandering about outside after dark at all costs. For any issues of a more spiritual matter, please consult Father Cedric Leopold."
 
 [node name="MarketStall" parent="." instance=ExtResource("5_xokc7")]
 transform = Transform3D(-0.10793, 0, -0.994158, 0, 1, 0, 0.994158, 0, -0.10793, 181.257, 0, -110.238)
@@ -214,3 +208,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.77, 0.755981, -114.324)
 
 [node name="PickableCandle4" parent="." instance=ExtResource("20_82pcc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.26, 0, -160.247)
+
+[node name="Page" parent="." instance=ExtResource("4_hqpic")]
+transform = Transform3D(0.26335, -0.9647, 0.000884406, -0.00233975, 0.000278046, 0.999997, -0.964698, -0.263352, -0.00218393, 195.334, 5.90855, -104.799)
+page_title = "Note to the Mayor"
+page_text = "Mayor Kiesel. Please find me when you see this note. I have discovered something that needs your immediate attention.
+
+- Chiel Alric"
+
+[node name="Page2" parent="." instance=ExtResource("4_hqpic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.692, 0.855712, -125.511)
+page_title = "Mayor's Note"
+page_text = "I should have had him killed a long time ago."
+
+[node name="Page3" parent="." instance=ExtResource("4_hqpic")]
+transform = Transform3D(0.963073, 0.269237, -0.00105259, 0, -0.0039095, -0.999992, -0.269239, 0.963066, -0.00376514, 182.601, 2.07782, -160.242)
+page_title = "Bloody Note"
+page_text = "Turn. Back.
+
+[The door is barred shut and a found stench seeps from under it]"
