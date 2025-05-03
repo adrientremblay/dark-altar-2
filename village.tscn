@@ -227,3 +227,18 @@ page_title = "Bloody Note"
 page_text = "Turn. Back.
 
 [The door is barred shut and a found stench seeps from under it]"
+
+[node name="PickableCandle" parent="." instance=ExtResource("20_82pcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193.493, 0.855712, -127.48)
+
+[node name="PickableCandle5" parent="." instance=ExtResource("20_82pcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.718, 4.2423, -101.116)
+
+[node name="PickableCandle6" parent="." instance=ExtResource("20_82pcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.35, 4.32877, -105.989)
+
+[node name="PickableCandle7" parent="." instance=ExtResource("20_82pcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 181.133, 0.705454, -110.762)
+
+[node name="PickableCandle8" parent="." instance=ExtResource("20_82pcc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.119, -0.0483052, -109.732)
