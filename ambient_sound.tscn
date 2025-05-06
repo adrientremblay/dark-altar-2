@@ -45,7 +45,7 @@ script = ExtResource("8_gtcyf")
 
 [node name="DungeonAmbience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_be5iq")
-volume_db = -4.0
+volume_db = -10.0
 
 [connection signal="timeout" from="Cricket/Timer" to="Cricket" method="_on_timer_timeout"]
 [connection signal="timeout" from="Owl/Timer" to="Owl" method="_on_timer_timeout"]
