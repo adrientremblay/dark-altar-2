@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://crympftnsrmwa"]
+[gd_scene load_steps=50 format=3 uid="uid://crympftnsrmwa"]
 
 [ext_resource type="MeshLibrary" uid="uid://b58cb358rt6wo" path="res://assets/dungeon/tileset.tres" id="1_tdmtu"]
 [ext_resource type="Script" path="res://level.gd" id="1_yh6qk"]
@@ -52,9 +52,6 @@ albedo_texture = ExtResource("2_ky368")
 material = SubResource("StandardMaterial3D_u5e14")
 size = Vector2(0.5, 0.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xdjah"]
-size = Vector3(3.92401, 4.8241, 7.58618)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_lxcc7"]
 size = Vector3(13.5627, 3.3114, 17.3884)
 
@@ -101,12 +98,6 @@ mesh = SubResource("PlaneMesh_nqbti")
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="GridMapPerennial/GridMap"]
 transform = Transform3D(-2.50019e-07, -1.55, 0, 4.04448, -4.79083e-08, -7.88334, 4.04448, -4.79083e-08, 7.88334, 76.0113, 5.01431, -195.972)
 mesh = SubResource("PlaneMesh_nqbti")
-
-[node name="GateToHell" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GateToHell"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 315.386, 29.2603, -100.077)
-shape = SubResource("BoxShape3D_xdjah")
 
 [node name="altar" parent="." instance=ExtResource("3_7m27l")]
 transform = Transform3D(-0.00276599, 0, 0.0999617, 0, 0.1, 0, -0.0999617, 0, -0.00276599, 370.137, 27.1545, -144.732)

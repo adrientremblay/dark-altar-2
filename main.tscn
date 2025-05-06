@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=31 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -64,6 +64,9 @@ size = Vector3(60.1612, 5.30359, 43.7548)
 [sub_resource type="BoxMesh" id="BoxMesh_wlmbg"]
 size = Vector3(250, 1, 250)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ufjn0"]
+size = Vector3(0.749496, 7.50595, 10.2228)
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_y3a05")
 
@@ -74,7 +77,7 @@ environment = SubResource("Environment_g4vby")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 202.659, 0.564528, -53.2463)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.390394, 0, -0.920646, 0, 1, 0, 0.920646, 0, 0.390394, 57.4193, 2.33176, -51.134)
+transform = Transform3D(-0.726549, 0, -0.687112, 0, 1, 0, 0.687112, 0, -0.726549, 272.419, 25.6924, -153.134)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -485,6 +488,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 [node name="Skull" parent="." instance=ExtResource("18_pusc7")]
 transform = Transform3D(0.431299, 0, -0.902209, 0, 1, 0, 0.902209, 0, 0.431299, 70.4796, 0, -62.286)
 
+[node name="DungeonAudioSwitcher" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DungeonAudioSwitcher"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 315.947, 29.6344, -100.475)
+shape = SubResource("BoxShape3D_ufjn0")
+
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
 [connection signal="register_skull" from="Player" to="." method="_on_player_register_skull"]
@@ -499,3 +508,4 @@ transform = Transform3D(0.431299, 0, -0.902209, 0, 1, 0, 0.902209, 0, 0.431299, 
 [connection signal="body_exited" from="NavigationRegion3D/StrangeRocksSpawnTrigger" to="NavigationRegion3D/StrangeRocksSpawnTrigger" method="_on_body_exited"]
 [connection signal="body_entered" from="NavigationRegion3D/FarmSpawnTrigger" to="NavigationRegion3D/FarmSpawnTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/FarmSpawnTrigger" to="NavigationRegion3D/FarmSpawnTrigger" method="_on_body_exited"]
+[connection signal="body_exited" from="DungeonAudioSwitcher" to="AmbientSound" method="_on_gate_to_hell_body_exited"]
