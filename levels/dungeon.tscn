@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://crympftnsrmwa"]
+[gd_scene load_steps=53 format=3 uid="uid://crympftnsrmwa"]
 
 [ext_resource type="MeshLibrary" uid="uid://b58cb358rt6wo" path="res://assets/dungeon/tileset.tres" id="1_tdmtu"]
 [ext_resource type="Script" path="res://level.gd" id="1_yh6qk"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://blakbhshf8jn3" path="res://assets/images/banner.png" id="38_sgllw"]
 [ext_resource type="Script" path="res://SkullGroup.gd" id="39_8riw2"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="40_gmqui"]
+[ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="42_nbgpb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fh5ua"]
 size = Vector3(147.187, 6.43048, 142.486)
@@ -202,7 +203,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 451.09
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7, 352.949, 27.4026, -60)
 
 [node name="torture_tools" parent="." instance=ExtResource("20_yxi0a")]
-transform = Transform3D(-0.0191764, 0, 0.499632, 0, 0.5, 0, -0.499632, 0, -0.0191764, 352.805, 27.8135, -59.9643)
+transform = Transform3D(-0.0191764, 0, 0.499632, 0, 0.5, 0, -0.499632, 0, -0.0191764, 352.974, 27.8319, -59.917)
 
 [node name="cage" parent="." instance=ExtResource("21_oan0t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 355.062, 26.9, -63.0124)
@@ -461,7 +462,6 @@ mesh = SubResource("PlaneMesh_s4s7d")
 skeleton = NodePath("../../../..")
 
 [node name="Test Flashlights" type="Node3D" parent="."]
-visible = false
 
 [node name="PREVIEW_FLASHLIGHT" type="OmniLight3D" parent="Test Flashlights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 354.717, 30.0803, -59.8937)
@@ -557,14 +557,42 @@ level = NodePath("../..")
 transform = Transform3D(-0.999238, 0, 0.0390332, 0, 1, 0, -0.0390332, 0, -0.999238, 350.184, 26.9, -84.0143)
 level = NodePath("../..")
 
-[node name="Skull10" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 369.378, 26.9, -150.535)
-level = NodePath("../..")
+[node name="Pages" type="Node3D" parent="."]
 
-[node name="Skull11" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 370.199, 26.9, -150.39)
-level = NodePath("../..")
+[node name="Page1" parent="Pages" instance=ExtResource("42_nbgpb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 350.888, 27.6806, -82.1588)
+page_title = "Cedric's Diary 2"
+page_text = "I have set up this room as a study. Here I begin the organization of the settlement of this magnificent "
 
-[node name="Skull12" parent="SkullGroupDungeon" node_paths=PackedStringArray("level") instance=ExtResource("40_gmqui")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 371.019, 26.9, -150.708)
-level = NodePath("../..")
+[node name="Page2" parent="Pages" instance=ExtResource("42_nbgpb")]
+transform = Transform3D(0.237156, -0.971223, -0.0219878, -0.0277434, 0.0158534, -0.999489, 0.971076, 0.237645, -0.0231853, 360.328, 28.2542, -48.3375)
+
+[node name="Page3" parent="Pages" instance=ExtResource("42_nbgpb")]
+transform = Transform3D(-0.0329821, 0.999456, -0.000550423, -0.00455391, -0.000700997, -0.999989, -0.999446, -0.0329792, 0.00457455, 352.052, 29.058, -59.9637)
+
+[node name="Page" parent="Pages" instance=ExtResource("42_nbgpb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 329.895, 27.882, -119.131)
+page_title = "Cedric's Diary 1"
+page_text = "Many years ago. An ancient order of cults built this ruin. To protect themselves from persecution. I have finally found it. Now we stock this room for all the supplies we will need to make this our permanent base of operations just under the nose of Angel's Crossing. The fools in town still think I am nothing more than the simple village priest. No, I am a student of divine teachings that go beyond the Bible."
+
+[node name="Page4" parent="Pages" instance=ExtResource("42_nbgpb")]
+transform = Transform3D(-0.996195, -0.0871556, 3.80969e-09, 0, -4.37114e-08, -1, 0.0871556, -0.996195, 4.35451e-08, 390.034, 28.9361, -14.0621)
+
+[node name="Page5" parent="Pages" instance=ExtResource("42_nbgpb")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 434.248, 27.4709, -79.5833)
+
+[node name="Page6" parent="Pages" instance=ExtResource("42_nbgpb")]
+transform = Transform3D(-0.755427, 0.655223, 0.00366405, 0.00328375, 0.00937784, -0.999951, -0.655226, -0.755377, -0.00923589, 452.37, 28.2961, -88.1112)
+
+[node name="Page7" parent="Pages" instance=ExtResource("42_nbgpb")]
+transform = Transform3D(-0.908851, 0, -0.417122, 0, 1, 0, 0.417122, 0, -0.908851, 373.904, 27.9044, -100.769)
+
+[node name="Page8" parent="Pages" instance=ExtResource("42_nbgpb")]
+transform = Transform3D(1, 0, 0, 0, -0.0242402, -0.999706, 0, 0.999706, -0.0242402, 356.192, 27.8845, -93.8891)
+
+[node name="Page" parent="." instance=ExtResource("42_nbgpb")]
+transform = Transform3D(0.97574, -0.218268, 0.0170416, 0.0184292, 0.00432291, -0.999821, 0.218155, 0.975879, 0.00824054, 369.163, 27.6459, -138.354)
+page_title = "Banishment Ritual"
+page_text = "I don't have the skulls. I need the damned skulls. All five skulls of Cedric's followers. The ones he sacrificed to summon the spirit of a demon into himself. From what I gather from the acursed books in the study of this dungeon, they must simply be placed infront of each stone seat. Then a candle placed on the \"Dark Altar\".
+
+- Mayor Kiesel"
