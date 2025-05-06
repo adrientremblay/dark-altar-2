@@ -207,9 +207,6 @@ func unpause_flame():
 func _process(delta: float) -> void:
 	hand_camera.global_transform = camera.global_transform
 
-func _on_gate_to_hell_body_entered(body: Node3D) -> void:
-	pass
-
 func _on_gate_to_hell_body_exited(body: Node3D) -> void:
 	if (not body.is_in_group("player")):
 		return

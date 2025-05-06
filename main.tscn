@@ -508,4 +508,5 @@ shape = SubResource("BoxShape3D_ufjn0")
 [connection signal="body_exited" from="NavigationRegion3D/StrangeRocksSpawnTrigger" to="NavigationRegion3D/StrangeRocksSpawnTrigger" method="_on_body_exited"]
 [connection signal="body_entered" from="NavigationRegion3D/FarmSpawnTrigger" to="NavigationRegion3D/FarmSpawnTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/FarmSpawnTrigger" to="NavigationRegion3D/FarmSpawnTrigger" method="_on_body_exited"]
+[connection signal="body_exited" from="DungeonAudioSwitcher" to="Player" method="_on_gate_to_hell_body_exited"]
 [connection signal="body_exited" from="DungeonAudioSwitcher" to="AmbientSound" method="_on_gate_to_hell_body_exited"]
