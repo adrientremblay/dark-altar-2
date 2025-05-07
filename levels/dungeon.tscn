@@ -269,7 +269,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 358.274, 27, -98.1705)
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 356.196, 27, -94.1253)
 
 [node name="bed" parent="." instance=ExtResource("28_g5qu4")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 433.562, 26.8987, -79.591)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 433.565, 26.8987, -79.58)
 
 [node name="bed2" parent="." instance=ExtResource("28_g5qu4")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 433.562, 26.8987, -76.5896)
@@ -562,13 +562,17 @@ level = NodePath("../..")
 [node name="Page1" parent="Pages" instance=ExtResource("42_nbgpb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 350.888, 27.6806, -82.1588)
 page_title = "Cedric's Diary 2"
-page_text = "I have set up this room as a study. Here I begin the organization of the settlement of this magnificent "
+page_text = "I have set up this room as a study. Here I begin the organization of the settlement of this magnificent fortress in the mountain. My followers have been aquiring all required materials in the surrounding towns and gathing them in the church. Then at night while the village sleeps we bring them up here. The most imporant artifact of course is the Dark Altar itself. It have knonwn of it's location for ages. Brought here by my grandfather from the holy land then guarded by some witch in the nearby forest. She was dispatched swiftly with a single swing of my sword. We are bringing up the altar shortly."
 
 [node name="Page2" parent="Pages" instance=ExtResource("42_nbgpb")]
 transform = Transform3D(0.237156, -0.971223, -0.0219878, -0.0277434, 0.0158534, -0.999489, 0.971076, 0.237645, -0.0231853, 360.328, 28.2542, -48.3375)
+page_title = "Cedric's Diary 4"
+page_text = "I pillage the tombs of my own ancestors. I'm sure they would understand. Perhaps their bones will be usefull for some sort of ritual. But more importantly, I seek the artifacts from the holy land. "
 
 [node name="Page3" parent="Pages" instance=ExtResource("42_nbgpb")]
 transform = Transform3D(-0.0329821, 0.999456, -0.000550423, -0.00455391, -0.000700997, -0.999989, -0.999446, -0.0329792, 0.00457455, 352.052, 29.058, -59.9637)
+page_title = "Cedric's Diary 3"
+page_text = "It's a shame that we need a room like this. But it is necessary. I need information. I need to know the locations of certain books, people, artifacts. Unfortunately, most people need their tongues loosened."
 
 [node name="Page" parent="Pages" instance=ExtResource("42_nbgpb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 329.895, 27.882, -119.131)
@@ -577,18 +581,33 @@ page_text = "Many years ago. An ancient order of cults built this ruin. To prote
 
 [node name="Page4" parent="Pages" instance=ExtResource("42_nbgpb")]
 transform = Transform3D(-0.996195, -0.0871556, 3.80969e-09, 0, -4.37114e-08, -1, 0.0871556, -0.996195, 4.35451e-08, 390.034, 28.9361, -14.0621)
+page_title = "Ominous Note"
+page_text = "He is behind you"
 
 [node name="Page5" parent="Pages" instance=ExtResource("42_nbgpb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 434.248, 27.4709, -79.5833)
+page_title = "Cedric's Diary 5"
+page_text = "We are now fully set up and acclimated to this new environment. It is perfect. I know not the true history of this place but it seems meant for us. Soon I will have the knowledge I seek. The knowledge of the world beyond this one. The proof that god exists. The true understanding of what drives men to be great and what drives men to be monsters."
 
 [node name="Page6" parent="Pages" instance=ExtResource("42_nbgpb")]
 transform = Transform3D(-0.755427, 0.655223, 0.00366405, 0.00328375, 0.00937784, -0.999951, -0.655226, -0.755377, -0.00923589, 452.37, 28.2961, -88.1112)
+page_title = "Cedric's Diary 6"
+page_text = "Still I struggle to uncover the process to unleash the true power of the Dark Altar. I have collected and read all these archaic tomes and grimoires. Still none of the rituals work. Perhaps the bones in the graveyard are not fresh enough. I must harvest blood, flesh, eyeballs, organs from fresh specimens. I can think of many names in the village that would go largely unnoticed if missing.s"
 
 [node name="Page7" parent="Pages" instance=ExtResource("42_nbgpb")]
 transform = Transform3D(-0.908851, 0, -0.417122, 0, 1, 0, 0.417122, 0, -0.908851, 373.904, 27.9044, -100.769)
+page_title = "Cedric's Diary 7"
+page_text = "Today we rejoice! The Altar has shown it's magical properties for the first time. My followers all took their seats around the altar. I believe 5 is the critical number. I began reciting the spell. We tried this many times without success. Then by chance, Markus the fool cut himself on his pocket knfe. The Altar seemed to flash and whispered. This is interesting. I must reflect on this."
 
 [node name="Page8" parent="Pages" instance=ExtResource("42_nbgpb")]
-transform = Transform3D(1, 0, 0, 0, -0.0242402, -0.999706, 0, 0.999706, -0.0242402, 356.192, 27.8845, -93.8891)
+transform = Transform3D(1, 0, 0, 0, -0.0242402, -0.999706, 0, 0.999706, -0.0242402, 356.192, 27.7307, -93.8891)
+page_title = "Cedric's Diary 8"
+page_text = "The towns people are growing increasingly suspicious. I fear we have a traitor in our midst. Not that it will matter much longer. Tonight we will conduct our final ritual."
+
+[node name="Page9" parent="Pages" instance=ExtResource("42_nbgpb")]
+transform = Transform3D(-0.822532, -0.56724, -0.0409896, 0.0358771, 0.0201764, -0.999152, 0.567586, -0.823305, 0.00375523, 365.844, 27.5437, -149.18)
+page_title = "Cedric's Diary 9"
+page_text = "I have concluded that they must all die. The life force must drain from all of them in their seats. I have prepared a poison wine for all of them to drink that I have deceived them into thinking is part of the ritual."
 
 [node name="Page" parent="." instance=ExtResource("42_nbgpb")]
 transform = Transform3D(0.97574, -0.218268, 0.0170416, 0.0184292, 0.00432291, -0.999821, 0.218155, 0.975879, 0.00824054, 369.163, 27.6459, -138.354)
@@ -596,3 +615,6 @@ page_title = "Banishment Ritual"
 page_text = "I don't have the skulls. I need the damned skulls. All five skulls of Cedric's followers. The ones he sacrificed to summon the spirit of a demon into himself. From what I gather from the acursed books in the study of this dungeon, they must simply be placed infront of each stone seat. Then a candle placed on the \"Dark Altar\".
 
 - Mayor Kiesel"
+
+[node name="bed5" parent="." instance=ExtResource("28_g5qu4")]
+transform = Transform3D(0.153952, 0, -0.988078, 0, 1, 0, 0.988078, 0, 0.153952, 438.493, 26.8987, -81.9958)
