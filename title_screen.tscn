@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://bkcwebiqubxqk"]
+
+[ext_resource type="Texture2D" path="res://grass_alb_ht.dds" id="1_dr2xh"]
+[ext_resource type="Texture2D" uid="uid://b8ygyuirq3w87" path="res://textures/AllSkyFree_Skyboxes/AllSky_Night_MoonBurst Equirect.png" id="2_7tods"]
+[ext_resource type="MeshLibrary" uid="uid://b58cb358rt6wo" path="res://assets/dungeon/tileset.tres" id="3_q6gt4"]
+[ext_resource type="PackedScene" uid="uid://cy56qixibkanx" path="res://assets/models/monk/monk.glb" id="4_h3mt7"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_agfuu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5e14"]
+albedo_texture = ExtResource("1_dr2xh")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_c086w"]
+panorama = ExtResource("2_7tods")
+
+[sub_resource type="Sky" id="Sky_oxcog"]
+sky_material = SubResource("PanoramaSkyMaterial_c086w")
+
+[sub_resource type="Environment" id="Environment_qd1uc"]
+background_mode = 2
+background_color = Color(0.0509804, 0.631373, 0.847059, 1)
+sky = SubResource("Sky_oxcog")
+ambient_light_source = 3
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
+reflected_light_source = 1
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48202, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, -17.9711)
+mesh = SubResource("PlaneMesh_agfuu")
+surface_material_override/0 = SubResource("StandardMaterial3D_u5e14")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qd1uc")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("3_q6gt4")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.939356, -4.81324)
+omni_range = 9.50516
+
+[node name="monk" parent="." instance=ExtResource("4_h3mt7")]
+transform = Transform3D(-0.01, 0, -8.74228e-10, 0, 0.01, 0, 8.74228e-10, 0, -0.01, 0, 0.0478125, -6.61328)

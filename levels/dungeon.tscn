@@ -605,7 +605,7 @@ page_title = "Cedric's Diary 8"
 page_text = "The towns people are growing increasingly suspicious. I fear we have a traitor in our midst. Not that it will matter much longer. Tonight we will conduct our final ritual."
 
 [node name="Page9" parent="Pages" instance=ExtResource("42_nbgpb")]
-transform = Transform3D(-0.822532, -0.56724, -0.0409896, 0.0358771, 0.0201764, -0.999152, 0.567586, -0.823305, 0.00375523, 365.844, 27.5437, -149.18)
+transform = Transform3D(-0.999681, -0.0228756, 0.010736, -0.0111744, 0.0191212, -0.999754, 0.0226642, -0.999555, -0.0193706, 370.07, 28.1459, -152.188)
 page_title = "Cedric's Diary 9"
 page_text = "I have concluded that they must all die. The life force must drain from all of them in their seats. I have prepared a poison wine for all of them to drink that I have deceived them into thinking is part of the ritual."
 
