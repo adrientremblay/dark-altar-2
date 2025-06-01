@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://bkcwebiqubxqk"]
+[gd_scene load_steps=33 format=3 uid="uid://bkcwebiqubxqk"]
 
 [ext_resource type="Texture2D" path="res://grass_alb_ht.dds" id="1_dr2xh"]
+[ext_resource type="Script" path="res://title_screen.gd" id="1_ropif"]
 [ext_resource type="Texture2D" uid="uid://b8ygyuirq3w87" path="res://textures/AllSkyFree_Skyboxes/AllSky_Night_MoonBurst Equirect.png" id="2_7tods"]
 [ext_resource type="MeshLibrary" uid="uid://b58cb358rt6wo" path="res://assets/dungeon/tileset.tres" id="3_q6gt4"]
 [ext_resource type="PackedScene" uid="uid://cy56qixibkanx" path="res://assets/models/monk/monk.glb" id="4_h3mt7"]
@@ -8,6 +9,9 @@
 [ext_resource type="Texture2D" path="res://grass_nrm_rgh.dds" id="5_v0oy2"]
 [ext_resource type="PackedScene" uid="uid://dgcgrml4qo4l8" path="res://candle.tscn" id="7_csvwp"]
 [ext_resource type="PackedScene" uid="uid://dinx2n1kr6nxt" path="res://tree.tscn" id="8_3pfa1"]
+[ext_resource type="AudioStream" uid="uid://cvwojghd5kwl" path="res://assets/audio/music/dark_altar_theme_inst.mp3" id="9_pm8sn"]
+[ext_resource type="AudioStream" uid="uid://bq2xj62hoclnk" path="res://assets/audio/sound_effects/night-ambience-17064.mp3" id="10_5eete"]
+[ext_resource type="FontFile" uid="uid://dm6dgw04fnest" path="res://assets/fonts/Darkcastle_PERSONAL_USE_ONLY.otf" id="11_b3dbl"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_agfuu"]
 
@@ -120,8 +124,17 @@ hue_variation_max = 0.3
 [sub_resource type="QuadMesh" id="QuadMesh_xitcj"]
 size = Vector2(3, 3)
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="LabelSettings" id="LabelSettings_7684l"]
+font = ExtResource("11_b3dbl")
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_hd3vd"]
+font = ExtResource("11_b3dbl")
+font_size = 60
+
+[node name="TitleScreen" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555335, 0)
+script = ExtResource("1_ropif")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31147, -4.00369)
@@ -141,6 +154,13 @@ mesh_library = ExtResource("3_q6gt4")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00180075, -0.151013, -9.2368)
 light_color = Color(0.705882, 0.666667, 0.141176, 1)
+light_specular = 0.0
+omni_range = 9.50516
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00180075, -0.163213, -9.10182)
+light_color = Color(0.705882, 0.666667, 0.141176, 1)
+light_energy = 0.167
 light_specular = 0.0
 omni_range = 9.50516
 
@@ -175,3 +195,56 @@ visible = false
 [node name="Tree2" parent="." instance=ExtResource("8_3pfa1")]
 transform = Transform3D(0.798751, 0, 0.601662, 0, 1, 0, -0.601662, 0, 0.798751, 15.1568, 1.48057, -24.9654)
 visible = false
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_pm8sn")
+autoplay = true
+
+[node name="n" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_5eete")
+volume_db = -5.06
+autoplay = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="UI"]
+layout_mode = 0
+offset_top = 11.0
+offset_right = 1920.0
+offset_bottom = 287.0
+text = "DARK ALTAR: The VIllage"
+label_settings = SubResource("LabelSettings_7684l")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartGameButton" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 720.0
+offset_top = 760.0
+offset_right = 1120.0
+offset_bottom = 872.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("11_b3dbl")
+theme_override_font_sizes/font_size = 80
+text = "Start Game"
+
+[node name="Title2" type="Label" parent="UI"]
+offset_top = 253.0
+offset_right = 1920.0
+offset_bottom = 339.0
+text = "by Adrien Tremblay"
+label_settings = SubResource("LabelSettings_hd3vd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="UI/StartGameButton" to="." method="_on_start_game_button_pressed"]
