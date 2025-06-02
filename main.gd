@@ -73,6 +73,9 @@ func _input(event):
 			if skull.level: # the starting skull has no level
 				skull.level.skull_collected.emit()
 			skull.queue_free()
+			if skulls_found == 5:
+				print("emit banish message")
+				ui.display_banish_message()
 		elif interactable.is_in_group("candle"):
 			var candle = interactable
 			$Player.collect_candle()

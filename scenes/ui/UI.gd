@@ -5,6 +5,7 @@ var intro_label = 1
 func _on_intro_timer_timeout() -> void:
 	match intro_label:
 		1:
+			print("Boom1")
 			$BOOM.play()
 			$Label.visible = true
 		2:
@@ -13,7 +14,7 @@ func _on_intro_timer_timeout() -> void:
 	intro_label +=1
 
 func _on_player_register_skull(skulls_found: int) -> void:
-	intro_label = 1
+	intro_label = 2
 	$IntroTimer.start()
 	$Label.text = "skull " + str(skulls_found) + "/5 collected"
 	$Label.visible = true
@@ -39,3 +40,12 @@ func display_page(page : Page):
 
 func toggle_pause_menu(toggle: bool):
 	$PauseMenu.visible = toggle
+
+func display_banish_message():
+	$Label.text = "head to the summoning chamber and place the skulls"
+	$Label.visible = true
+	print("Boom2")
+	$BOOM.play()
+	intro_label = 2
+	$IntroTimer.start()
+	pass

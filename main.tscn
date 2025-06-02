@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=31 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bi7ytov5l6euy" path="res://assets/Skeleton/monkey.jpg" id="12_hbp13"]
 [ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
 [ext_resource type="Script" path="res://SpawnTrigger.gd" id="16_irgr7"]
+[ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="18_wedqe"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="20_b2i1c"]
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
@@ -58,7 +59,7 @@ size = Vector3(73.0636, 3.56152, 94.1811)
 size = Vector3(54.5026, 5.25323, 60.0435)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_st1qi"]
-size = Vector3(60.1612, 5.30359, 43.7548)
+size = Vector3(79.6268, 5.30359, 54.2203)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wlmbg"]
 size = Vector3(250, 1, 250)
@@ -76,7 +77,7 @@ environment = SubResource("Environment_g4vby")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 202.659, 0.564528, -53.2463)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(0.979221, 0, -0.202786, 0, 1, 0, 0.202786, 0, 0.979221, 52.2815, 1.0808, -47.9146)
+transform = Transform3D(0.979221, 0, -0.202786, 0, 1, 0, 0.202786, 0, 0.979221, 175.673, 1.0808, -218.296)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -471,7 +472,7 @@ number_skull_options = 3
 cedric = NodePath("../../Cedric")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/FarmSpawnTrigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.646, 2.15179, -210.379)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.384, 2.15179, -210.449)
 shape = SubResource("BoxShape3D_st1qi")
 
 [node name="Floor" type="MeshInstance3D" parent="NavigationRegion3D"]
@@ -489,6 +490,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DungeonAudioSwitcher"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 315.947, 29.6344, -100.475)
 shape = SubResource("BoxShape3D_ufjn0")
+
+[node name="Skull" parent="." instance=ExtResource("18_wedqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.498, 0, -220.377)
+
+[node name="Skull2" parent="." instance=ExtResource("18_wedqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.37, 0, -219.719)
+
+[node name="Skull3" parent="." instance=ExtResource("18_wedqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.293, 0, -221.212)
+
+[node name="Skull4" parent="." instance=ExtResource("18_wedqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.361, 0, -221.477)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
