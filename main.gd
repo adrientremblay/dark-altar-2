@@ -31,8 +31,10 @@ func _process(delta: float) -> void:
 	if (distance_to_cedric <= CEDRIC_DAMAGE_DISTANCE):
 		var damage_scale = (CEDRIC_DAMAGE_DISTANCE - distance_to_cedric) / CEDRIC_DAMAGE_DISTANCE
 		$Player.sanity -= damage_scale * CEDRIC_DAMAGE * delta
+		#print("Player taking sanity damage! " + str(player.sanity))
 	elif $Player.sanity < 100:
 		$Player.sanity += 20 * delta
+		#print("Player sanity healing!!! " + str(player.sanity))
 	
 	if $Player.sanity < 0:
 		$Player.sanity = 0
@@ -40,10 +42,14 @@ func _process(delta: float) -> void:
 	if $Player.sanity < 100:
 		var distortion_scale = (100 - $Player.sanity) / 100
 		ghost = distortion_scale * 1.2
-		choirSound.volume_db = (1 - distortion_scale) * -20
-		
+		choirSound.volume_db = ((1 - distortion_scale) * -20) + 2
 		if (!choirSound.playing):
 			choirSound.play()
+		print(choirSound.volume_db)
+	elif choirSound.volume_db > -40:
+		choirSound.volume_db -= 1
+	else:
+		choirSound.stop()
 			
 	if choirSound.volume_db < -40:
 		choirSound.stop()

@@ -14,6 +14,8 @@ const TELEPORT_DISTANCE = [100, 25, 20, 15, 10, 5] # the distance added to the s
 
 var player: Player
 
+var dungeon_ai_active = false
+
 func _process(delta: float) -> void:
 	if Global.game_paused:
 		return
@@ -39,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func teleport():
-	if Global.game_paused || agression_level < 1:
+	if Global.game_paused || agression_level < 1 || dungeon_ai_active:
 		return
 	
 	if (player.check_if_can_see_me(self)):
@@ -62,7 +64,7 @@ func teleport():
 	teleport_timer.start()
 
 func spotted_behaviour():
-	if spotted:
+	if spotted || dungeon_ai_active:
 		return
 	
 	if not player.check_if_can_see_me(self):
@@ -88,3 +90,8 @@ func increase_agression():
 
 func _on_haunt_change_position_timer_timeout() -> void:
 	teleport()
+
+func _on_area_to_disable_cedric_normal_ai_body_entered(body: Node3D) -> void:
+	if (body.is_in_group("player")):
+		dungeon_ai_active = ! dungeon_ai_active
+		print("dungeon ai active: " + str(dungeon_ai_active))
