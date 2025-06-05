@@ -45,13 +45,9 @@ func _process(delta: float) -> void:
 		choirSound.volume_db = ((1 - distortion_scale) * -20) + 2
 		if (!choirSound.playing):
 			choirSound.play()
-		print(choirSound.volume_db)
 	elif choirSound.volume_db > -40:
 		choirSound.volume_db -= 1
 	else:
-		choirSound.stop()
-			
-	if choirSound.volume_db < -40:
 		choirSound.stop()
 	
 	shaderMat.set_shader_parameter("ghost", ghost)
