@@ -81,7 +81,7 @@ script = ExtResource("1_y3a05")
 environment = SubResource("Environment_g4vby")
 
 [node name="Cedric" parent="." instance=ExtResource("12_ax3ba")]
-transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 202.659, 0.564528, -53.2463)
+transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 202.659, 0.829702, -53.2463)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
 transform = Transform3D(0.979221, 0, -0.202786, 0, 1, 0, 0.202786, 0, 0.979221, 175.673, 1.0808, -218.296)
@@ -534,7 +534,7 @@ teleport_target = NodePath("Node3D")
 cedric = NodePath("../Cedric")
 
 [node name="Node3D" type="Node3D" parent="SpawnTrap"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47281, 3.75084, 0.488556)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.88675, 0.660194, -1.36217)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnTrap"]
 transform = Transform3D(0.820501, 0, 0.571645, 0, 1, 0, -0.571645, 0, 0.820501, -0.299713, 0.733948, -0.903992)
