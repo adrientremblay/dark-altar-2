@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=34 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
 [ext_resource type="Script" path="res://SpawnTrigger.gd" id="16_irgr7"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="18_wedqe"]
+[ext_resource type="Script" path="res://spawn_trap.gd" id="19_p7ukp"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="20_b2i1c"]
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
@@ -69,6 +70,9 @@ size = Vector3(0.749496, 7.50595, 10.2228)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f0ywy"]
 size = Vector3(1, 10.3077, 108.912)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uljgd"]
+size = Vector3(3.49811, 2.4679, 9.36096)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_y3a05")
@@ -523,6 +527,19 @@ transform = Transform3D(0.996526, -0.0819144, 0.0150075, 0.0832778, 0.980211, -0
 page_title = "Directions to the Cult Lair"
 page_text = "I have found the hideaway of the so called 'Order of the Dark Altar'. It is down this path, far up the mountain. God grant me strength."
 
+[node name="SpawnTrap" type="Area3D" parent="." node_paths=PackedStringArray("teleport_target", "cedric")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 197.999, 5.45658, -232.375)
+script = ExtResource("19_p7ukp")
+teleport_target = NodePath("Node3D")
+cedric = NodePath("../Cedric")
+
+[node name="Node3D" type="Node3D" parent="SpawnTrap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47281, 3.75084, 0.488556)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnTrap"]
+transform = Transform3D(0.820501, 0, 0.571645, 0, 1, 0, -0.571645, 0, 0.820501, -0.299713, 0.733948, -0.903992)
+shape = SubResource("BoxShape3D_uljgd")
+
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
 [connection signal="register_skull" from="Player" to="." method="_on_player_register_skull"]
@@ -540,3 +557,4 @@ page_text = "I have found the hideaway of the so called 'Order of the Dark Altar
 [connection signal="body_exited" from="DungeonAudioSwitcher" to="Player" method="_on_gate_to_hell_body_exited"]
 [connection signal="body_exited" from="DungeonAudioSwitcher" to="AmbientSound" method="_on_gate_to_hell_body_exited"]
 [connection signal="body_entered" from="AreaToDisableCedricNormalAI" to="Cedric" method="_on_area_to_disable_cedric_normal_ai_body_entered"]
+[connection signal="body_entered" from="SpawnTrap" to="SpawnTrap" method="_on_body_entered"]
