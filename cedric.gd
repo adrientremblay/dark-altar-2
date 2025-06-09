@@ -62,9 +62,12 @@ func teleport():
 	spotted = false
 	
 	teleport_timer.start()
+	
+func play_movement_sound():
+	$MovementSound.play()
 
 func spotted_behaviour():
-	if spotted || dungeon_ai_active:
+	if spotted:
 		return
 	
 	if not player.check_if_can_see_me(self):
