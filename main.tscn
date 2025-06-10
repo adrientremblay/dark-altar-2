@@ -532,6 +532,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 197.999, 5.45658, -232.375)
 script = ExtResource("19_p7ukp")
 teleport_target = NodePath("Node3D")
 cedric = NodePath("../Cedric")
+dialogue_number = 1
 
 [node name="Node3D" type="Node3D" parent="SpawnTrap"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.88675, 0.660194, -1.36217)

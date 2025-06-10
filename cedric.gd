@@ -11,10 +11,14 @@ const TELEPORT_DISTANCE = [100, 25, 20, 15, 10, 5] # the distance added to the s
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 @onready var teleport_timer: Timer = $TeleportTimer 
+@onready var dialogue: AudioStreamPlayer3D = $DialogueSound
 
 var player: Player
 
 var dungeon_ai_active = false
+
+@onready var dialogue_1 = preload("res://assets/audio/sound_effects/cedric_dialogue/1.mp3")
+
 
 func _process(delta: float) -> void:
 	if Global.game_paused:
@@ -98,3 +102,9 @@ func _on_area_to_disable_cedric_normal_ai_body_entered(body: Node3D) -> void:
 	if (body.is_in_group("player")):
 		dungeon_ai_active = ! dungeon_ai_active
 		print("dungeon ai active: " + str(dungeon_ai_active))
+
+func play_dialogue(dialogue_number: int):
+	match dialogue_number:
+		1:
+			dialogue.stream = dialogue_1
+	dialogue.play()

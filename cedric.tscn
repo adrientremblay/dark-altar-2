@@ -34,4 +34,7 @@ transform = Transform3D(-0.01, 0, -8.74228e-10, 0, 0.01, 0, 8.74228e-10, 0, -0.0
 [node name="MovementSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_axp5x")
 
+[node name="DialogueSound" type="AudioStreamPlayer3D" parent="."]
+volume_db = -4.0
+
 [connection signal="timeout" from="TeleportTimer" to="." method="_on_haunt_change_position_timer_timeout"]
