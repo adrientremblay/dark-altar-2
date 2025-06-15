@@ -1,0 +1,185 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v5.2.cf7d3637)"
+    },
+    "extensionsUsed": [
+        "KHR_materials_volume",
+        "FB_ngon_encoding"
+    ],
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 696,
+            "type": "VEC3",
+            "max": [
+                285.86785888671877,
+                293.75,
+                75.00009155273438
+            ],
+            "min": [
+                -964.1321411132813,
+                -293.75,
+                -0.0001222783757839352
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 696,
+            "type": "VEC3",
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 696,
+            "type": "VEC2",
+            "max": [
+                121.55843353271485,
+                625.647705078125
+            ],
+            "min": [
+                -119.55844116210938,
+                -624.5404052734375
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5125,
+            "count": 696,
+            "type": "SCALAR",
+            "max": [
+                695
+            ],
+            "min": [
+                0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 25056,
+            "uri": "result.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 8352,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 8352,
+            "byteLength": 8352,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 16704,
+            "byteLength": 5568,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 22272,
+            "byteLength": 2784,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "02 - Default",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.5,
+                    0.5,
+                    0.5,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": -2.200000047683716
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Cross",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 3,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TEXCOORD_0": 2
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "RootNode",
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "Cross",
+            "matrix": [
+                -4.371138828673793e-8,
+                0.0,
+                1.0,
+                0.0,
+                -8.742277657347586e-8,
+                -1.0,
+                -3.82137093032941e-15,
+                0.0,
+                1.0,
+                -8.742277657347586e-8,
+                4.371138828673793e-8,
+                0.0,
+                -3557.535888671875,
+                1.6819915771484376,
+                1285.7454833984376,
+                1.0
+            ],
+            "mesh": 0,
+            "extras": {
+                "UserProperties": "VRay_MoBlur_GeomSamples = 2&cr;&lf;VRay_GI_Generate = True&cr;&lf;VRay_GI_Receive = True&cr;&lf;VRay_GI_Multipier = 1,000000&cr;&lf;VRay_GI_GenerateMultipier = 1,000000&cr;&lf;VRay_GI_SubdivsMultiplier = 1,000000&cr;&lf;VRay_Caustics_Generate = True&cr;&lf;VRay_Caustics_Receive = True&cr;&lf;VRay_Caustics_Multipier = 1,000000&cr;&lf;VRay_MoBlur_DefaultGeomSamples = True&cr;&lf;VRay_Matte_Enable = False&cr;&lf;VRay_Matte_Alpha = 1,000000&cr;&lf;VRay_Matte_Shadows = False&cr;&lf;VRay_Matte_ShadowAlpha = False&cr;&lf;VRay_Matte_ShadowColor = [0,0,0]&cr;&lf;VRay_Matte_ShadowBrightness = 1,000000&cr;&lf;VRay_Matte_ReflectionAmount = 1,000000&cr;&lf;VRay_Matte_RefractionAmount = 1,000000&cr;&lf;VRay_Matte_GIAmount = 1,000000&cr;&lf;VRay_Matte_GI_OtherMattes = True&cr;&lf;VRay_GI_SurfaceID = 0&cr;&lf;VRay_GI_VisibleToGI = True&cr;&lf;VRay_GI_VisibleToReflections = True&cr;&lf;VRay_GI_VisibleToRefractions = True&cr;&lf;VRay_Secondary_Matte_Enable = False&cr;&lf;VRay_MoBlur_Override = False&cr;&lf;VRay_MoBlur_Overrid",
+                "IsNull": false,
+                "DefaultAttributeIndex": 0,
+                "InheritType": 1,
+                "MaxHandle": 680,
+                "ScalingMax": null,
+                "UDP3DSMAX": "VRay_MoBlur_GeomSamples = 2&cr;&lf;VRay_GI_Generate = True&cr;&lf;VRay_GI_Receive = True&cr;&lf;VRay_GI_Multipier = 1,000000&cr;&lf;VRay_GI_GenerateMultipier = 1,000000&cr;&lf;VRay_GI_SubdivsMultiplier = 1,000000&cr;&lf;VRay_Caustics_Generate = True&cr;&lf;VRay_Caustics_Receive = True&cr;&lf;VRay_Caustics_Multipier = 1,000000&cr;&lf;VRay_MoBlur_DefaultGeomSamples = True&cr;&lf;VRay_Matte_Enable = False&cr;&lf;VRay_Matte_Alpha = 1,000000&cr;&lf;VRay_Matte_Shadows = False&cr;&lf;VRay_Matte_ShadowAlpha = False&cr;&lf;VRay_Matte_ShadowColor = [0,0,0]&cr;&lf;VRay_Matte_ShadowBrightness = 1,000000&cr;&lf;VRay_Matte_ReflectionAmount = 1,000000&cr;&lf;VRay_Matte_RefractionAmount = 1,000000&cr;&lf;VRay_Matte_GIAmount = 1,000000&cr;&lf;VRay_Matte_GI_OtherMattes = True&cr;&lf;VRay_GI_SurfaceID = 0&cr;&lf;VRay_GI_VisibleToGI = True&cr;&lf;VRay_GI_VisibleToReflections = True&cr;&lf;VRay_GI_VisibleToRefractions = True&cr;&lf;VRay_Secondary_Matte_Enable = False&cr;&lf;VRay_MoBlur_Override = False&cr;&lf;VRay_MoBlur_Overrid"
+            }
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}

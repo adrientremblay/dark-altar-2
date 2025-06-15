@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp3lchmfp7j5b"]
+
+[ext_resource type="PackedScene" uid="uid://ba4mocr313odv" path="res://assets/models/Crucifix/result.gltf" id="1_qqmx0"]
+[ext_resource type="Texture2D" uid="uid://bcowli0t5rcex" path="res://assets/models/Crucifix/oak.jpg" id="2_p07fh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbxf1"]
+albedo_texture = ExtResource("2_p07fh")
+uv1_scale = Vector3(0.003, 0.003, 0.003)
+
+[node name="CrucifixModel" instance=ExtResource("1_qqmx0")]
+
+[node name="Cross" parent="RootNode" index="0"]
+transform = Transform3D(1.19249e-11, -0.001, 0, 0.001, 1.19249e-11, 0, 0, 0, 0.001, 0, 0.978134, 0)
+material_override = SubResource("StandardMaterial3D_jbxf1")

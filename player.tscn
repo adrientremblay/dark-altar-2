@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=28 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bs3pqalo0i2s" path="res://assets/audio/sound_effects/candle_pickup.mp3" id="10_2t33u"]
 [ext_resource type="AudioStream" uid="uid://pk2rt2mkq0j2" path="res://assets/audio/sound_effects/running_stone.mp3" id="11_vdl85"]
 [ext_resource type="AudioStream" uid="uid://dr5csb57jmyhf" path="res://assets/audio/sound_effects/flame_flicker.mp3" id="13_xvj01"]
+[ext_resource type="PackedScene" uid="uid://bp3lchmfp7j5b" path="res://scenes/crucifix_model.tscn" id="14_uhf7j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwuph"]
 
@@ -243,6 +244,9 @@ cull_mask = 1047556
 [node name="FlameFlickerSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_xvj01")
 volume_db = 4.685
+
+[node name="CrucifixModel" parent="." instance=ExtResource("14_uhf7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.413809, -0.397123, -1.52936)
 
 [connection signal="area_entered" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_entered"]
 [connection signal="area_exited" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_exited"]
