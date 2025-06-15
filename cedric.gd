@@ -104,6 +104,7 @@ func _on_area_to_disable_cedric_normal_ai_body_entered(body: Node3D) -> void:
 		print("dungeon ai active: " + str(dungeon_ai_active))
 
 func play_dialogue(dialogue_number: int):
+	return
 	match dialogue_number:
 		1:
 			dialogue.stream = dialogue_1

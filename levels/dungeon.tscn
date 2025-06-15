@@ -462,6 +462,7 @@ mesh = SubResource("PlaneMesh_s4s7d")
 skeleton = NodePath("../../../..")
 
 [node name="Test Flashlights" type="Node3D" parent="."]
+visible = false
 
 [node name="PREVIEW_FLASHLIGHT" type="OmniLight3D" parent="Test Flashlights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 354.717, 30.0803, -59.8937)

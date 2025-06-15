@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=36 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -69,9 +69,15 @@ size = Vector3(250, 1, 250)
 size = Vector3(0.749496, 7.50595, 10.2228)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f0ywy"]
-size = Vector3(1, 10.3077, 108.912)
+size = Vector3(30.0092, 10.3077, 108.912)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uljgd"]
+size = Vector3(3.49811, 2.4679, 9.36096)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1i2d"]
+size = Vector3(3.49811, 2.4679, 9.36096)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l4dnv"]
 size = Vector3(3.49811, 2.4679, 9.36096)
 
 [node name="Main" type="Node3D"]
@@ -513,7 +519,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.361, 0, -221.477)
 [node name="AreaToDisableCedricNormalAI" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AreaToDisableCedricNormalAI"]
-transform = Transform3D(0.549562, 0, 0.835453, 0, 1, 0, -0.835453, 0, 0.549562, 190.903, 4.65387, -230.528)
+transform = Transform3D(0.549562, 0, 0.835453, 0, 1, 0, -0.835453, 0, 0.549562, 190.022, 4.65387, -229.189)
 shape = SubResource("BoxShape3D_f0ywy")
 
 [node name="PickableCandle2" parent="." instance=ExtResource("50_81846")]
@@ -535,63 +541,78 @@ cedric = NodePath("../Cedric")
 dialogue_number = 1
 
 [node name="Node3D" type="Node3D" parent="SpawnTrap"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.88675, 0.660194, -1.36217)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.46671, 1.39659, -4.79874)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnTrap"]
 transform = Transform3D(0.820501, 0, 0.571645, 0, 1, 0, -0.571645, 0, 0.820501, -0.299713, 0.733948, -0.903992)
 shape = SubResource("BoxShape3D_uljgd")
 
+[node name="Timer" type="Timer" parent="SpawnTrap"]
+wait_time = 5.0
+one_shot = true
+
+[node name="Skull5" parent="." instance=ExtResource("18_wedqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.592, 0.00613856, -221.484)
+
+[node name="PickableCandle4" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188.286, 1.26334, -224.01)
+
+[node name="PickableCandle5" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.259, 4.75038, -231.221)
+
+[node name="PickableCandle6" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 209.616, 8.42219, -246.383)
+
 [node name="SpawnTrap2" type="Area3D" parent="." node_paths=PackedStringArray("teleport_target", "cedric")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240.331, 15.5432, -258.754)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 208.403, 5.45658, -251.641)
 script = ExtResource("19_p7ukp")
 teleport_target = NodePath("Node3D")
 cedric = NodePath("../Cedric")
+dialogue_number = 1
 
 [node name="Node3D" type="Node3D" parent="SpawnTrap2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.88675, 0.660194, -1.36217)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.83232, 3.46697, -3.71208)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnTrap2"]
-transform = Transform3D(0.820501, 0, 0.571645, 0, 1, 0, -0.571645, 0, 0.820501, -0.299713, 0.733948, -0.903992)
-shape = SubResource("BoxShape3D_uljgd")
+transform = Transform3D(0.820501, 0, 0.571645, 0, 1, 0, -0.571645, 0, 0.820501, 2.73959, 3.58569, 2.9785)
+shape = SubResource("BoxShape3D_b1i2d")
+
+[node name="Timer" type="Timer" parent="SpawnTrap2"]
+wait_time = 5.0
+one_shot = true
+
+[node name="PickableCandle7" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 234.13, 15.1017, -258.033)
 
 [node name="SpawnTrap3" type="Area3D" parent="." node_paths=PackedStringArray("teleport_target", "cedric")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 279.134, 23.8722, -217.828)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 208.403, 5.45658, -251.641)
 script = ExtResource("19_p7ukp")
 teleport_target = NodePath("Node3D")
 cedric = NodePath("../Cedric")
+dialogue_number = 1
 
 [node name="Node3D" type="Node3D" parent="SpawnTrap3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.631439, 2.38406, 9.28831)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.0424, 11.4381, -8.97647)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnTrap3"]
-transform = Transform3D(0.820501, 0, 0.571645, 0, 1, 0, -0.571645, 0, 0.820501, -0.299713, 0.733948, -0.903992)
-shape = SubResource("BoxShape3D_uljgd")
+transform = Transform3D(0.820501, 0, 0.571645, 0, 1, 0, -0.571645, 0, 0.820501, 29.1577, 10.2318, -7.23096)
+shape = SubResource("BoxShape3D_l4dnv")
 
-[node name="SpawnTrap4" type="Area3D" parent="." node_paths=PackedStringArray("teleport_target", "cedric")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 279.472, 23.8722, -141.724)
-script = ExtResource("19_p7ukp")
-teleport_target = NodePath("Node3D")
-cedric = NodePath("../Cedric")
+[node name="Timer" type="Timer" parent="SpawnTrap3"]
+wait_time = 5.0
+one_shot = true
 
-[node name="Node3D" type="Node3D" parent="SpawnTrap4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56085, -2.37701, 10.9503)
+[node name="PickableCandle8" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 268.984, 24.0549, -238.19)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnTrap4"]
-transform = Transform3D(0.820501, 0, 0.571645, 0, 1, 0, -0.571645, 0, 0.820501, -0.299713, 1.78079, -2.18806)
-shape = SubResource("BoxShape3D_uljgd")
+[node name="PickableCandle9" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 279.714, 27.4044, -203.815)
 
-[node name="SpawnTrap5" type="Area3D" parent="." node_paths=PackedStringArray("teleport_target", "cedric")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 305.241, 23.8722, -106.306)
-script = ExtResource("19_p7ukp")
-teleport_target = NodePath("Node3D")
-cedric = NodePath("../Cedric")
+[node name="PickableCandle10" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 277.315, 25.5971, -146.819)
 
-[node name="Node3D" type="Node3D" parent="SpawnTrap5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.10223, 2.21888, 6.27731)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SpawnTrap5"]
-transform = Transform3D(0.820501, 0, 0.571645, 0, 1, 0, -0.571645, 0, 0.820501, -0.310913, 2.84318, 0.371574)
-shape = SubResource("BoxShape3D_uljgd")
+[node name="PickableCandle11" parent="." instance=ExtResource("50_81846")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 314.732, 27.1202, -100.4)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
@@ -611,7 +632,8 @@ shape = SubResource("BoxShape3D_uljgd")
 [connection signal="body_exited" from="DungeonAudioSwitcher" to="AmbientSound" method="_on_gate_to_hell_body_exited"]
 [connection signal="body_entered" from="AreaToDisableCedricNormalAI" to="Cedric" method="_on_area_to_disable_cedric_normal_ai_body_entered"]
 [connection signal="body_entered" from="SpawnTrap" to="SpawnTrap" method="_on_body_entered"]
+[connection signal="timeout" from="SpawnTrap/Timer" to="SpawnTrap" method="_on_timer_timeout"]
 [connection signal="body_entered" from="SpawnTrap2" to="SpawnTrap2" method="_on_body_entered"]
+[connection signal="timeout" from="SpawnTrap2/Timer" to="SpawnTrap2" method="_on_timer_timeout"]
 [connection signal="body_entered" from="SpawnTrap3" to="SpawnTrap3" method="_on_body_entered"]
-[connection signal="body_entered" from="SpawnTrap4" to="SpawnTrap4" method="_on_body_entered"]
-[connection signal="body_entered" from="SpawnTrap5" to="SpawnTrap5" method="_on_body_entered"]
+[connection signal="timeout" from="SpawnTrap3/Timer" to="SpawnTrap3" method="_on_timer_timeout"]
