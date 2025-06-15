@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=29 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cmauvnhp04ys4" path="res://assets/audio/sound_effects/panting.mp3" id="6_8qrlp"]
 [ext_resource type="AudioStream" uid="uid://dnem3422cvig" path="res://assets/audio/sound_effects/running.mp3" id="7_0qke1"]
 [ext_resource type="AudioStream" uid="uid://cmeujy0jwgmkq" path="res://assets/audio/sound_effects/walking_stone.mp3" id="7_c5k3q"]
+[ext_resource type="PackedScene" uid="uid://d25m2whf0vyqw" path="res://scenes/left_arm.tscn" id="7_fruf0"]
 [ext_resource type="AudioStream" uid="uid://bs3pqalo0i2s" path="res://assets/audio/sound_effects/candle_pickup.mp3" id="10_2t33u"]
 [ext_resource type="AudioStream" uid="uid://pk2rt2mkq0j2" path="res://assets/audio/sound_effects/running_stone.mp3" id="11_vdl85"]
 [ext_resource type="AudioStream" uid="uid://dr5csb57jmyhf" path="res://assets/audio/sound_effects/flame_flicker.mp3" id="13_xvj01"]
@@ -127,7 +128,7 @@ current = true
 far = 1000.0
 
 [node name="Arm" parent="CameraPivot/Camera3D" instance=ExtResource("2_v36k5")]
-transform = Transform3D(-0.05, -4.37114e-09, 1.91069e-16, 0, -2.18557e-09, -0.05, 4.37114e-09, -0.05, 2.18557e-09, 0.741275, -0.423212, -0.443583)
+transform = Transform3D(-0.05, -7.54979e-09, 3.30012e-16, 0, -2.18557e-09, -0.05, 7.54979e-09, -0.05, 2.18557e-09, 0.741275, -0.423212, -0.443583)
 
 [node name="Candle" parent="CameraPivot/Camera3D" instance=ExtResource("4_h756x")]
 transform = Transform3D(0.08, 0, 0, 0, 0.12, 0, 0, 0, 0.08, 0.683, -0.234, -0.712)
@@ -171,7 +172,7 @@ shadow_enabled = true
 shadow_bias = 0.001
 shadow_opacity = 0.96
 shadow_blur = 0.075
-omni_range = 0.75
+omni_range = 2.17844
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CameraPivot/Camera3D/Candle"]
 
@@ -189,6 +190,12 @@ transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.683, -0.58, -0.712
 libraries = {
 "": SubResource("AnimationLibrary_2si74")
 }
+
+[node name="CrucifixModel" parent="CameraPivot/Camera3D" instance=ExtResource("14_uhf7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.644513, -0.523586, -0.714564)
+
+[node name="LeftArm" parent="CameraPivot/Camera3D" instance=ExtResource("7_fruf0")]
+transform = Transform3D(-0.05, 4.37114e-09, -1.91069e-16, 0, -2.18557e-09, -0.05, -4.37114e-09, -0.05, 2.18557e-09, -0.71831, -0.423, -0.444)
 
 [node name="Walking" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")
@@ -244,9 +251,6 @@ cull_mask = 1047556
 [node name="FlameFlickerSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_xvj01")
 volume_db = 4.685
-
-[node name="CrucifixModel" parent="." instance=ExtResource("14_uhf7j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.413809, -0.397123, -1.52936)
 
 [connection signal="area_entered" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_entered"]
 [connection signal="area_exited" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_exited"]
