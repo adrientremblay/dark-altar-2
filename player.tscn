@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=33 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
@@ -19,6 +19,98 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwuph"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8cwml"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bp2ix"]
+height = 2.59507
+
+[sub_resource type="Animation" id="Animation_tab8j"]
+resource_name = "Head Bob"
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3672, 0.76355, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.540563, 0), Vector3(0, 0.5, 0), Vector3(0, 0.6, 0), Vector3(0, 0.540563, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_k3l5e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.540563, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2si74"]
+_data = {
+"Head Bob": SubResource("Animation_tab8j"),
+"RESET": SubResource("Animation_k3l5e")
+}
+
+[sub_resource type="Animation" id="Animation_ct7xe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.71831, -0.423, -0.444)]
+}
+
+[sub_resource type="Animation" id="Animation_rh6rp"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.71831, -0.423, -0.444), Vector3(-0.71831, -0.423, -0.629455)]
+}
+
+[sub_resource type="Animation" id="Animation_u1gys"]
+resource_name = "rebuke"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.718, -0.423, -0.444), Vector3(-0.71831, -0.423, -0.390918), Vector3(-0.71831, -0.423, -0.698571), Vector3(-0.71831, -0.423, -0.698571), Vector3(-0.718, -0.423, -0.444)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wu6hx"]
+_data = {
+"RESET": SubResource("Animation_ct7xe"),
+"new_animation": SubResource("Animation_rh6rp"),
+"rebuke": SubResource("Animation_u1gys")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gllx"]
 transparency = 1
@@ -67,46 +159,6 @@ hue_variation_max = 0.3
 [sub_resource type="QuadMesh" id="QuadMesh_66rta"]
 size = Vector2(3, 3)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bp2ix"]
-height = 2.59507
-
-[sub_resource type="Animation" id="Animation_tab8j"]
-resource_name = "Head Bob"
-step = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3672, 0.76355, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0.540563, 0), Vector3(0, 0.5, 0), Vector3(0, 0.6, 0), Vector3(0, 0.540563, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_k3l5e"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.540563, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2si74"]
-_data = {
-"Head Bob": SubResource("Animation_tab8j"),
-"RESET": SubResource("Animation_k3l5e")
-}
-
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07157, 0)
 script = ExtResource("1_fclsx")
@@ -130,8 +182,34 @@ far = 1000.0
 [node name="Arm" parent="CameraPivot/Camera3D" instance=ExtResource("2_v36k5")]
 transform = Transform3D(-0.05, -7.54979e-09, 3.30012e-16, 0, -2.18557e-09, -0.05, 7.54979e-09, -0.05, 2.18557e-09, 0.741275, -0.423212, -0.443583)
 
+[node name="GrabShape" type="Area3D" parent="CameraPivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00240922, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraPivot/Camera3D/GrabShape"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -1.866)
+shape = SubResource("CapsuleShape3D_bp2ix")
+
+[node name="candlestick2" parent="CameraPivot/Camera3D" instance=ExtResource("5_re3m2")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.683, -0.58, -0.712)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraPivot/Camera3D"]
+libraries = {
+"": SubResource("AnimationLibrary_2si74")
+}
+
+[node name="LeftArm" parent="CameraPivot/Camera3D" instance=ExtResource("7_fruf0")]
+transform = Transform3D(-0.05, 4.37114e-09, -1.91069e-16, 0, -2.18557e-09, -0.05, -4.37114e-09, -0.05, 2.18557e-09, -0.71831, -0.423, -0.444)
+
+[node name="CrucifixModel" parent="CameraPivot/Camera3D/LeftArm" instance=ExtResource("14_uhf7j")]
+transform = Transform3D(-20, -1.50878e-20, -1.74846e-06, 1.74846e-06, -8.74228e-07, -20, -7.64274e-14, -20, 8.74228e-07, -1.47594, 5.41128, 2.01173)
+
+[node name="CrucifixAnimationPlayer" type="AnimationPlayer" parent="CameraPivot/Camera3D/LeftArm"]
+libraries = {
+"": SubResource("AnimationLibrary_wu6hx")
+}
+
 [node name="Candle" parent="CameraPivot/Camera3D" instance=ExtResource("4_h756x")]
-transform = Transform3D(0.08, 0, 0, 0, 0.12, 0, 0, 0, 0.08, 0.683, -0.234, -0.712)
+transform = Transform3D(0.08, 0, -8.88178e-16, 0, 0.12, 0, 8.88178e-16, 0, 0.08, 0.683, -0.234, -0.712)
 script = ExtResource("4_om2wh")
 
 [node name="Flame" type="GPUParticles3D" parent="CameraPivot/Camera3D/Candle"]
@@ -175,27 +253,6 @@ shadow_blur = 0.075
 omni_range = 2.17844
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CameraPivot/Camera3D/Candle"]
-
-[node name="GrabShape" type="Area3D" parent="CameraPivot/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00240922, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraPivot/Camera3D/GrabShape"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -1.866)
-shape = SubResource("CapsuleShape3D_bp2ix")
-
-[node name="candlestick2" parent="CameraPivot/Camera3D" instance=ExtResource("5_re3m2")]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.683, -0.58, -0.712)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraPivot/Camera3D"]
-libraries = {
-"": SubResource("AnimationLibrary_2si74")
-}
-
-[node name="CrucifixModel" parent="CameraPivot/Camera3D" instance=ExtResource("14_uhf7j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.644513, -0.523586, -0.714564)
-
-[node name="LeftArm" parent="CameraPivot/Camera3D" instance=ExtResource("7_fruf0")]
-transform = Transform3D(-0.05, 4.37114e-09, -1.91069e-16, 0, -2.18557e-09, -0.05, -4.37114e-09, -0.05, 2.18557e-09, -0.71831, -0.423, -0.444)
 
 [node name="Walking" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")

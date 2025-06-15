@@ -18,6 +18,7 @@ var in_dungeon = false
 @onready var animation_player : AnimationPlayer = $CameraPivot/Camera3D/AnimationPlayer
 @onready var walking : AudioStreamPlayer = $Walking
 @onready var sprinting : AudioStreamPlayer = $Sprinting
+@onready var crucifix_animation_player : AnimationPlayer = $CameraPivot/Camera3D/LeftArm/CrucifixAnimationPlayer
 
 var sanity = 100 # out of 100
 var stamina = 100 # out of 100
@@ -243,3 +244,7 @@ func start_flame_flicker():
 
 func _on_flame_flicker_timer_timeout() -> void:
 	candle.flickering = false
+
+func _input(event):
+	if event.is_action_pressed("rebuke"):
+		crucifix_animation_player.play("rebuke")
