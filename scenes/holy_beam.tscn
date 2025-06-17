@@ -42,12 +42,7 @@ material_override = SubResource("ShaderMaterial_x2gr7")
 emitting = false
 amount = 1
 lifetime = 2.0
+one_shot = true
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_lf0v4")
 draw_pass_1 = ExtResource("1_l35fb")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
