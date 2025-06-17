@@ -1,34 +1,53 @@
-[gd_scene load_steps=7 format=3 uid="uid://6on2bcxgpbjm"]
+[gd_scene load_steps=10 format=3 uid="uid://6on2bcxgpbjm"]
 
+[ext_resource type="Shader" uid="uid://rsts7elxdqea" path="res://assets/models/HolyBeam/holy_shader.tres" id="1_bde88"]
+[ext_resource type="Script" path="res://scenes/holy_beam.gd" id="1_dg7t6"]
 [ext_resource type="ArrayMesh" uid="uid://bgclk2fts6q5n" path="res://assets/models/HolyBeam/cylinder1.tres" id="1_l35fb"]
 
-[sub_resource type="Curve" id="Curve_gjtdc"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x2gr7"]
+render_priority = 0
+shader = ExtResource("1_bde88")
+
+[sub_resource type="Curve" id="Curve_y06h6"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="Curve" id="Curve_k7pbf"]
+[sub_resource type="Curve" id="Curve_4fhce"]
 max_value = 8.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.99635, 7.84431), 0.0, 0.0, 0, 0]
-point_count = 2
+_data = [Vector2(0.0109489, 1.30539), 0.0, 37.6984, 0, 0, Vector2(0.156934, 8), 0.0, 0.0, 0, 0, Vector2(0.989051, 8), 0.0, 0.0, 0, 0]
+point_count = 3
 
-[sub_resource type="Curve" id="Curve_1pxaj"]
+[sub_resource type="Curve" id="Curve_fy1k5"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_g1uey"]
-curve_x = SubResource("Curve_gjtdc")
-curve_y = SubResource("Curve_k7pbf")
-curve_z = SubResource("Curve_1pxaj")
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_2ruwd"]
+curve_x = SubResource("Curve_y06h6")
+curve_y = SubResource("Curve_4fhce")
+curve_z = SubResource("Curve_fy1k5")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lf0v4"]
 gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveXYZTexture_g1uey")
+scale_min = 0.25
+scale_max = 0.25
+scale_curve = SubResource("CurveXYZTexture_2ruwd")
+color = Color(1, 1, 0.458824, 1)
 
-[node name="Node3D" type="Node3D"]
+[node name="HolyBeam" type="Node3D"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_dg7t6")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="MainEnergyCylinder" type="GPUParticles3D" parent="."]
+material_override = SubResource("ShaderMaterial_x2gr7")
+emitting = false
 amount = 1
 lifetime = 2.0
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_lf0v4")
 draw_pass_1 = ExtResource("1_l35fb")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
