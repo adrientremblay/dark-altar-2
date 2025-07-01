@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://dftdhckb58yar"]
+
+[ext_resource type="PackedScene" uid="uid://c4v2xfs4b188o" path="res://assets/models/Church/church.glb" id="1_grdde"]
+[ext_resource type="Script" path="res://scenes/church_animated.gd" id="2_2w8vh"]
+
+[sub_resource type="Animation" id="Animation_0kil6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Church Door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oajl3"]
+resource_name = "open_door"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Church Door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.70845, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3eqep"]
+_data = {
+"RESET": SubResource("Animation_0kil6"),
+"open_door": SubResource("Animation_oajl3")
+}
+
+[node name="church" instance=ExtResource("1_grdde")]
+script = ExtResource("2_2w8vh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_3eqep")
+}

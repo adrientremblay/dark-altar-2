@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bqjgeepv2ax3l"]
+[gd_scene load_steps=22 format=3 uid="uid://bqjgeepv2ax3l"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_766ux"]
 [ext_resource type="PackedScene" uid="uid://cr4i4u2jhdyq" path="res://assets/models/market_stall_1/stall.tscn" id="1_uyb56"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://dwopijb2yaa6w" path="res://wheat.tscn" id="13_aeqne"]
 [ext_resource type="PackedScene" uid="uid://dkkh43k706sad" path="res://assets/models/medieval_house2/medieval_house_2.tscn" id="14_5x7rv"]
 [ext_resource type="PackedScene" uid="uid://b6m64cf85vrk7" path="res://assets/models/manor/manor.tscn" id="15_u4ru2"]
-[ext_resource type="PackedScene" uid="uid://b54uvt8meaxdf" path="res://assets/models/Church/church.tscn" id="16_5y6u1"]
 [ext_resource type="Script" path="res://SkullGroup.gd" id="17_gf04q"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="18_4ln1x"]
 [ext_resource type="ArrayMesh" uid="uid://dpci07ey3ih3n" path="res://assets/models/Well_obj/Well.obj" id="19_0samu"]
@@ -139,9 +138,6 @@ transform = Transform3D(0.0390262, 0, -0.698911, 0, 0.7, 0, 0.698911, 0, 0.03902
 [node name="Manor" parent="." instance=ExtResource("15_u4ru2")]
 transform = Transform3D(-0.240567, 0, -0.970633, 0, 1, 0, 0.970633, 0, -0.240567, 195, 0, -108.277)
 
-[node name="Church" parent="." instance=ExtResource("16_5y6u1")]
-transform = Transform3D(0.199804, 0, -0.774647, 0, 0.8, 0, 0.774647, 0, 0.199804, 179.114, 0, -173.453)
-
 [node name="SkullGroupVillage" type="Node3D" parent="."]
 script = ExtResource("17_gf04q")
 
@@ -185,10 +181,6 @@ level = NodePath("../..")
 transform = Transform3D(0.334498, 0, -0.942397, 0, 1, 0, 0.942397, 0, 0.334498, 202.959, 2.99977, -124.584)
 level = NodePath("../..")
 
-[node name="Skull11" parent="SkullGroupVillage" node_paths=PackedStringArray("level") instance=ExtResource("18_4ln1x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.015, 0, -159.788)
-level = NodePath("../..")
-
 [node name="Well" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0291339, 0, 0.00715651, 0, 0.03, 0, -0.00715651, 0, 0.0291339, 175.284, 0, -108.861)
 mesh = ExtResource("19_0samu")
@@ -206,9 +198,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.853, 0.988491, -103.859)
 [node name="PickableCandle3" parent="." instance=ExtResource("20_82pcc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.77, 0.755981, -114.324)
 
-[node name="PickableCandle4" parent="." instance=ExtResource("20_82pcc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.26, 0, -160.247)
-
 [node name="Page" parent="." instance=ExtResource("4_hqpic")]
 transform = Transform3D(0.26335, -0.9647, 0.000884406, -0.00233975, 0.000278046, 0.999997, -0.964698, -0.263352, -0.00218393, 195.334, 5.90855, -104.799)
 page_title = "Note to the Mayor"
@@ -220,13 +209,6 @@ page_text = "Mayor Kiesel. Please find me when you see this note. I have discove
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.692, 0.855712, -125.511)
 page_title = "Mayor's Note"
 page_text = "I should have had him killed a long time ago."
-
-[node name="Page3" parent="." instance=ExtResource("4_hqpic")]
-transform = Transform3D(0.963073, 0.269237, -0.00105259, 0, -0.0039095, -0.999992, -0.269239, 0.963066, -0.00376514, 182.601, 2.07782, -160.242)
-page_title = "Bloody Note"
-page_text = "Turn. Back.
-
-[The door is barred shut and a found stench seeps from under it]"
 
 [node name="PickableCandle" parent="." instance=ExtResource("20_82pcc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 193.493, 0.855712, -127.48)
