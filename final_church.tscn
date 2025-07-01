@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://rwkvp33kdyu7"]
+[gd_scene load_steps=14 format=3 uid="uid://rwkvp33kdyu7"]
 
 [ext_resource type="PackedScene" uid="uid://c4v2xfs4b188o" path="res://assets/models/Church/church.glb" id="1_vegsj"]
 [ext_resource type="Script" path="res://door.gd" id="2_gjr1s"]
@@ -59,6 +59,9 @@ size = Vector3(1.09464, 6.47385, 0.417805)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_piya8"]
 size = Vector3(22.2114, 0.641053, 7.72949)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pbkwo"]
+size = Vector3(1.80978, 0.0618286, 3.00128)
 
 [node name="church" instance=ExtResource("1_vegsj")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
@@ -127,3 +130,7 @@ shape = SubResource("BoxShape3D_4p0m4")
 [node name="CollisionShape3D11" type="CollisionShape3D" parent="StaticBody3D" index="10"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.11267, -0.179474, -0.024711)
 shape = SubResource("BoxShape3D_piya8")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="StaticBody3D" index="11"]
+transform = Transform3D(0.99497, 0.100171, 0, -0.100171, 0.99497, 0, 0, 0, 1, 18.0551, 0.0243864, -0.0996399)
+shape = SubResource("BoxShape3D_pbkwo")
