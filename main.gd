@@ -6,6 +6,7 @@ var choirSound: AudioStreamPlayer
 @onready var ui = $UI
 @onready var cedric: Cedric = $Cedric
 @onready var player: Player = $Player
+@onready var church = $church
 
 var CEDRIC_DAMAGE_DISTANCE = 10
 var CEDRIC_DAMAGE = 30
@@ -82,6 +83,9 @@ func _input(event):
 			var candle = interactable
 			$Player.collect_candle()
 			candle.queue_free()
+		elif interactable.is_in_group("door"):
+			var door: Door = interactable
+			door.open()
 	elif event.is_action_pressed("pause"):
 		Global.game_paused = not Global.game_paused
 		if Global.game_paused:

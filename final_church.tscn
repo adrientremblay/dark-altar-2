@@ -1,6 +1,46 @@
-[gd_scene load_steps=7 format=3 uid="uid://rwkvp33kdyu7"]
+[gd_scene load_steps=13 format=3 uid="uid://rwkvp33kdyu7"]
 
 [ext_resource type="PackedScene" uid="uid://c4v2xfs4b188o" path="res://assets/models/Church/church.glb" id="1_vegsj"]
+[ext_resource type="Script" path="res://door.gd" id="2_gjr1s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ftajx"]
+size = Vector3(0.22937, 3.11353, 2.29169)
+
+[sub_resource type="Animation" id="Animation_wsoc2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Church Door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fc65d"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Church Door:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.19562, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kpjie"]
+_data = {
+"RESET": SubResource("Animation_wsoc2"),
+"open": SubResource("Animation_fc65d")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4p0m4"]
 size = Vector3(0.203369, 5.68152, 2.67871)
@@ -11,14 +51,36 @@ size = Vector3(0.203369, 5.68152, 15.8893)
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jumo"]
 size = Vector3(0.203369, 5.68152, 5.986)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kvjfa"]
-size = Vector3(1.60553, 6.47385, 0.417805)
+[sub_resource type="BoxShape3D" id="BoxShape3D_odywb"]
+size = Vector3(1.07864, 6.47385, 0.417805)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tsv74"]
+size = Vector3(1.09464, 6.47385, 0.417805)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_piya8"]
 size = Vector3(22.2114, 0.641053, 7.72949)
 
 [node name="church" instance=ExtResource("1_vegsj")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Church Door" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Church Door/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078064, 0.144165, -1.1442)
+shape = SubResource("BoxShape3D_ftajx")
+
+[node name="Door1" type="Area3D" parent="Church Door" index="1" groups=["door", "interactable"]]
+script = ExtResource("2_gjr1s")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Church Door/Door1" index="0"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_kpjie")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Church Door/Door1" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078064, 0.144165, -1.1442)
+shape = SubResource("BoxShape3D_ftajx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="18"]
 
@@ -47,12 +109,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.033
 shape = SubResource("BoxShape3D_7jumo")
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D" index="6"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.9988, 3.2852, -2.1329)
-shape = SubResource("BoxShape3D_kvjfa")
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.9988, 3.2852, -2.39634)
+shape = SubResource("BoxShape3D_odywb")
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="StaticBody3D" index="7"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.9988, 3.2852, 1.99008)
-shape = SubResource("BoxShape3D_kvjfa")
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.9988, 3.2852, 2.24553)
+shape = SubResource("BoxShape3D_tsv74")
 
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="StaticBody3D" index="8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8738, 2.34076, 2.50068)
