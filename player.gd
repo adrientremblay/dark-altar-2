@@ -209,35 +209,6 @@ func unpause_flame():
 func _process(delta: float) -> void:
 	hand_camera.global_transform = camera.global_transform
 
-func _on_gate_to_hell_body_exited(body: Node3D) -> void:
-	if (not body.is_in_group("player")):
-		return
-	
-	in_dungeon = not in_dungeon
-	
-	if movement_mode == MovementMode.WALKING:
-		if (in_dungeon):
-			walking.stop()
-			walking = $StoneWalking
-			sprinting = $StoneSprinting
-			walking.play()
-		else:
-			walking.stop()
-			walking = $Walking
-			sprinting = $Sprinting
-			walking.play()
-	else:
-		if (in_dungeon):
-			sprinting.stop()
-			sprinting = $StoneSprinting
-			walking = $StoneWalking
-			sprinting.play()
-		else:
-			sprinting.stop()
-			sprinting = $Sprinting
-			walking = $Walking
-			sprinting.play()
-
 func start_flame_flicker():
 	candle.flickering = true
 	$FlameFlickerTimer.start()
@@ -250,3 +221,33 @@ func _input(event):
 	if event.is_action_pressed("rebuke"):
 		crucifix_animation_player.play("rebuke")
 		holy_beam.fire()
+
+func _on_dungeon_audio_switcher_body_entered(body: Node3D) -> void:
+	if (not body.is_in_group("player")):
+		return
+	
+	if movement_mode == MovementMode.WALKING:
+		walking.stop()
+		walking = $StoneWalking
+		sprinting = $StoneSprinting
+		walking.play()
+	else:
+		sprinting.stop()
+		sprinting = $StoneSprinting
+		walking = $StoneWalking
+		sprinting.play()
+
+func _on_outside_audio_switcher_body_entered(body: Node3D) -> void:
+	if (not body.is_in_group("player")):
+		return
+	
+	if movement_mode == MovementMode.WALKING:
+		walking.stop()
+		walking = $Walking
+		sprinting = $Sprinting
+		walking.play()
+	else:
+		sprinting.stop()
+		sprinting = $Sprinting
+		walking = $Walking
+		sprinting.play()
