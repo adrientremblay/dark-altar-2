@@ -24,17 +24,18 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_fc65d"]
 resource_name = "open"
+length = 3.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Church Door:rotation")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.966667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.03333, 3.16667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 2.19562, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 2.19562, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kpjie"]
@@ -66,6 +67,9 @@ size = Vector3(1.80978, 0.0618286, 3.00128)
 
 [node name="church" instance=ExtResource("1_vegsj")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="Church Door" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9826, 1.84343, 1.11596)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Church Door" index="0"]
 
