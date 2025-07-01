@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://rwkvp33kdyu7"]
+[gd_scene load_steps=15 format=3 uid="uid://rwkvp33kdyu7"]
 
 [ext_resource type="PackedScene" uid="uid://c4v2xfs4b188o" path="res://assets/models/Church/church.glb" id="1_vegsj"]
 [ext_resource type="Script" path="res://door.gd" id="2_gjr1s"]
+[ext_resource type="AudioStream" uid="uid://d3nvenklx5veq" path="res://assets/audio/sound_effects/door_open_sound.mp3" id="3_s3g37"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ftajx"]
 size = Vector3(0.22937, 3.11353, 2.29169)
@@ -84,6 +85,10 @@ libraries = {
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Church Door/Door1" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078064, 0.144165, -1.1442)
 shape = SubResource("BoxShape3D_ftajx")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Church Door/Door1" index="2"]
+transform = Transform3D(1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, 0, 0, -1.33333)
+stream = ExtResource("3_s3g37")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="18"]
 
