@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=36 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
@@ -13,9 +13,11 @@
 [ext_resource type="AudioStream" uid="uid://cmeujy0jwgmkq" path="res://assets/audio/sound_effects/walking_stone.mp3" id="7_c5k3q"]
 [ext_resource type="PackedScene" uid="uid://d25m2whf0vyqw" path="res://scenes/left_arm.tscn" id="7_fruf0"]
 [ext_resource type="AudioStream" uid="uid://bs3pqalo0i2s" path="res://assets/audio/sound_effects/candle_pickup.mp3" id="10_2t33u"]
+[ext_resource type="AudioStream" uid="uid://c24tfru7xankn" path="res://assets/audio/sound_effects/wood_walking.mp3" id="11_hjpu2"]
 [ext_resource type="AudioStream" uid="uid://pk2rt2mkq0j2" path="res://assets/audio/sound_effects/running_stone.mp3" id="11_vdl85"]
 [ext_resource type="AudioStream" uid="uid://dr5csb57jmyhf" path="res://assets/audio/sound_effects/flame_flicker.mp3" id="13_xvj01"]
 [ext_resource type="PackedScene" uid="uid://bp3lchmfp7j5b" path="res://scenes/crucifix_model.tscn" id="14_uhf7j"]
+[ext_resource type="AudioStream" uid="uid://bkvt3gv6ffkwa" path="res://assets/audio/sound_effects/wood_sprinting.mp3" id="16_4h8be"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xwuph"]
 
@@ -265,6 +267,9 @@ bus = &"Ambience"
 [node name="StoneWalking" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_c5k3q")
 
+[node name="WoodWalking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_hjpu2")
+
 [node name="SkullPickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_vv7y3")
 bus = &"Ambience"
@@ -280,6 +285,9 @@ bus = &"Ambience"
 
 [node name="StoneSprinting" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_vdl85")
+
+[node name="WoodSprinting" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_4h8be")
 
 [node name="CandlePickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_2t33u")

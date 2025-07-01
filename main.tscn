@@ -502,13 +502,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 [node name="DungeonAudioSwitcher" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DungeonAudioSwitcher"]
-transform = Transform3D(0.754778, 0, 0.65598, 0, 1, 0, -0.65598, 0, 0.754778, 198.714, 1.65812, -229.422)
+transform = Transform3D(0.754778, 0, 0.65598, 0, 1, 0, -0.65598, 0, 0.754778, 214.991, 1.65812, -243.569)
 shape = SubResource("BoxShape3D_ufjn0")
 
 [node name="OutsideAudioSwitcher" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OutsideAudioSwitcher"]
 transform = Transform3D(0.754778, 0, 0.65598, 0, 1, 0, -0.65598, 0, 0.754778, 197.599, 1.65812, -228.453)
+shape = SubResource("BoxShape3D_ufjn0")
+
+[node name="ChurchAudioSwitcher2" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChurchAudioSwitcher2"]
+transform = Transform3D(0.754778, 0, 0.65598, 0, 1, 0, -0.65598, 0, 0.754778, 198.257, 1.65812, -229.025)
+shape = SubResource("BoxShape3D_ufjn0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ChurchAudioSwitcher2"]
+transform = Transform3D(0.754778, 0, 0.65598, 0, 1, 0, -0.65598, 0, 0.754778, 214.534, 1.65812, -243.172)
 shape = SubResource("BoxShape3D_ufjn0")
 
 [node name="Skull" parent="." instance=ExtResource("18_wedqe")]
@@ -563,7 +573,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.592, 0.00613856, -221.484
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 215.34, 1.80612, -240.563)
-visible = false
 light_energy = 16.0
 light_indirect_energy = 2.916
 omni_range = 22.8744
@@ -587,6 +596,7 @@ transform = Transform3D(-0.723606, 0, -0.690213, 0, 1, 0, 0.690213, 0, -0.723606
 [connection signal="body_exited" from="NavigationRegion3D/FarmSpawnTrigger" to="NavigationRegion3D/FarmSpawnTrigger" method="_on_body_exited"]
 [connection signal="body_entered" from="DungeonAudioSwitcher" to="Player" method="_on_dungeon_audio_switcher_body_entered"]
 [connection signal="body_entered" from="OutsideAudioSwitcher" to="Player" method="_on_outside_audio_switcher_body_entered"]
+[connection signal="body_entered" from="ChurchAudioSwitcher2" to="Player" method="_on_church_audio_switcher_2_body_entered"]
 [connection signal="body_entered" from="AreaToDisableCedricNormalAI" to="Cedric" method="_on_area_to_disable_cedric_normal_ai_body_entered"]
 [connection signal="body_entered" from="SpawnTrap" to="SpawnTrap" method="_on_body_entered"]
 [connection signal="timeout" from="SpawnTrap/Timer" to="SpawnTrap" method="_on_timer_timeout"]

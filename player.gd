@@ -251,3 +251,19 @@ func _on_outside_audio_switcher_body_entered(body: Node3D) -> void:
 		sprinting = $Sprinting
 		walking = $Walking
 		sprinting.play()
+
+
+func _on_church_audio_switcher_2_body_entered(body: Node3D) -> void:
+	if (not body.is_in_group("player")):
+		return
+	
+	if movement_mode == MovementMode.WALKING:
+		walking.stop()
+		walking = $WoodWalking
+		sprinting = $WoodSprinting
+		walking.play()
+	else:
+		sprinting.stop()
+		sprinting = $WoodSprinting
+		walking = $WoodWalking
+		sprinting.play()
