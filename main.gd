@@ -66,6 +66,7 @@ func _input(event):
 			ui.display_page(page)	
 			if not $Player.reading:
 				unpause()
+				page.queue_free()
 			else:
 				pause()
 		elif interactable.is_in_group("skull"):
@@ -86,6 +87,11 @@ func _input(event):
 		elif interactable.is_in_group("door"):
 			var door: Door = interactable
 			door.open()
+		elif interactable.is_in_group("key"):
+			var key : Key = interactable
+			ui.display_message("This key can unlock a door")
+			key.pickup()
+			$PickupSound.play()
 	elif event.is_action_pressed("pause"):
 		Global.game_paused = not Global.game_paused
 		if Global.game_paused:

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://betbs0sua2nbj"]
+
+[ext_resource type="Script" path="res://scenes/interactable_key.gd" id="1_vhdch"]
+[ext_resource type="PackedScene" uid="uid://bt44tmyqrqd5c" path="res://scenes/key.tscn" id="1_wfxix"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lt148"]
+size = Vector3(0.0460205, 0.276611, 0.136292)
+
+[node name="InteractableKey" type="Area3D" groups=["interactable", "key"]]
+script = ExtResource("1_vhdch")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0144653, 0.0167236, 0.00380167)
+shape = SubResource("BoxShape3D_lt148")
+
+[node name="key" parent="." instance=ExtResource("1_wfxix")]
