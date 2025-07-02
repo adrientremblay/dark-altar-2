@@ -1,85 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://rwkvp33kdyu7"]
+[gd_scene load_steps=10 format=3 uid="uid://rwkvp33kdyu7"]
 
 [ext_resource type="PackedScene" uid="uid://c4v2xfs4b188o" path="res://assets/models/Church/church.glb" id="1_vegsj"]
-[ext_resource type="Script" path="res://door.gd" id="2_gjr1s"]
-[ext_resource type="AudioStream" uid="uid://d3nvenklx5veq" path="res://assets/audio/sound_effects/door_open_sound.mp3" id="3_s3g37"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ftajx"]
-size = Vector3(0.22937, 3.11353, 2.29169)
-
-[sub_resource type="Animation" id="Animation_wsoc2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Church Door:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_fc65d"]
-resource_name = "open"
-length = 3.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Church Door:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.03333, 3.16667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 2.19562, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kpjie"]
-_data = {
-"RESET": SubResource("Animation_wsoc2"),
-"open": SubResource("Animation_fc65d")
-}
-
-[sub_resource type="Animation" id="Animation_ll2k0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_kj0j2"]
-resource_name = "open"
-length = 3.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.06667, 3.16667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 1.74533, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_yf1lg"]
-_data = {
-"RESET": SubResource("Animation_ll2k0"),
-"open": SubResource("Animation_kj0j2")
-}
+[ext_resource type="PackedScene" uid="uid://cnq55o7wljlla" path="res://scenes/door.tscn" id="2_kioev"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4p0m4"]
 size = Vector3(0.203369, 5.68152, 2.67871)
@@ -107,51 +29,10 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 
 [node name="Church Door" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9349, 1.84343, 1.11596)
+visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Church Door" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Church Door/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078064, 0.144165, -1.1442)
-shape = SubResource("BoxShape3D_ftajx")
-
-[node name="Door1" type="Area3D" parent="Church Door" index="1" groups=["door", "interactable"]]
-script = ExtResource("2_gjr1s")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Church Door/Door1" index="0"]
-root_node = NodePath("../../..")
-libraries = {
-"": SubResource("AnimationLibrary_kpjie")
-}
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Church Door/Door1" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078064, 0.144165, -1.1442)
-shape = SubResource("BoxShape3D_ftajx")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Church Door/Door1" index="2"]
-transform = Transform3D(1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, 0, 0, -1.33333)
-stream = ExtResource("3_s3g37")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Church Door_002" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Church Door_002/StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0285163, 0.144165, -1.1442)
-shape = SubResource("BoxShape3D_ftajx")
-
-[node name="Door1" type="Area3D" parent="Church Door_002" index="1" groups=["door", "interactable"]]
-script = ExtResource("2_gjr1s")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Church Door_002/Door1" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078064, 0.144165, -1.1442)
-shape = SubResource("BoxShape3D_ftajx")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Church Door_002/Door1" index="1"]
-transform = Transform3D(1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, 0, 0, -1.33333)
-stream = ExtResource("3_s3g37")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Church Door_002/Door1" index="2"]
-libraries = {
-"": SubResource("AnimationLibrary_yf1lg")
-}
+[node name="Church Door_002" parent="." index="17"]
+visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="18"]
 
@@ -205,3 +86,6 @@ shape = SubResource("BoxShape3D_pbkwo")
 
 [node name="Church Door_003" parent="." index="19"]
 transform = Transform3D(-0.264429, 0, 0.964405, 0, 1, 0, -0.964405, 0, -0.264429, 17.0891, 1.84343, 1.11596)
+
+[node name="door" parent="." index="20" instance=ExtResource("2_kioev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9165, 0.346427, 1.17495)
