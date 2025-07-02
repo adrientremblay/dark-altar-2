@@ -106,7 +106,7 @@ size = Vector3(1.80978, 0.0618286, 3.00128)
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 
 [node name="Church Door" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.099, 1.84343, 1.11596)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9349, 1.84343, 1.11596)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Church Door" index="0"]
 
@@ -204,4 +204,4 @@ transform = Transform3D(0.99497, 0.100171, 0, -0.100171, 0.99497, 0, 0, 0, 1, 18
 shape = SubResource("BoxShape3D_pbkwo")
 
 [node name="Church Door_003" parent="." index="19"]
-visible = false
+transform = Transform3D(-0.264429, 0, 0.964405, 0, 1, 0, -0.964405, 0, -0.264429, 17.0891, 1.84343, 1.11596)

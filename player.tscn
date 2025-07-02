@@ -24,6 +24,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8cwml"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bp2ix"]
+radius = 0.145936
 height = 2.59507
 
 [sub_resource type="Animation" id="Animation_tab8j"]

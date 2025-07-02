@@ -191,10 +191,12 @@ func _on_grab_shape_area_exited(area: Area3D) -> void:
 		cannot_interact_with_something.emit()
 
 func return_interactable():
+	var found_area = null
 	for area in grab_shape.get_overlapping_areas():
 		if area.is_in_group("interactable"):
-			return area
-	return null
+			if found_area == null || found_area.is_in_group("door"):
+				found_area = area
+	return found_area
 			
 func collect_candle():
 	candle.replenish()

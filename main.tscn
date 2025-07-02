@@ -81,7 +81,7 @@ environment = SubResource("Environment_g4vby")
 transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996, 202.659, 0.829702, -53.2463)
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
-transform = Transform3D(-0.494124, 0, 0.869389, 0, 1, 0, -0.869389, 0, -0.494124, 195.933, 1.0808, -226.22)
+transform = Transform3D(-0.494124, 0, 0.869389, 0, 1, 0, -0.869389, 0, -0.494124, 202.226, 1.0808, -231.176)
 
 [node name="Trees" type="Node3D" parent="."]
 
@@ -415,8 +415,8 @@ bus = &"Ambience"
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 69.8289, -0.0624461, -63.9854)
 
 [node name="RemainsPage" parent="." instance=ExtResource("20_b2i1c")]
-transform = Transform3D(0.608997, 0, -0.793173, 0, 1, 0, 0.793173, 0, 0.608997, 69.4602, 0.0106834, -63.5473)
-page_title = "Ominous Note"
+transform = Transform3D(0.691879, -0.722014, -4.37114e-08, -3.0243e-08, 3.15602e-08, -1, 0.722014, 0.691878, 6.1311e-15, 202.803, 1.72815, -232.816)
+page_title = "Church Note"
 page_text = "To whoever reads this note, know that your doom was wrought by the wayward priest Cedric Leopold. Who with his five loyal followers, brought ruin to this village. He betrayed them all. He betrayed this village and he betrayed mighty god himself. You must find the five skulls of his followers: the so called \"Order of the Dark Altar\". They are hidden nearby. Bring their skulls to the summoning chamber atop the mountain. It is the only way to break the seal. My days are numbered. Christ grant you strength whoever you may be.
 
 - Mayor Kiesel"
