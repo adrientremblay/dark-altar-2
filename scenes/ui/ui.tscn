@@ -9,7 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://b5x14n16kot0p" path="res://assets/audio/sound_effects/boom.mp3" id="7_di1hf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_17whb"]
-font_size = 40
+font_size = 30
+font_color = Color(1, 1, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hiycv"]
 font_size = 50
@@ -24,25 +25,25 @@ font_size = 50
 layer = 4
 script = ExtResource("1_onnvg")
 
-[node name="Label" type="Label" parent="."]
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="MessageLabel" type="Label" parent="."]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -45.5
-offset_top = -11.5
-offset_right = 45.5
-offset_bottom = 11.5
+offset_left = -887.0
+offset_top = 399.0
+offset_right = 891.0
+offset_bottom = 501.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Look for the skulls"
+text = "Sample text sample text sample text"
 label_settings = SubResource("LabelSettings_17whb")
-
-[node name="IntroTimer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
+horizontal_alignment = 1
 
 [node name="PageView" type="Control" parent="."]
 visible = false
@@ -169,4 +170,4 @@ script = ExtResource("6_feolo")
 [node name="BOOM" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_di1hf")
 
-[connection signal="timeout" from="IntroTimer" to="." method="_on_intro_timer_timeout"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

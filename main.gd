@@ -108,3 +108,6 @@ func unpause():
 	player.unpause_flame()
 	if not $Player.reading:
 		ui.toggle_pause_menu(false)
+
+func _on_intro_timer_timeout() -> void:
+	ui.display_message("Read the note")
