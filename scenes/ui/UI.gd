@@ -39,5 +39,5 @@ func display_banish_message():
 	$Label.visible = true
 
 func _on_message_timer_timeout() -> void:
-	print("balls")
 	message_label.visible = false
+	message_timer.stop()
