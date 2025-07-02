@@ -14,7 +14,7 @@ func _on_dungeon_audio_switcher_body_entered(body: Node3D) -> void:
 	$DungeonAmbience.play()
 	$DungeonAmbience.volume_db = MIN_VOLUME
 	var tween1 = get_tree().create_tween().set_parallel(true)
-	tween1.tween_property($DungeonAmbience, "volume_db", MAX_VOLUME, TRANSITION_TIME).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+	tween1.tween_property($DungeonAmbience, "volume_db", -15, TRANSITION_TIME).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 
 	$ChurchAmbience.play()
 	$ChurchAmbience.volume_db = MAX_VOLUME
@@ -34,7 +34,7 @@ func _on_outside_audio_switcher_body_entered(body: Node3D) -> void:
 	$NightBugs.play()
 	$NightBugs.volume_db = MIN_VOLUME
 	var tween1 = get_tree().create_tween().set_parallel(true)
-	tween1.tween_property($NightBugs, "volume_db", MAX_VOLUME, TRANSITION_TIME).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+	tween1.tween_property($NightBugs, "volume_db", 10, TRANSITION_TIME).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 
 	$ChurchAmbience.play()
 	$ChurchAmbience.volume_db = MAX_VOLUME
