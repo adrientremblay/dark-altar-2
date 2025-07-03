@@ -168,6 +168,8 @@ func check_if_can_see_me(cedric: CharacterBody3D):
 	ray_trace_obj.from = neck.global_position
 	ray_trace_obj.to = cedric.global_position
 	var ray_trace_result = space_state.intersect_ray(ray_trace_obj)
+	if ray_trace_result.is_empty():
+		return false
 	var ray_trace_collider = ray_trace_result.collider
 	if ray_trace_collider != cedric:
 		return false

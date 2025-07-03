@@ -2,7 +2,8 @@ class_name Cedric extends CharacterBody3D
 
 var random = RandomNumberGenerator.new()
 
-var spotted = true
+var spotted = false
+var can_teleport = false
 
 var agression_level = 0 # corresponds to the number of skulls the player has collected
 # The following are indexed by agression_level
@@ -29,6 +30,10 @@ func _process(delta: float) -> void:
 	var new_basis = Basis.looking_at(direction_to)
 	basis = new_basis
 	
+	if can_teleport && not player.check_if_can_see_me(self):
+		teleport()
+		can_teleport = false
+	
 	# flickering when cedric is first spotted after he TPs
 	spotted_behaviour()
 
@@ -48,9 +53,6 @@ func teleport():
 	if Global.game_paused || agression_level < 1 || dungeon_ai_active:
 		return
 	
-	if (player.check_if_can_see_me(self)):
-		spotted = false # trigger a flicker
-	
 	var safe_distance = min(player.candle_light.omni_range + 1, TELEPORT_DISTANCE[agression_level])
 	
 	# move
@@ -62,8 +64,6 @@ func teleport():
 	position = nav.target_position 
 	
 	$MovementSound.play()
-	
-	spotted = false
 	
 	teleport_timer.start()
 	
@@ -96,7 +96,8 @@ func increase_agression():
 	teleport_timer.start()
 
 func _on_haunt_change_position_timer_timeout() -> void:
-	teleport()
+	can_teleport = true
+	spotted = false
 
 func _on_area_to_disable_cedric_normal_ai_body_entered(body: Node3D) -> void:
 	if (body.is_in_group("player")):
