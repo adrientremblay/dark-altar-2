@@ -72,7 +72,7 @@ size = Vector3(250, 1, 250)
 size = Vector3(0.749496, 7.50595, 10.2228)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f0ywy"]
-size = Vector3(30.0092, 10.3077, 108.912)
+size = Vector3(30.0092, 2.6862, 108.912)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_y3a05")
@@ -528,7 +528,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.361, 0, -221.477)
 [node name="AreaToDisableCedricNormalAI" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AreaToDisableCedricNormalAI"]
-transform = Transform3D(0.549562, 0, 0.835453, 0, 1, 0, -0.835453, 0, 0.549562, 190.022, 4.65387, -229.189)
+transform = Transform3D(0.549562, 0, 0.835453, 0, 1, 0, -0.835453, 0, 0.549562, 190.022, 28.0436, -229.189)
 shape = SubResource("BoxShape3D_f0ywy")
 
 [node name="PickableCandle2" parent="." instance=ExtResource("50_81846")]

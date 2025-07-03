@@ -8,8 +8,8 @@ var choirSound: AudioStreamPlayer
 @onready var player: Player = $Player
 @onready var church = $church
 
-var CEDRIC_DAMAGE_DISTANCE = 10
-var CEDRIC_DAMAGE = 30
+var CEDRIC_DAMAGE = 100
+var PLAYER_HEALING_PER_TICK = 5
 
 var skulls_found = 0
 
@@ -22,19 +22,16 @@ func _process(delta: float) -> void:
 	if Global.game_paused:
 		return
 	
-	#var angle_to_cedric = abs($Player.check_if_can_see_me(cedric))
-	
 	var distance_to_cedric_vec = $Player.global_position - cedric.global_position
 	var distance_to_cedric = distance_to_cedric_vec.length()
 	
 	var ghost = 0
 	var amplitude = 0.01
-	if (distance_to_cedric <= CEDRIC_DAMAGE_DISTANCE):
-		var damage_scale = (CEDRIC_DAMAGE_DISTANCE - distance_to_cedric) / CEDRIC_DAMAGE_DISTANCE
-		$Player.sanity -= damage_scale * CEDRIC_DAMAGE * delta
-		#print("Player taking sanity damage! " + str(player.sanity))
+	if ($Player.check_if_can_see_me(cedric)):
+		var damage = (1 / distance_to_cedric) * CEDRIC_DAMAGE * delta
+		$Player.sanity -= damage
 	elif $Player.sanity < 100:
-		$Player.sanity += 20 * delta
+		$Player.sanity += PLAYER_HEALING_PER_TICK * delta
 		#print("Player sanity healing!!! " + str(player.sanity))
 	
 	if $Player.sanity < 0:
