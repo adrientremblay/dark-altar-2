@@ -68,6 +68,8 @@ func _input(event):
 			if not $Player.reading:
 				unpause()
 				page.queue_free()
+				if page.page_title == "Church Note":
+					ui.display_message("Search the village for the five skulls")
 			else:
 				pause()
 		elif interactable.is_in_group("skull"):
@@ -92,7 +94,7 @@ func _input(event):
 				ui.display_message("You do not possess the key for this door")
 		elif interactable.is_in_group("key"):
 			var key : Key = interactable
-			ui.display_message("This key can unlock a door")
+			ui.display_message(key.message)
 			key.pickup()
 			$PickupSound.play()
 	elif event.is_action_pressed("pause"):

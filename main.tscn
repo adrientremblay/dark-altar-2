@@ -561,6 +561,7 @@ stream = ExtResource("20_oh7hr")
 [node name="ChurchKey" parent="." node_paths=PackedStringArray("door") instance=ExtResource("21_0r6pb")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 185.906, -1.93011, -229.093)
 door = NodePath("../ChurchDoor")
+message = "Return to the church"
 
 [node name="ChurchDoor" parent="." instance=ExtResource("22_efjyi")]
 transform = Transform3D(-0.749892, 0, -0.66156, 0, 1, 0, 0.66156, 0, -0.749892, 202.09, 0.309011, -233.819)
