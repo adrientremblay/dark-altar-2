@@ -186,6 +186,11 @@ func collect_skull(skulls_found: int):
 
 func _on_grab_shape_area_entered(area: Area3D) -> void:
 	if area.is_in_group("interactable"):
+		if area.is_in_group("door"):
+			var door : Door = area
+			if door.disabled:
+				return
+		
 		can_interact_with_something.emit()
 
 func _on_grab_shape_area_exited(area: Area3D) -> void:
