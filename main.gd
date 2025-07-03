@@ -64,6 +64,7 @@ func _input(event):
 			$Player.reading = not $Player.reading
 			var page: Page = interactable
 			ui.display_page(page)	
+			ui.display_message("")
 			if not $Player.reading:
 				unpause()
 				page.queue_free()
@@ -76,10 +77,10 @@ func _input(event):
 			cedric.increase_agression()
 			if skull.level: # the starting skull has no level
 				skull.level.skull_collected.emit()
-			skull.queue_free()
 			if skulls_found == 5:
-				print("emit banish message")
 				ui.display_banish_message()
+				$ChurchKey.position = skull.position
+			skull.queue_free()
 		elif interactable.is_in_group("candle"):
 			var candle = interactable
 			$Player.collect_candle()
@@ -87,6 +88,8 @@ func _input(event):
 		elif interactable.is_in_group("door"):
 			var door: Door = interactable
 			door.open()
+			if door.locked:
+				ui.display_message("You do not possess the key for this door")
 		elif interactable.is_in_group("key"):
 			var key : Key = interactable
 			ui.display_message("This key can unlock a door")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=36 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -16,8 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="18_wedqe"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="20_b2i1c"]
 [ext_resource type="AudioStream" uid="uid://dqn0eg1xlsoxn" path="res://assets/audio/sound_effects/key_pickup.mp3" id="20_oh7hr"]
+[ext_resource type="PackedScene" uid="uid://betbs0sua2nbj" path="res://scenes/interactable_key.tscn" id="21_0r6pb"]
 [ext_resource type="PackedScene" uid="uid://rwkvp33kdyu7" path="res://final_church.tscn" id="21_muk4u"]
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
+[ext_resource type="PackedScene" uid="uid://cnq55o7wljlla" path="res://scenes/door.tscn" id="22_efjyi"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
 
@@ -562,6 +564,13 @@ autostart = true
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_oh7hr")
+
+[node name="ChurchKey" parent="." node_paths=PackedStringArray("door") instance=ExtResource("21_0r6pb")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 185.906, -1.93011, -229.093)
+door = NodePath("../ChurchDoor")
+
+[node name="ChurchDoor" parent="." instance=ExtResource("22_efjyi")]
+transform = Transform3D(-0.749892, 0, -0.66156, 0, 1, 0, 0.66156, 0, -0.749892, 202.09, 0.309011, -233.819)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]

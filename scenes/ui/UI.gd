@@ -9,8 +9,7 @@ func display_message(message):
 	message_timer.start()
 
 func _on_player_register_skull(skulls_found: int) -> void:
-	$Label.text = "skull " + str(skulls_found) + "/5 collected"
-	$Label.visible = true
+	display_message("Skull " + str(skulls_found) + "/5 collected")
 
 func _on_player_can_interact_with_something() -> void:
 	$InteractHand.visible = true
@@ -35,8 +34,7 @@ func toggle_pause_menu(toggle: bool):
 	$PauseMenu.visible = toggle
 
 func display_banish_message():
-	$Label.text = "head to the summoning chamber and place the skulls"
-	$Label.visible = true
+	display_message("The key to the church was hidden beneath this final skull")
 
 func _on_message_timer_timeout() -> void:
 	message_label.visible = false

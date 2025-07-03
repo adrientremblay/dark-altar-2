@@ -7,6 +7,7 @@
 size = Vector3(0.0460205, 0.276611, 0.136292)
 
 [node name="InteractableKey" type="Area3D" groups=["interactable", "key"]]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_vhdch")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

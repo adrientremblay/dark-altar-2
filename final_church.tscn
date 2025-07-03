@@ -1,8 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://rwkvp33kdyu7"]
+[gd_scene load_steps=9 format=3 uid="uid://rwkvp33kdyu7"]
 
 [ext_resource type="PackedScene" uid="uid://c4v2xfs4b188o" path="res://assets/models/Church/church.glb" id="1_vegsj"]
-[ext_resource type="PackedScene" uid="uid://cnq55o7wljlla" path="res://scenes/door.tscn" id="2_kioev"]
-[ext_resource type="PackedScene" uid="uid://betbs0sua2nbj" path="res://scenes/interactable_key.tscn" id="3_hb5dm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4p0m4"]
 size = Vector3(0.203369, 5.68152, 2.67871)
@@ -87,10 +85,3 @@ shape = SubResource("BoxShape3D_pbkwo")
 
 [node name="Church Door_003" parent="." index="19"]
 transform = Transform3D(-0.264429, 0, 0.964405, 0, 1, 0, -0.964405, 0, -0.264429, 17.0891, 1.84343, 1.11596)
-
-[node name="door" parent="." index="20" instance=ExtResource("2_kioev")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9165, 0.32478, 1.17495)
-
-[node name="InteractableKey" parent="." index="21" node_paths=PackedStringArray("door") instance=ExtResource("3_hb5dm")]
-transform = Transform3D(-5.82819e-08, 0, 1.33333, 0, 1.33333, 0, -1.33333, 0, -5.82819e-08, 11.887, 1.7957, 2.70137)
-door = NodePath("../door")

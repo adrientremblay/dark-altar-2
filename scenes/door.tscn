@@ -9,22 +9,6 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_a2tri"]
 size = Vector3(0.22937, 3.11353, 2.29169)
 
-[sub_resource type="Animation" id="Animation_w5are"]
-resource_name = "open"
-length = 3.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Church Door:rotation")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9, 3.1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 1.9865, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_6beoo"]
 length = 0.001
 tracks/0/type = "value"
@@ -53,6 +37,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.0872665, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w5are"]
+resource_name = "open"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Church Door:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 1.9865, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wtcsk"]
