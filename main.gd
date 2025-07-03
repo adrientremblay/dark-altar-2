@@ -12,6 +12,7 @@ var CEDRIC_DAMAGE = 100
 var PLAYER_HEALING_PER_TICK = 5
 
 var skulls_found = 0
+var door_slammed = false
 
 func _ready() -> void:
 	shaderMat  = $CanvasLayer/ColorRect.material
@@ -119,3 +120,12 @@ func unpause():
 
 func _on_intro_timer_timeout() -> void:
 	ui.display_message("Read the note")
+
+func _on_area_3d_slam_door_body_entered(body: Node3D) -> void:
+	if door_slammed:
+		return
+	
+	if body.is_in_group("player"):
+		$DungeonDoor.slam()
+		door_slammed = true
+		

@@ -14,3 +14,7 @@ func open():
 	else:
 		$AnimationPlayer.play("locked")
 		$LockedSound.play()
+
+func close():
+	$AnimationPlayer.play("close")
+	$OpenSound.play()
