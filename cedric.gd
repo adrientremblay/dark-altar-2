@@ -20,7 +20,6 @@ var dungeon_ai_active = false
 
 @onready var dialogue_1 = preload("res://assets/audio/sound_effects/cedric_dialogue/1.mp3")
 
-
 func _process(delta: float) -> void:
 	if Global.game_paused:
 		return
