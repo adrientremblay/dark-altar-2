@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var player: Player
 
 func _physics_process(delta: float) -> void:
+	pass
 	if Global.game_paused:
 		return
 		
@@ -17,3 +18,7 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.lerp(direction * 10, speed * delta)
 	print(nav.get_next_path_position())
 	move_and_slide()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action("tp"):
+		global_position = player.global_position

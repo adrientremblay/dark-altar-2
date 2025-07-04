@@ -48,8 +48,8 @@ shader_parameter/giggle = 10.0
 shader_parameter/amplitude = 0.01
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_rgv7a"]
-vertices = PackedVector3Array(33.792, 0.5, -244.103, 33.792, 0.5, 4.897, 282.792, 0.5, 4.897, 282.792, 0.5, -244.103)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+vertices = PackedVector3Array(200.792, 0.5, -234.103, 198.792, 0.5, -232.853, 199.042, 0.5, -231.353, 200.292, 0.5, -228.353, 203.292, 0.5, -231.103, 209.042, 0.5, -227.353, 206.292, 0.5, -230.103, 205.792, 0.5, -229.353, 195.042, 0.5, -232.103, 198.792, 0.5, -236.853, 211.542, 0.5, -269.103, 33.792, 0.5, -269.103, 282.792, 0.5, -231.103, 216.042, 0.5, -231.103, 215.542, 0.5, -230.103, 199.042, 0.5, -228.853, 197.542, 0.75, -229.353, 198.042, 0.75, -228.603, 211.042, 0.5, -247.853, 211.542, 0.5, -247.853, 196.542, 0.5, -229.353, 198.042, 0.5, -227.603, 282.792, 0.5, 29.897, 211.042, 0.5, -225.853, 209.792, 0.5, -225.853, 195.042, 0.5, -230.853, 204.292, 0.5, -229.853, 201.292, 0.5, -227.103, 200.792, 0.5, -225.853, 199.042, 0.5, -235.353, 211.292, 0.5, -226.853, 199.542, 0.5, -225.853, 33.792, 0.5, 29.897, 201.042, 0.5, -238.353, 216.292, 0.5, -238.853, 212.292, 0.5, -235.603, 212.292, 0.5, -247.853, 214.292, 0.5, -244.603, 218.042, 0.5, -241.353, 282.792, 0.5, -269.103, 218.042, 0.5, -240.603, 201.542, 0.5, -236.353, 201.042, 0.5, -236.353, 202.542, 0.5, -234.103, 205.292, 0.5, -231.603, 215.542, 0.5, -240.853, 214.292, 0.5, -242.853, 211.542, 0.5, -245.603, 207.542, 0.5, -231.353, 210.292, 0.5, -228.103, 213.792, 0.5, -231.103, 211.042, 0.5, -234.353)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(7, 6, 5), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(14, 13, 12), PackedInt32Array(2, 3, 15), PackedInt32Array(17, 16, 15), PackedInt32Array(15, 16, 2), PackedInt32Array(10, 19, 18), PackedInt32Array(16, 17, 20), PackedInt32Array(20, 17, 21), PackedInt32Array(24, 23, 22), PackedInt32Array(21, 25, 20), PackedInt32Array(27, 26, 7), PackedInt32Array(5, 24, 7), PackedInt32Array(7, 24, 27), PackedInt32Array(27, 24, 28), PackedInt32Array(28, 24, 22), PackedInt32Array(9, 29, 8), PackedInt32Array(11, 8, 25), PackedInt32Array(30, 14, 23), PackedInt32Array(23, 14, 12), PackedInt32Array(23, 12, 22), PackedInt32Array(21, 31, 25), PackedInt32Array(25, 31, 11), PackedInt32Array(11, 31, 32), PackedInt32Array(32, 31, 22), PackedInt32Array(31, 28, 22), PackedInt32Array(33, 9, 18), PackedInt32Array(18, 9, 10), PackedInt32Array(34, 13, 35), PackedInt32Array(37, 36, 38), PackedInt32Array(38, 36, 10), PackedInt32Array(38, 10, 39), PackedInt32Array(38, 39, 12), PackedInt32Array(34, 40, 13), PackedInt32Array(13, 40, 12), PackedInt32Array(36, 19, 10), PackedInt32Array(12, 40, 38), PackedInt32Array(43, 42, 41), PackedInt32Array(43, 41, 44), PackedInt32Array(44, 41, 45), PackedInt32Array(45, 41, 46), PackedInt32Array(46, 41, 47), PackedInt32Array(51, 50, 48), PackedInt32Array(48, 50, 49)]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8xyxr"]
 size = Vector3(123.561, 28.59, 184.521)
@@ -67,7 +67,7 @@ size = Vector3(54.5026, 5.25323, 60.0435)
 size = Vector3(79.6268, 5.30359, 54.2203)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wlmbg"]
-size = Vector3(250, 1, 250)
+size = Vector3(250, 1, 300)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ufjn0"]
 size = Vector3(0.749496, 7.50595, 10.2228)
@@ -492,6 +492,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 158.292, -0.5, -119.603)
 visible = false
 mesh = SubResource("BoxMesh_wlmbg")
 
+[node name="Church" parent="NavigationRegion3D" instance=ExtResource("21_muk4u")]
+transform = Transform3D(-0.743145, 0, -0.669131, 0, 1, 0, 0.669131, 0, -0.743145, 210.64, 0, -240.565)
+
+[node name="ChurchDoor" parent="NavigationRegion3D/Church" instance=ExtResource("22_efjyi")]
+transform = Transform3D(0.999244, 0, -0.0388759, 0, 1, 0, 0.0388759, 0, 0.999244, 10.838, 10.9877, 1.16748)
+
+[node name="RemainsPage" parent="NavigationRegion3D/Church/ChurchDoor" instance=ExtResource("20_b2i1c")]
+transform = Transform3D(-0.0411784, 0.999152, 3.27788e-08, -3.0243e-08, 3.15602e-08, -1, -0.999152, -0.0411777, 2.89177e-08, 0.0626355, 1.60383, -2.83073)
+page_title = "Church Note"
+page_text = "To whoever reads this note, know that your doom was wrought by the wayward priest Cedric Leopold. Who with his five loyal followers, brought ruin to this village. He betrayed them all. He betrayed this village and he betrayed mighty god himself. You must find the five skulls of his followers: the so called \"Order of the Dark Altar\". They are hidden nearby. Bring their skulls to the summoning chamber atop the mountain. It is the only way to break the seal. My days are numbered. Christ grant you strength whoever you may be.
+
+- Mayor Kiesel"
+
 [node name="PickableCandle" parent="." instance=ExtResource("50_81846")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 
@@ -553,22 +566,9 @@ light_energy = 16.0
 light_indirect_energy = 2.916
 omni_range = 22.8744
 
-[node name="Church" parent="." instance=ExtResource("21_muk4u")]
-transform = Transform3D(-0.743145, 0, -0.669131, 0, 1, 0, 0.669131, 0, -0.743145, 210.64, 0, -240.565)
-
-[node name="ChurchDoor" parent="Church" instance=ExtResource("22_efjyi")]
-transform = Transform3D(0.999244, 0, -0.0388759, 0, 1, 0, 0.0388759, 0, 0.999244, 10.838, 0.309011, 1.16748)
-
-[node name="RemainsPage" parent="Church/ChurchDoor" instance=ExtResource("20_b2i1c")]
-transform = Transform3D(-0.0411784, 0.999152, 3.27788e-08, -3.0243e-08, 3.15602e-08, -1, -0.999152, -0.0411777, 2.89177e-08, 0.0626355, 1.60383, -2.83073)
-page_title = "Church Note"
-page_text = "To whoever reads this note, know that your doom was wrought by the wayward priest Cedric Leopold. Who with his five loyal followers, brought ruin to this village. He betrayed them all. He betrayed this village and he betrayed mighty god himself. You must find the five skulls of his followers: the so called \"Order of the Dark Altar\". They are hidden nearby. Bring their skulls to the summoning chamber atop the mountain. It is the only way to break the seal. My days are numbered. Christ grant you strength whoever you may be.
-
-- Mayor Kiesel"
-
 [node name="ChurchKey" parent="." node_paths=PackedStringArray("door") instance=ExtResource("21_0r6pb")]
 transform = Transform3D(-4.36933e-08, -0.999587, -0.0287413, 1, -4.37114e-08, 0, -1.25632e-09, -0.0287413, 0.999587, 185.492, -1.93011, -229.922)
-door = NodePath("../Church/ChurchDoor")
+door = NodePath("../NavigationRegion3D/Church/ChurchDoor")
 message = "Return to the church"
 
 [node name="IntroTimer" type="Timer" parent="."]
@@ -580,10 +580,11 @@ autostart = true
 stream = ExtResource("20_oh7hr")
 
 [node name="DungeonDoor" parent="." instance=ExtResource("22_efjyi")]
-transform = Transform3D(-0.724533, 0, -0.68924, 0, 1, 0, 0.68924, 0, -0.724533, 213.494, 0.349299, -244.646)
+transform = Transform3D(-0.724533, 0, -0.68924, 0, 1, 0, 0.68924, 0, -0.724533, 213.494, 5.61874, -244.646)
 
 [node name="DungeonKey" parent="." node_paths=PackedStringArray("door") instance=ExtResource("21_0r6pb")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 213.265, 0.141052, -242.413)
+visible = false
 door = NodePath("../DungeonDoor")
 message = "This key unlocks the door before you"
 
@@ -594,7 +595,8 @@ transform = Transform3D(0.679224, 0, 0.733931, 0, 1, 0, -0.733931, 0, 0.679224, 
 shape = SubResource("BoxShape3D_28jmc")
 
 [node name="TestFollower" type="CharacterBody3D" parent="." node_paths=PackedStringArray("player")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.878, 0, -227.402)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 192.878, 0, -206.541)
+visible = false
 script = ExtResource("24_6be1w")
 player = NodePath("../Player")
 
