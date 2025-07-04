@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c6kfu4yd13506"]
 
-[ext_resource type="Script" path="res://death_screen.gd" id="1_xxkfi"]
+[ext_resource type="Script" uid="uid://bxiq2w07eldlx" path="res://death_screen.gd" id="1_xxkfi"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6wc3r"]
 font_size = 80

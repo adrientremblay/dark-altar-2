@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://bqjgeepv2ax3l"]
 
-[ext_resource type="Script" path="res://level.gd" id="1_766ux"]
+[ext_resource type="Script" uid="uid://c86ehxnd2qs5t" path="res://level.gd" id="1_766ux"]
 [ext_resource type="PackedScene" uid="uid://cr4i4u2jhdyq" path="res://assets/models/market_stall_1/stall.tscn" id="1_uyb56"]
 [ext_resource type="PackedScene" uid="uid://0ca7iald35bs" path="res://assets/models/CartOfBarrels/cart_of_barrels.tscn" id="2_c8xqc"]
 [ext_resource type="PackedScene" uid="uid://c85ubr2r1vi8o" path="res://assets/models/notice_board_low-poly/notice_board.tscn" id="3_gbg74"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dwopijb2yaa6w" path="res://wheat.tscn" id="13_aeqne"]
 [ext_resource type="PackedScene" uid="uid://dkkh43k706sad" path="res://assets/models/medieval_house2/medieval_house_2.tscn" id="14_5x7rv"]
 [ext_resource type="PackedScene" uid="uid://b6m64cf85vrk7" path="res://assets/models/manor/manor.tscn" id="15_u4ru2"]
-[ext_resource type="Script" path="res://SkullGroup.gd" id="17_gf04q"]
+[ext_resource type="Script" uid="uid://brwk8b6jmbc1w" path="res://SkullGroup.gd" id="17_gf04q"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="18_4ln1x"]
 [ext_resource type="ArrayMesh" uid="uid://dpci07ey3ih3n" path="res://assets/models/Well_obj/Well.obj" id="19_0samu"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="20_82pcc"]

@@ -1,11 +1,11 @@
 [gd_resource type="Terrain3DTextureList" load_steps=10 format=3 uid="uid://cxxgwh8nc3h21"]
 
-[ext_resource type="Texture2D" path="res://grass_alb_ht.dds" id="1_uwalo"]
-[ext_resource type="Texture2D" path="res://grass_nrm_rgh.dds" id="2_6dp6v"]
-[ext_resource type="Texture2D" path="res://ground_alb_ht.dds" id="3_lur0b"]
-[ext_resource type="Texture2D" path="res://ground_normal_roughness.dds" id="4_pxxjp"]
-[ext_resource type="Texture2D" path="res://mud_alb_ht.dds" id="5_d8vqm"]
-[ext_resource type="Texture2D" path="res://mud_normal_rough.dds" id="6_wk2qo"]
+[ext_resource type="Texture2D" uid="uid://cjnd1jnmv1giq" path="res://grass_alb_ht.dds" id="1_uwalo"]
+[ext_resource type="Texture2D" uid="uid://bkqqgtingrkl5" path="res://grass_nrm_rgh.dds" id="2_6dp6v"]
+[ext_resource type="Texture2D" uid="uid://blmaxyn0pr70u" path="res://ground_alb_ht.dds" id="3_lur0b"]
+[ext_resource type="Texture2D" uid="uid://dnml0vi3q58cq" path="res://ground_normal_roughness.dds" id="4_pxxjp"]
+[ext_resource type="Texture2D" uid="uid://7ocbeedv4wc2" path="res://mud_alb_ht.dds" id="5_d8vqm"]
+[ext_resource type="Texture2D" uid="uid://blll5c1rqm82e" path="res://mud_normal_rough.dds" id="6_wk2qo"]
 
 [sub_resource type="Terrain3DTexture" id="Terrain3DTexture_bp4ht"]
 albedo_color = Color(0.862745, 0.862745, 0.862745, 1)

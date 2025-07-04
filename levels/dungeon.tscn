@@ -1,7 +1,7 @@
 [gd_scene load_steps=49 format=3 uid="uid://crympftnsrmwa"]
 
 [ext_resource type="MeshLibrary" uid="uid://b58cb358rt6wo" path="res://assets/dungeon/tileset.tres" id="1_tdmtu"]
-[ext_resource type="Script" path="res://level.gd" id="1_yh6qk"]
+[ext_resource type="Script" uid="uid://c86ehxnd2qs5t" path="res://level.gd" id="1_yh6qk"]
 [ext_resource type="PackedScene" uid="uid://b86a1pi8r3spt" path="res://assets/models/altar/altar.tscn" id="3_7m27l"]
 [ext_resource type="Texture2D" uid="uid://cv2glboxhsx8t" path="res://assets/images/dungeon/pentagram.png" id="4_nwrdt"]
 [ext_resource type="PackedScene" uid="uid://d3bg727m32k24" path="res://assets/models/altar2/altar2.tscn" id="5_5k0d3"]
@@ -37,7 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://boc8tk8so0niu" path="res://assets/models/open_book_about_magic/openspellbook.tscn" id="36_gst4f"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="37_a657x"]
 [ext_resource type="Texture2D" uid="uid://blakbhshf8jn3" path="res://assets/images/banner.png" id="38_sgllw"]
-[ext_resource type="Script" path="res://SkullGroup.gd" id="39_8riw2"]
+[ext_resource type="Script" uid="uid://brwk8b6jmbc1w" path="res://SkullGroup.gd" id="39_8riw2"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="40_gmqui"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="42_nbgpb"]
 

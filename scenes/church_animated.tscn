@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dftdhckb58yar"]
 
 [ext_resource type="PackedScene" uid="uid://c4v2xfs4b188o" path="res://assets/models/Church/church.glb" id="1_grdde"]
-[ext_resource type="Script" path="res://scenes/church_animated.gd" id="2_2w8vh"]
+[ext_resource type="Script" uid="uid://c3ujgy608xlss" path="res://scenes/church_animated.gd" id="2_2w8vh"]
 
 [sub_resource type="Animation" id="Animation_0kil6"]
 length = 0.001
@@ -35,8 +35,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3eqep"]
 _data = {
-"RESET": SubResource("Animation_0kil6"),
-"open_door": SubResource("Animation_oajl3")
+&"RESET": SubResource("Animation_0kil6"),
+&"open_door": SubResource("Animation_oajl3")
 }
 
 [node name="church" instance=ExtResource("1_grdde")]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://bu7rovvuhl8u8"]
 
 [ext_resource type="PackedScene" uid="uid://du42fl1gkhb0h" path="res://assets/models/Headstone4/headstone_4.tscn" id="1_6tely"]
-[ext_resource type="Script" path="res://level.gd" id="1_ehmek"]
+[ext_resource type="Script" uid="uid://c86ehxnd2qs5t" path="res://level.gd" id="1_ehmek"]
 [ext_resource type="PackedScene" uid="uid://chrbsmggm8opq" path="res://assets/models/Headstone2/headstone_2.tscn" id="2_w6ovn"]
 [ext_resource type="PackedScene" uid="uid://d2vyr3cat8e6o" path="res://assets/models/Headstone3/headstone_3.tscn" id="3_83myx"]
 [ext_resource type="PackedScene" uid="uid://17c4kmj323ib" path="res://assets/models/Crossstone/cross_stone.tscn" id="4_v00yk"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cqapmgn7vakkj" path="res://mausoleum.tscn" id="13_frkm6"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="14_s8dln"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="15_dvaux"]
-[ext_resource type="Script" path="res://SkullGroup.gd" id="17_sey8s"]
+[ext_resource type="Script" uid="uid://brwk8b6jmbc1w" path="res://SkullGroup.gd" id="17_sey8s"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="18_vvncj"]
 [ext_resource type="PackedScene" uid="uid://qu8m8i5m2acd" path="res://signpost.tscn" id="19_eucrl"]
 

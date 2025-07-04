@@ -1,13 +1,13 @@
 [gd_scene load_steps=11 format=3 uid="uid://cahu2dcqaj8sc"]
 
-[ext_resource type="Script" path="res://ambient_sound.gd" id="1_bv45c"]
+[ext_resource type="Script" uid="uid://cmmxuq5pylgnb" path="res://ambient_sound.gd" id="1_bv45c"]
 [ext_resource type="AudioStream" uid="uid://bq2xj62hoclnk" path="res://assets/audio/sound_effects/night-ambience-17064.mp3" id="2_wu61w"]
 [ext_resource type="AudioStream" uid="uid://nrdv2pni533t" path="res://assets/audio/sound_effects/cricket.mp3" id="3_qwo36"]
-[ext_resource type="Script" path="res://Cricket.gd" id="4_5g3vj"]
+[ext_resource type="Script" uid="uid://c08pv271d2y4s" path="res://Cricket.gd" id="4_5g3vj"]
 [ext_resource type="AudioStream" uid="uid://be7yrbp8dq517" path="res://assets/audio/sound_effects/owl-hooting-48028.mp3" id="5_a8qsc"]
-[ext_resource type="Script" path="res://Owl.gd" id="6_0essl"]
+[ext_resource type="Script" uid="uid://dsyyc6h7cy0be" path="res://Owl.gd" id="6_0essl"]
 [ext_resource type="AudioStream" uid="uid://cthlck3fnywkb" path="res://assets/audio/sound_effects/Whip-poor-will Song.mp3" id="7_3iisp"]
-[ext_resource type="Script" path="res://NightBird.gd" id="8_gtcyf"]
+[ext_resource type="Script" uid="uid://dd1rnkyvl72aw" path="res://NightBird.gd" id="8_gtcyf"]
 [ext_resource type="AudioStream" uid="uid://bi31x10nci6eo" path="res://assets/audio/sound_effects/10m_crypt.mp3" id="10_be5iq"]
 [ext_resource type="AudioStream" uid="uid://bheff1drftfi4" path="res://assets/audio/sound_effects/wind_rustling_ambience.mp3" id="10_x8xwc"]
 

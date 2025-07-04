@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bw1kyibwxh7vf"]
 
-[ext_resource type="Script" path="res://level.gd" id="1_pp86i"]
+[ext_resource type="Script" uid="uid://c86ehxnd2qs5t" path="res://level.gd" id="1_pp86i"]
 [ext_resource type="PackedScene" uid="uid://c6dyrbvg3kax8" path="res://assets/models/broken_house/broken_house.tscn" id="2_smyo8"]
 [ext_resource type="PackedScene" uid="uid://t82pm107s5ln" path="res://assets/models/fence/fence_1.tscn" id="3_s62ds"]
 [ext_resource type="PackedScene" uid="uid://ku8vgvidtajj" path="res://assets/models/fence/fence_2.tscn" id="4_6fcvb"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://t1lyj1wuxghb" path="res://assets/models/cow_skull/cowskull.tscn" id="10_gh3dl"]
 [ext_resource type="PackedScene" uid="uid://dibmyslxnh0h8" path="res://assets/models/barrel__crate/just_barrel.tscn" id="11_nkwl3"]
 [ext_resource type="PackedScene" uid="uid://cmlhrnonmhdnv" path="res://assets/models/medieval_chest/scene.gltf" id="12_woluw"]
-[ext_resource type="Script" path="res://SkullGroup.gd" id="14_vcbv1"]
+[ext_resource type="Script" uid="uid://brwk8b6jmbc1w" path="res://SkullGroup.gd" id="14_vcbv1"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="15_80u7m"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="16_5x5l8"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="16_mtbrl"]

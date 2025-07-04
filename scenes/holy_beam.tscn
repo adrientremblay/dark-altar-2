@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://6on2bcxgpbjm"]
 
 [ext_resource type="Shader" uid="uid://rsts7elxdqea" path="res://assets/models/HolyBeam/holy_shader.tres" id="1_bde88"]
-[ext_resource type="Script" path="res://scenes/holy_beam.gd" id="1_dg7t6"]
+[ext_resource type="Script" uid="uid://bniak67hawji" path="res://scenes/holy_beam.gd" id="1_dg7t6"]
 [ext_resource type="ArrayMesh" uid="uid://bgclk2fts6q5n" path="res://assets/models/HolyBeam/cylinder1.tres" id="1_l35fb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x2gr7"]
@@ -13,7 +13,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_4fhce"]
-max_value = 8.0
+_limits = [0.0, 8.0, 0.0, 1.0]
 _data = [Vector2(0.0109489, 1.30539), 0.0, 37.6984, 0, 0, Vector2(0.156934, 8), 0.0, 0.0, 0, 0, Vector2(0.989051, 8), 0.0, 0.0, 0, 0]
 point_count = 3
 

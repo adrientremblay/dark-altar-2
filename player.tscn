@@ -1,11 +1,11 @@
 [gd_scene load_steps=36 format=3 uid="uid://nqaltxfxv1gr"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_fclsx"]
+[ext_resource type="Script" uid="uid://cjphl7lhkqnn6" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
 [ext_resource type="AudioStream" uid="uid://dni157qfh4eyi" path="res://assets/audio/sound_effects/Footsteps grass sound effect.mp3" id="2_vbp7b"]
 [ext_resource type="PackedScene" uid="uid://6on2bcxgpbjm" path="res://scenes/holy_beam.tscn" id="4_8levr"]
 [ext_resource type="PackedScene" uid="uid://dgcgrml4qo4l8" path="res://candle.tscn" id="4_h756x"]
-[ext_resource type="Script" path="res://candle.gd" id="4_om2wh"]
+[ext_resource type="Script" uid="uid://dp8asxiqlvlxf" path="res://candle.gd" id="4_om2wh"]
 [ext_resource type="PackedScene" uid="uid://11376fbjjwer" path="res://candlestick.tscn" id="5_re3m2"]
 [ext_resource type="AudioStream" uid="uid://cb7tjjqfo08h0" path="res://assets/audio/sound_effects/scary-foley-86229.mp3" id="5_vv7y3"]
 [ext_resource type="AudioStream" uid="uid://cmauvnhp04ys4" path="res://assets/audio/sound_effects/panting.mp3" id="6_8qrlp"]
@@ -60,8 +60,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2si74"]
 _data = {
-"Head Bob": SubResource("Animation_tab8j"),
-"RESET": SubResource("Animation_k3l5e")
+&"Head Bob": SubResource("Animation_tab8j"),
+&"RESET": SubResource("Animation_k3l5e")
 }
 
 [sub_resource type="Animation" id="Animation_ct7xe"]
@@ -111,9 +111,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wu6hx"]
 _data = {
-"RESET": SubResource("Animation_ct7xe"),
-"new_animation": SubResource("Animation_rh6rp"),
-"rebuke": SubResource("Animation_u1gys")
+&"RESET": SubResource("Animation_ct7xe"),
+&"new_animation": SubResource("Animation_rh6rp"),
+&"rebuke": SubResource("Animation_u1gys")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gllx"]
@@ -198,7 +198,7 @@ transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.683, -0.58, -0.712
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CameraPivot/Camera3D"]
 libraries = {
-"": SubResource("AnimationLibrary_2si74")
+&"": SubResource("AnimationLibrary_2si74")
 }
 
 [node name="LeftArm" parent="CameraPivot/Camera3D" instance=ExtResource("7_fruf0")]
@@ -213,7 +213,7 @@ transform = Transform3D(9.55342e-16, -2.18556e-08, 0.5, -0.5, -2.18557e-08, 5.63
 
 [node name="CrucifixAnimationPlayer" type="AnimationPlayer" parent="CameraPivot/Camera3D/LeftArm"]
 libraries = {
-"": SubResource("AnimationLibrary_wu6hx")
+&"": SubResource("AnimationLibrary_wu6hx")
 }
 
 [node name="Candle" parent="CameraPivot/Camera3D" instance=ExtResource("4_h756x")]

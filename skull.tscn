@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://tc0pw02m12e2"]
 
-[ext_resource type="Script" path="res://skull.gd" id="1_0kmau"]
+[ext_resource type="Script" uid="uid://dmyyq608ewsg1" path="res://skull.gd" id="1_0kmau"]
 [ext_resource type="PackedScene" uid="uid://cxcnqxkcllt8f" path="res://skull_model.tscn" id="1_nit7v"]
 [ext_resource type="AudioStream" uid="uid://7fcrqkt8utk8" path="res://assets/audio/sound_effects/Ghost Whispering Sound Effect.mp3" id="3_1fhpn"]
 
