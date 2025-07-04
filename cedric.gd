@@ -29,6 +29,9 @@ func _process(delta: float) -> void:
 	var new_basis = Basis.looking_at(direction_to)
 	basis = new_basis
 	
+	if dungeon_ai_active:
+		return
+		
 	if can_teleport && not player.check_if_can_see_me(self):
 		teleport()
 		can_teleport = false
@@ -37,14 +40,16 @@ func _process(delta: float) -> void:
 	spotted_behaviour()
 
 func _physics_process(delta: float) -> void:
-	if Global.game_paused:
+	if Global.game_paused || !dungeon_ai_active:
 		return
 	
+	nav.target_position = player.global_position
+
 	var direction = Vector3()
 	direction = nav.get_next_path_position() - global_position
 	direction = direction.normalized()
 	
-	var speed = 100
+	var speed = 0.1
 	velocity = velocity.lerp(direction * 10, speed * delta)
 	move_and_slide()
 
@@ -98,14 +103,13 @@ func _on_haunt_change_position_timer_timeout() -> void:
 	can_teleport = true
 	spotted = false
 
-func _on_area_to_disable_cedric_normal_ai_body_entered(body: Node3D) -> void:
-	if (body.is_in_group("player")):
-		dungeon_ai_active = ! dungeon_ai_active
-		print("dungeon ai active: " + str(dungeon_ai_active))
-
 func play_dialogue(dialogue_number: int):
 	return
 	match dialogue_number:
 		1:
 			dialogue.stream = dialogue_1
 	dialogue.play()
+
+func _on_area_3d_slam_door_body_entered(body: Node3D) -> void:
+	if (body.is_in_group("player")):
+		dungeon_ai_active = true

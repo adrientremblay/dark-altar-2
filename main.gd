@@ -128,4 +128,5 @@ func _on_area_3d_slam_door_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		$DungeonDoor.slam()
 		door_slammed = true
+		cedric.global_position = $DungeonSpawnPosition.global_position
 		
