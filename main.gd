@@ -95,6 +95,10 @@ func _input(event):
 			ui.display_message(key.message)
 			key.pickup()
 			$PickupSound.play()
+		elif interactable.is_in_group("crucifix"):
+			$"DungeonKey".global_position = interactable.global_position
+			interactable.queue_free()
+			ui.display_message("Another key was hidden beneath the crucifix")
 	elif event.is_action_pressed("pause"):
 		Global.game_paused = not Global.game_paused
 		if Global.game_paused:
@@ -130,7 +134,6 @@ func _on_area_3d_slam_door_body_entered(body: Node3D) -> void:
 		door_slammed = true
 		cedric.global_position = $DungeonSpawnPosition.global_position
 		
-
 var pickup_cross_message_displayed = false
 func _on_area_3d_pickup_cross_message_body_entered(body: Node3D) -> void:
 	if body.is_in_group('player') and !pickup_cross_message_displayed:

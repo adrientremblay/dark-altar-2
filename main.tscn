@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=38 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" uid="uid://rtfpa0y5k4a0" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://rwkvp33kdyu7" path="res://final_church.tscn" id="21_muk4u"]
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
 [ext_resource type="PackedScene" uid="uid://cnq55o7wljlla" path="res://scenes/door.tscn" id="22_efjyi"]
+[ext_resource type="PackedScene" uid="uid://pnubw26h3dwo" path="res://scenes/crucifix_pickup.tscn" id="23_d13ii"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
 
@@ -422,7 +423,6 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 69.8289, -0.0624461, -6
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 205.733, 4.27941, -236.888)
-visible = false
 light_energy = 16.0
 light_indirect_energy = 2.916
 omni_range = 22.8744
@@ -575,7 +575,7 @@ stream = ExtResource("20_oh7hr")
 transform = Transform3D(-0.724533, 0, -0.68924, 0, 1, 0, 0.68924, 0, -0.724533, 213.494, 0.310502, -244.646)
 
 [node name="DungeonKey" parent="." node_paths=PackedStringArray("door") instance=ExtResource("21_0r6pb")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 213.265, 0.141052, -242.413)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 213.265, -0.887934, -242.413)
 door = NodePath("../DungeonDoor")
 message = "This key unlocks the door before you"
 
@@ -587,6 +587,9 @@ shape = SubResource("BoxShape3D_28jmc")
 
 [node name="DungeonSpawnPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 215.582, 2.00417, -245.489)
+
+[node name="CrucifixPickup" parent="." instance=ExtResource("23_d13ii")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 210.668, 0.141053, -240.716)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
