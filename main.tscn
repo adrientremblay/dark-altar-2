@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=37 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" uid="uid://rtfpa0y5k4a0" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -67,6 +67,9 @@ size = Vector3(79.6268, 5.30359, 54.2203)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wlmbg"]
 size = Vector3(250, 1, 300)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ryguw"]
+size = Vector3(1, 1, 6.76081)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ufjn0"]
 size = Vector3(0.749496, 7.50595, 10.2228)
@@ -417,6 +420,13 @@ bus = &"Ambience"
 [node name="Remains" parent="." instance=ExtResource("21_soo3d")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 69.8289, -0.0624461, -63.9854)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 205.733, 4.27941, -236.888)
+visible = false
+light_energy = 16.0
+light_indirect_energy = 2.916
+omni_range = 22.8744
+
 [node name="Terrain3D2" type="Terrain3D" parent="."]
 storage = ExtResource("8_a0fla")
 material = ExtResource("4_b3sqw")
@@ -494,6 +504,12 @@ page_text = "To whoever reads this note, know that your doom was wrought by the 
 
 - Mayor Kiesel"
 
+[node name="Area3DPickupCrossMessage" type="Area3D" parent="NavigationRegion3D/Church"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Church/Area3DPickupCrossMessage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.63843, 1.27081, -0.0983429)
+shape = SubResource("BoxShape3D_ryguw")
+
 [node name="PickableCandle" parent="." instance=ExtResource("50_81846")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.6632, 0, -63.676)
 
@@ -542,13 +558,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.865, -0.0235379, -226.883
 [node name="Skull5" parent="." instance=ExtResource("18_wedqe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.592, 0.00613856, -221.484)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 215.34, 7.34549, -240.563)
-visible = false
-light_energy = 16.0
-light_indirect_energy = 2.916
-omni_range = 22.8744
-
 [node name="ChurchKey" parent="." node_paths=PackedStringArray("door") instance=ExtResource("21_0r6pb")]
 transform = Transform3D(-4.36933e-08, -0.999587, -0.0287413, 1, -4.37114e-08, 0, -1.25632e-09, -0.0287413, 0.999587, 185.492, -1.93011, -229.922)
 door = NodePath("../NavigationRegion3D/Church/ChurchDoor")
@@ -593,6 +602,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 215.582, 2.00417, -245.489)
 [connection signal="body_exited" from="NavigationRegion3D/StrangeRocksSpawnTrigger" to="NavigationRegion3D/StrangeRocksSpawnTrigger" method="_on_body_exited"]
 [connection signal="body_entered" from="NavigationRegion3D/FarmSpawnTrigger" to="NavigationRegion3D/FarmSpawnTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/FarmSpawnTrigger" to="NavigationRegion3D/FarmSpawnTrigger" method="_on_body_exited"]
+[connection signal="body_entered" from="NavigationRegion3D/Church/Area3DPickupCrossMessage" to="." method="_on_area_3d_pickup_cross_message_body_entered"]
 [connection signal="body_entered" from="DungeonAudioSwitcher" to="Player" method="_on_dungeon_audio_switcher_body_entered"]
 [connection signal="body_entered" from="DungeonAudioSwitcher" to="AmbientSound" method="_on_dungeon_audio_switcher_body_entered"]
 [connection signal="body_entered" from="OutsideAudioSwitcher" to="Player" method="_on_outside_audio_switcher_body_entered"]

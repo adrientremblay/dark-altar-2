@@ -130,3 +130,9 @@ func _on_area_3d_slam_door_body_entered(body: Node3D) -> void:
 		door_slammed = true
 		cedric.global_position = $DungeonSpawnPosition.global_position
 		
+
+var pickup_cross_message_displayed = false
+func _on_area_3d_pickup_cross_message_body_entered(body: Node3D) -> void:
+	if body.is_in_group('player') and !pickup_cross_message_displayed:
+		ui.display_message('Pick up the crucifix')
+		pickup_cross_message_displayed = true
