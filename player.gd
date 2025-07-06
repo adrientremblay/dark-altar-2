@@ -14,7 +14,7 @@ var in_dungeon = false
 @onready var particle_emitter : GPUParticles3D = $CameraPivot/Camera3D/Bobber/Candle/Flame
 @onready var grab_shape : Area3D = $CameraPivot/Camera3D/GrabShape
 @onready var candle_light : OmniLight3D = $CameraPivot/Camera3D/Bobber/Candle/WorldLight
-@onready var candle = $CameraPivot/Camera3D/Candle
+@onready var candle = $CameraPivot/Bobber/Camera3D/Candle
 @onready var animation_player : AnimationPlayer = $CameraPivot/Camera3D/AnimationPlayer
 @onready var walking : AudioStreamPlayer = $Walking
 @onready var sprinting : AudioStreamPlayer = $Sprinting
@@ -129,6 +129,11 @@ func _physics_process(delta):
 	calculate_flame_direction(input_dir.normalized())
 
 func change_movement_mode(new_movement_mode : MovementMode):
+	if new_movement_mode == MovementMode.WALKING:
+		bob_animation_player.speed_scale = 1.0
+	elif new_movement_mode == MovementMode.SPRINTING:
+		bob_animation_player.speed_scale = 2.0
+	
 	match movement_mode:
 		MovementMode.STANDING:
 			match new_movement_mode:
