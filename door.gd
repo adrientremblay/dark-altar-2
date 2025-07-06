@@ -17,4 +17,4 @@ func open():
 
 func close():
 	$AnimationPlayer.play("close")
-	$OpenSound.play()
+	$SlamSound.play()

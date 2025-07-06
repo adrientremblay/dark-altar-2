@@ -11,15 +11,16 @@ var in_dungeon = false
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
 @onready var hand_camera = $CanvasLayer/SubViewportContainer/SubViewport/Camera3D
-@onready var particle_emitter : GPUParticles3D = $CameraPivot/Camera3D/Candle/Flame
+@onready var particle_emitter : GPUParticles3D = $CameraPivot/Camera3D/Bobber/Candle/Flame
 @onready var grab_shape : Area3D = $CameraPivot/Camera3D/GrabShape
-@onready var candle_light : OmniLight3D = $CameraPivot/Camera3D/Candle/WorldLight
+@onready var candle_light : OmniLight3D = $CameraPivot/Camera3D/Bobber/Candle/WorldLight
 @onready var candle = $CameraPivot/Camera3D/Candle
 @onready var animation_player : AnimationPlayer = $CameraPivot/Camera3D/AnimationPlayer
 @onready var walking : AudioStreamPlayer = $Walking
 @onready var sprinting : AudioStreamPlayer = $Sprinting
 @onready var crucifix_animation_player : AnimationPlayer = $CameraPivot/Camera3D/LeftArm/CrucifixAnimationPlayer
 @onready var holy_beam = $CameraPivot/Camera3D/LeftArm/CrucifixModel/HolyBeam
+@onready var bob_animation_player : AnimationPlayer = $CameraPivot/Camera3D/HeadBobAnimationPlayer
 
 var sanity = 100 # out of 100
 var stamina = 100 # out of 100
@@ -34,9 +35,8 @@ signal cannot_interact_with_something
 var reading = false
 
 func _ready() -> void:
-	#var main_env = camera.get_camera_projection()
-	#hand_camera.get_camera_projection().set
-	pass
+	var anim: Animation = bob_animation_player.get_animation("Head Bob")
+	anim.loop_mode = Animation.LOOP_LINEAR
 
 func calculate_flame_direction(direction: Vector3):
 	var flame_direction : Vector3 = Vector3(0,1,0) # -z
@@ -76,7 +76,13 @@ func _physics_process(delta):
 		input_dir.z += 1
 	if not is_on_floor():
 		input_dir.y -= 1
-	var direction = (transform.basis * neck.transform.basis * input_dir).normalized()
+	var direction : Vector3 = (transform.basis * neck.transform.basis * input_dir).normalized()
+	
+	#ensure that the bob animation is playing if the play is in movement
+	if direction.length() != 0 && !bob_animation_player.is_playing():
+		bob_animation_player.play("Head Bob")
+	elif direction.length() == 0 && bob_animation_player.is_playing():
+		bob_animation_player.pause()
 	
 	# movement mode code
 	if Input.is_action_just_pressed("sprint") and stamina > 0 and direction:
@@ -104,7 +110,7 @@ func _physics_process(delta):
 		
 	if movement_mode == MovementMode.WALKING and not direction:
 		change_movement_mode(MovementMode.STANDING)
-		animation_player.stop()
+		#animation_player.stop()
 	
 	# movement
 	var move_speed = speed

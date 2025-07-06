@@ -29,18 +29,19 @@ height = 2.59507
 
 [sub_resource type="Animation" id="Animation_tab8j"]
 resource_name = "Head Bob"
+length = 2.0
 step = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Bobber:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3672, 0.76355, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 1.99),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0.540563, 0), Vector3(0, 0.5, 0), Vector3(0, 0.6, 0), Vector3(0, 0.540563, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, -0.0617969, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_k3l5e"]
@@ -48,14 +49,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("Bobber:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0.540563, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2si74"]
@@ -183,9 +184,6 @@ cull_mask = 1048571
 current = true
 far = 1000.0
 
-[node name="Arm" parent="CameraPivot/Camera3D" instance=ExtResource("2_v36k5")]
-transform = Transform3D(-0.05, -7.54979e-09, 3.30012e-16, 0, -2.18557e-09, -0.05, 7.54979e-09, -0.05, 2.18557e-09, 0.741275, -0.423212, -0.443583)
-
 [node name="GrabShape" type="Area3D" parent="CameraPivot/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00240922, 0)
 
@@ -193,10 +191,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00240922, 0)
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -1.866)
 shape = SubResource("CapsuleShape3D_bp2ix")
 
-[node name="candlestick2" parent="CameraPivot/Camera3D" instance=ExtResource("5_re3m2")]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.683, -0.58, -0.712)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraPivot/Camera3D"]
+[node name="HeadBobAnimationPlayer" type="AnimationPlayer" parent="CameraPivot/Camera3D"]
 libraries = {
 &"": SubResource("AnimationLibrary_2si74")
 }
@@ -216,11 +211,19 @@ libraries = {
 &"": SubResource("AnimationLibrary_wu6hx")
 }
 
-[node name="Candle" parent="CameraPivot/Camera3D" instance=ExtResource("4_h756x")]
+[node name="Bobber" type="Node3D" parent="CameraPivot/Camera3D"]
+
+[node name="Arm" parent="CameraPivot/Camera3D/Bobber" instance=ExtResource("2_v36k5")]
+transform = Transform3D(-0.05, -7.54979e-09, 3.30012e-16, 0, -2.18557e-09, -0.05, 7.54979e-09, -0.05, 2.18557e-09, 0.741275, -0.423212, -0.443583)
+
+[node name="candlestick2" parent="CameraPivot/Camera3D/Bobber" instance=ExtResource("5_re3m2")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.683, -0.58, -0.712)
+
+[node name="Candle" parent="CameraPivot/Camera3D/Bobber" instance=ExtResource("4_h756x")]
 transform = Transform3D(0.08, 0, -8.88178e-16, 0, 0.12, 0, 8.88178e-16, 0, 0.08, 0.683, -0.234, -0.712)
 script = ExtResource("4_om2wh")
 
-[node name="Flame" type="GPUParticles3D" parent="CameraPivot/Camera3D/Candle"]
+[node name="Flame" type="GPUParticles3D" parent="CameraPivot/Camera3D/Bobber/Candle"]
 transform = Transform3D(0.234373, 0, -0.0870042, 0, 0.25, 0, 0.0870042, 0, 0.234373, 0.004076, 3.03378, -0.00397444)
 layers = 4
 material_override = SubResource("StandardMaterial3D_5gllx")
@@ -233,7 +236,7 @@ draw_order = 3
 process_material = SubResource("ParticleProcessMaterial_443lx")
 draw_pass_1 = SubResource("QuadMesh_66rta")
 
-[node name="WorldLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Candle"]
+[node name="WorldLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Bobber/Candle"]
 transform = Transform3D(-12.5, -1.09279e-06, 7.16509e-14, 8.18835e-21, -5.46393e-07, -8.33333, 1.09279e-06, -12.5, 8.1959e-07, -8.92399, 3.22024, -0.0149746)
 layers = 5
 light_color = Color(0.705882, 0.666667, 0.141176, 1)
@@ -246,7 +249,7 @@ shadow_bias = 0.036
 shadow_blur = 0.04
 omni_range = 8.0
 
-[node name="PlayerLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Candle"]
+[node name="PlayerLight" type="OmniLight3D" parent="CameraPivot/Camera3D/Bobber/Candle"]
 transform = Transform3D(-12.5, -1.09278e-06, 4.7767e-14, 0, -3.64262e-07, -8.33333, 1.09278e-06, -12.5, 5.46393e-07, -0.00472164, 3.32983, 0.0380745)
 layers = 4
 light_color = Color(0.705882, 0.666667, 0.141176, 1)
@@ -260,7 +263,7 @@ shadow_opacity = 0.96
 shadow_blur = 0.075
 omni_range = 2.17844
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CameraPivot/Camera3D/Candle"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CameraPivot/Camera3D/Bobber/Candle"]
 
 [node name="Walking" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")

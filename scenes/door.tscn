@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cnq55o7wljlla"]
+[gd_scene load_steps=14 format=3 uid="uid://cnq55o7wljlla"]
 
 [ext_resource type="PackedScene" uid="uid://cbqp3n0lkaauj" path="res://assets/models/Church/door.glb" id="1_0l02h"]
 [ext_resource type="Script" uid="uid://ckhsv3vw3tgtd" path="res://scenes/door_wrapper.gd" id="2_l1sdx"]
 [ext_resource type="Script" uid="uid://bxny517i4nxrm" path="res://door.gd" id="2_ms7j2"]
 [ext_resource type="AudioStream" uid="uid://d3nvenklx5veq" path="res://assets/audio/sound_effects/door_open_sound.mp3" id="3_2d3sl"]
 [ext_resource type="AudioStream" uid="uid://boij1xfpuqf1g" path="res://assets/audio/sound_effects/door_unlock_fail.mp3" id="4_5kmb1"]
+[ext_resource type="AudioStream" uid="uid://bgo1p1tpsnycs" path="res://assets/audio/sound_effects/door-slam-sound-effect-21878.mp3" id="6_q5w8r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a2tri"]
 size = Vector3(0.22937, 3.11353, 2.29169)
@@ -104,13 +105,17 @@ stream = ExtResource("3_2d3sl")
 transform = Transform3D(1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, 0, 0, 0)
 stream = ExtResource("4_5kmb1")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Church Door/Door1" index="3"]
+[node name="SlamSound" type="AudioStreamPlayer3D" parent="Church Door/Door1" index="3"]
+transform = Transform3D(1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, 0, 0, 0)
+stream = ExtResource("6_q5w8r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Church Door/Door1" index="4"]
 root_node = NodePath("../../..")
 libraries = {
 &"": SubResource("AnimationLibrary_wtcsk")
 }
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Church Door/Door1" index="4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Church Door/Door1" index="5"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Church Door/Door1/StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0285163, 1.59132, -1.1442)
