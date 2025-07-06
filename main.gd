@@ -141,3 +141,7 @@ func _on_area_3d_pickup_cross_message_body_entered(body: Node3D) -> void:
 	if body.is_in_group('player') and !pickup_cross_message_displayed:
 		ui.display_message('Pick up the crucifix')
 		pickup_cross_message_displayed = true
+
+func _on_church_audio_switcher_2_body_entered(body: Node3D) -> void:
+	if body.is_in_group('player'):
+		cedric.global_position = $OutsideDoor.global_position

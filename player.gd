@@ -287,3 +287,4 @@ func _on_church_audio_switcher_2_body_entered(body: Node3D) -> void:
 		sprinting = $WoodSprinting
 		walking = $WoodWalking
 		sprinting.play()
+		

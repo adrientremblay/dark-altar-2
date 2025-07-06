@@ -77,10 +77,10 @@ size = Vector3(1, 1, 6.76081)
 size = Vector3(192.343, 7.50595, 207.525)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1u8w0"]
-size = Vector3(303.177, 7.50595, 316.183)
+size = Vector3(309.709, 7.50595, 316.183)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0odxb"]
-size = Vector3(18.6621, 7.50595, 6.21818)
+size = Vector3(13.7041, 7.50595, 6.21818)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_28jmc"]
 size = Vector3(1, 3.80029, 5.04919)
@@ -532,13 +532,13 @@ shape = SubResource("BoxShape3D_ufjn0")
 [node name="OutsideAudioSwitcher" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OutsideAudioSwitcher"]
-transform = Transform3D(0.754778, 0, 0.65598, 0, 1, 0, -0.65598, 0, 0.754778, 106.437, 1.65812, -100.859)
+transform = Transform3D(0.754778, 0, 0.65598, 0, 1, 0, -0.65598, 0, 0.754778, 108.902, 1.65812, -103.001)
 shape = SubResource("BoxShape3D_1u8w0")
 
 [node name="ChurchAudioSwitcher2" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChurchAudioSwitcher2"]
-transform = Transform3D(0.754778, 0, 0.65598, 0, 1, 0, -0.65598, 0, 0.754778, 206.105, 1.65812, -236.281)
+transform = Transform3D(0.754778, 0, 0.65598, 0, 1, 0, -0.65598, 0, 0.754778, 207.976, 1.65812, -237.907)
 shape = SubResource("BoxShape3D_0odxb")
 
 [node name="Skull" parent="." instance=ExtResource("18_wedqe")]
@@ -598,6 +598,9 @@ stream = ExtResource("24_1u8w0")
 [node name="CrucifixPickup" parent="." instance=ExtResource("23_d13ii")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 210.668, 0.141053, -240.716)
 
+[node name="OutsideDoor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.472, 1.11612, -227.572)
+
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
 [connection signal="register_skull" from="Player" to="." method="_on_player_register_skull"]
@@ -618,8 +621,11 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 210.668, 0.141053, -240
 [connection signal="body_entered" from="OutsideAudioSwitcher" to="Cedric" method="_on_outside_audio_switcher_body_entered"]
 [connection signal="body_entered" from="OutsideAudioSwitcher" to="Player" method="_on_outside_audio_switcher_body_entered"]
 [connection signal="body_entered" from="OutsideAudioSwitcher" to="AmbientSound" method="_on_outside_audio_switcher_body_entered"]
+[connection signal="body_entered" from="ChurchAudioSwitcher2" to="." method="_on_church_audio_switcher_2_body_entered"]
+[connection signal="body_entered" from="ChurchAudioSwitcher2" to="Cedric" method="_on_church_audio_switcher_2_body_entered"]
 [connection signal="body_entered" from="ChurchAudioSwitcher2" to="Player" method="_on_church_audio_switcher_2_body_entered"]
 [connection signal="body_entered" from="ChurchAudioSwitcher2" to="AmbientSound" method="_on_church_audio_switcher_2_body_entered"]
+[connection signal="body_exited" from="ChurchAudioSwitcher2" to="Cedric" method="_on_church_audio_switcher_2_body_exited"]
 [connection signal="timeout" from="IntroTimer" to="." method="_on_intro_timer_timeout"]
 [connection signal="area_entered" from="Area3DSlamDoor" to="." method="_on_area_3d_slam_door_area_entered"]
 [connection signal="body_entered" from="Area3DSlamDoor" to="." method="_on_area_3d_slam_door_body_entered"]

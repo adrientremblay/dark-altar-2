@@ -17,11 +17,12 @@ const TELEPORT_DISTANCE = [100, 25, 20, 15, 10, 5] # the distance added to the s
 var player: Player
 
 var dungeon_ai_active = false
+var disabled = false
 
 @onready var dialogue_1 = preload("res://assets/audio/sound_effects/cedric_dialogue/1.mp3")
 
 func _process(delta: float) -> void:
-	if Global.game_paused:
+	if Global.game_paused :
 		return
 	
 	# always rotate towards player
@@ -29,7 +30,7 @@ func _process(delta: float) -> void:
 	var new_basis = Basis.looking_at(direction_to)
 	basis = new_basis
 	
-	if dungeon_ai_active:
+	if dungeon_ai_active || disabled:
 		return
 		
 	if can_teleport && not player.check_if_can_see_me(self):
@@ -42,7 +43,7 @@ func _process(delta: float) -> void:
 		spotted_behaviour()
 
 func _physics_process(delta: float) -> void:
-	if Global.game_paused || !dungeon_ai_active:
+	if Global.game_paused || !dungeon_ai_active || disabled:
 		return
 	
 	nav.target_position = player.global_position
@@ -56,7 +57,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func teleport():
-	if Global.game_paused || agression_level < 1 || dungeon_ai_active:
+	if Global.game_paused || agression_level < 1 || dungeon_ai_active || disabled:
 		return
 	
 	var safe_distance = min(player.candle_light.omni_range + 1, TELEPORT_DISTANCE[agression_level])
@@ -115,3 +116,13 @@ func play_dialogue(dialogue_number: int):
 func _on_area_3d_slam_door_body_entered(body: Node3D) -> void:
 	if (body.is_in_group("player")):
 		dungeon_ai_active = true
+
+func _on_church_audio_switcher_2_body_entered(body: Node3D) -> void:
+	if (body.is_in_group("player")):
+		print("disabled")
+		disabled = true
+
+func _on_church_audio_switcher_2_body_exited(body: Node3D) -> void:
+	if (body.is_in_group("player")):
+		print("enabled")
+		disabled = false
