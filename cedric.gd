@@ -33,11 +33,13 @@ func _process(delta: float) -> void:
 		return
 		
 	if can_teleport && not player.check_if_can_see_me(self):
+		self.visible = false
 		teleport()
+		self.visible = true
+		spotted_behaviour()
 		can_teleport = false
-	
-	# flickering when cedric is first spotted after he TPs
-	spotted_behaviour()
+	else:
+		spotted_behaviour()
 
 func _physics_process(delta: float) -> void:
 	if Global.game_paused || !dungeon_ai_active:
