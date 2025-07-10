@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1ofj233qo7kr"]
+
+[ext_resource type="PackedScene" uid="uid://ry6qrweip78a" path="res://assets/models/butt_plug/butt_plug.glb" id="1_ktjwu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktjwu"]
+transparency = 1
+albedo_color = Color(0.482353, 1, 1, 0.615686)
+
+[node name="butt_plug" instance=ExtResource("1_ktjwu")]
+
+[node name="ButtPlug" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ktjwu")
