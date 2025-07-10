@@ -51,7 +51,7 @@ shader_parameter/amplitude = 0.01
 [sub_resource type="NavigationMesh" id="NavigationMesh_rgv7a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8xyxr"]
-size = Vector3(123.561, 28.59, 184.521)
+size = Vector3(158.258, 28.59, 184.521)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ehsq3"]
 size = Vector3(89.6974, 5.88721, 120.02)
@@ -449,7 +449,7 @@ number_skull_options = 12
 cedric = NodePath("../../Cedric")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/DungeonSpawnTrigger"]
-transform = Transform3D(0.605933, 0, -0.795516, 0, 1, 0, 0.795516, 0, 0.605933, 261.397, 1.08287, -307.345)
+transform = Transform3D(0.605933, 0, -0.795516, 0, 1, 0, 0.795516, 0, 0.605933, 271.909, 1.08287, -293.544)
 shape = SubResource("BoxShape3D_8xyxr")
 
 [node name="VillageSpawnTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
