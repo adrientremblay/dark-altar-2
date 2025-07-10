@@ -574,7 +574,7 @@ autostart = true
 stream = ExtResource("20_oh7hr")
 
 [node name="DungeonDoor" parent="." instance=ExtResource("22_efjyi")]
-transform = Transform3D(-0.724533, 0, -0.68924, 0, 1, 0, 0.68924, 0, -0.724533, 213.494, 0.310502, -244.646)
+transform = Transform3D(-0.724533, 0, -0.68924, 0, 1, 0, 0.68924, 0, -0.724533, 213.494, 0.344971, -244.646)
 
 [node name="DungeonKey" parent="." node_paths=PackedStringArray("door") instance=ExtResource("21_0r6pb")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 213.265, -0.887934, -242.413)
