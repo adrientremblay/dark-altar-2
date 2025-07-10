@@ -46,14 +46,14 @@ func _physics_process(delta: float) -> void:
 	if Global.game_paused || !dungeon_ai_active || disabled:
 		return
 	
-	nav.target_position = player.global_position
+	nav.target_position = player.position
 
 	var direction = Vector3()
 	direction = nav.get_next_path_position() - global_position
 	direction = direction.normalized()
 	
-	var speed = 0.1
-	velocity = velocity.lerp(direction * 10, speed * delta)
+	var speed = 150
+	velocity = direction * speed * delta
 	move_and_slide()
 
 func teleport():
@@ -119,10 +119,8 @@ func _on_area_3d_slam_door_body_entered(body: Node3D) -> void:
 
 func _on_church_audio_switcher_2_body_entered(body: Node3D) -> void:
 	if (body.is_in_group("player")):
-		print("disabled")
 		disabled = true
 
 func _on_church_audio_switcher_2_body_exited(body: Node3D) -> void:
 	if (body.is_in_group("player")):
-		print("enabled")
 		disabled = false
