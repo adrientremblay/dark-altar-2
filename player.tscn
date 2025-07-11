@@ -198,7 +198,6 @@ libraries = {
 
 [node name="LeftArm" parent="CameraPivot/Camera3D" instance=ExtResource("7_fruf0")]
 transform = Transform3D(-0.05, 4.37114e-09, -1.91069e-16, 0, -2.18557e-09, -0.05, -4.37114e-09, -0.05, 2.18557e-09, -0.71831, -0.423, -0.444)
-visible = false
 
 [node name="CrucifixModel" parent="CameraPivot/Camera3D/LeftArm" instance=ExtResource("14_uhf7j")]
 transform = Transform3D(-20, -1.50878e-20, -1.74846e-06, 1.74846e-06, -8.74228e-07, -20, -7.64274e-14, -20, 8.74228e-07, -1.47594, 5.41128, 2.01173)
