@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=40 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" uid="uid://rtfpa0y5k4a0" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -11,7 +11,6 @@
 [ext_resource type="Shader" uid="uid://dfvr58mktjdr5" path="res://main.gdshader" id="12_35pxv"]
 [ext_resource type="PackedScene" uid="uid://bdn0o2f8qbgk" path="res://cedric.tscn" id="12_ax3ba"]
 [ext_resource type="Texture2D" uid="uid://bi7ytov5l6euy" path="res://assets/Skeleton/monkey.jpg" id="12_hbp13"]
-[ext_resource type="PackedScene" uid="uid://crympftnsrmwa" path="res://levels/dungeon.tscn" id="15_1u8w0"]
 [ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
 [ext_resource type="Script" uid="uid://vs5gqxmwtxhr" path="res://SpawnTrigger.gd" id="16_irgr7"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="18_wedqe"]
@@ -451,8 +450,6 @@ cedric = NodePath("../../Cedric")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/DungeonSpawnTrigger"]
 transform = Transform3D(0.605933, 0, -0.795516, 0, 1, 0, 0.795516, 0, 0.605933, 271.909, 1.08287, -293.544)
 shape = SubResource("BoxShape3D_8xyxr")
-
-[node name="Dungeon" parent="NavigationRegion3D/DungeonSpawnTrigger" instance=ExtResource("15_1u8w0")]
 
 [node name="VillageSpawnTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
 script = ExtResource("16_irgr7")
