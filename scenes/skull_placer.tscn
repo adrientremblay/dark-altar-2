@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://hif2jkgena08"]
+
+[ext_resource type="PackedScene" uid="uid://d1ofj233qo7kr" path="res://scenes/butt_plug.tscn" id="1_gv10p"]
+[ext_resource type="Script" uid="uid://b3caeflmglp4u" path="res://scenes/skull_placer.gd" id="1_trjwk"]
+
+[sub_resource type="Animation" id="Animation_trjwk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("butt_plug:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.3, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("butt_plug:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gv10p"]
+resource_name = "move_arrow"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("butt_plug:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.3, 0), Vector3(0, 0.39416, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("butt_plug:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_17420"]
+_data = {
+&"RESET": SubResource("Animation_trjwk"),
+&"move_arrow": SubResource("Animation_gv10p")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gv10p"]
+size = Vector3(0.297852, 0.629631, 0.32309)
+
+[node name="SkullPlacer" type="Area3D" groups=["interactable", "skullplacer"]]
+script = ExtResource("1_trjwk")
+
+[node name="butt_plug" parent="." instance=ExtResource("1_gv10p")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0.3, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_17420")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141602, 0.322277, 0.00245667)
+shape = SubResource("BoxShape3D_gv10p")
