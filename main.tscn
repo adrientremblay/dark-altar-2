@@ -1,10 +1,11 @@
-[gd_scene load_steps=40 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=41 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" uid="uid://rtfpa0y5k4a0" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
 [ext_resource type="Texture2D" uid="uid://b8ygyuirq3w87" path="res://textures/AllSkyFree_Skyboxes/AllSky_Night_MoonBurst Equirect.png" id="2_uljkl"]
 [ext_resource type="Terrain3DMaterial" uid="uid://jj8rehsyihdg" path="res://new_terrain_3d_material.tres" id="4_b3sqw"]
 [ext_resource type="PackedScene" uid="uid://dinx2n1kr6nxt" path="res://tree.tscn" id="4_gfekl"]
+[ext_resource type="PackedScene" uid="uid://dxyu88nqby1i4" path="res://holy_ball.tscn" id="5_1u8w0"]
 [ext_resource type="Terrain3DTextureList" uid="uid://cxxgwh8nc3h21" path="res://new_terrain_3d_texture_list.tres" id="5_fqye3"]
 [ext_resource type="Terrain3DStorage" uid="uid://smjxvslnotwx" path="res://new_terrain_3d_storage.res" id="8_a0fla"]
 [ext_resource type="PackedScene" uid="uid://dx1ic8e4exr86" path="res://scenes/ui/ui.tscn" id="11_usrys"]
@@ -93,6 +94,7 @@ transform = Transform3D(0.994996, 0, -0.0999102, 0, 1, 0, 0.0999102, 0, 0.994996
 
 [node name="Player" parent="." instance=ExtResource("2_lbx66")]
 transform = Transform3D(0.829349, 0, -0.558728, 0, 1, 0, 0.558728, 0, 0.829349, 201.593, 1.0808, -230.236)
+holy_ball_scene = ExtResource("5_1u8w0")
 
 [node name="Trees" type="Node3D" parent="."]
 

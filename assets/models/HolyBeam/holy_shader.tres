@@ -1,9 +1,12 @@
-[gd_resource type="VisualShader" load_steps=11 format=3 uid="uid://rsts7elxdqea"]
+[gd_resource type="VisualShader" load_steps=12 format=3 uid="uid://rsts7elxdqea"]
 
 [ext_resource type="Texture2D" uid="uid://ce0nu00dbnhdg" path="res://assets/images/Beam Effect textures/T_VFX_Noise_4.PNG" id="1_qdxkg"]
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_22es8"]
 operator = 2
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_b0ljh"]
+constant = Color(1, 1, 0, 1)
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_bfyix"]
 input_name = "color"
@@ -43,6 +46,10 @@ uniform sampler2D tex_frg_3;
 
 
 void fragment() {
+// ColorConstant:11
+	vec4 n_out11p0 = vec4(1.000000, 1.000000, 0.000000, 1.000000);
+
+
 // Input:2
 	vec4 n_out2p0 = COLOR;
 
@@ -89,12 +96,13 @@ void fragment() {
 
 
 // Output:0
-	ALBEDO = vec3(n_out2p0.xyz);
+	ALBEDO = vec3(n_out11p0.xyz);
 	ALPHA = n_out10p0;
 
 
 }
 "
+graph_offset = Vector2(-181.479, 29.9043)
 modes/cull = 2
 flags/unshaded = true
 nodes/fragment/0/position = Vector2(720, 100)
@@ -116,4 +124,6 @@ nodes/fragment/9/node = SubResource("VisualShaderNodeVectorDecompose_hlguc")
 nodes/fragment/9/position = Vector2(-100, 280)
 nodes/fragment/10/node = SubResource("VisualShaderNodeFloatOp_22es8")
 nodes/fragment/10/position = Vector2(360, 200)
-nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 3, 0, 4, 0, 4, 0, 5, 0, 7, 0, 8, 0, 8, 0, 6, 2, 6, 0, 3, 0, 2, 0, 9, 0, 9, 3, 10, 0, 5, 0, 10, 1, 10, 0, 0, 1)
+nodes/fragment/11/node = SubResource("VisualShaderNodeColorConstant_b0ljh")
+nodes/fragment/11/position = Vector2(160, 100)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 4, 0, 5, 0, 8, 0, 6, 2, 6, 0, 3, 0, 9, 3, 10, 0, 5, 0, 10, 1, 7, 0, 8, 0, 10, 0, 0, 1, 11, 0, 0, 0, 2, 0, 9, 0)

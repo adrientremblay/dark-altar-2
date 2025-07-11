@@ -1,5 +1,6 @@
 class_name Player extends CharacterBody3D
 
+@export var holy_ball_scene: PackedScene
 @export var speed = 3.5
 @export var sprint_modifier = 1.7
 var sprint_regen = 10
@@ -245,7 +246,10 @@ func _on_flame_flicker_timer_timeout() -> void:
 func _input(event):
 	if event.is_action_pressed("rebuke"):
 		crucifix_animation_player.play("rebuke")
-		holy_beam.fire()
+		var holy_ball = holy_ball_scene.instantiate()
+		get_tree().current_scene.add_child(holy_ball)
+		holy_ball.global_position = $HolyBallSpawn.global_position
+		print(holy_ball.global_position)
 
 func _on_dungeon_audio_switcher_body_entered(body: Node3D) -> void:
 	if (not body.is_in_group("player")):

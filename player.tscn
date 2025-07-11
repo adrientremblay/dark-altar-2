@@ -1,9 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://nqaltxfxv1gr"]
+[gd_scene load_steps=35 format=3 uid="uid://nqaltxfxv1gr"]
 
 [ext_resource type="Script" uid="uid://cjphl7lhkqnn6" path="res://player.gd" id="1_fclsx"]
 [ext_resource type="PackedScene" uid="uid://dnmajxcolns8q" path="res://arm.tscn" id="2_v36k5"]
 [ext_resource type="AudioStream" uid="uid://dni157qfh4eyi" path="res://assets/audio/sound_effects/Footsteps grass sound effect.mp3" id="2_vbp7b"]
-[ext_resource type="PackedScene" uid="uid://6on2bcxgpbjm" path="res://scenes/holy_beam.tscn" id="4_8levr"]
 [ext_resource type="PackedScene" uid="uid://dgcgrml4qo4l8" path="res://candle.tscn" id="4_h756x"]
 [ext_resource type="Script" uid="uid://dp8asxiqlvlxf" path="res://candle.gd" id="4_om2wh"]
 [ext_resource type="PackedScene" uid="uid://11376fbjjwer" path="res://candlestick.tscn" id="5_re3m2"]
@@ -202,9 +201,6 @@ transform = Transform3D(-0.05, 4.37114e-09, -1.91069e-16, 0, -2.18557e-09, -0.05
 [node name="CrucifixModel" parent="CameraPivot/Camera3D/LeftArm" instance=ExtResource("14_uhf7j")]
 transform = Transform3D(-20, -1.50878e-20, -1.74846e-06, 1.74846e-06, -8.74228e-07, -20, -7.64274e-14, -20, 8.74228e-07, -1.47594, 5.41128, 2.01173)
 
-[node name="HolyBeam" parent="CameraPivot/Camera3D/LeftArm/CrucifixModel" instance=ExtResource("4_8levr")]
-transform = Transform3D(9.55342e-16, -2.18556e-08, 0.5, -0.5, -2.18557e-08, 5.63983e-21, 2.18557e-08, -0.5, -2.18556e-08, 0.00323027, 0.523587, 0.0348894)
-
 [node name="CrucifixAnimationPlayer" type="AnimationPlayer" parent="CameraPivot/Camera3D/LeftArm"]
 libraries = {
 &"": SubResource("AnimationLibrary_wu6hx")
@@ -324,6 +320,9 @@ cull_mask = 1047556
 [node name="FlameFlickerSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_xvj01")
 volume_db = 4.685
+
+[node name="HolyBallSpawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.534218, -1.16541)
 
 [connection signal="area_entered" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_entered"]
 [connection signal="area_exited" from="CameraPivot/Camera3D/GrabShape" to="." method="_on_grab_shape_area_exited"]
