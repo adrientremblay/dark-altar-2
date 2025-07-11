@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=41 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" uid="uid://rtfpa0y5k4a0" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -11,6 +11,7 @@
 [ext_resource type="Shader" uid="uid://dfvr58mktjdr5" path="res://main.gdshader" id="12_35pxv"]
 [ext_resource type="PackedScene" uid="uid://bdn0o2f8qbgk" path="res://cedric.tscn" id="12_ax3ba"]
 [ext_resource type="Texture2D" uid="uid://bi7ytov5l6euy" path="res://assets/Skeleton/monkey.jpg" id="12_hbp13"]
+[ext_resource type="PackedScene" uid="uid://crympftnsrmwa" path="res://levels/dungeon.tscn" id="15_1u8w0"]
 [ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
 [ext_resource type="Script" uid="uid://vs5gqxmwtxhr" path="res://SpawnTrigger.gd" id="16_irgr7"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="18_wedqe"]
@@ -20,9 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://rwkvp33kdyu7" path="res://final_church.tscn" id="21_muk4u"]
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
 [ext_resource type="PackedScene" uid="uid://cnq55o7wljlla" path="res://scenes/door.tscn" id="22_efjyi"]
-[ext_resource type="PackedScene" uid="uid://pnubw26h3dwo" path="res://scenes/crucifix_pickup.tscn" id="23_d13ii"]
 [ext_resource type="AudioStream" uid="uid://c0ff7i5u5eyyb" path="res://assets/audio/sound_effects/cross_pickup.mp3" id="24_1u8w0"]
-[ext_resource type="PackedScene" uid="uid://hif2jkgena08" path="res://scenes/skull_placer.tscn" id="25_0odxb"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
 
@@ -453,6 +452,8 @@ cedric = NodePath("../../Cedric")
 transform = Transform3D(0.605933, 0, -0.795516, 0, 1, 0, 0.795516, 0, 0.605933, 271.909, 1.08287, -293.544)
 shape = SubResource("BoxShape3D_8xyxr")
 
+[node name="Dungeon" parent="NavigationRegion3D/DungeonSpawnTrigger" instance=ExtResource("15_1u8w0")]
+
 [node name="VillageSpawnTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
 script = ExtResource("16_irgr7")
 level_path = "res://village.tscn"
@@ -503,6 +504,7 @@ transform = Transform3D(-0.743145, 0, -0.669131, 0, 1, 0, 0.669131, 0, -0.743145
 
 [node name="ChurchDoor" parent="NavigationRegion3D/Church" instance=ExtResource("22_efjyi")]
 transform = Transform3D(0.999244, 0, -0.0388759, 0, 1, 0, 0.0388759, 0, 0.999244, 10.838, 0.314048, 1.16748)
+visible = false
 
 [node name="RemainsPage" parent="NavigationRegion3D/Church/ChurchDoor" instance=ExtResource("20_b2i1c")]
 transform = Transform3D(-0.0411784, 0.999152, 3.27788e-08, -3.0243e-08, 3.15602e-08, -1, -0.999152, -0.0411777, 2.89177e-08, 0.0626355, 1.60383, -2.83073)
@@ -562,7 +564,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.865, -0.0235379, -226.883
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.592, 0.00613856, -221.484)
 
 [node name="ChurchKey" parent="." node_paths=PackedStringArray("door") instance=ExtResource("21_0r6pb")]
-transform = Transform3D(-4.36933e-08, -0.999587, -0.0287413, 1, -4.37114e-08, 0, -1.25632e-09, -0.0287413, 0.999587, 185.492, -1.93011, -229.922)
+transform = Transform3D(-4.36933e-08, -0.999587, -0.0287413, 1, -4.37114e-08, 0, -1.25632e-09, -0.0287413, 0.999587, 185.307, -1.93011, -230.099)
 door = NodePath("../NavigationRegion3D/Church/ChurchDoor")
 message = "Return to the church"
 
@@ -578,9 +580,9 @@ stream = ExtResource("20_oh7hr")
 transform = Transform3D(-0.724533, 0, -0.68924, 0, 1, 0, 0.68924, 0, -0.724533, 213.494, 0.344971, -244.646)
 
 [node name="DungeonKey" parent="." node_paths=PackedStringArray("door") instance=ExtResource("21_0r6pb")]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 213.265, -0.887934, -242.413)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 213.265, 0.120245, -242.413)
 door = NodePath("../DungeonDoor")
-message = "Enter the church dungeon"
+message = "Open the mysterious door"
 
 [node name="Area3DSlamDoor" type="Area3D" parent="."]
 
@@ -594,14 +596,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 215.794, 0.972428, -245.348)
 [node name="CrucifixPickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("24_1u8w0")
 
-[node name="CrucifixPickup" parent="." instance=ExtResource("23_d13ii")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 210.668, 0.141053, -240.716)
-
 [node name="OutsideDoor" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 196.472, 1.11612, -227.572)
-
-[node name="SkullPlacer" parent="." instance=ExtResource("25_0odxb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 202.991, 0.143107, -231.384)
 
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]

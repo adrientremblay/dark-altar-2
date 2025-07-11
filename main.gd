@@ -12,6 +12,7 @@ var CEDRIC_DAMAGE = 100
 var PLAYER_HEALING_PER_TICK = 5
 
 var skulls_found = 0
+var skulls_placed = 0
 var door_slammed = false
 
 func _ready() -> void:
@@ -96,14 +97,17 @@ func _input(event):
 			key.pickup()
 			$PickupSound.play()
 		elif interactable.is_in_group("crucifix"):
-			$"DungeonKey".global_position = interactable.global_position
+			#$"DungeonKey".global_position = interactable.global_position
 			interactable.queue_free()
-			ui.display_message("Another key was hidden beneath the crucifix")
+			ui.display_message("The key to the ritual chamber is hidden beneath the crucifix")
 			$CrucifixPickupSound.play()
 		elif interactable.is_in_group("skullplacer"):
 			var skull: SkullPlacer = interactable
 			skull.show_skull()
 			player.cannot_interact_with_something.emit()
+			skulls_placed += 1
+			if skulls_placed == 5:
+				boss_battle()
 	elif event.is_action_pressed("pause"):
 		Global.game_paused = not Global.game_paused
 		if Global.game_paused:
@@ -143,9 +147,12 @@ func _on_area_3d_slam_door_body_entered(body: Node3D) -> void:
 var pickup_cross_message_displayed = false
 func _on_area_3d_pickup_cross_message_body_entered(body: Node3D) -> void:
 	if body.is_in_group('player') and !pickup_cross_message_displayed:
-		ui.display_message('Pick up the crucifix')
+		ui.display_message('Pick up the key to the back door')
 		pickup_cross_message_displayed = true
 
 func _on_church_audio_switcher_2_body_entered(body: Node3D) -> void:
 	if body.is_in_group('player'):
 		cedric.global_position = $OutsideDoor.global_position
+
+func boss_battle() -> void:
+	print("boss battle")

@@ -576,3 +576,15 @@ metadata/_editor_floor_ = Vector3(0, -320, 0)
 
 [node name="SkullPlacer" parent="." instance=ExtResource("41_rn74w")]
 transform = Transform3D(0.746371, 0, -0.66553, 0, 1, 0, 0.66553, 0, 0.746371, 369.292, 27.3348, -138.738)
+
+[node name="SkullPlacer2" parent="." instance=ExtResource("41_rn74w")]
+transform = Transform3D(0.746371, 0, -0.66553, 0, 1, 0, 0.66553, 0, 0.746371, 363.991, 27.3381, -143.465)
+
+[node name="SkullPlacer3" parent="." instance=ExtResource("41_rn74w")]
+transform = Transform3D(0.746371, 0, -0.66553, 0, 1, 0, 0.66553, 0, 0.746371, 366.03, 27.3497, -148.802)
+
+[node name="SkullPlacer4" parent="." instance=ExtResource("41_rn74w")]
+transform = Transform3D(0.746371, 0, -0.66553, 0, 1, 0, 0.66553, 0, 0.746371, 373.832, 27.3311, -148.457)
+
+[node name="SkullPlacer5" parent="." instance=ExtResource("41_rn74w")]
+transform = Transform3D(0.746371, 0, -0.66553, 0, 1, 0, 0.66553, 0, 0.746371, 375.632, 27.3538, -143.418)
