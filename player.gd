@@ -249,7 +249,7 @@ func _input(event):
 		var holy_ball = holy_ball_scene.instantiate()
 		get_tree().current_scene.add_child(holy_ball)
 		holy_ball.global_position = $HolyBallSpawn.global_position
-		print(holy_ball.global_position)
+		$RebukeSound.play()
 
 func _on_dungeon_audio_switcher_body_entered(body: Node3D) -> void:
 	if (not body.is_in_group("player")):
