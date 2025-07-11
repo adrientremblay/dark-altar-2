@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://hif2jkgena08"]
+[gd_scene load_steps=9 format=3 uid="uid://hif2jkgena08"]
 
 [ext_resource type="PackedScene" uid="uid://d1ofj233qo7kr" path="res://scenes/butt_plug.tscn" id="1_gv10p"]
 [ext_resource type="Script" uid="uid://b3caeflmglp4u" path="res://scenes/skull_placer.gd" id="1_trjwk"]
 [ext_resource type="PackedScene" uid="uid://cxcnqxkcllt8f" path="res://skull_model.tscn" id="3_17420"]
+[ext_resource type="AudioStream" uid="uid://bx334ggi5vu53" path="res://assets/audio/sound_effects/skull_place.mp3" id="4_im1ej"]
 
 [sub_resource type="Animation" id="Animation_trjwk"]
 length = 0.001
@@ -84,3 +85,7 @@ shape = SubResource("BoxShape3D_gv10p")
 
 [node name="SkullModel" parent="." instance=ExtResource("3_17420")]
 visible = false
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_im1ej")
+volume_db = -5.0
