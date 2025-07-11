@@ -248,7 +248,8 @@ func _input(event):
 		crucifix_animation_player.play("rebuke")
 		var holy_ball = holy_ball_scene.instantiate()
 		get_tree().current_scene.add_child(holy_ball)
-		holy_ball.global_position = $HolyBallSpawn.global_position
+		holy_ball.global_position = $CameraPivot/HolyBallSpawn.global_position
+		holy_ball.direction = (transform.basis * neck.transform.basis * Vector3(0,0,-1))
 		$RebukeSound.play()
 
 func _on_dungeon_audio_switcher_body_entered(body: Node3D) -> void:

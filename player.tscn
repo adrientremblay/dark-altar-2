@@ -261,6 +261,9 @@ omni_range = 2.17844
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CameraPivot/Camera3D/Bobber/Candle"]
 
+[node name="HolyBallSpawn" type="Node3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.534218, -1.16541)
+
 [node name="Walking" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_vbp7b")
 bus = &"Ambience"
@@ -321,9 +324,6 @@ cull_mask = 1047556
 [node name="FlameFlickerSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_xvj01")
 volume_db = 4.685
-
-[node name="HolyBallSpawn" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.534218, -1.16541)
 
 [node name="RebukeSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_q13i1")

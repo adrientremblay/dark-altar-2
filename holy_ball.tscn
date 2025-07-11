@@ -1,16 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxyu88nqby1i4"]
+[gd_scene load_steps=6 format=3 uid="uid://dxyu88nqby1i4"]
 
+[ext_resource type="Script" uid="uid://bmp13v2l26i22" path="res://holy_ball.gd" id="1_gxcn7"]
 [ext_resource type="Shader" uid="uid://rsts7elxdqea" path="res://assets/models/HolyBeam/holy_shader.tres" id="1_wvpqv"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_gxcn7"]
+radius = 0.25
+height = 0.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wvpqv"]
 render_priority = 0
 shader = ExtResource("1_wvpqv")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wvpqv"]
+radius = 0.293144
 
 [node name="HolyBall" type="Area3D"]
+script = ExtResource("1_gxcn7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_gxcn7")
