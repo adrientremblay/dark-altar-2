@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://j8cvyeij62b2" path="res://cedric.gd" id="1_xmn3u"]
 [ext_resource type="AudioStream" uid="uid://n1u68hvc4yo7" path="res://assets/audio/sound_effects/cedric_reveal_sound.mp3" id="2_xvglx"]
-[ext_resource type="AudioStream" uid="uid://deuttlstletah" path="res://assets/audio/sound_effects/woosh.mp3" id="4_r83s5"]
+[ext_resource type="AudioStream" uid="uid://cebsn0w1klfpl" path="res://assets/audio/sound_effects/cedric_teleport.mp3" id="4_r83s5"]
 [ext_resource type="PackedScene" uid="uid://cy56qixibkanx" path="res://assets/models/monk/monk.glb" id="5_hbmsy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8hff"]
