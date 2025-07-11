@@ -101,6 +101,7 @@ func _input(event):
 			interactable.queue_free()
 			$CrucifixPickupSound.play()
 			player.enable_cross()
+			ui.display_message("This crucifix feels charged with holy energy. Use LMS to fire a beam of holy light.")
 		elif interactable.is_in_group("skullplacer"):
 			var skull: SkullPlacer = interactable
 			skull.show_skull()
