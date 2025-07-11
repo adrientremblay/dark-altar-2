@@ -21,6 +21,7 @@ var in_dungeon = false
 @onready var crucifix_animation_player : AnimationPlayer = $CameraPivot/Camera3D/LeftArm/CrucifixAnimationPlayer
 @onready var holy_beam = $CameraPivot/Camera3D/LeftArm/CrucifixModel/HolyBeam
 @onready var bob_animation_player : AnimationPlayer = $CameraPivot/Camera3D/HeadBobAnimationPlayer
+@onready var left_arm = $CameraPivot/Camera3D/LeftArm
 
 var sanity = 100 # out of 100
 var stamina = 100 # out of 100
@@ -292,3 +293,5 @@ func _on_church_audio_switcher_2_body_entered(body: Node3D) -> void:
 		walking = $WoodWalking
 		sprinting.play()
 		
+func enable_cross() -> void:
+	left_arm.visible = true

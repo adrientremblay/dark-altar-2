@@ -99,8 +99,8 @@ func _input(event):
 		elif interactable.is_in_group("crucifix"):
 			#$"DungeonKey".global_position = interactable.global_position
 			interactable.queue_free()
-			ui.display_message("The key to the ritual chamber is hidden beneath the crucifix")
 			$CrucifixPickupSound.play()
+			player.enable_cross()
 		elif interactable.is_in_group("skullplacer"):
 			var skull: SkullPlacer = interactable
 			skull.show_skull()
