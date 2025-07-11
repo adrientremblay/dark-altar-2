@@ -124,3 +124,7 @@ func _on_church_audio_switcher_2_body_entered(body: Node3D) -> void:
 func _on_church_audio_switcher_2_body_exited(body: Node3D) -> void:
 	if (body.is_in_group("player")):
 		disabled = false
+
+func _on_holy_ball_detector_area_entered(area: Area3D) -> void:
+	$ImpactSound.play()
+	area.queue_free()

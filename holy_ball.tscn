@@ -14,7 +14,7 @@ shader = ExtResource("1_wvpqv")
 [sub_resource type="SphereShape3D" id="SphereShape3D_wvpqv"]
 radius = 0.293144
 
-[node name="HolyBall" type="Area3D"]
+[node name="HolyBall" type="Area3D" groups=["holy"]]
 script = ExtResource("1_gxcn7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdn0o2f8qbgk"]
+[gd_scene load_steps=7 format=3 uid="uid://bdn0o2f8qbgk"]
 
 [ext_resource type="Script" uid="uid://j8cvyeij62b2" path="res://cedric.gd" id="1_xmn3u"]
 [ext_resource type="AudioStream" uid="uid://n1u68hvc4yo7" path="res://assets/audio/sound_effects/cedric_reveal_sound.mp3" id="2_xvglx"]
 [ext_resource type="AudioStream" uid="uid://cebsn0w1klfpl" path="res://assets/audio/sound_effects/cedric_teleport.mp3" id="4_r83s5"]
 [ext_resource type="PackedScene" uid="uid://cy56qixibkanx" path="res://assets/models/monk/monk.glb" id="5_hbmsy"]
+[ext_resource type="AudioStream" uid="uid://sfnscq11i7w3" path="res://assets/audio/sound_effects/cedric_impact.mp3" id="5_wldm7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8hff"]
 
@@ -37,4 +38,14 @@ stream = ExtResource("4_r83s5")
 [node name="DialogueSound" type="AudioStreamPlayer3D" parent="."]
 volume_db = -4.0
 
+[node name="HolyBallDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HolyBallDetector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.155787, 0)
+shape = SubResource("CapsuleShape3D_u8hff")
+
+[node name="ImpactSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_wldm7")
+
 [connection signal="timeout" from="TeleportTimer" to="." method="_on_haunt_change_position_timer_timeout"]
+[connection signal="area_entered" from="HolyBallDetector" to="." method="_on_holy_ball_detector_area_entered"]
