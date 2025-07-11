@@ -201,6 +201,10 @@ func _on_grab_shape_area_entered(area: Area3D) -> void:
 			var door : Door = area
 			if door.disabled:
 				return
+		elif area.is_in_group("skullplacer"):
+			var skull_placer : SkullPlacer = area
+			if skull_placer.disabled:
+				return
 		
 		can_interact_with_something.emit()
 

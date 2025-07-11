@@ -100,6 +100,10 @@ func _input(event):
 			interactable.queue_free()
 			ui.display_message("Another key was hidden beneath the crucifix")
 			$CrucifixPickupSound.play()
+		elif interactable.is_in_group("skullplacer"):
+			var skull: SkullPlacer = interactable
+			skull.show_skull()
+			player.cannot_interact_with_something.emit()
 	elif event.is_action_pressed("pause"):
 		Global.game_paused = not Global.game_paused
 		if Global.game_paused:

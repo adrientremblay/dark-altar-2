@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://hif2jkgena08"]
+[gd_scene load_steps=8 format=3 uid="uid://hif2jkgena08"]
 
 [ext_resource type="PackedScene" uid="uid://d1ofj233qo7kr" path="res://scenes/butt_plug.tscn" id="1_gv10p"]
 [ext_resource type="Script" uid="uid://b3caeflmglp4u" path="res://scenes/skull_placer.gd" id="1_trjwk"]
+[ext_resource type="PackedScene" uid="uid://cxcnqxkcllt8f" path="res://skull_model.tscn" id="3_17420"]
 
 [sub_resource type="Animation" id="Animation_trjwk"]
 length = 0.001
@@ -80,3 +81,6 @@ libraries = {
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0141602, 0.322277, 0.00245667)
 shape = SubResource("BoxShape3D_gv10p")
+
+[node name="SkullModel" parent="." instance=ExtResource("3_17420")]
+visible = false
