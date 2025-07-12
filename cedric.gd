@@ -121,11 +121,11 @@ func _on_area_3d_slam_door_body_entered(body: Node3D) -> void:
 	if (body.is_in_group("player")):
 		dungeon_ai_active = true
 
-func _on_church_audio_switcher_2_body_entered(body: Node3D) -> void:
+func _disable_cedric_body_entered(body: Node3D) -> void:
 	if (body.is_in_group("player")):
 		disabled = true
 
-func _on_church_audio_switcher_2_body_exited(body: Node3D) -> void:
+func _disable_cedric_body_exited(body: Node3D) -> void:
 	if (body.is_in_group("player")):
 		disabled = false
 
