@@ -446,7 +446,7 @@ navigation_mesh = SubResource("NavigationMesh_rgv7a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 script = ExtResource("16_irgr7")
 level_path = "res://levels/dungeon.tscn"
-number_cross_options = 4
+number_cross_options = 9
 cedric = NodePath("../../Cedric")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/DungeonSpawnTrigger"]

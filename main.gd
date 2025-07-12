@@ -145,7 +145,7 @@ func _on_area_3d_slam_door_body_entered(body: Node3D) -> void:
 		$DungeonDoor.slam()
 		door_slammed = true
 		cedric.global_position = $DungeonSpawnPosition.global_position
-		ui.display_message("Search for the ritual chamber")
+		ui.display_message("Pick up the crucifix")
 		cedric.playTpSound()
 		
 var pickup_cross_message_displayed = false
