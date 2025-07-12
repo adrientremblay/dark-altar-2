@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bkqqgtingrkl5" path="res://grass_nrm_rgh.dds" id="5_v0oy2"]
 [ext_resource type="PackedScene" uid="uid://dgcgrml4qo4l8" path="res://candle.tscn" id="7_csvwp"]
 [ext_resource type="PackedScene" uid="uid://dinx2n1kr6nxt" path="res://tree.tscn" id="8_3pfa1"]
-[ext_resource type="AudioStream" uid="uid://cvwojghd5kwl" path="res://assets/audio/music/dark_altar_theme_inst.mp3" id="9_pm8sn"]
 [ext_resource type="AudioStream" uid="uid://bq2xj62hoclnk" path="res://assets/audio/sound_effects/night-ambience-17064.mp3" id="10_5eete"]
+[ext_resource type="AudioStream" uid="uid://pcg28vrgvxc" path="res://assets/audio/music/title_screen_ambience.mp3" id="10_q7w76"]
 [ext_resource type="FontFile" uid="uid://cpjjw34khmu8l" path="res://assets/fonts/OldLondon.ttf" id="12_lf08s"]
 [ext_resource type="PackedScene" uid="uid://rwkvp33kdyu7" path="res://final_church.tscn" id="13_lf08s"]
 [ext_resource type="FontFile" uid="uid://drf7yfiy7bo2g" path="res://assets/fonts/Times Regular.ttf" id="13_q7w76"]
@@ -207,7 +207,7 @@ transform = Transform3D(0.798751, 0, 0.601662, 0, 1, 0, -0.601662, 0, 0.798751, 
 visible = false
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_pm8sn")
+stream = ExtResource("10_q7w76")
 autoplay = true
 
 [node name="n" type="AudioStreamPlayer" parent="."]
