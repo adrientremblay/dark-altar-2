@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chc0lqn7moeeo"
-path.s3tc="res://.godot/imported/PavingStones005_1K-JPG_NormalGL.jpg-18dd0e90eafb21c34cd6a6046938d77a.s3tc.ctex"
+uid="uid://kcl2l0h85knt"
+path.s3tc="res://.godot/imported/wall_PavingStones005_1K-JPG_NormalGL.jpg-0884ce0854dec8a2d525798cc9ecd7a2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "66f2dbd4e31e660964def3f50ee888b0"
+}
 
 [deps]
 
-source_file="res://assets/dungeon/PavingStones005_1K-JPG_NormalGL.jpg"
-dest_files=["res://.godot/imported/PavingStones005_1K-JPG_NormalGL.jpg-18dd0e90eafb21c34cd6a6046938d77a.s3tc.ctex"]
+source_file="res://scenes/wall_PavingStones005_1K-JPG_NormalGL.jpg"
+dest_files=["res://.godot/imported/wall_PavingStones005_1K-JPG_NormalGL.jpg-0884ce0854dec8a2d525798cc9ecd7a2.s3tc.ctex"]
 
 [params]
 
@@ -25,7 +28,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://assets/dungeon/PavingStones005_1K-JPG_NormalGL.jpg"
+roughness/src_normal="res://scenes/wall_PavingStones005_1K-JPG_NormalGL.jpg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
