@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://crympftnsrmwa"]
+[gd_scene load_steps=52 format=3 uid="uid://crympftnsrmwa"]
 
 [ext_resource type="MeshLibrary" uid="uid://b58cb358rt6wo" path="res://assets/dungeon/tileset.tres" id="1_tdmtu"]
 [ext_resource type="Script" uid="uid://c86ehxnd2qs5t" path="res://level.gd" id="1_yh6qk"]
@@ -42,7 +42,8 @@
 [ext_resource type="PackedScene" uid="uid://hif2jkgena08" path="res://scenes/skull_placer.tscn" id="41_rn74w"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="42_nbgpb"]
 [ext_resource type="PackedScene" uid="uid://betbs0sua2nbj" path="res://scenes/interactable_key.tscn" id="42_w6waj"]
-[ext_resource type="PackedScene" uid="uid://btsfducly38a1" path="res://scenes/rock_wall.tscn" id="43_g4ltv"]
+[ext_resource type="PackedScene" uid="uid://epmedbrcvaia" path="res://thick_wall.tscn" id="44_4fj3p"]
+[ext_resource type="PackedScene" uid="uid://cnq55o7wljlla" path="res://scenes/door.tscn" id="44_e1nuy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbqgk"]
 transparency = 1
@@ -63,7 +64,10 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Arr
 agent_radius = 0.75
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4ltv"]
-size = Vector3(1.55505, 3.04138, 0.14563)
+size = Vector3(1.44438, 3.04138, 0.14563)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e1nuy"]
+size = Vector3(1.20932, 3.04138, 0.14563)
 
 [node name="Dungeon" type="Node3D" node_paths=PackedStringArray("cross_group")]
 transform = Transform3D(0.746371, 0, 0.66553, 0, 1, 0, -0.66553, 0, 0.746371, 44.9601, -26.9, 41.1885)
@@ -562,53 +566,65 @@ transform = Transform3D(0.00959501, 0.000268011, 0.49991, -0.0139608, 0.499805, 
 [node name="CrossSpawns" type="Node3D" parent="."]
 script = ExtResource("39_8riw2")
 
-[node name="InteractableKey" parent="CrossSpawns" instance=ExtResource("42_w6waj")]
+[node name="InteractableKey" parent="CrossSpawns" node_paths=PackedStringArray("door") instance=ExtResource("42_w6waj")]
 transform = Transform3D(-3.26249e-08, -0.746371, -0.66553, 1, -4.37114e-08, 0, -2.90913e-08, -0.66553, 0.746371, 331.414, 27.6533, -117.374)
+door = NodePath("../../SummoningChamberDoor")
+message = "This key unlocks the summoning chamber"
 
-[node name="InteractableKey2" parent="CrossSpawns" instance=ExtResource("42_w6waj")]
+[node name="InteractableKey2" parent="CrossSpawns" node_paths=PackedStringArray("door") instance=ExtResource("42_w6waj")]
 transform = Transform3D(-3.26249e-08, -0.746371, -0.66553, 1, -4.37114e-08, 0, -2.90913e-08, -0.66553, 0.746371, 349.221, 27.6951, -82.1067)
+door = NodePath("../../SummoningChamberDoor")
+message = "This key unlocks the summoning chamber"
 
-[node name="InteractableKey3" parent="CrossSpawns" instance=ExtResource("42_w6waj")]
+[node name="InteractableKey3" parent="CrossSpawns" node_paths=PackedStringArray("door") instance=ExtResource("42_w6waj")]
 transform = Transform3D(-3.26249e-08, -0.746371, -0.66553, 1, -4.37114e-08, 0, -2.90913e-08, -0.66553, 0.746371, 356.208, 27.4878, -94.3136)
+door = NodePath("../../SummoningChamberDoor")
+message = "This key unlocks the summoning chamber"
 
-[node name="InteractableKey4" parent="CrossSpawns" instance=ExtResource("42_w6waj")]
+[node name="InteractableKey4" parent="CrossSpawns" node_paths=PackedStringArray("door") instance=ExtResource("42_w6waj")]
 transform = Transform3D(-3.26249e-08, -0.746371, -0.66553, 1, -4.37114e-08, 0, -2.90913e-08, -0.66553, 0.746371, 362.605, 27.9268, -59.1487)
+door = NodePath("../../SummoningChamberDoor")
+message = "This key unlocks the summoning chamber"
 
-[node name="InteractableKey5" parent="CrossSpawns" instance=ExtResource("42_w6waj")]
+[node name="InteractableKey5" parent="CrossSpawns" node_paths=PackedStringArray("door") instance=ExtResource("42_w6waj")]
 transform = Transform3D(-3.92749e-09, -0.0898504, -0.995956, 1, -4.37114e-08, 1.32582e-15, -4.35346e-08, -0.995956, 0.0898504, 357.657, 27.1995, -47.7353)
+door = NodePath("../../SummoningChamberDoor")
+message = "This key unlocks the summoning chamber"
 
-[node name="InteractableKey6" parent="CrossSpawns" instance=ExtResource("42_w6waj")]
+[node name="InteractableKey6" parent="CrossSpawns" node_paths=PackedStringArray("door") instance=ExtResource("42_w6waj")]
 transform = Transform3D(-3.26249e-08, -0.746371, -0.66553, 1, -4.37114e-08, 0, -2.90913e-08, -0.66553, 0.746371, 376.914, 26.9144, -69.006)
+door = NodePath("../../SummoningChamberDoor")
+message = "This key unlocks the summoning chamber"
 
-[node name="InteractableKey7" parent="CrossSpawns" instance=ExtResource("42_w6waj")]
+[node name="InteractableKey7" parent="CrossSpawns" node_paths=PackedStringArray("door") instance=ExtResource("42_w6waj")]
 transform = Transform3D(-3.26249e-08, -0.746371, -0.66553, 1, -4.37114e-08, 0, -2.90913e-08, -0.66553, 0.746371, 374.006, 27.8872, -99.2848)
+door = NodePath("../../SummoningChamberDoor")
+message = "This key unlocks the summoning chamber"
 
-[node name="InteractableKey8" parent="CrossSpawns" instance=ExtResource("42_w6waj")]
+[node name="InteractableKey8" parent="CrossSpawns" node_paths=PackedStringArray("door") instance=ExtResource("42_w6waj")]
 transform = Transform3D(-3.26249e-08, -0.746371, -0.66553, 1, -4.37114e-08, 0, -2.90913e-08, -0.66553, 0.746371, 437.719, 27.47, -76.7307)
+door = NodePath("../../SummoningChamberDoor")
+message = "This key unlocks the summoning chamber"
 
-[node name="InteractableKey9" parent="CrossSpawns" instance=ExtResource("42_w6waj")]
+[node name="InteractableKey9" parent="CrossSpawns" node_paths=PackedStringArray("door") instance=ExtResource("42_w6waj")]
 transform = Transform3D(-3.26249e-08, -0.746371, -0.66553, 1, -4.37114e-08, 0, -2.90913e-08, -0.66553, 0.746371, 449.93, 27.7646, -86.8773)
-
-[node name="wall" parent="." instance=ExtResource("43_g4ltv")]
-transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 370.11, 26.0022, -128.777)
-
-[node name="wall2" parent="." instance=ExtResource("43_g4ltv")]
-transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 370.11, 30.9978, -128.777)
-
-[node name="wall3" parent="." instance=ExtResource("43_g4ltv")]
-transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 370.11, 26.0022, -128.877)
-
-[node name="wall4" parent="." instance=ExtResource("43_g4ltv")]
-transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 370.11, 30.9978, -128.877)
+door = NodePath("../../SummoningChamberDoor")
+message = "This key unlocks the summoning chamber"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 368.716, 28.3442, -128.832)
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 368.504, 28.3442, -128.832)
 shape = SubResource("BoxShape3D_g4ltv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="StaticBody3D"]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 371.486, 28.344, -128.832)
-shape = SubResource("BoxShape3D_g4ltv")
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 371.659, 28.344, -128.832)
+shape = SubResource("BoxShape3D_e1nuy")
+
+[node name="SummoningChamberDoor" parent="." instance=ExtResource("44_e1nuy")]
+transform = Transform3D(4.52995e-06, -0.00130899, -0.750001, -0.00261799, 0.749994, -0.001309, 0.749997, 0.00261799, -5.96046e-08, 369.299, 27.2139, -128.836)
+
+[node name="thick_wall" parent="." instance=ExtResource("44_4fj3p")]
+transform = Transform3D(0, 0, 0.750001, 0, 0.75, 0, -0.750001, 0, 0, 370.168, 27.1343, -128.835)

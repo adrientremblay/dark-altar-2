@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://epmedbrcvaia"]
+
+[ext_resource type="PackedScene" uid="uid://djv03opr4k6ee" path="res://assets/models/thick_wall.glb" id="1_yjo5n"]
+
+[node name="thick_wall" instance=ExtResource("1_yjo5n")]
+
+[node name="Wall" parent="." index="0"]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 1.59647, 0)

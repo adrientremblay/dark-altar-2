@@ -5,4 +5,4 @@
 [node name="wall" instance=ExtResource("1_yekpr")]
 
 [node name="Wall" parent="." index="0"]
-transform = Transform3D(-2.18557e-08, 0.5, 0, -0.5, -2.18557e-08, 0, 0, 0, 0.5, 0, 1.71305, 0)
+transform = Transform3D(-3.27835e-08, 0.75, 0, -0.75, -3.27835e-08, 0, 0, 0, 0.75, 0, 1.71305, 0)
