@@ -4,7 +4,7 @@ var random = RandomNumberGenerator.new()
 
 var spotted = false
 var can_teleport = false
-var frozen = true
+var frozen = false
 
 var agression_level = 0 # corresponds to the number of skulls the player has collected
 # The following are indexed by agression_level
@@ -135,3 +135,6 @@ func _on_holy_ball_detector_area_entered(area: Area3D) -> void:
 
 func _on_unfreeze_timer_timeout() -> void:
 	frozen = false
+	
+func playTpSound() -> void:
+	$MovementSound.play
