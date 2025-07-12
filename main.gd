@@ -101,7 +101,7 @@ func _input(event):
 			interactable.queue_free()
 			$CrucifixPickupSound.play()
 			player.enable_cross()
-			ui.display_message("This crucifix feels charged with holy energy. Use LMS to fire a beam of holy light.")
+			ui.display_message("Search for the ritual chamber. The crucifix is your only defense.")
 		elif interactable.is_in_group("skullplacer"):
 			var skull: SkullPlacer = interactable
 			skull.show_skull()
@@ -146,7 +146,7 @@ func _on_area_3d_slam_door_body_entered(body: Node3D) -> void:
 		door_slammed = true
 		cedric.global_position = $DungeonSpawnPosition.global_position
 		ui.display_message("Pick up the crucifix")
-		cedric.playTpSound()
+		cedric.play_movement_sound()
 		
 var pickup_cross_message_displayed = false
 func _on_area_3d_pickup_cross_message_body_entered(body: Node3D) -> void:
