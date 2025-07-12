@@ -121,6 +121,7 @@ func pause():
 	var ambience_bus_index = AudioServer.get_bus_index("Ambience")
 	AudioServer.set_bus_volume_db(ambience_bus_index, -100)
 	player.pause_flame()
+	player.is_paused = true
 	if not $Player.reading:
 		ui.toggle_pause_menu(true)
 	
@@ -129,6 +130,7 @@ func unpause():
 	var ambience_bus_index = AudioServer.get_bus_index("Ambience")
 	AudioServer.set_bus_volume_db(ambience_bus_index, 0)
 	player.unpause_flame()
+	player.is_paused = false
 	if not $Player.reading:
 		ui.toggle_pause_menu(false)
 

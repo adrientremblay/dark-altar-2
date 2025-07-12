@@ -8,6 +8,7 @@ var sprint_degen = 30
 enum MovementMode {STANDING, WALKING, SPRINTING}
 var movement_mode : MovementMode = MovementMode.STANDING
 var in_dungeon = false
+var is_paused = false
 
 @onready var neck = $CameraPivot
 @onready var camera = $CameraPivot/Camera3D
@@ -245,7 +246,7 @@ func _on_flame_flicker_timer_timeout() -> void:
 	candle.flickering = false
 
 func _input(event):
-	if event.is_action_pressed("rebuke") && has_cross:
+	if event.is_action_pressed("rebuke") && has_cross && !is_paused:
 		crucifix_animation_player.play("rebuke")
 		var holy_ball = holy_ball_scene.instantiate()
 		get_tree().current_scene.add_child(holy_ball)
