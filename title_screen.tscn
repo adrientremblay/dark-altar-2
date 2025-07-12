@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bkcwebiqubxqk"]
+[gd_scene load_steps=35 format=3 uid="uid://bkcwebiqubxqk"]
 
 [ext_resource type="Texture2D" uid="uid://cjnd1jnmv1giq" path="res://grass_alb_ht.dds" id="1_dr2xh"]
 [ext_resource type="Script" uid="uid://d3h3ytbpmlogr" path="res://title_screen.gd" id="1_ropif"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bq2xj62hoclnk" path="res://assets/audio/sound_effects/night-ambience-17064.mp3" id="10_5eete"]
 [ext_resource type="FontFile" uid="uid://cpjjw34khmu8l" path="res://assets/fonts/OldLondon.ttf" id="12_lf08s"]
 [ext_resource type="PackedScene" uid="uid://rwkvp33kdyu7" path="res://final_church.tscn" id="13_lf08s"]
+[ext_resource type="PackedScene" uid="uid://cnq55o7wljlla" path="res://scenes/door.tscn" id="14_n1yhu"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_agfuu"]
 
@@ -140,7 +141,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555335, 0)
 script = ExtResource("1_ropif")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31147, -0.0679057)
+transform = Transform3D(1, 0, 0, 0, 0.997421, -0.071776, 0, 0.071776, 0.997421, -7.70183, 1.31147, 2.6045)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, -17.9711)
@@ -155,20 +156,20 @@ environment = SubResource("Environment_qd1uc")
 mesh_library = ExtResource("3_q6gt4")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00180075, -0.151013, -9.2368)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6713, -0.151013, -5.61025)
 light_color = Color(0.705882, 0.666667, 0.141176, 1)
 light_specular = 0.0
 omni_range = 9.50516
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00180075, -0.163213, -9.10182)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6713, -0.163213, -5.47527)
 light_color = Color(0.705882, 0.666667, 0.141176, 1)
 light_energy = 0.167
 light_specular = 0.0
 omni_range = 9.50516
 
 [node name="monk" parent="." instance=ExtResource("4_h3mt7")]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, -0.578035, -11.0563)
+transform = Transform3D(0.0065194, 0, 0.00758271, 0, 0.01, 0, -0.00758271, 0, 0.0065194, -22.0406, 3.27629, -11.0563)
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 storage = ExtResource("5_drh42")
@@ -176,7 +177,7 @@ material = SubResource("Terrain3DMaterial_be1wv")
 texture_list = SubResource("Terrain3DTextureList_4woog")
 
 [node name="Candle" parent="." instance=ExtResource("7_csvwp")]
-transform = Transform3D(0.08, 0, 0, 0, 0.12, 0, 0, 0, 0.08, 0, -0.485933, -9.255)
+transform = Transform3D(0.08, 0, 0, 0, 0.12, 0, 0, 0, 0.08, 1.6695, -0.485933, -5.62845)
 
 [node name="Flame" type="GPUParticles3D" parent="Candle"]
 transform = Transform3D(0.234373, 0, -0.0870042, 0, 0.25, 0, 0.0870042, 0, 0.234373, 0.004076, 3.03378, -0.00397444)
@@ -208,51 +209,111 @@ stream = ExtResource("10_5eete")
 volume_db = -5.06
 autoplay = true
 
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="UI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
-[node name="Title" type="Label" parent="UI"]
-layout_mode = 0
-offset_top = 11.0
+[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+offset_top = 90.0
 offset_right = 1920.0
-offset_bottom = 287.0
+offset_bottom = 330.0
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="UI/VBoxContainer"]
+layout_mode = 2
 text = "DARK ALTAR 2"
 label_settings = SubResource("LabelSettings_7684l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StartGameButton" type="Button" parent="UI"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 720.0
-offset_top = 760.0
-offset_right = 1120.0
-offset_bottom = 872.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_fonts/font = ExtResource("12_lf08s")
-theme_override_font_sizes/font_size = 66
-text = "Start Game"
-
-[node name="Title2" type="Label" parent="UI"]
-layout_mode = 0
-offset_top = 207.0
-offset_right = 1920.0
-offset_bottom = 267.0
+[node name="Tagline" type="Label" parent="UI/VBoxContainer"]
+layout_mode = 2
 text = "by Adrien Tremblay"
 label_settings = SubResource("LabelSettings_hd3vd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="church" parent="." instance=ExtResource("13_lf08s")]
-transform = Transform3D(-0.0934155, 0, 0.74416, 0, 0.75, 0, -0.74416, 0, -0.0934155, -0.399208, -0.555335, -10.1671)
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI"]
+offset_left = 800.0
+offset_top = 733.0
+offset_right = 1192.0
+offset_bottom = 998.0
+theme_override_constants/separation = 20
 
-[connection signal="pressed" from="UI/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[node name="StartGameButton" type="Button" parent="UI/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("12_lf08s")
+theme_override_font_sizes/font_size = 45
+text = "Start Game"
+
+[node name="OptionsButton" type="Button" parent="UI/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("12_lf08s")
+theme_override_font_sizes/font_size = 45
+text = "Controls"
+
+[node name="LoreButton" type="Button" parent="UI/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("12_lf08s")
+theme_override_font_sizes/font_size = 45
+text = "Lore"
+
+[node name="LoreButton2" type="Button" parent="UI/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("12_lf08s")
+theme_override_font_sizes/font_size = 45
+text = "Exit"
+
+[node name="church" parent="." instance=ExtResource("13_lf08s")]
+transform = Transform3D(-3.27836e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.27836e-08, 0.12326, -0.555335, -10.1671)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66335, -0.151013, -5.61025)
+light_color = Color(0.705882, 0.666667, 0.141176, 1)
+light_specular = 0.0
+omni_range = 9.50516
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66335, -0.163213, -5.47527)
+light_color = Color(0.705882, 0.666667, 0.141176, 1)
+light_energy = 0.167
+light_specular = 0.0
+omni_range = 9.50516
+
+[node name="Candle2" parent="." instance=ExtResource("7_csvwp")]
+transform = Transform3D(0.08, 0, 0, 0, 0.12, 0, 0, 0, 0.08, -1.66515, -0.485933, -5.62845)
+
+[node name="Flame" type="GPUParticles3D" parent="Candle2"]
+transform = Transform3D(0.234373, 0, -0.0870042, 0, 0.25, 0, 0.0870042, 0, 0.234373, 0.004076, 3.03378, -0.00397444)
+layers = 4
+material_override = SubResource("StandardMaterial3D_mm4wd")
+amount = 100
+lifetime = 0.3
+randomness = 1.0
+visibility_aabb = AABB(-4, -4.02881, -3.97363, 8, 8, 8)
+local_coords = true
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_8in7s")
+draw_pass_1 = SubResource("QuadMesh_xitcj")
+
+[node name="door" parent="." instance=ExtResource("14_n1yhu")]
+transform = Transform3D(0.380485, 0, -0.646322, 0, 0.75, 0, 0.646322, 0, 0.380485, -0.774401, -0.307926, -6.48939)
+
+[connection signal="pressed" from="UI/VBoxContainer2/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer2/OptionsButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer2/LoreButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer2/LoreButton2" to="." method="_on_start_game_button_pressed"]
