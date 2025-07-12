@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bkcwebiqubxqk"]
+[gd_scene load_steps=34 format=3 uid="uid://bkcwebiqubxqk"]
 
 [ext_resource type="Texture2D" uid="uid://cjnd1jnmv1giq" path="res://grass_alb_ht.dds" id="1_dr2xh"]
 [ext_resource type="Script" uid="uid://d3h3ytbpmlogr" path="res://title_screen.gd" id="1_ropif"]
@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dinx2n1kr6nxt" path="res://tree.tscn" id="8_3pfa1"]
 [ext_resource type="AudioStream" uid="uid://cvwojghd5kwl" path="res://assets/audio/music/dark_altar_theme_inst.mp3" id="9_pm8sn"]
 [ext_resource type="AudioStream" uid="uid://bq2xj62hoclnk" path="res://assets/audio/sound_effects/night-ambience-17064.mp3" id="10_5eete"]
-[ext_resource type="FontFile" uid="uid://dm6dgw04fnest" path="res://assets/fonts/Darkcastle_PERSONAL_USE_ONLY.otf" id="11_b3dbl"]
+[ext_resource type="FontFile" uid="uid://cpjjw34khmu8l" path="res://assets/fonts/OldLondon.ttf" id="12_lf08s"]
+[ext_resource type="PackedScene" uid="uid://rwkvp33kdyu7" path="res://final_church.tscn" id="13_lf08s"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_agfuu"]
 
@@ -125,19 +126,21 @@ hue_variation_max = 0.3
 size = Vector2(3, 3)
 
 [sub_resource type="LabelSettings" id="LabelSettings_7684l"]
-font = ExtResource("11_b3dbl")
-font_size = 100
+font = ExtResource("12_lf08s")
+font_size = 130
+font_color = Color(1, 1, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hd3vd"]
-font = ExtResource("11_b3dbl")
+font = ExtResource("12_lf08s")
 font_size = 60
+font_color = Color(1, 1, 0, 1)
 
 [node name="TitleScreen" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555335, 0)
 script = ExtResource("1_ropif")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31147, -4.00369)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31147, -0.0679057)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, -17.9711)
@@ -173,7 +176,7 @@ material = SubResource("Terrain3DMaterial_be1wv")
 texture_list = SubResource("Terrain3DTextureList_4woog")
 
 [node name="Candle" parent="." instance=ExtResource("7_csvwp")]
-transform = Transform3D(0.08, 0, 0, 0, 0.12, 0, 0, 0, 0.08, 0, -0.578, -9.255)
+transform = Transform3D(0.08, 0, 0, 0, 0.12, 0, 0, 0, 0.08, 0, -0.485933, -9.255)
 
 [node name="Flame" type="GPUParticles3D" parent="Candle"]
 transform = Transform3D(0.234373, 0, -0.0870042, 0, 0.25, 0, 0.0870042, 0, 0.234373, 0.004076, 3.03378, -0.00397444)
@@ -216,7 +219,7 @@ layout_mode = 0
 offset_top = 11.0
 offset_right = 1920.0
 offset_bottom = 287.0
-text = "DARK ALTAR: The VIllage"
+text = "DARK ALTAR 2"
 label_settings = SubResource("LabelSettings_7684l")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -234,18 +237,22 @@ offset_right = 1120.0
 offset_bottom = 872.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("11_b3dbl")
-theme_override_font_sizes/font_size = 80
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("12_lf08s")
+theme_override_font_sizes/font_size = 66
 text = "Start Game"
 
 [node name="Title2" type="Label" parent="UI"]
 layout_mode = 0
-offset_top = 253.0
+offset_top = 207.0
 offset_right = 1920.0
-offset_bottom = 339.0
+offset_bottom = 267.0
 text = "by Adrien Tremblay"
 label_settings = SubResource("LabelSettings_hd3vd")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="church" parent="." instance=ExtResource("13_lf08s")]
+transform = Transform3D(-0.0934155, 0, 0.74416, 0, 0.75, 0, -0.74416, 0, -0.0934155, -0.399208, -0.555335, -10.1671)
 
 [connection signal="pressed" from="UI/StartGameButton" to="." method="_on_start_game_button_pressed"]
