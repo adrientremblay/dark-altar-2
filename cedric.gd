@@ -4,6 +4,7 @@ var random = RandomNumberGenerator.new()
 
 var spotted = false
 var can_teleport = false
+var frozen = true
 
 var agression_level = 0 # corresponds to the number of skulls the player has collected
 # The following are indexed by agression_level
@@ -43,7 +44,7 @@ func _process(delta: float) -> void:
 		spotted_behaviour()
 
 func _physics_process(delta: float) -> void:
-	if Global.game_paused || !dungeon_ai_active || disabled:
+	if Global.game_paused || !dungeon_ai_active || disabled || frozen:
 		return
 	
 	nav.target_position = player.position
@@ -126,5 +127,11 @@ func _on_church_audio_switcher_2_body_exited(body: Node3D) -> void:
 		disabled = false
 
 func _on_holy_ball_detector_area_entered(area: Area3D) -> void:
-	$ImpactSound.play()
-	area.queue_free()
+	if (area.is_in_group("holy")):
+		$ImpactSound.play()
+		area.queue_free()
+		frozen = true
+		$UnfreezeTimer.start()
+
+func _on_unfreeze_timer_timeout() -> void:
+	frozen = false

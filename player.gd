@@ -35,6 +35,7 @@ signal can_interact_with_something
 signal cannot_interact_with_something
 
 var reading = false
+var has_cross = false
 
 func _ready() -> void:
 	var anim: Animation = bob_animation_player.get_animation("Head Bob")
@@ -244,7 +245,7 @@ func _on_flame_flicker_timer_timeout() -> void:
 	candle.flickering = false
 
 func _input(event):
-	if event.is_action_pressed("rebuke"):
+	if event.is_action_pressed("rebuke") && has_cross:
 		crucifix_animation_player.play("rebuke")
 		var holy_ball = holy_ball_scene.instantiate()
 		get_tree().current_scene.add_child(holy_ball)
@@ -300,3 +301,4 @@ func _on_church_audio_switcher_2_body_entered(body: Node3D) -> void:
 		
 func enable_cross() -> void:
 	left_arm.visible = true
+	has_cross = true

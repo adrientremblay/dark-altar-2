@@ -47,5 +47,10 @@ shape = SubResource("CapsuleShape3D_u8hff")
 [node name="ImpactSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_wldm7")
 
+[node name="UnfreezeTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="timeout" from="TeleportTimer" to="." method="_on_haunt_change_position_timer_timeout"]
 [connection signal="area_entered" from="HolyBallDetector" to="." method="_on_holy_ball_detector_area_entered"]
+[connection signal="timeout" from="UnfreezeTimer" to="." method="_on_unfreeze_timer_timeout"]
