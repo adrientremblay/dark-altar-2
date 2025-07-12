@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bkcwebiqubxqk"]
+[gd_scene load_steps=38 format=3 uid="uid://bkcwebiqubxqk"]
 
 [ext_resource type="Texture2D" uid="uid://cjnd1jnmv1giq" path="res://grass_alb_ht.dds" id="1_dr2xh"]
 [ext_resource type="Script" uid="uid://d3h3ytbpmlogr" path="res://title_screen.gd" id="1_ropif"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://rwkvp33kdyu7" path="res://final_church.tscn" id="13_lf08s"]
 [ext_resource type="FontFile" uid="uid://drf7yfiy7bo2g" path="res://assets/fonts/Times Regular.ttf" id="13_q7w76"]
 [ext_resource type="PackedScene" uid="uid://cnq55o7wljlla" path="res://scenes/door.tscn" id="14_n1yhu"]
+[ext_resource type="AudioStream" uid="uid://biao3dwnq6urb" path="res://assets/audio/sound_effects/ominous_sound.mp3" id="16_wot2p"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_agfuu"]
 
@@ -245,12 +246,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Controls" type="Label" parent="UI/Menus"]
-visible = false
+layout_mode = 0
 offset_top = 309.0
 offset_right = 1920.0
 offset_bottom = 694.0
-text = "WSAD: Move Around
-MOUSE: Aim
+text = "WSAD: Move
+MOUSE: Look
 E: Interact
 LMS: Use crucifix
 P: Pause"
@@ -260,6 +261,7 @@ vertical_alignment = 1
 
 [node name="Lore" type="Label" parent="UI/Menus"]
 visible = false
+layout_mode = 0
 offset_top = 309.0
 offset_right = 1920.0
 offset_bottom = 694.0
@@ -348,6 +350,9 @@ draw_pass_1 = SubResource("QuadMesh_xitcj")
 
 [node name="door" parent="." instance=ExtResource("14_n1yhu")]
 transform = Transform3D(0.380485, 0, -0.646322, 0, 0.75, 0, 0.646322, 0, 0.380485, -0.774401, -0.307926, -6.48939)
+
+[node name="ButtonPressSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_wot2p")
 
 [connection signal="pressed" from="UI/VBoxContainer2/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer2/ControlsButton" to="." method="_on_controls_button_pressed"]
