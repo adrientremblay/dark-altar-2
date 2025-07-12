@@ -159,11 +159,16 @@ func _on_church_audio_switcher_2_body_entered(body: Node3D) -> void:
 		cedric.global_position = $OutsideDoor.global_position
 
 func boss_battle() -> void:
+	ui.display_message("Use the crucifix to banish Cedric")
 	cedric.global_position = $CedricFinalRestingPlace.global_position
 	cedric.disabled = true
+	cedric.vulnerable = true
 
 var summon_message_displayed = false
 func _on_area_3d_place_the_skulls_body_entered(body: Node3D) -> void:
 	if body.is_in_group('player') && !summon_message_displayed:
 		ui.display_message('Place the five skulls.')
 		summon_message_displayed = true
+
+func _on_cedric_cedric_has_died() -> void:
+	ui.display_message('The shade of Cedric Leopold has been banished. The village of Angels crossing is free at last.')

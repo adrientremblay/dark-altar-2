@@ -23,6 +23,8 @@ var disabled = false
 
 @onready var dialogue_1 = preload("res://assets/audio/sound_effects/cedric_dialogue/1.mp3")
 
+signal cedric_has_died
+
 func _process(delta: float) -> void:
 	if Global.game_paused :
 		return
@@ -127,12 +129,13 @@ func _on_church_audio_switcher_2_body_exited(body: Node3D) -> void:
 	if (body.is_in_group("player")):
 		disabled = false
 
+var death_seq_active = false
 func _on_holy_ball_detector_area_entered(area: Area3D) -> void:
 	if (area.is_in_group("holy")):
 		if vulnerable:
-			$DeathSound.play()
-			# TODO
-			print("Game Over")
+			$ImpactSound.play()
+			if !death_seq_active:
+				startDeathCountdown()
 		else:
 			$ImpactSound.play()
 			frozen = true
@@ -143,4 +146,14 @@ func _on_unfreeze_timer_timeout() -> void:
 	frozen = false
 	
 func playTpSound() -> void:
-	$MovementSound.play
+	$MovementSound.play()
+	
+func startDeathCountdown() -> void:
+	print("Start death timer")
+	$DeathTimer.start()
+	death_seq_active = true
+
+func _on_death_timer_timeout() -> void:
+	$DeathSound.play()
+	global_position = Vector3(0,0,0)
+	cedric_has_died.emit()
