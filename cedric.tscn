@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdn0o2f8qbgk"]
+[gd_scene load_steps=8 format=3 uid="uid://bdn0o2f8qbgk"]
 
 [ext_resource type="Script" uid="uid://j8cvyeij62b2" path="res://cedric.gd" id="1_xmn3u"]
 [ext_resource type="AudioStream" uid="uid://n1u68hvc4yo7" path="res://assets/audio/sound_effects/cedric_reveal_sound.mp3" id="2_xvglx"]
 [ext_resource type="AudioStream" uid="uid://cebsn0w1klfpl" path="res://assets/audio/sound_effects/cedric_teleport.mp3" id="4_r83s5"]
 [ext_resource type="PackedScene" uid="uid://cy56qixibkanx" path="res://assets/models/monk/monk.glb" id="5_hbmsy"]
 [ext_resource type="AudioStream" uid="uid://sfnscq11i7w3" path="res://assets/audio/sound_effects/cedric_impact.mp3" id="5_wldm7"]
+[ext_resource type="AudioStream" uid="uid://bpkl3300plt08" path="res://assets/audio/sound_effects/cedric_death.mp3" id="6_yrlcs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8hff"]
 
@@ -50,6 +51,9 @@ stream = ExtResource("5_wldm7")
 [node name="UnfreezeTimer" type="Timer" parent="."]
 wait_time = 7.0
 one_shot = true
+
+[node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_yrlcs")
 
 [connection signal="timeout" from="TeleportTimer" to="." method="_on_haunt_change_position_timer_timeout"]
 [connection signal="area_entered" from="HolyBallDetector" to="." method="_on_holy_ball_detector_area_entered"]

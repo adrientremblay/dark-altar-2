@@ -5,6 +5,7 @@ var random = RandomNumberGenerator.new()
 var spotted = false
 var can_teleport = false
 var frozen = false
+var vulnerable = false
 
 var agression_level = 0 # corresponds to the number of skulls the player has collected
 # The following are indexed by agression_level
@@ -128,10 +129,15 @@ func _on_church_audio_switcher_2_body_exited(body: Node3D) -> void:
 
 func _on_holy_ball_detector_area_entered(area: Area3D) -> void:
 	if (area.is_in_group("holy")):
-		$ImpactSound.play()
+		if vulnerable:
+			$DeathSound.play()
+			# TODO
+			print("Game Over")
+		else:
+			$ImpactSound.play()
+			frozen = true
+			$UnfreezeTimer.start()
 		area.queue_free()
-		frozen = true
-		$UnfreezeTimer.start()
 
 func _on_unfreeze_timer_timeout() -> void:
 	frozen = false

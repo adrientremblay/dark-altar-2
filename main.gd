@@ -159,4 +159,11 @@ func _on_church_audio_switcher_2_body_entered(body: Node3D) -> void:
 		cedric.global_position = $OutsideDoor.global_position
 
 func boss_battle() -> void:
-	print("boss battle")
+	cedric.global_position = $CedricFinalRestingPlace.global_position
+	cedric.disabled = true
+
+var summon_message_displayed = false
+func _on_area_3d_place_the_skulls_body_entered(body: Node3D) -> void:
+	if body.is_in_group('player') && !summon_message_displayed:
+		ui.display_message('Place the five skulls.')
+		summon_message_displayed = true

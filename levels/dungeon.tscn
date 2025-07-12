@@ -624,7 +624,7 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 371.659,
 shape = SubResource("BoxShape3D_e1nuy")
 
 [node name="SummoningChamberDoor" parent="." instance=ExtResource("44_e1nuy")]
-transform = Transform3D(4.52995e-06, -0.00130899, -0.750001, -0.00261799, 0.749994, -0.001309, 0.749997, 0.00261799, -5.96046e-08, 369.299, 27.2139, -128.836)
+transform = Transform3D(4.52995e-06, -0.00130899, -0.750001, -0.00261799, 0.749994, -0.001309, 0.749997, 0.00261799, -8.9407e-08, 369.265, 27.2139, -128.797)
 
 [node name="thick_wall" parent="." instance=ExtResource("44_4fj3p")]
-transform = Transform3D(0, 0, 0.750001, 0, 0.75, 0, -0.750001, 0, 0, 370.168, 27.1343, -128.835)
+transform = Transform3D(0, 0, 0.750001, 0, 0.75, 0, -0.750001, 0, 0, 370.133, 27.1343, -128.796)
