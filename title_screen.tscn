@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bkcwebiqubxqk"]
+[gd_scene load_steps=37 format=3 uid="uid://bkcwebiqubxqk"]
 
 [ext_resource type="Texture2D" uid="uid://cjnd1jnmv1giq" path="res://grass_alb_ht.dds" id="1_dr2xh"]
 [ext_resource type="Script" uid="uid://d3h3ytbpmlogr" path="res://title_screen.gd" id="1_ropif"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bq2xj62hoclnk" path="res://assets/audio/sound_effects/night-ambience-17064.mp3" id="10_5eete"]
 [ext_resource type="FontFile" uid="uid://cpjjw34khmu8l" path="res://assets/fonts/OldLondon.ttf" id="12_lf08s"]
 [ext_resource type="PackedScene" uid="uid://rwkvp33kdyu7" path="res://final_church.tscn" id="13_lf08s"]
+[ext_resource type="FontFile" uid="uid://drf7yfiy7bo2g" path="res://assets/fonts/Times Regular.ttf" id="13_q7w76"]
 [ext_resource type="PackedScene" uid="uid://cnq55o7wljlla" path="res://scenes/door.tscn" id="14_n1yhu"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_agfuu"]
@@ -136,6 +137,11 @@ font = ExtResource("12_lf08s")
 font_size = 60
 font_color = Color(1, 1, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_n1yhu"]
+font = ExtResource("13_q7w76")
+font_size = 49
+font_color = Color(1, 1, 0, 1)
+
 [node name="TitleScreen" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555335, 0)
 script = ExtResource("1_ropif")
@@ -212,30 +218,60 @@ autoplay = true
 [node name="UI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI"]
+[node name="VBoxContainerTitle" type="VBoxContainer" parent="UI"]
 offset_top = 90.0
 offset_right = 1920.0
 offset_bottom = 330.0
 theme_override_constants/separation = 15
 
-[node name="Title" type="Label" parent="UI/VBoxContainer"]
+[node name="Title" type="Label" parent="UI/VBoxContainerTitle"]
 layout_mode = 2
 text = "DARK ALTAR 2"
 label_settings = SubResource("LabelSettings_7684l")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Tagline" type="Label" parent="UI/VBoxContainer"]
+[node name="Tagline" type="Label" parent="UI/VBoxContainerTitle"]
 layout_mode = 2
 text = "by Adrien Tremblay"
 label_settings = SubResource("LabelSettings_hd3vd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Menus" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Controls" type="Label" parent="UI/Menus"]
+visible = false
+offset_top = 309.0
+offset_right = 1920.0
+offset_bottom = 694.0
+text = "WSAD: Move Around
+MOUSE: Aim
+E: Interact
+LMS: Use crucifix
+P: Pause"
+label_settings = SubResource("LabelSettings_n1yhu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lore" type="Label" parent="UI/Menus"]
+visible = false
+offset_top = 309.0
+offset_right = 1920.0
+offset_bottom = 694.0
+text = "You are father Fabrice Beaumont. You have travelled to the village of New Yarmouth by order of the Church. Your task is to investigate rumours of heresy. The village priest is Cedric Leopold. Rumours circulate in surrounding villages that he has forsaken god and serves now the devil."
+label_settings = SubResource("LabelSettings_n1yhu")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="UI"]
-offset_left = 800.0
 offset_top = 733.0
-offset_right = 1192.0
+offset_right = 1917.0
 offset_bottom = 998.0
 theme_override_constants/separation = 20
 
@@ -248,7 +284,7 @@ theme_override_fonts/font = ExtResource("12_lf08s")
 theme_override_font_sizes/font_size = 45
 text = "Start Game"
 
-[node name="OptionsButton" type="Button" parent="UI/VBoxContainer2"]
+[node name="ControlsButton" type="Button" parent="UI/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"FlatButton"
@@ -268,7 +304,7 @@ theme_override_fonts/font = ExtResource("12_lf08s")
 theme_override_font_sizes/font_size = 45
 text = "Lore"
 
-[node name="LoreButton2" type="Button" parent="UI/VBoxContainer2"]
+[node name="QuitButton" type="Button" parent="UI/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_type_variation = &"FlatButton"
@@ -276,7 +312,7 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("12_lf08s")
 theme_override_font_sizes/font_size = 45
-text = "Exit"
+text = "Quit"
 
 [node name="church" parent="." instance=ExtResource("13_lf08s")]
 transform = Transform3D(-3.27836e-08, 0, 0.75, 0, 0.75, 0, -0.75, 0, -3.27836e-08, 0.12326, -0.555335, -10.1671)
@@ -314,6 +350,6 @@ draw_pass_1 = SubResource("QuadMesh_xitcj")
 transform = Transform3D(0.380485, 0, -0.646322, 0, 0.75, 0, 0.646322, 0, 0.380485, -0.774401, -0.307926, -6.48939)
 
 [connection signal="pressed" from="UI/VBoxContainer2/StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer2/OptionsButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer2/LoreButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="UI/VBoxContainer2/LoreButton2" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer2/ControlsButton" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer2/LoreButton" to="." method="_on_lore_button_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]
