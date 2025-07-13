@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bkcwebiqubxqk"]
+[gd_scene load_steps=40 format=3 uid="uid://bkcwebiqubxqk"]
 
 [ext_resource type="Texture2D" uid="uid://cjnd1jnmv1giq" path="res://grass_alb_ht.dds" id="1_dr2xh"]
 [ext_resource type="Script" uid="uid://d3h3ytbpmlogr" path="res://title_screen.gd" id="1_ropif"]
@@ -16,6 +16,7 @@
 [ext_resource type="FontFile" uid="uid://drf7yfiy7bo2g" path="res://assets/fonts/Times Regular.ttf" id="13_q7w76"]
 [ext_resource type="PackedScene" uid="uid://cnq55o7wljlla" path="res://scenes/door.tscn" id="14_n1yhu"]
 [ext_resource type="AudioStream" uid="uid://biao3dwnq6urb" path="res://assets/audio/sound_effects/ominous_sound.mp3" id="16_wot2p"]
+[ext_resource type="AudioStream" uid="uid://bmu5fitmp8evs" path="res://assets/audio/sound_effects/dialogue/open_up_dialogue.mp3" id="17_kvwfe"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_agfuu"]
 
@@ -143,6 +144,9 @@ font = ExtResource("13_q7w76")
 font_size = 49
 font_color = Color(1, 1, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wot2p"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="TitleScreen" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555335, 0)
 script = ExtResource("1_ropif")
@@ -246,6 +250,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Controls" type="Label" parent="UI/Menus"]
+visible = false
 layout_mode = 0
 offset_top = 309.0
 offset_right = 1920.0
@@ -354,7 +359,17 @@ transform = Transform3D(0.380485, 0, -0.646322, 0, 0.75, 0, 0.646322, 0, 0.38048
 [node name="ButtonPressSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_wot2p")
 
+[node name="BlackPanel" type="Panel" parent="."]
+visible = false
+offset_right = 1952.0
+offset_bottom = 1171.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wot2p")
+
+[node name="IntroDialogue" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_kvwfe")
+
 [connection signal="pressed" from="UI/VBoxContainer2/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer2/ControlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer2/LoreButton" to="." method="_on_lore_button_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="finished" from="IntroDialogue" to="." method="_on_intro_dialogue_finished"]
