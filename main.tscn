@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=46 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" uid="uid://rtfpa0y5k4a0" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -24,6 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://c0ff7i5u5eyyb" path="res://assets/audio/sound_effects/cross_pickup.mp3" id="24_1u8w0"]
 [ext_resource type="AudioStream" uid="uid://dcbnur7j0luac" path="res://assets/audio/sound_effects/dialogue/skulls.mp3" id="25_lswn8"]
 [ext_resource type="Script" uid="uid://dl5ntd1kvw62x" path="res://dialogue.gd" id="26_a6jrf"]
+[ext_resource type="AudioStream" uid="uid://djnpiqltn36uo" path="res://assets/audio/sound_effects/dialogue/village_bears_no_light.mp3" id="27_a6jrf"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
 
@@ -627,6 +628,11 @@ stream = ExtResource("25_lswn8")
 script = ExtResource("26_a6jrf")
 transcript = "Skulls? What manner of witchcraft is this? (laughing). Nonetheless if remains even those of alleged heretics are left unburied it is my duty to collect them."
 
+[node name="VillageBearsNoLight" type="AudioStreamPlayer" parent="Dialogue"]
+stream = ExtResource("27_a6jrf")
+script = ExtResource("26_a6jrf")
+transcript = "This village bears no light. And I sense no souls sleep within these hovels. This place is abandoned. The villagers having fled. Spreading rumours of their kin gone missing in the night."
+
 [connection signal="cedric_has_died" from="Cedric" to="." method="_on_cedric_cedric_has_died"]
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
 [connection signal="cannot_interact_with_something" from="Player" to="UI" method="_on_player_cannot_interact_with_something"]
@@ -634,6 +640,7 @@ transcript = "Skulls? What manner of witchcraft is this? (laughing). Nonetheless
 [connection signal="register_skull" from="Player" to="UI" method="_on_player_register_skull"]
 [connection signal="body_entered" from="NavigationRegion3D/DungeonSpawnTrigger" to="NavigationRegion3D/DungeonSpawnTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/DungeonSpawnTrigger" to="NavigationRegion3D/DungeonSpawnTrigger" method="_on_body_exited"]
+[connection signal="body_entered" from="NavigationRegion3D/VillageSpawnTrigger" to="." method="_on_village_spawn_trigger_body_entered"]
 [connection signal="body_entered" from="NavigationRegion3D/VillageSpawnTrigger" to="NavigationRegion3D/VillageSpawnTrigger" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion3D/VillageSpawnTrigger" to="NavigationRegion3D/VillageSpawnTrigger" method="_on_body_exited"]
 [connection signal="body_entered" from="NavigationRegion3D/GraveyardSpawnTrigger" to="NavigationRegion3D/GraveyardSpawnTrigger" method="_on_body_entered"]

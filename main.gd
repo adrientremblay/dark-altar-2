@@ -174,8 +174,13 @@ func _on_cedric_cedric_has_died() -> void:
 	ui.display_message('The shade of Cedric Leopold has been banished. The village of Angels crossing is free at last.')
 
 func play_dialogue(d: Dialogue) -> void:
+	if (!d.played):
+		ui.display_dialogue(d.transcript)
 	d.play_once()
-	ui.display_dialogue(d.transcript)
 
 func _on_dialogue_finished() -> void:
 	ui.hide_message_label()
+
+func _on_village_spawn_trigger_body_entered(body: Node3D) -> void:
+	if (body.is_in_group("player")):
+		play_dialogue($Dialogue/VillageBearsNoLight)
