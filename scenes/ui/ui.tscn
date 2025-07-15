@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dx1ic8e4exr86"]
+[gd_scene load_steps=13 format=3 uid="uid://dx1ic8e4exr86"]
 
 [ext_resource type="Script" uid="uid://bdfcx7ne2cp3k" path="res://scenes/ui/UI.gd" id="1_onnvg"]
 [ext_resource type="Texture2D" uid="uid://bt22o018bjsuu" path="res://assets/images/page_template.png" id="2_88ewc"]
+[ext_resource type="FontFile" uid="uid://drf7yfiy7bo2g" path="res://assets/fonts/Times Regular.ttf" id="2_jcn1r"]
 [ext_resource type="Texture2D" uid="uid://ctg4enhb3qais" path="res://assets/images/gauntletCursor/outlines/cursor_outline_yellow.png" id="3_eqyhu"]
 [ext_resource type="AudioStream" uid="uid://deyxjil4sab1s" path="res://assets/audio/sound_effects/page-flip-01a.mp3" id="4_2mdbe"]
 [ext_resource type="AudioStream" uid="uid://b4plvq8gy0xnv" path="res://assets/audio/music/dark_altar_theme.mp3" id="5_keeai"]
@@ -9,7 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://b5x14n16kot0p" path="res://assets/audio/sound_effects/boom.mp3" id="7_di1hf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_17whb"]
-font_size = 30
+font = ExtResource("2_jcn1r")
+font_size = 32
 font_color = Color(1, 1, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_hiycv"]
@@ -29,21 +31,22 @@ script = ExtResource("1_onnvg")
 wait_time = 3.0
 
 [node name="MessageLabel" type="Label" parent="."]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -887.0
-offset_top = 399.0
+offset_top = 310.0
 offset_right = 891.0
-offset_bottom = 501.0
+offset_bottom = 518.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Sample text sample text sample text"
+text = "Sample text sample text sample textSample text sample text sample textSample text sample text sample textSample text sample text sample textSample text sample text sample textSample text sample text sample textSample text sample text sample textSample text sample text sample textSample text sample text sample textSample text sample text sample text "
 label_settings = SubResource("LabelSettings_17whb")
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="PageView" type="Control" parent="."]
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=45 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" uid="uid://rtfpa0y5k4a0" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://byp887bp7vco1" path="res://assets/models/remains/scene.gltf" id="21_soo3d"]
 [ext_resource type="PackedScene" uid="uid://cnq55o7wljlla" path="res://scenes/door.tscn" id="22_efjyi"]
 [ext_resource type="AudioStream" uid="uid://c0ff7i5u5eyyb" path="res://assets/audio/sound_effects/cross_pickup.mp3" id="24_1u8w0"]
+[ext_resource type="AudioStream" uid="uid://dcbnur7j0luac" path="res://assets/audio/sound_effects/dialogue/skulls.mp3" id="25_lswn8"]
+[ext_resource type="Script" uid="uid://dl5ntd1kvw62x" path="res://dialogue.gd" id="26_a6jrf"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
 
@@ -617,6 +619,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225.02, 1.65816, -312.975)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DisableCedricArea"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 235.082, 15.1246, -209.783)
 shape = SubResource("BoxShape3D_a6jrf")
+
+[node name="Dialogue" type="Node" parent="."]
+
+[node name="Skulls" type="AudioStreamPlayer" parent="Dialogue"]
+stream = ExtResource("25_lswn8")
+script = ExtResource("26_a6jrf")
+transcript = "Skulls? What manner of witchcraft is this? (laughing). Nonetheless if remains even those of alleged heretics are left unburied it is my duty to collect them."
 
 [connection signal="cedric_has_died" from="Cedric" to="." method="_on_cedric_cedric_has_died"]
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]

@@ -68,7 +68,7 @@ func _input(event):
 				unpause()
 				page.queue_free()
 				if page.page_title == "Church Note":
-					ui.display_message("Search the village for the five skulls")
+					play_dialogue($Dialogue/Skulls)
 			else:
 				pause()
 		elif interactable.is_in_group("skull"):
@@ -172,3 +172,7 @@ func _on_area_3d_place_the_skulls_body_entered(body: Node3D) -> void:
 
 func _on_cedric_cedric_has_died() -> void:
 	ui.display_message('The shade of Cedric Leopold has been banished. The village of Angels crossing is free at last.')
+
+func play_dialogue(d: Dialogue) -> void:
+	d.play_once()
+	ui.display_message(d.transcript)

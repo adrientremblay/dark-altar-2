@@ -16,7 +16,7 @@
 [ext_resource type="FontFile" uid="uid://drf7yfiy7bo2g" path="res://assets/fonts/Times Regular.ttf" id="13_q7w76"]
 [ext_resource type="PackedScene" uid="uid://cnq55o7wljlla" path="res://scenes/door.tscn" id="14_n1yhu"]
 [ext_resource type="AudioStream" uid="uid://biao3dwnq6urb" path="res://assets/audio/sound_effects/ominous_sound.mp3" id="16_wot2p"]
-[ext_resource type="AudioStream" uid="uid://bmu5fitmp8evs" path="res://assets/audio/sound_effects/dialogue/open_up_dialogue.mp3" id="17_kvwfe"]
+[ext_resource type="AudioStream" uid="uid://csad4gtqt3qr3" path="res://assets/audio/sound_effects/dialogue/OPEN_up.mp3" id="17_kvwfe"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_agfuu"]
 
