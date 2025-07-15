@@ -24,6 +24,7 @@ var disabled = false
 @onready var dialogue_1 = preload("res://assets/audio/sound_effects/cedric_dialogue/1.mp3")
 
 signal cedric_has_died
+signal cedric_spotted
 
 func _process(delta: float) -> void:
 	if Global.game_paused :
@@ -93,6 +94,7 @@ func spotted_behaviour():
 	player.start_flame_flicker()
 	
 	spotted = true
+	cedric_spotted.emit()
 
 func rotate_to_me(player_position: Vector3):
 	# rotate

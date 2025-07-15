@@ -184,3 +184,22 @@ func _on_dialogue_finished() -> void:
 func _on_village_spawn_trigger_body_entered(body: Node3D) -> void:
 	if (body.is_in_group("player")):
 		play_dialogue($Dialogue/VillageBearsNoLight)
+
+func _on_farm_spawn_trigger_body_entered(body: Node3D) -> void:
+	if (body.is_in_group("player")):
+		play_dialogue($Dialogue/PatheticFarm)
+
+func _on_strange_rocks_spawn_trigger_body_entered(body: Node3D) -> void:
+	if (body.is_in_group("player")):
+		play_dialogue($Dialogue/PaganMagic)
+
+func _on_graveyard_spawn_trigger_body_entered(body: Node3D) -> void:
+	if (body.is_in_group("player")):
+		play_dialogue($Dialogue/BeautifulCemetary)
+
+func _on_mayor_kiesel_body_body_entered(body: Node3D) -> void:
+	if (body.is_in_group("player")):
+		play_dialogue($Dialogue/HereLiesMayorKiesel)
+
+func _on_cedric_cedric_spotted() -> void:
+	play_dialogue($Dialogue/ThisThisThisMan)
