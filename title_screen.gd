@@ -6,6 +6,7 @@ func _on_start_game_button_pressed() -> void:
 	$BlackPanel.visible = true
 	$MusicPlayer.stop()
 	$IntroDialogue.play()
+	$DialogueLabel.visible = true
 
 func _on_controls_button_pressed() -> void:
 	$UI/Menus/Lore.visible = false
