@@ -658,3 +658,4 @@ transcript = "Skulls? What manner of witchcraft is this? (laughing). Nonetheless
 [connection signal="body_entered" from="Area3DPlaceTheSkulls" to="." method="_on_area_3d_place_the_skulls_body_entered"]
 [connection signal="body_entered" from="DisableCedricArea" to="Cedric" method="_disable_cedric_body_entered"]
 [connection signal="body_exited" from="DisableCedricArea" to="Cedric" method="_disable_cedric_body_exited"]
+[connection signal="finished" from="Dialogue/Skulls" to="." method="_on_dialogue_finished"]

@@ -175,4 +175,7 @@ func _on_cedric_cedric_has_died() -> void:
 
 func play_dialogue(d: Dialogue) -> void:
 	d.play_once()
-	ui.display_message(d.transcript)
+	ui.display_dialogue(d.transcript)
+
+func _on_dialogue_finished() -> void:
+	ui.hide_message_label()
