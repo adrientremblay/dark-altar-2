@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://h3r1d42it2ut"]
+[gd_scene load_steps=64 format=3 uid="uid://h3r1d42it2ut"]
 
 [ext_resource type="Script" uid="uid://rtfpa0y5k4a0" path="res://main.gd" id="1_y3a05"]
 [ext_resource type="PackedScene" uid="uid://nqaltxfxv1gr" path="res://player.tscn" id="2_lbx66"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bi7ytov5l6euy" path="res://assets/Skeleton/monkey.jpg" id="12_hbp13"]
 [ext_resource type="AudioStream" uid="uid://b44nqnfus16hc" path="res://assets/audio/sound_effects/Horror Choir Scary Sound Effect.mp3" id="15_ww56w"]
 [ext_resource type="Script" uid="uid://vs5gqxmwtxhr" path="res://SpawnTrigger.gd" id="16_irgr7"]
+[ext_resource type="PackedScene" uid="uid://crympftnsrmwa" path="res://assets/models/rusty_dungeon_cage/dungeon.tscn" id="16_ok6jj"]
 [ext_resource type="PackedScene" uid="uid://tc0pw02m12e2" path="res://skull.tscn" id="18_wedqe"]
 [ext_resource type="PackedScene" uid="uid://d0k3gkte6gqhl" path="res://page.tscn" id="20_b2i1c"]
 [ext_resource type="AudioStream" uid="uid://dqn0eg1xlsoxn" path="res://assets/audio/sound_effects/key_pickup.mp3" id="20_oh7hr"]
@@ -30,6 +31,13 @@
 [ext_resource type="AudioStream" uid="uid://cjmh1jf7gk133" path="res://assets/audio/sound_effects/dialogue/beautiful_cemetary.mp3" id="30_kq58d"]
 [ext_resource type="AudioStream" uid="uid://w1yoadfa6n1i" path="res://assets/audio/sound_effects/dialogue/here_lies_mayor_kiesel.mp3" id="31_seu75"]
 [ext_resource type="AudioStream" uid="uid://7av7p0kp3kh7" path="res://assets/audio/sound_effects/dialogue/this_this_this_man.mp3" id="32_htxhm"]
+[ext_resource type="AudioStream" uid="uid://b5etmagqrteqb" path="res://assets/audio/sound_effects/dialogue/wretched_lair.mp3" id="33_jq2sk"]
+[ext_resource type="AudioStream" uid="uid://ihqytqxyo0lu" path="res://assets/audio/sound_effects/dialogue/special_cross.mp3" id="34_4k2k6"]
+[ext_resource type="AudioStream" uid="uid://coiutqmc1lo2s" path="res://assets/audio/sound_effects/dialogue/so_these_are_the_villagers.mp3" id="35_0rl1p"]
+[ext_resource type="AudioStream" uid="uid://cvdvr6dwwws4v" path="res://assets/audio/sound_effects/dialogue/books_shall_burn.mp3" id="37_facbu"]
+[ext_resource type="AudioStream" uid="uid://clgj4slixkkc4" path="res://assets/audio/sound_effects/dialogue/skull_with_horns.mp3" id="38_b1qrp"]
+[ext_resource type="AudioStream" uid="uid://clyd4mc6nywqi" path="res://assets/audio/sound_effects/dialogue/wow_the_dark_alter.mp3" id="39_come4"]
+[ext_resource type="AudioStream" uid="uid://ct1xq7dcoreng" path="res://assets/audio/sound_effects/dialogue/the_village_is_free.mp3" id="40_h8e4i"]
 [ext_resource type="PackedScene" uid="uid://cucwmwjau6e2n" path="res://pickable_candle.tscn" id="50_81846"]
 [ext_resource type="PackedScene" uid="uid://cahu2dcqaj8sc" path="res://ambient_sound.tscn" id="50_gnthh"]
 
@@ -99,6 +107,18 @@ size = Vector3(39.0574, 31.2493, 336.263)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kq58d"]
 size = Vector3(9.52173, 5.66547, 11.0725)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_facbu"]
+size = Vector3(8.50775, 4.12292, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1qrp"]
+size = Vector3(1, 4.57068, 4.60339)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_come4"]
+size = Vector3(9.24304, 4.19324, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h8e4i"]
+size = Vector3(8.6871, 3.35791, 1.13074)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_y3a05")
@@ -470,6 +490,9 @@ cedric = NodePath("../../Cedric")
 transform = Transform3D(0.605933, 0, -0.795516, 0, 1, 0, 0.795516, 0, 0.605933, 279.735, -7.72497, -283.57)
 shape = SubResource("BoxShape3D_8xyxr")
 
+[node name="Dungeon" parent="NavigationRegion3D/DungeonSpawnTrigger" instance=ExtResource("16_ok6jj")]
+transform = Transform3D(0.746371, 0, 0.66553, 0, 1, 0, -0.66553, 0, 0.746371, 44.9601, -27, 41.1885)
+
 [node name="VillageSpawnTrigger" type="Area3D" parent="NavigationRegion3D" node_paths=PackedStringArray("cedric")]
 script = ExtResource("16_irgr7")
 level_path = "res://village.tscn"
@@ -593,6 +616,7 @@ stream = ExtResource("20_oh7hr")
 
 [node name="DungeonDoor" parent="." instance=ExtResource("22_efjyi")]
 transform = Transform3D(-0.724533, 0, -0.68924, 0, 1, 0, 0.68924, 0, -0.724533, 213.55, 0.344971, -244.697)
+door_name = "dungeon_door"
 
 [node name="DungeonKey" parent="." node_paths=PackedStringArray("door") instance=ExtResource("21_0r6pb")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 213.265, 0.120245, -242.413)
@@ -666,6 +690,41 @@ stream = ExtResource("32_htxhm")
 script = ExtResource("26_a6jrf")
 transcript = "This man. This fallen priest. Is not of this world. I can't... bear to look at him. He is only now a vessel. Marked by hell. The devil walks in his skin."
 
+[node name="WretchedLair" type="AudioStreamPlayer" parent="Dialogue"]
+stream = ExtResource("33_jq2sk")
+script = ExtResource("26_a6jrf")
+transcript = "A wretched lair built into a church? How sinister."
+
+[node name="SpecialCross" type="AudioStreamPlayer" parent="Dialogue"]
+stream = ExtResource("34_4k2k6")
+script = ExtResource("26_a6jrf")
+transcript = "This cross is special. I can feel it. Cedric Leopold I smite thee!"
+
+[node name="SoTheseAreTheVillagers" type="AudioStreamPlayer" parent="Dialogue"]
+stream = ExtResource("35_0rl1p")
+script = ExtResource("26_a6jrf")
+transcript = "So these are the villagers. The mystery is solved. God rest their souls."
+
+[node name="BooksShallBurn" type="AudioStreamPlayer" parent="Dialogue"]
+stream = ExtResource("37_facbu")
+script = ExtResource("26_a6jrf")
+transcript = "These acursed books shall burn if I survive this night."
+
+[node name="SkullWithHorns" type="AudioStreamPlayer" parent="Dialogue"]
+stream = ExtResource("38_b1qrp")
+script = ExtResource("26_a6jrf")
+transcript = "What in gods name is this? A skull with horns. It can only be one thing."
+
+[node name="WowTheDarkAlter" type="AudioStreamPlayer" parent="Dialogue"]
+stream = ExtResource("39_come4")
+script = ExtResource("26_a6jrf")
+transcript = "My god. The Dark Altar. I thought it was myth. I must place the skulls."
+
+[node name="TheVillageIsFree" type="AudioStreamPlayer" parent="Dialogue"]
+stream = ExtResource("40_h8e4i")
+script = ExtResource("26_a6jrf")
+transcript = "Finally. It is done. The village is free."
+
 [node name="MayorKieselBody" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MayorKieselBody"]
@@ -674,6 +733,31 @@ shape = SubResource("BoxShape3D_kq58d")
 
 [node name="Skull6" parent="." instance=ExtResource("18_wedqe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.0631, 0, -65.137)
+
+[node name="Area3DVillagers" type="Area3D" parent="."]
+transform = Transform3D(0.790957, 0, 0.611872, 0, 1, 0, -0.611872, 0, 0.790957, 278.967, 0.608833, -235.019)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3DVillagers"]
+transform = Transform3D(0.989006, 0, 0.147879, 0, 1, 0, -0.147879, 0, 0.989006, -0.416534, 1.13177, -0.590149)
+shape = SubResource("BoxShape3D_facbu")
+
+[node name="Area3DBooksShallBurn" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3DBooksShallBurn"]
+transform = Transform3D(0.740934, 0, 0.671578, 0, 1, 0, -0.671578, 0, 0.740934, 317.452, 1.17595, -322.092)
+shape = SubResource("BoxShape3D_b1qrp")
+
+[node name="Area3DSkullWithHorns" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3DSkullWithHorns"]
+transform = Transform3D(0.708093, 0, 0.706119, 0, 1, 0, -0.706119, 0, 0.708093, 248.863, 2.02386, -264.812)
+shape = SubResource("BoxShape3D_come4")
+
+[node name="Area3DWorDarkAltar" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3DWorDarkAltar"]
+transform = Transform3D(0.754171, 0, 0.656678, 0, 1, 0, -0.656678, 0, 0.754171, 230.888, 1.17896, -306.458)
+shape = SubResource("BoxShape3D_h8e4i")
 
 [connection signal="cedric_has_died" from="Cedric" to="." method="_on_cedric_cedric_has_died"]
 [connection signal="cedric_spotted" from="Cedric" to="." method="_on_cedric_cedric_spotted"]
@@ -713,3 +797,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.0631, 0, -65.137)
 [connection signal="body_exited" from="DisableCedricArea" to="Cedric" method="_disable_cedric_body_exited"]
 [connection signal="finished" from="Dialogue/Skulls" to="." method="_on_dialogue_finished"]
 [connection signal="body_entered" from="MayorKieselBody" to="." method="_on_mayor_kiesel_body_body_entered"]
+[connection signal="body_entered" from="Area3DVillagers" to="." method="_on_area_3d_villagers_body_entered"]
+[connection signal="body_entered" from="Area3DBooksShallBurn" to="." method="_on_area_3d_books_shall_burn_body_entered"]
+[connection signal="body_entered" from="Area3DSkullWithHorns" to="." method="_on_area_3d_skull_with_horns_body_entered"]
+[connection signal="body_entered" from="Area3DWorDarkAltar" to="." method="_on_area_3d_wor_dark_altar_body_entered"]
