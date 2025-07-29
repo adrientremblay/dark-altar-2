@@ -14,7 +14,7 @@ func display_message(message):
 func display_dialogue(message):
 	message_label.text = message
 	message_label.visible = true
-	message_timer.start()
+	message_timer.stop()
 
 func hide_message_label():
 	message_label.visible = false

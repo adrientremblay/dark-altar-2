@@ -45,6 +45,7 @@ text = "you are dead lol"
 label_settings = SubResource("LabelSettings_6wc3r")
 
 [node name="Title" type="Label" parent="."]
+layout_mode = 0
 offset_right = 1917.0
 offset_bottom = 1082.0
 text = "You Are Dead"

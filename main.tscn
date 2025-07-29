@@ -580,26 +580,11 @@ shape = SubResource("BoxShape3D_1u8w0")
 transform = Transform3D(0.754778, 0, 0.65598, 0, 1, 0, -0.65598, 0, 0.754778, 207.976, 1.65812, -237.907)
 shape = SubResource("BoxShape3D_0odxb")
 
-[node name="Skull" parent="." instance=ExtResource("18_wedqe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.498, 0, -220.377)
-
-[node name="Skull2" parent="." instance=ExtResource("18_wedqe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.37, 0, -219.719)
-
-[node name="Skull3" parent="." instance=ExtResource("18_wedqe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 179.293, 0, -221.212)
-
-[node name="Skull4" parent="." instance=ExtResource("18_wedqe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177.361, 0, -221.477)
-
 [node name="PickableCandle2" parent="." instance=ExtResource("50_81846")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 199.187, -0.0666542, -226.995)
 
 [node name="PickableCandle3" parent="." instance=ExtResource("50_81846")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 198.865, -0.0235379, -226.883)
-
-[node name="Skull5" parent="." instance=ExtResource("18_wedqe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.592, 0.00613856, -221.484)
 
 [node name="ChurchKey" parent="." node_paths=PackedStringArray("door") instance=ExtResource("21_0r6pb")]
 transform = Transform3D(-4.36933e-08, -0.999587, -0.0287413, 1, -4.37114e-08, 0, -1.25632e-09, -0.0287413, 0.999587, 185.307, -1.93011, -230.099)
