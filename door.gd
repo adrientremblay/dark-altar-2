@@ -2,6 +2,7 @@ class_name Door extends Area3D
 
 var locked = true
 var disabled = false
+var door_name = ''
 
 func open():
 	if disabled:

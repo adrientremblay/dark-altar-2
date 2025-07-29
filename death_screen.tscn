@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6kfu4yd13506"]
+[gd_scene load_steps=5 format=3 uid="uid://c6kfu4yd13506"]
 
 [ext_resource type="Script" uid="uid://bxiq2w07eldlx" path="res://death_screen.gd" id="1_xxkfi"]
+[ext_resource type="FontFile" uid="uid://cpjjw34khmu8l" path="res://assets/fonts/OldLondon.ttf" id="2_ex68u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6wc3r"]
 font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_6bi5g"]
+font = ExtResource("2_ex68u")
+font_size = 130
+font_color = Color(1, 1, 0, 1)
 
 [node name="DeathScreen" type="Control"]
 layout_mode = 3
@@ -33,6 +39,15 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CenterContainer"]
+visible = false
 layout_mode = 2
 text = "you are dead lol"
 label_settings = SubResource("LabelSettings_6wc3r")
+
+[node name="Title" type="Label" parent="."]
+offset_right = 1917.0
+offset_bottom = 1082.0
+text = "You Are Dead"
+label_settings = SubResource("LabelSettings_6bi5g")
+horizontal_alignment = 1
+vertical_alignment = 1

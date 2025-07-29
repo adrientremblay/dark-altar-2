@@ -92,7 +92,7 @@ func _input(event):
 			if door.locked:
 				ui.display_message("You do not possess the key for this door")
 			if interactable.door_name == "dungeon_door":
-				ui.display_dialogue($Dialogue/WretchedLair)
+				play_dialogue($Dialogue/WretchedLair)
 		elif interactable.is_in_group("key"):
 			var key : Key = interactable
 			ui.display_message(key.message)
@@ -103,7 +103,7 @@ func _input(event):
 			interactable.queue_free()
 			$CrucifixPickupSound.play()
 			player.enable_cross()
-			ui.display_dialogue($Dialogue/SpecialCross)
+			play_dialogue($Dialogue/SpecialCross)
 		elif interactable.is_in_group("skullplacer"):
 			var skull: SkullPlacer = interactable
 			skull.show_skull()
@@ -174,6 +174,7 @@ func _on_area_3d_place_the_skulls_body_entered(body: Node3D) -> void:
 
 func _on_cedric_cedric_has_died() -> void:
 	play_dialogue($Dialogue/TheVillageIsFree)
+	$EndGameTimer.start()
 
 func play_dialogue(d: Dialogue) -> void:
 	if (!d.played):
@@ -221,3 +222,6 @@ func _on_area_3d_skull_with_horns_body_entered(body: Node3D) -> void:
 func _on_area_3d_wor_dark_altar_body_entered(body: Node3D) -> void:
 	if (body.is_in_group("player")):
 		play_dialogue($Dialogue/WowTheDarkAlter)
+
+func _on_end_game_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://end_screen.tscn")

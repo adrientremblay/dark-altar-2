@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpk7784iy4nw1"]
+
+[ext_resource type="FontFile" uid="uid://cpjjw34khmu8l" path="res://assets/fonts/OldLondon.ttf" id="1_my301"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3iaq5"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_abjgy"]
+font = ExtResource("1_my301")
+font_size = 130
+font_color = Color(1, 1, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1946.0
+offset_bottom = 1126.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3iaq5")
+
+[node name="Title" type="Label" parent="."]
+offset_right = 1946.0
+offset_bottom = 1098.0
+text = "The End"
+label_settings = SubResource("LabelSettings_abjgy")
+horizontal_alignment = 1
+vertical_alignment = 1

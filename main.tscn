@@ -759,6 +759,9 @@ shape = SubResource("BoxShape3D_come4")
 transform = Transform3D(0.754171, 0, 0.656678, 0, 1, 0, -0.656678, 0, 0.754171, 230.888, 1.17896, -306.458)
 shape = SubResource("BoxShape3D_h8e4i")
 
+[node name="EndGameTimer" type="Timer" parent="."]
+wait_time = 8.0
+
 [connection signal="cedric_has_died" from="Cedric" to="." method="_on_cedric_cedric_has_died"]
 [connection signal="cedric_spotted" from="Cedric" to="." method="_on_cedric_cedric_spotted"]
 [connection signal="can_interact_with_something" from="Player" to="UI" method="_on_player_can_interact_with_something"]
@@ -801,3 +804,4 @@ shape = SubResource("BoxShape3D_h8e4i")
 [connection signal="body_entered" from="Area3DBooksShallBurn" to="." method="_on_area_3d_books_shall_burn_body_entered"]
 [connection signal="body_entered" from="Area3DSkullWithHorns" to="." method="_on_area_3d_skull_with_horns_body_entered"]
 [connection signal="body_entered" from="Area3DWorDarkAltar" to="." method="_on_area_3d_wor_dark_altar_body_entered"]
+[connection signal="timeout" from="EndGameTimer" to="." method="_on_end_game_timer_timeout"]
