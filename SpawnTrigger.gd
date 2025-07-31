@@ -41,3 +41,5 @@ func _process(delta: float) -> void:
 		spawned_level.init(skull_keep_index, cross_keep_index)
 		spawned_level.connect("skull_collected", self._on_skull_collected)
 		add_child(spawned_level)
+	elif result == ResourceLoader.THREAD_LOAD_FAILED:
+		print("failed to load level")

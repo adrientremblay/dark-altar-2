@@ -17,11 +17,9 @@ var is_paused = false
 @onready var grab_shape : Area3D = $CameraPivot/Camera3D/GrabShape
 @onready var candle_light : OmniLight3D = $CameraPivot/Camera3D/Bobber/Candle/WorldLight
 @onready var candle = $CameraPivot/Camera3D/Bobber/Candle
-@onready var animation_player : AnimationPlayer = $CameraPivot/Camera3D/AnimationPlayer
 @onready var walking : AudioStreamPlayer = $Walking
 @onready var sprinting : AudioStreamPlayer = $Sprinting
 @onready var crucifix_animation_player : AnimationPlayer = $CameraPivot/Camera3D/LeftArm/CrucifixAnimationPlayer
-@onready var holy_beam = $CameraPivot/Camera3D/LeftArm/CrucifixModel/HolyBeam
 @onready var bob_animation_player : AnimationPlayer = $CameraPivot/Camera3D/HeadBobAnimationPlayer
 @onready var left_arm = $CameraPivot/Camera3D/LeftArm
 

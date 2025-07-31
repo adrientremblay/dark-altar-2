@@ -6,7 +6,6 @@ var choirSound: AudioStreamPlayer
 @onready var ui = $UI
 @onready var cedric: Cedric = $Cedric
 @onready var player: Player = $Player
-@onready var church = $church
 
 var CEDRIC_DAMAGE = 100
 var PLAYER_HEALING_PER_TICK = 5
