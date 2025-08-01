@@ -18,6 +18,9 @@ func _ready() -> void:
 	shaderMat  = $CanvasLayer/ColorRect.material
 	choirSound = $Choir
 	cedric.player = $Player
+	var cross_keep_index = RandomNumberGenerator.new().randi_range(0, 8)
+	$NavigationRegion3D/Dungeon.init(-1, cross_keep_index)
+	$NavigationRegion3D/Dungeon.connect("skull_collected", self._on_skull_collected)
 
 func _process(delta: float) -> void:
 	if Global.game_paused:
